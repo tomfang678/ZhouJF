@@ -1,0 +1,1359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YHPT.Management.WebUI</RootNamespace>
+    <AssemblyName>YHPT.Management.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MB.Framework.BaseInfo.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\MB.Framework.BaseInfo.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\MB.Framework\MB.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.RuleBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\MB.Framework\MB.Framework.RuleBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\MB.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.RuleBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\MB.RuleBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.RuleBase.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\MB.RuleBase.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Util, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\MB.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.WinEIDrive, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\MB.WinEIDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\1.lib\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\1.lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.PolicyInjection, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\1.lib\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\1.lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\1.lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\1.lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\1.lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>K:\TMS\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>K:\TMS\MB.TMS.Management.WebUI\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>K:\TMS\MB.TMS.Management.WebUI\bin\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>K:\TMS\MB.TMS.Management.WebUI\bin\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>K:\TMS\MB.TMS.Management.WebUI\bin\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack, Version=4.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client, Version=4.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=4.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartFast.BaseFrame.Utility">
+      <HintPath>..\1.lib\SmartFast.BaseFrame.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartFast.Plugin">
+      <HintPath>..\1.lib\SmartFast.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartFast.Web.BaseLibrary">
+      <HintPath>..\1.lib\SmartFast.Web.BaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>K:\TMS\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CommonLogic\AdminCacheContext.cs" />
+    <Compile Include="CommonLogic\CheckEntityResult.cs" />
+    <Compile Include="CommonLogic\ColumnDefines.cs" />
+    <Compile Include="CommonLogic\CSVFile.cs" />
+    <Compile Include="CommonLogic\FileNPOI.cs" />
+    <Compile Include="CommonLogic\ProcessBarHandler.cs" />
+    <Compile Include="CommonLogic\UtilHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AreaInfoController.cs" />
+    <Compile Include="Controllers\BfCodeController.cs" />
+    <Compile Include="Controllers\BfModuleController.cs" />
+    <Compile Include="Controllers\BfOrgController.cs" />
+    <Compile Include="Controllers\BfRoleController.cs" />
+    <Compile Include="Controllers\BfUserController.cs" />
+    <Compile Include="Controllers\BridgeInfoController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\GreenLandInfoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlugInController.cs" />
+    <Compile Include="Controllers\RoadBasicInfoController.cs" />
+    <Compile Include="Controllers\RoadMunicipalInfoController.cs" />
+    <Compile Include="Controllers\SanitationInfoController.cs" />
+    <Compile Include="Controllers\SewerInfoController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\StreetTreeInfoController.cs" />
+    <Compile Include="Controllers\SubContLeaderInfoController.cs" />
+    <Compile Include="Controllers\SubContractorInfoController.cs" />
+    <Compile Include="Controllers\YHBasicController.cs" />
+    <Compile Include="FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\GridState.cs" />
+    <Compile Include="Models\JsTreeNode.cs" />
+    <Compile Include="Models\MenuItemModel.cs" />
+    <Compile Include="Models\NameValueObject.cs" />
+    <Compile Include="Models\SyncErrorModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfCode.xml">
+      <Link>ConfigFile\BfCode.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfCodeDetail.xml">
+      <Link>ConfigFile\BfCodeDetail.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfModule.xml">
+      <Link>ConfigFile\BfModule.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfModuleOperation.xml">
+      <Link>ConfigFile\BfModuleOperation.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfModuleOtherOperation.xml">
+      <Link>ConfigFile\BfModuleOtherOperation.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfOrg.xml">
+      <Link>ConfigFile\BfOrg.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfRegion.xml">
+      <Link>ConfigFile\BfRegion.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfRole.xml">
+      <Link>ConfigFile\BfRole.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfRolePermission.xml">
+      <Link>ConfigFile\BfRolePermission.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfRoleSpecialPermission.xml">
+      <Link>ConfigFile\BfRoleSpecialPermission.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfRoleUser.xml">
+      <Link>ConfigFile\BfRoleUser.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\BfUser.xml">
+      <Link>ConfigFile\BfUser.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ZhouJF.SystemInfo.DAL\ConfigFile\UserToken.xml">
+      <Link>ConfigFile\UserToken.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\admin\layout\css\custom.css" />
+    <Content Include="Assets\admin\layout\css\layout.css" />
+    <Content Include="Assets\admin\layout\css\themes\default.css" />
+    <Content Include="Assets\admin\layout\img\avatar1.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar10.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar11.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar2.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar3.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar3_small.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar4.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar6.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar7.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar8.jpg" />
+    <Content Include="Assets\admin\layout\img\avatar9.jpg" />
+    <Content Include="Assets\admin\layout\img\icon-color-close.png" />
+    <Content Include="Assets\admin\layout\img\icon-color.png" />
+    <Content Include="Assets\admin\layout\img\sidebar_inline_toggler_icon_default.jpg" />
+    <Content Include="Assets\admin\layout\img\sidebar_toggler_icon_default.png" />
+    <Content Include="Assets\admin\layout\Scripts\demo.js" />
+    <Content Include="Assets\admin\layout\Scripts\layout.js" />
+    <Content Include="Assets\admin\layout\Scripts\quick-sidebar.js" />
+    <Content Include="Assets\admin\order\css\detail.css" />
+    <Content Include="Assets\admin\order\img\1.png" />
+    <Content Include="Assets\admin\order\img\2.png" />
+    <Content Include="Assets\admin\order\img\3.png" />
+    <Content Include="Assets\admin\order\img\4.png" />
+    <Content Include="Assets\admin\order\img\5.png" />
+    <Content Include="Assets\admin\order\img\6.png" />
+    <Content Include="Assets\admin\pages\css\login.css" />
+    <Content Include="Assets\admin\pages\scripts\demo.js" />
+    <Content Include="Assets\admin\pages\scripts\form-samples.js" />
+    <Content Include="Assets\admin\pages\scripts\login.js" />
+    <Content Include="Assets\admin\pages\scripts\table-advanced.js" />
+    <Content Include="Assets\admin\pages\scripts\table-ajax.js" />
+    <Content Include="Assets\admin\pages\scripts\table-editable.js" />
+    <Content Include="Assets\admin\pages\scripts\table-managed.js" />
+    <Content Include="Assets\admin\pages\scripts\ui-alert-dialog-api.js" />
+    <Content Include="Assets\admin\pages\scripts\ui-tree.js" />
+    <Content Include="Assets\fileUpload\css\fileUpload.css" />
+    <Content Include="Assets\fileUpload\css\iconfont.css" />
+    <Content Include="Assets\fileUpload\fonts\iconfont.svg" />
+    <Content Include="Assets\fileUpload\index.html" />
+    <Content Include="Assets\fileUpload\js\fileUpload.js" />
+    <Content Include="Assets\fileUpload\js\iconfont.js" />
+    <Content Include="Assets\fileUpload\js\jquery-2.1.3.min.js" />
+    <Content Include="Assets\global\Css\breviaryScroll.css" />
+    <Content Include="Assets\global\Css\components.css" />
+    <Content Include="Assets\global\Css\imgviewer.css" />
+    <Content Include="Assets\global\Css\Plugins.css" />
+    <Content Include="Assets\global\Css\style-metronic.css" />
+    <Content Include="Assets\global\Img\datatable-row-openclose.png" />
+    <Content Include="Assets\global\Img\input-spinner.gif" />
+    <Content Include="Assets\global\Img\iPhone-landscape.png" />
+    <Content Include="Assets\global\Img\iPhone-portrait.png" />
+    <Content Include="Assets\global\Img\loading-spinner-grey.gif" />
+    <Content Include="Assets\global\Img\portlet-collapse-icon-white.png" />
+    <Content Include="Assets\global\Img\portlet-collapse-icon.png" />
+    <Content Include="Assets\global\Img\portlet-config-icon-white.png" />
+    <Content Include="Assets\global\Img\portlet-config-icon.png" />
+    <Content Include="Assets\global\Img\portlet-expand-icon-white.png" />
+    <Content Include="Assets\global\Img\portlet-reload-icon-white.png" />
+    <Content Include="Assets\global\Img\portlet-reload-icon.png" />
+    <Content Include="Assets\global\Img\portlet-remove-icon-white.png" />
+    <Content Include="Assets\global\Img\portlet-remove-icon.png" />
+    <Content Include="Assets\global\Img\remove-icon-small.png" />
+    <Content Include="Assets\global\Img\syncfusion-icons.png" />
+    <Content Include="Assets\global\Img\welcome.jpg" />
+    <Content Include="Assets\global\Img\welcome2.jpg" />
+    <Content Include="Assets\global\Plugins\bootBox\bootbox.min.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-fileinput\bootstrap-fileinput.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-fileinput\bootstrap-fileinput.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-fileinput\jquery.form.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Assets\global\Plugins\bootStrap-switch\Css\bootstrap-switch.min.css" />
+    <Content Include="Assets\global\Plugins\bootStrap-switch\Js\bootstrap-switch.min.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-treeview\bootstrap-treeview.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-treeview\bootstrap-treeview.min.js" />
+    <Content Include="Assets\global\Plugins\bootstrap-treeview\css\bootstrap-treeview.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-treeview\css\bootstrap-treeview.min.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-treeview\css\default.css" />
+    <Content Include="Assets\global\Plugins\bootstrap-treeview\css\normalize.css" />
+    <Content Include="Assets\global\Plugins\bootstrap\Css\bootstrap.min.css" />
+    <Content Include="Assets\global\Plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\global\Plugins\bootstrap\Js\bootstrap.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\html_table.html" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\index.html" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\js\FixedHeader.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\js\FixedHeader.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\top_bottom_left_right.html" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\top_left.html" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\two_tables.html" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\zIndexes.html" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\Scroller\Css\dataTables.scroller.min.css" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Assets\global\Plugins\datatables\media\images\sort_asc.png" />
+    <Content Include="Assets\global\Plugins\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="Assets\global\Plugins\datatables\media\images\sort_both.png" />
+    <Content Include="Assets\global\Plugins\datatables\media\images\sort_desc.png" />
+    <Content Include="Assets\global\Plugins\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="Assets\global\Plugins\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\global\Plugins\datatables\plugins\bootstrap\dataTables.bootstrap.css" />
+    <Content Include="Assets\global\Plugins\datatables\plugins\bootstrap\dataTables.bootstrap.js" />
+    <Content Include="Assets\global\Plugins\editor\editor.css" />
+    <Content Include="Assets\global\Plugins\editor\editor.js" />
+    <Content Include="Assets\global\Plugins\font-awesome\Css\font-awesome.min.css" />
+    <Content Include="Assets\global\Plugins\font-awesome\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\global\Plugins\jquery-1.10.1.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-1.11.0.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-1.8.3.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-bbq-1.2.1\jquery.ba-bbq.js" />
+    <Content Include="Assets\global\Plugins\jquery-bbq-1.2.1\jquery.ba-bbq.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Assets\global\Plugins\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-ui\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-ui\jquery-ui.css" />
+    <Content Include="Assets\global\Plugins\jquery-validation\additional-methods.min.js" />
+    <Content Include="Assets\global\Plugins\jquery-validation\jquery.validate.min.js" />
+    <Content Include="Assets\global\Plugins\jquery.blockui.min.js" />
+    <Content Include="Assets\global\Plugins\jquery.cookie.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\.gitignore" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\New Text Document.txt" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\ajax_nodes.html" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\apple-touch-icon-precomposed.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\jstree.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\jstree.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\libs\jquery.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\libs\jquery.ui.touch.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\libs\require.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\themes\default\32px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\themes\default\40px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\themes\default\style.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\themes\default\style.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\dist\themes\default\throbber.gif" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\docs.css" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\docs.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\favicon.ico" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\html5.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\browsers.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\find.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\logo.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\tree.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\tree_icon.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\jquery-1.10.2.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\jquery.address-1.6.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\respond.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\vakata.js" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\index.html" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\file_sprite.png" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\sitebrowser\data.sql" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\jstree.js" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\jstree.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\libs\document-register-element.js" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\libs\jquery.js" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\libs\require.js" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\themes\default\32px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\themes\default\40px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\themes\default\style.css" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\themes\default\style.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\dist\themes\default\throbber.gif" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\ajax_nodes.html" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\apple-touch-icon-precomposed.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\jstree.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\jstree.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\libs\document-register-element.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\libs\jquery.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\libs\jquery.ui.touch.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\libs\require.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\themes\default\32px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\themes\default\40px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\themes\default\style.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\themes\default\style.min.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\dist\themes\default\throbber.gif" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\docs.css" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\docs.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\favicon.ico" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\html5.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\images\browsers.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\images\find.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\images\logo.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\images\tree.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\images\tree_icon.png" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\jquery-1.10.2.min.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\jquery.address-1.6.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\respond.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\vakata.js" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\index.html" />
+    <Content Include="Assets\global\Plugins\jsTree\gruntfile.js" />
+    <Content Include="Assets\global\Plugins\jsTree\libs\document-register-element.js" />
+    <Content Include="Assets\global\Plugins\jsTree\libs\jquery.js" />
+    <Content Include="Assets\global\Plugins\jsTree\libs\require.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\intro.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.checkbox.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.contextmenu.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.dnd.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.search.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.sort.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.state.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.types.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.unique.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\jstree.wholerow.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\misc.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\outro.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\sample.js" />
+    <Content Include="Assets\global\Plugins\jsTree\src\themes\default\32px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\src\themes\default\40px.png" />
+    <Content Include="Assets\global\Plugins\jsTree\src\themes\default\style.css" />
+    <Content Include="Assets\global\Plugins\jsTree\src\themes\default\throbber.gif" />
+    <Content Include="Assets\global\Plugins\jsTree\src\vakata-jstree.js" />
+    <Content Include="Assets\global\Plugins\jsTree\test\index.html" />
+    <Content Include="Assets\global\Plugins\jsTree\test\libs\qunit.css" />
+    <Content Include="Assets\global\Plugins\jsTree\test\libs\qunit.js" />
+    <Content Include="Assets\global\Plugins\jsTree\test\test.js" />
+    <Content Include="Assets\global\Plugins\laydate\laydate.js" />
+    <Content Include="Assets\global\Plugins\laydate\need\laydate.css" />
+    <Content Include="Assets\global\Plugins\laydate\skins\dahong\icon.png" />
+    <Content Include="Assets\global\Plugins\laydate\skins\dahong\laydate.css" />
+    <Content Include="Assets\global\Plugins\laydate\skins\default\icon.png" />
+    <Content Include="Assets\global\Plugins\laydate\skins\default\laydate.css" />
+    <Content Include="Assets\global\Plugins\laydate\skins\molv\icon.png" />
+    <Content Include="Assets\global\Plugins\laydate\skins\molv\laydate.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\calendar.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\lang\en.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\lang\zh-cn.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\lang\zh-tw.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\readme.txt" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\datePicker.gif" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\default\datepicker.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\default\img.gif" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\WdatePicker.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\whyGreen\bg.jpg" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\whyGreen\datepicker.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\dev\skin\whyGreen\img.gif" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\lang\en.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Assets\global\Plugins\My97DatePicker\WdatePicker.js" />
+    <Content Include="Assets\global\Plugins\select2\select2-spinner.gif" />
+    <Content Include="Assets\global\Plugins\select2\select2.css" />
+    <Content Include="Assets\global\Plugins\select2\select2.min.js" />
+    <Content Include="Assets\global\Plugins\select2\select2.png" />
+    <Content Include="Assets\global\Plugins\simple-line-icons\Fonts\Simple-Line-Icons.svg" />
+    <Content Include="Assets\global\Plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="Assets\global\Plugins\table-editable.js" />
+    <Content Include="Assets\global\Plugins\uniform\Css\uniform.default.css" />
+    <Content Include="Assets\global\Plugins\uniform\Images\sprite.png" />
+    <Content Include="Assets\global\Plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="Assets\global\Scripts\datatable.js" />
+    <Content Include="Assets\global\Scripts\dataTableExtention.js" />
+    <Content Include="Assets\global\Scripts\metronic.js" />
+    <Content Include="Assets\scripts\flashupload.js" />
+    <Content Include="Assets\uploadify3.2.1\jquery.uploadify.js" />
+    <Content Include="Assets\uploadify3.2.1\jquery.uploadify.min.js" />
+    <Content Include="Assets\uploadify3.2.1\uploadify-cancel.png" />
+    <Content Include="Assets\uploadify3.2.1\uploadify.css" />
+    <Content Include="Assets\uploadify3.2.1\uploadify.swf" />
+    <Content Include="ConfigFile\Areainfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Bridgeinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\GreenLandInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Imginfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Roadbasicinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Roadmunicipalinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Sanitationinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Sewerinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\StreetTreeInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Subcontleaderinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Subcontractorinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\CacheConfig.xml" />
+    <Content Include="Config\DaoConfig.xml" />
+    <Content Include="Config\Log4net.xml" />
+    <Content Include="Config\SystemConfig.xml" />
+    <Content Include="Config\UploadConfig.xml" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\loadingAnimation.gif" />
+    <Content Include="Content\MenuTree.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\ActionIcons10.png" />
+    <Content Include="Image\ajax-modal-loading.gif" />
+    <Content Include="Image\arrows_01.png" />
+    <Content Include="Image\arrows_02.png" />
+    <Content Include="Image\defmale.png" />
+    <Content Include="Image\progressBar_m.gif" />
+    <Content Include="Image\thumbnail.png" />
+    <Content Include="Image\Ynext.png" />
+    <Content Include="Image\Yprev.png" />
+    <Content Include="Scripts\SanitationInfo\Add.js" />
+    <Content Include="Scripts\SanitationInfo\Edit.js" />
+    <Content Include="Scripts\SanitationInfo\Index.js" />
+    <Content Include="Scripts\GreenLandInfo\Add.js" />
+    <Content Include="Scripts\GreenLandInfo\Edit.js" />
+    <Content Include="Scripts\GreenLandInfo\Index.js" />
+    <Content Include="Scripts\StreetTreeInfo\Add.js" />
+    <Content Include="Scripts\StreetTreeInfo\Edit.js" />
+    <Content Include="Scripts\StreetTreeInfo\Index.js" />
+    <Content Include="Scripts\SewerInfo\Add.js" />
+    <Content Include="Scripts\SewerInfo\Edit.js" />
+    <Content Include="Scripts\SewerInfo\Index.js" />
+    <Content Include="Scripts\BridgeInfo\Add.js" />
+    <Content Include="Scripts\BridgeInfo\Edit.js" />
+    <Content Include="Scripts\BridgeInfo\Index.js" />
+    <Content Include="Scripts\RoadMunicipalInfo\Add.js" />
+    <Content Include="Scripts\RoadMunicipalInfo\Edit.js" />
+    <Content Include="Scripts\RoadMunicipalInfo\Index.js" />
+    <Content Include="Scripts\Roadbasicinfo\Add.js" />
+    <Content Include="Scripts\Roadbasicinfo\Edit.js" />
+    <Content Include="Scripts\Roadbasicinfo\Index.js" />
+    <Content Include="Scripts\AreaInfo\Add.js" />
+    <Content Include="Scripts\AreaInfo\Edit.js" />
+    <Content Include="Scripts\AreaInfo\Index.js" />
+    <Content Include="Scripts\SubContLeaderInfo\Add.js" />
+    <Content Include="Scripts\SubContLeaderInfo\Edit.js" />
+    <Content Include="Scripts\SubContLeaderInfo\Index.js" />
+    <Content Include="Scripts\SubContractorInfo\Add.js" />
+    <Content Include="Scripts\SubContractorInfo\Edit.js" />
+    <Content Include="Scripts\SubContractorInfo\Index.js" />
+    <Content Include="Scripts\BfCode\Add.js" />
+    <Content Include="Scripts\BfCode\Edit.js" />
+    <Content Include="Scripts\BfCode\Index.js" />
+    <Content Include="Scripts\BfModule\BfModule.js" />
+    <Content Include="Scripts\BfOrg\Add.js" />
+    <Content Include="Scripts\BfOrg\Edit.js" />
+    <Content Include="Scripts\BfOrg\Index.js" />
+    <Content Include="Scripts\BfRole\Add.js" />
+    <Content Include="Scripts\BfRole\Edit.js" />
+    <Content Include="Scripts\BfRole\Index.js" />
+    <Content Include="Scripts\BfUser\Add.js" />
+    <Content Include="Scripts\BfUser\ChangePwd.js" />
+    <Content Include="Scripts\BfUser\Edit.js" />
+    <Content Include="Scripts\BfUser\Index.js" />
+    <Content Include="Scripts\dropzone\css\basic.css" />
+    <Content Include="Scripts\dropzone\css\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
+    <Content Include="Scripts\dropzone\images\spritemap%402x.png" />
+    <Content Include="Scripts\dropzone\images\spritemap.png" />
+    <Content Include="Scripts\ImportData.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\changelog.txt" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\datagrid-detailview.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\easyloader.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\jquery.easyui.min.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\jquery.min.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\licence_gpl.txt" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\license_commercial.txt" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-af.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-ar.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-bg.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-ca.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-cs.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-cz.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-da.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-de.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-el.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-en.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-es.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-fr.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-it.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-jp.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-nl.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-pl.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-pt_BR.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-ru.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-sv_SE.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-tr.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.accordion.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.calendar.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.combo.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.combobox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.combogrid.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.combotree.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.datagrid.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.datebox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.datetimebox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.dialog.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.draggable.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.droppable.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.form.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.layout.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.linkbutton.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.menu.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.menubutton.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.messager.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.numberbox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.numberspinner.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.pagination.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.panel.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.parser.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.progressbar.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.propertygrid.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.resizable.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.searchbox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.slider.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.spinner.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.splitbutton.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.tabs.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.timespinner.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.tooltip.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.tree.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.treegrid.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.validatebox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\plugins\jquery.window.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\readme.txt" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\easyloader.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.accordion.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.calendar.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.combobox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.datebox.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.draggable.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.droppable.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.form.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.linkbutton.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.menu.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.parser.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.progressbar.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.propertygrid.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.resizable.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.slider.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.tabs.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\src\jquery.window.js" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\accordion.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\calendar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\combo.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\combobox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\datagrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\datebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\dialog.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\easyui.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\accordion_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\blank.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\calendar_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\combo_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\datagrid_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\datebox_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\layout_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\linkbutton_bg.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\loading.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\menu_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\messager_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\pagination_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\panel_tools.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\searchbox_button.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\slider_handle.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\spinner_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\tabs_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\tree_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\images\validatebox_warning.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\layout.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\linkbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\menu.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\menubutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\messager.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\pagination.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\panel.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\progressbar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\propertygrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\searchbox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\slider.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\spinner.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\splitbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\tabs.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\tooltip.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\tree.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\validatebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\black\window.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\accordion.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\calendar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\combo.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\combobox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\datagrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\datebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\dialog.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\easyui.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\blank.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\loading.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\layout.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\linkbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\menu.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\menubutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\messager.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\pagination.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\panel.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\progressbar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\propertygrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\searchbox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\slider.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\spinner.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\splitbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\tabs.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\tooltip.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\tree.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\validatebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\bootstrap\window.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\accordion.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\calendar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\combo.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\combobox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\datagrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\datebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\dialog.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\easyui.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\accordion_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\blank.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\calendar_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\combo_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\datagrid_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\datebox_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\layout_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\linkbutton_bg.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\loading.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\menu_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\messager_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\pagination_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\panel_tools.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\searchbox_button.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\slider_handle.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\spinner_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\tabs_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\tree_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\images\validatebox_warning.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\layout.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\linkbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\menu.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\menubutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\messager.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\pagination.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\panel.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\progressbar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\propertygrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\searchbox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\slider.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\spinner.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\splitbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\tabs.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\tooltip.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\tree.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\validatebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\default\window.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\accordion.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\calendar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\combo.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\combobox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\datagrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\datebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\dialog.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\easyui.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\accordion_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\blank.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\calendar_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\combo_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\datagrid_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\layout_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\loading.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\menu_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\messager_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\pagination_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\panel_tools.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\searchbox_button.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\slider_handle.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\spinner_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\tabs_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\tree_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\layout.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\linkbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\menu.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\menubutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\messager.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\pagination.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\panel.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\progressbar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\propertygrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\searchbox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\slider.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\spinner.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\splitbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\tabs.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\tooltip.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\tree.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\validatebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\gray\window.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icon.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\back.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\blank.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\cancel.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\cut.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\edit_add.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\edit_remove.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\filesave.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\help.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\mini_add.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\mini_edit.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\mini_refresh.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\no.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\ok.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\pencil.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\print.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\redo.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\reload.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\search.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\stop.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\sum.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\tip.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\icons\undo.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\accordion.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\calendar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\combo.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\combobox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\datagrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\datebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\dialog.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\easyui.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\accordion_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\blank.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\calendar_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\combo_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\datagrid_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\layout_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\loading.gif" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\menu_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\messager_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\pagination_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\panel_tools.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\searchbox_button.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\slider_handle.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\spinner_arrows.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\tabs_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\tree_icons.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\layout.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\linkbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\menu.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\menubutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\messager.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\pagination.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\panel.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\progressbar.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\propertygrid.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\searchbox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\slider.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\spinner.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\splitbutton.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\tabs.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\tooltip.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\tree.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\validatebox.css" />
+    <Content Include="Scripts\jquery-easyui-1.3.4\themes\metro\window.css" />
+    <Content Include="Scripts\PulgIn\BfOrgTree.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Sigin.cshtml" />
+    <Content Include="Views\BfCode\Add.cshtml" />
+    <Content Include="Views\BfCode\Detail.cshtml" />
+    <Content Include="Views\BfCode\Edit.cshtml" />
+    <Content Include="Views\BfCode\Index.cshtml" />
+    <Content Include="Views\BfModule\Index.cshtml" />
+    <Content Include="Views\BfModule\SearchModuleOperate.cshtml" />
+    <Content Include="Views\BfOrg\Add.cshtml" />
+    <Content Include="Views\BfOrg\Edit.cshtml" />
+    <Content Include="Views\BfOrg\Index.cshtml" />
+    <Content Include="Views\BfRole\Add.cshtml" />
+    <Content Include="Views\BfRole\Edit.cshtml" />
+    <Content Include="Views\BfRole\Index.cshtml" />
+    <Content Include="Views\BfUser\Add.cshtml" />
+    <Content Include="Views\BfUser\ChangePwd.cshtml" />
+    <Content Include="Views\BfUser\Edit.cshtml" />
+    <Content Include="Views\BfUser\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PlugIn\BfOrg.cshtml" />
+    <Content Include="Views\PlugIn\ImportData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Assets\admin\order\scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZhouJF.Management.WebUI.Library\YHPT.Management.WebUI.Library.csproj">
+      <Project>{26fe31bd-ead3-4b38-8e1d-15f58efb49fd}</Project>
+      <Name>YHPT.Management.WebUI.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.Business\YHPT.SystemInfo.Business.csproj">
+      <Project>{0480bc0a-00b1-4e6f-b9e0-6efed1f54bcf}</Project>
+      <Name>YHPT.SystemInfo.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.DAL\YHPT.SystemInfo.DAL.csproj">
+      <Project>{94854b83-a2b3-4d89-b383-9750ae46fe6e}</Project>
+      <Name>YHPT.SystemInfo.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.IDataAccess\YHPT.SystemInfo.IDataAccess.csproj">
+      <Project>{59b3a3d7-06b6-4398-9548-8f7a80397722}</Project>
+      <Name>YHPT.SystemInfo.IDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.Model\YHPT.SystemInfo.Model.csproj">
+      <Project>{84908d34-a8ee-4cd0-a522-e759570efd02}</Project>
+      <Name>YHPT.SystemInfo.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\dropzone\css\stylus\basic.styl" />
+    <Content Include="Scripts\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Scripts\dropzone\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\global\Plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\global\Plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\global\Plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\global\Plugins\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js.map" />
+    <Content Include="Assets\global\Plugins\datatables\extensions\FixedHeader\js\FixedHeader.min.js.gz" />
+    <Content Include="Assets\global\Plugins\font-awesome\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\global\Plugins\font-awesome\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\global\Plugins\font-awesome\Fonts\fontawesome-webfont2.eot" />
+    <Content Include="Assets\global\Plugins\jsTree\bower.json" />
+    <Content Include="Assets\global\Plugins\jsTree\component.json" />
+    <Content Include="Assets\global\Plugins\jsTree\composer.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\.htaccess" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\ajax_children.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\ajax_children2.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\asdf asdf" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\asdfasdf" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\asdfasdfasdfasdfasdf" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\asdf\New file4" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\ajax_children.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\ajax_demo_children.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\ajax_demo_roots.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\ajax_roots.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\ajax_children2.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\assets\images\New file4" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\data\root\jstree.json" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\filebrowser\index.php" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\sitebrowser\class.db.php" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\sitebrowser\class.tree.php" />
+    <Content Include="Assets\global\Plugins\jsTree\demo\sitebrowser\index.php" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\ajax_children.json" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\ajax_demo_children.json" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\ajax_demo_roots.json" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\ajax_roots.json" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\global\Plugins\jsTree\docs\jstree.json" />
+    <Content Include="Assets\global\Plugins\jsTree\jstree.jquery.json" />
+    <Content Include="Assets\global\Plugins\jsTree\LICENSE-MIT" />
+    <Content Include="Assets\global\Plugins\jsTree\package.json" />
+    <Content Include="Assets\global\Plugins\jsTree\README.md" />
+    <Content Include="Assets\global\Plugins\jsTree\src\themes\default\base.less" />
+    <Content Include="Assets\global\Plugins\jsTree\src\themes\default\style.less" />
+    <Content Include="Assets\global\Plugins\jsTree\test\UNDER_CONTRUCTION" />
+    <Content Include="Assets\global\Plugins\simple-line-icons\Fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Assets\global\Plugins\simple-line-icons\Fonts\Simple-Line-Icons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_BaseLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Debug.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LeftNavMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_TopNavMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PlugIn\BfOrgTree.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\YHBasic\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubContractorInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RoadBasicInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RoadMunicipalInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BridgeInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StreetTreeInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SanitationInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GreenLandInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SewerInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubContractorInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubContractorInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RoadBasicInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RoadBasicInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RoadMunicipalInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RoadMunicipalInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SewerInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SewerInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BridgeInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BridgeInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GreenLandInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GreenLandInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SanitationInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SanitationInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StreetTreeInfo\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StreetTreeInfo\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\uploadify3.2.1\uploadify.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\fileUpload\fonts\iconfont.eot" />
+    <Content Include="Assets\fileUpload\fonts\iconfont.ttf" />
+    <Content Include="Assets\fileUpload\fonts\iconfont.woff" />
+    <Content Include="FileUpload.ashx" />
+    <None Include="Properties\PublishProfiles\ss.pubxml" />
+    <Content Include="Views\SubContLeaderInfo\Index.cshtml" />
+    <Content Include="Views\SubContLeaderInfo\Add.cshtml" />
+    <Content Include="Views\SubContLeaderInfo\Edit.cshtml" />
+    <Content Include="Views\BfRole\SubContLeaderInfo\Add.cshtml" />
+    <Content Include="Views\BfRole\SubContLeaderInfo\Edit.cshtml" />
+    <Content Include="Views\BfRole\SubContLeaderInfo\Index.cshtml" />
+    <Content Include="Views\BfRole\GreenLandInfo\Add.cshtml" />
+    <Content Include="Views\BfRole\GreenLandInfo\Edit.cshtml" />
+    <Content Include="Views\BfRole\GreenLandInfo\Index.cshtml" />
+    <Content Include="Views\RoadBasicInfo\Detail.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:45665/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

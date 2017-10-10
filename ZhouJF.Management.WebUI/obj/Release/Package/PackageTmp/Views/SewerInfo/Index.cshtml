@@ -1,0 +1,194 @@
+﻿@using YHPT.Management.WebUI.Library
+@{
+    ViewBag.Title = "道路下水道管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <link href="~/Assets/global/Plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" />
+    <script src="~/Assets/global/Plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.3.4/plugins/jquery.form.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-fileinput/jquery.form.js"></script>
+    <script type="text/javascript">
+        var IsEdit = "@(ViewBag.AuthorizeKey.CanUpdate + "")";
+        var IsDelete = "@(ViewBag.AuthorizeKey.CanDelete + "")";
+        var IsAdd = "@(ViewBag.AuthorizeKey.CanAdd + "")";
+    </script>
+    @Scripts.Render("~/Scripts/SewerInfo/Index.js")
+    <script src="~/Scripts/ImportData.js"></script>
+}
+
+<input type="hidden" id="hidIsEdit" name="hidIsEdit" value="@(ViewBag.AuthorizeKey.CanUpdate + "")" />
+<input type="hidden" id="hidIsDelete" name="hidIsDelete" value="@(ViewBag.AuthorizeKey.CanDelete + "")" />
+<input type="hidden" id="hidIsAdd" name="hidIsAdd" value="@(ViewBag.AuthorizeKey.CanAdd + "")" />
+
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">首页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">@ViewBag.Title</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+<form id="searchContatiner" action="#" class="form-horizontal">
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">道路ID</label>
+                            <div class="col-md-8">
+                                <input hidden="hidden" id="txtRoadCode" name="RoadCode" class="form-control">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">连管长度</label>
+                                <div class="col-md-8">
+                                    <input hidden="hidden" id="txtConnectingPipeLength" name="ConnectingPipeLength" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">小型雨水管长度(φ600)	</label>
+                                <div class="col-md-8">
+                                    <input hidden="hidden" id="txtSamllRainPipeLength" name="SamllRainPipeLength" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">中型雨水管长度（Φ600-Φ1000)</label>
+                                <div class="col-md-8">
+                                    <input hidden="hidden" id="txtMiddleRainPipeLength" name="MiddleRainPipeLength" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">大型雨水管长度（Φ1050-Φ1500)</label>
+                                <div class="col-md-8">
+                                    <input hidden="hidden" id="txtBigRainPipeLength" name="BigRainPipeLength" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">污水管长度（不分管径）</label>
+                                <div class="col-md-8">
+                                    <input hidden="hidden" id="txtDirtyWaterPipeLength" name="DirtyWaterPipeLength" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">带班编码</label>
+                            <div class="col-md-8">
+                                <input hidden="hidden" id="txtLeaderCode" name="LeaderCode" class="form-control">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn red" onclick="resetDtl();">查询</button>
+                                <button type="reset" class="btn default" onclick="resetDtl();">清除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="portlet box purple">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class=""></i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+        <div class="actions">
+            @if (ViewBag.AuthorizeKey.CanAdd)
+            {
+                <a href="@Url.Action("Add")" class="btn green"><i class="fa fa-plus"></i>添加</a>
+            }
+
+            @*<div class="btn-group">
+                    <a class="btn btn-sm green" href="#" data-toggle="dropdown">
+                        <i class="fa fa-user"></i>批量操作 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        @if (UserSession.Current.HasPermit("/SubContractorInfo/Index", "IMPORT"))
+                        {
+                            <li>
+                                <a data-toggle="modal" id="btnImport" href="#basic"><i class="fa fa-download"></i>系统参数导入</a>
+                            </li>
+                        }
+                        <li>
+                            <a href="javascript:;" id="btnExport"><i class="fa fa-upload"></i>系统参数导出</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" id="btnImportTemplate"><i class="fa fa-upload"></i>导出系统参数模版</a>
+                        </li>
+                    </ul>
+                </div>*@
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table id="grid" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>道路ID</th>
+                    <th>连管长度</th>
+                    <th>小型雨水管长度（φ600)</th>
+                    <th>中型雨水管长度（φ600-φ1000)</th>
+                    <th>大型雨水管长度（φ1050-φ1500)</th>
+                    <th>特大型雨水管长度（＞φ1500)</th>
+                    <th>污水管长度（不分管径）</th>
+                    <th>带班编码</th>
+                    <th>
+                        创建人
+                    </th>
+                    <th>
+                        创建时间
+                    </th>
+                    <th>
+                        更新人
+                    </th>
+                    <th>
+                        更新时间
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@*@{ Html.RenderAction("ImportData", "PlugIn"); }*@

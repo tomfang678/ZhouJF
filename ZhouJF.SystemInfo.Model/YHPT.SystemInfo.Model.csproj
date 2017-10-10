@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84908D34-A8EE-4CD0-A522-E759570EFD02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YHPT.SystemInfo.Model</RootNamespace>
+    <AssemblyName>YHPT.SystemInfo.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\1.lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\1.lib\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.Common">
+      <HintPath>..\1.lib\MB.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.RuleBase">
+      <HintPath>..\1.lib\MB.Framework.RuleBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.ORM">
+      <HintPath>..\1.lib\MB.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Util">
+      <HintPath>..\1.lib\MB.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BfCode\BfCodeDetailInfo.cs" />
+    <Compile Include="BfCode\BfCodeInfo.cs" />
+    <Compile Include="BfCode\ImportBfCodeDto.cs" />
+    <Compile Include="BfCode\QueryBfCodeDetailDto.cs" />
+    <Compile Include="BfCode\QueryBfCodeDto.cs" />
+    <Compile Include="BfModule\BfModuleInfo.cs" />
+    <Compile Include="BfModule\BfModuleOperationInfo.cs" />
+    <Compile Include="BfModule\BfModuleOtherOperationInfo.cs" />
+    <Compile Include="BfModule\QueryBfModuleDto.cs" />
+    <Compile Include="BfModule\QueryBfModuleOperationDto.cs" />
+    <Compile Include="BfModule\QueryBfModuleOtherOperationDto.cs" />
+    <Compile Include="BfOrg\BfOrgInfo.cs" />
+    <Compile Include="BfOrg\QueryBfOrgDto.cs" />
+    <Compile Include="BfRegion\BfRegionInfo.cs" />
+    <Compile Include="BfRegion\ImportBfRegionDto.cs" />
+    <Compile Include="BfRegion\QueryBfRegionDto.cs" />
+    <Compile Include="BfRoleUser\BfRoleUserInfo.cs" />
+    <Compile Include="BfRole\BfRoleInfo.cs" />
+    <Compile Include="BfRole\BfRolePermissionInfo.cs" />
+    <Compile Include="BfRole\BfRoleSpecialPermissionInfo.cs" />
+    <Compile Include="BfRole\QueryBfRoleDto.cs" />
+    <Compile Include="BfRole\QueryBfRolePermissionDto.cs" />
+    <Compile Include="BfRole\QueryBfRoleSpecialPermissionDto.cs" />
+    <Compile Include="BfUser\BfUserInfo.cs" />
+    <Compile Include="BfUser\LoginUserInfo.cs" />
+    <Compile Include="BfUser\QueryBfUserDto.cs" />
+    <Compile Include="BfUser\UserTokenInfo.cs" />
+    <Compile Include="BfUser\ValidateUserDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryDto.cs" />
+    <Compile Include="YhManager\ImgInfo.cs" />
+    <Compile Include="YhManager\ImgInfoDto.cs" />
+    <Compile Include="YhManager\StreetTreeInfo.cs" />
+    <Compile Include="YhManager\StreetTreeInfoDto.cs" />
+    <Compile Include="YhManager\SanitationInfoDto.cs" />
+    <Compile Include="YhManager\GreenLandInfoDto.cs" />
+    <Compile Include="YhManager\BridgeinfoDto.cs" />
+    <Compile Include="YhManager\SanitationInfo.cs" />
+    <Compile Include="YhManager\GreenLandInfo.cs" />
+    <Compile Include="YhManager\BridgeinfoInfo.cs" />
+    <Compile Include="YhManager\SewerinfoInfo.cs" />
+    <Compile Include="YhManager\SewerinfoDto.cs" />
+    <Compile Include="YhManager\SubContLeaderInfoDto.cs" />
+    <Compile Include="YhManager\SubContLeaderInfo.cs" />
+    <Compile Include="YhRoadMunicipalInfo\RoadMunicipalInfo.cs" />
+    <Compile Include="YhRoadMunicipalInfo\RoadMunicipalInfoDto.cs" />
+    <Compile Include="YhRoadbasicinfo\Roadbasicinfo.cs" />
+    <Compile Include="YhRoadbasicinfo\RoadbasicinfoDto.cs" />
+    <Compile Include="YhAreaInfo\AreaInfoDto.cs" />
+    <Compile Include="YhAreaInfo\AreaInfo.cs" />
+    <Compile Include="YhSubcontractor\SubContractorDto.cs" />
+    <Compile Include="YhSubcontractor\SubContractorInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

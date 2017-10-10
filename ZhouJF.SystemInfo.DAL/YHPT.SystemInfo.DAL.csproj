@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94854B83-A2B3-4D89-B383-9750AE46FE6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YHPT.SystemInfo.DAL</RootNamespace>
+    <AssemblyName>YHPT.SystemInfo.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\1.lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\1.lib\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.Common">
+      <HintPath>..\1.lib\MB.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.RuleBase">
+      <HintPath>..\1.lib\MB.Framework.RuleBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.ORM">
+      <HintPath>..\1.lib\MB.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.RuleBase">
+      <HintPath>..\1.lib\MB.RuleBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.RuleBase.Common">
+      <HintPath>..\1.lib\MB.RuleBase.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Util">
+      <HintPath>..\1.lib\MB.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\1.lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\BfCodeDetailInfoDAL.cs" />
+    <Compile Include="DAL\BfCodeInfoDAL.cs" />
+    <Compile Include="DAL\BfModuleInfoDAL.cs" />
+    <Compile Include="DAL\BfModuleOperationDAL.cs" />
+    <Compile Include="DAL\BfModuleOtherOperationDAL.cs" />
+    <Compile Include="DAL\BfOrgInfoDAL.cs" />
+    <Compile Include="DAL\BfRegionInfoDAL.cs" />
+    <Compile Include="DAL\BfRoleDAL.cs" />
+    <Compile Include="DAL\BfRolePermissionDAL.cs" />
+    <Compile Include="DAL\BfRoleSpecialPermissionDAL.cs" />
+    <Compile Include="DAL\BfRoleUserDAL.cs" />
+    <Compile Include="DAL\BfUserInfoDAL.cs" />
+    <Compile Include="DAL\YhImgInfoDAL.cs" />
+    <Compile Include="DAL\YhGreenLandInfoDAL.cs" />
+    <Compile Include="DAL\YhSanitationInfoDAL.cs" />
+    <Compile Include="DAL\YhStreetTreeInfoDAL.cs" />
+    <Compile Include="DAL\YhSewerinfoInfoDAL.cs" />
+    <Compile Include="DAL\YhBridgeInfoDAL.cs" />
+    <Compile Include="DAL\YhRoadMunicipalInfoDAL.cs" />
+    <Compile Include="DAL\YhRoadbasicinfoDAL.cs" />
+    <Compile Include="DAL\YhAreainfoDAL.cs" />
+    <Compile Include="DAL\YhSubContLeaderInfoDAL.cs" />
+    <Compile Include="DAL\YhSubcontractorinfoDAL.cs" />
+    <Compile Include="DAL\UserTokenDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConfigFile\Areainfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfCode.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfCodeDetail.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfModule.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfModuleOperation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfModuleOtherOperation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfOrg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfRegion.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfRole.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfRolePermission.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfRoleSpecialPermission.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfRoleUser.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\BfUser.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Bridgeinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\GreenLandInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Imginfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Roadbasicinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Roadmunicipalinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Sanitationinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Sewerinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\StreetTreeInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\Subcontleaderinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\SubContractorInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigFile\UserToken.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.IDataAccess\YHPT.SystemInfo.IDataAccess.csproj">
+      <Project>{59b3a3d7-06b6-4398-9548-8f7a80397722}</Project>
+      <Name>YHPT.SystemInfo.IDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.Model\YHPT.SystemInfo.Model.csproj">
+      <Project>{84908d34-a8ee-4cd0-a522-e759570efd02}</Project>
+      <Name>YHPT.SystemInfo.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

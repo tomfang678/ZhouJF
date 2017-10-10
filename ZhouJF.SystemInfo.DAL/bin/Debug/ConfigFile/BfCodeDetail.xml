@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--   XML 文件生成时间 2009-12-18 11:08  -->
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>BF_CODE_DETAIL</MappingTableName>
+  <Sqls>
+    <Sql Name="GetBatCodeDtls">
+      <SqlString>
+        <String>
+          <![CDATA[
+SELECT CD.ID,
+       CD.BF_CODE_ID,
+       (C.CODE || ' ' || CD.CODE) AS CODE,
+       CD.NAME,
+       CD.SEQ_NUM,
+       CD.LAST_MODIFIED_DATE
+  FROM BF_CODE_DETAIL CD
+  LEFT JOIN BF_CODE C ON CD.BF_CODE_ID = C.ID
+ WHERE C.CODE IN (SELECT BP.CODE
+                    FROM SF_BAT_PARS BP
+                   WHERE BP.IS_VISIBLE = 1
+                     AND BP.IS_INPUT = 0);
+]]>
+        </String>
+      </SqlString>
+    </Sql>
+    
+    <Sql Name="GetBatParam">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ ID 
+ ,BF_CODE_ID 
+ ,CODE 
+ ,NAME 
+ ,SEQ_NUM  
+ ,LAST_MODIFIED_DATE
+ FROM 
+ BF_CODE_DETAIL 
+  WHERE @Where 
+  ORDER BY SEQ_NUM;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ ID 
+ ,BF_CODE_ID 
+ ,CODE 
+ ,NAME 
+ ,SEQ_NUM  
+ ,LAST_MODIFIED_DATE
+ FROM 
+ BF_CODE_DETAIL 
+  WHERE @Where 
+  ORDER BY SEQ_NUM;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="GetByForeingKey">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ ID 
+ ,BF_CODE_ID 
+ ,CODE 
+ ,NAME 
+ ,SEQ_NUM 
+ ,LAST_MODIFIED_DATE 
+ FROM 
+ BF_CODE_DETAIL 
+  WHERE BF_CODE_ID=@BF_CODE_ID 
+  ORDER BY SEQ_NUM;
+]]>
+        </String>
+        <Param Name = "@BF_CODE_ID" Column = "BF_CODE_ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <!--根据编码大类获取数据 -->
+    <Sql Name="GetByClassCode">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ D.ID 
+ ,D.BF_CODE_ID 
+ ,D.CODE 
+ ,D.NAME 
+ ,D.SEQ_NUM 
+ ,D.LAST_MODIFIED_DATE
+ FROM BF_CODE_DETAIL D
+ INNER JOIN BF_CODE C ON C.ID = D.BF_CODE_ID
+  WHERE C.CODE = @CODE
+  ORDER BY D.SEQ_NUM;
+]]>
+        </String>
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              INSERT INTO 
+ BF_CODE_DETAIL 
+ (ID 
+ ,BF_CODE_ID 
+ ,CODE 
+ ,NAME 
+ ,SEQ_NUM 
+ ,LAST_MODIFIED_DATE
+ ) 
+ VALUES( 
+ @ID 
+ ,@BF_CODE_ID 
+ ,@CODE 
+ ,@NAME 
+ ,@SEQ_NUM 
+ ,@LAST_MODIFIED_DATE
+ );
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@BF_CODE_ID" Column = "BF_CODE_ID" TypeName = "System.Int32" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@NAME" Column = "NAME" TypeName = "System.String" />
+        <Param Name = "@SEQ_NUM" Column = "SEQ_NUM" TypeName = "System.String" />
+        <Param Name = "@LAST_MODIFIED_DATE" Column = "LAST_MODIFIED_DATE" TypeName = "System.DateTime" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              UPDATE  BF_CODE_DETAIL 
+ SET BF_CODE_ID = @BF_CODE_ID 
+ ,CODE = @CODE 
+ ,NAME = @NAME 
+ ,SEQ_NUM = @SEQ_NUM 
+ ,LAST_MODIFIED_DATE = @LAST_MODIFIED_DATE
+ WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@BF_CODE_ID" Column = "BF_CODE_ID" TypeName = "System.Int32" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@NAME" Column = "NAME" TypeName = "System.String" />
+        <Param Name = "@SEQ_NUM" Column = "SEQ_NUM" TypeName = "System.String" />
+        <Param Name = "@LAST_MODIFIED_DATE" Column = "LAST_MODIFIED_DATE" TypeName = "System.DateTime" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM BF_CODE_DETAIL 
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <!--常用数据获取专用 -->
+    <Sql Name="GetAllObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ D.ID 
+ ,D.BF_CODE_ID 
+ ,D.CODE 
+ ,D.NAME 
+ ,D.SEQ_NUM 
+ ,D.LAST_MODIFIED_DATE
+ FROM BF_CODE_DETAIL D
+ INNER JOIN BF_CODE C ON C.ID = D.BF_CODE_ID
+  ORDER BY D.SEQ_NUM;
+]]>
+        </String>
+      </SqlString>
+    </Sql>
+
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+      select * from ( 
+      select row_number() over (order by @SortField @Direction) row, 
+       A.ID 
+       ,A.BF_CODE_ID 
+       ,A.CODE 
+       ,A.NAME 
+       ,A.SEQ_NUM 
+       ,A.LAST_MODIFIED_DATE
+       FROM BF_CODE_DETAIL A
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM BF_CODE_DETAIL A
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="DeleteObjectByBfCodeId">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM [BF_CODE_DETAIL]   
+ WHERE BF_CODE_ID = @bfCodeId;
+]]>
+        </String>
+        <Param Name = "@bfCodeId" Column = "bfCodeId" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="SelectBfCodeDetailByBfCodeIds">
+      <SqlString>
+        <String>
+          <![CDATA[
+          SELECT 
+              ID 
+             ,BF_CODE_ID 
+             ,CODE 
+             ,NAME 
+             ,SEQ_NUM  
+             ,LAST_MODIFIED_DATE
+          FROM dbo.BF_CODE_DETAIL 
+          WHERE BF_CODE_ID IN (@IDS);
+]]>
+        </String>
+        <Param Name = "@IDS" Column = "IDS" TypeName = "System.String" Overcast="true" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

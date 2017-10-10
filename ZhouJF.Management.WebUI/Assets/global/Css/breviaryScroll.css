@@ -1,0 +1,14 @@
+﻿ul,li{margin:0;padding:0;list-style:none}
+a:focus{outline:none}
+.clearfix{*zoom:1}
+.clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
+.pr{position:relative}
+.pa{position:absolute}
+.breviary-box .prev,.breviary-box .next{display:block;width:62px; height:14px; background:#a4a4a4; text-indent:-9999px; position:relative}
+.breviary-box .btn-disable{background:#eee}
+.breviary-box .prev b,.breviary-box .next b{position:absolute;right:25px;top:0;width:0;height:0;font-size:0;overflow:hidden;border:5px dashed transparent;border-bottom:5px solid #ddd}
+.breviary-box .next b{border:5px dashed transparent;border-top:5px solid #ddd;top:5px}
+.breviary-box .image-box{width:62px; overflow:hidden}
+.breviary-box li{width:62px; height:62px; background:#a4a4a4; margin-top:3px; text-align:center; line-height:62px; overflow:hidden;cursor:pointer}
+.breviary-box img{max-width:62px;_width:62px;vertical-align:middle}
+.currentImage-box{border: 2px solid red;}

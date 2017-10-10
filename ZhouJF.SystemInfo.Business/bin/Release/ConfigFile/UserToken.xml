@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <PrimaryKeyName>USERID</PrimaryKeyName>
+  <MappingTableName>UserToken</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    A.USERID 
+    ,A.TOKEN 
+    ,A.CREATE_TIME 
+    FROM 
+    UserToken A
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              INSERT INTO 
+ UserToken 
+ (USERID 
+ ,TOKEN 
+ ,CREATE_TIME 
+ ) 
+ VALUES(
+ @USERID 
+ ,@TOKEN 
+ ,GETDATE()
+ );
+]]>
+        </String>
+        <Param Name = "@USERID" Column = "USERID" TypeName = "System.Int32" />
+        <Param Name = "@TOKEN" Column = "TOKEN" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM UserToken 
+ WHERE USERID = @USERID;
+]]>
+        </String>
+        <Param Name = "@USERID" Column = "USERID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+UPDATE UserToken 
+   SET CREATE_TIME = GETDATE()
+ WHERE USERID = @USERID ;
+]]>
+        </String>
+        <Param Name = "@USERID" Column = "USERID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

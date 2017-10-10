@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>BF_MODULE_OPERATION</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+      SELECT [ID]
+        ,[BF_MODULE_ID]
+        ,[CODE]
+        FROM [BF_MODULE_OPERATION]
+      WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+    INSERT INTO [BF_MODULE_OPERATION]
+               ([ID]
+           ,[BF_MODULE_ID]
+           ,[CODE])
+         VALUES
+               (@ID
+               ,@BF_MODULE_ID
+               ,@CODE)
+ SELECT @@IDENTITY;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@BF_MODULE_ID" Column = "BF_MODULE_ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+      UPDATE [BF_MODULE_OPERATION]
+         SET [CODE] = @CODE
+            ,[BF_MODULE_ID] = @BF_MODULE_ID
+       WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@BF_MODULE_ID" Column = "BF_MODULE_ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM [BF_MODULE_OPERATION]   
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+      select * from ( 
+      select row_number() over (order by @SortField @Direction) row, 
+            [ID]
+        ,[BF_MODULE_ID]
+        ,[CODE]
+        FROM [BF_MODULE_OPERATION]
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM BF_MODULE_OPERATION 
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObjectByModuleID">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM [BF_MODULE_OPERATION]   
+ WHERE BF_MODULE_ID = @BF_MODULE_ID;
+]]>
+        </String>
+        <Param Name = "@BF_MODULE_ID" Column = "BF_MODULE_ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="SelectOperationByUserID">
+      <SqlString>
+        <String>
+          <![CDATA[
+          SELECT DISTINCT 
+                    M.[CODE] MODULE_CODE
+                    ,MO.CODE 
+          FROM dbo.BF_USER U 
+          INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID
+          INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID
+          INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID
+          INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID 
+          WHERE u.ID=@USER_ID
+          UNION
+          SELECT DISTINCT
+                  M.[CODE] MODULE_CODE ,
+                  MOO.CODE CODE
+          FROM    dbo.BF_USER U
+                  INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID = U.ID
+                  INNER JOIN dbo.BF_ROLE_MOD_SPECIAL_PERMISSION MSP ON MSP.BF_ROLE_ID = RU.BF_ROLE_ID
+                  INNER JOIN dbo.BF_MODULE_OTHER_OPERATION MOO ON MOO.ID = MSP.BF_MODULE_SPECIAL_ID
+                  INNER JOIN dbo.BF_MODULE M ON M.ID = MOO.BF_MODULE_ID
+          WHERE   u.ID = @USER_ID; 
+]]>
+        </String>
+        <Param Name = "@USER_ID" Column = "USER_ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="SelectOperationByModule">
+      <SqlString>
+        <String>
+          <![CDATA[
+          SELECT 
+              [ID]
+            ,[BF_MODULE_ID]
+            ,[CODE] FROM dbo.BF_MODULE_OPERATION BMO 
+          WHERE BMO.BF_MODULE_ID IN (@IDS);
+]]>
+        </String>
+        <Param Name = "@IDS" Column = "IDS" TypeName = "System.String" Overcast="true" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

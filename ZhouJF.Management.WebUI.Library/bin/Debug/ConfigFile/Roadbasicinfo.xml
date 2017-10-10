@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  XML 文件生成时间 2017-10-03 11:00  -->
+<!--  如果生成的是明细需要用  GetByForeingKey 替换 SelectObject 同时修改对应主表中DeleteObject 语句 -->
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>RoadBasicInfo</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+               SELECT 
+ ID 
+ ,RoadCode 
+ ,RoadName 
+ ,RoadLevel 
+ ,RoadMaterial 
+ ,BridgeNumber 
+ ,AreaCode 
+ ,CreateUser 
+ ,CreateTime 
+ ,LastModifiedUser 
+ ,LastModifiedTime 
+ ,picture 
+  
+ FROM 
+ RoadBasicInfo 
+  WHERE @Where ;
+
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              INSERT INTO 
+ RoadBasicInfo 
+ (RoadCode 
+ ,RoadName 
+ ,RoadLevel 
+ ,RoadMaterial 
+ ,BridgeNumber 
+ ,AreaCode 
+ ,CreateUser 
+ ,CreateTime 
+ ,LastModifiedUser 
+ ,LastModifiedTime 
+  ,picture 
+ ) 
+ VALUES( 
+@RoadCode 
+ ,@RoadName 
+ ,@RoadLevel 
+ ,@RoadMaterial 
+ ,@BridgeNumber 
+ ,@AreaCode 
+ ,@CreateUser 
+ ,@CreateTime 
+ ,@LastModifiedUser 
+ ,@LastModifiedTime 
+  ,@picture 
+ );
+]]>
+        </String>
+        <Param Name = "@RoadCode" Column = "RoadCode" TypeName = "System.String" />
+        <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
+        <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
+        <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
+        <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.Int32" />
+        <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
+        <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
+        <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
+        <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
+        <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              UPDATE  RoadBasicInfo 
+ SET RoadCode = @RoadCode 
+ ,RoadName = @RoadName 
+ ,RoadLevel = @RoadLevel 
+ ,RoadMaterial = @RoadMaterial 
+ ,BridgeNumber = @BridgeNumber 
+ ,AreaCode = @AreaCode 
+ ,LastModifiedUser = @LastModifiedUser 
+ ,LastModifiedTime = @LastModifiedTime 
+ ,picture = @picture 
+ WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@RoadCode" Column = "RoadCode" TypeName = "System.String" />
+        <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
+        <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
+        <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
+        <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.Int32" />
+        <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
+        <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
+        <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM RoadBasicInfo 
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+          select X.*,B.Area from ( 
+         select * from ( 
+      select row_number() over (order by @SortField  @Direction) row, 
+  A.ID 
+ ,A.RoadCode 
+ ,A.RoadName 
+ ,A.RoadLevel 
+ ,A.RoadMaterial 
+ ,A.BridgeNumber 
+ ,A.AreaCode 
+ ,A.CreateUser 
+ ,A.CreateTime 
+ ,A.LastModifiedUser 
+ ,A.LastModifiedTime
+ FROM 
+ RoadBasicInfo A
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
+        ) X
+         left join AreaInfo B on X.AreaCode=B.AreaCode
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM RoadBasicInfo A
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

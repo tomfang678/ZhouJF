@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "修改密码";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model YHPT.SystemInfo.Model.BfUser.BfUserInfo
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">修改密码 
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">首页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "BfOrg")">用户管理</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">修改密码</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+
+<div class="portlet box purple">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+        <div class="actions">
+            <a class="btn green" href="@Url.Action("Index", new { gridStage = Request.QueryString["gridStage"] })"><i class="fa  fa-mail-reply"></i>返回</a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form id="BfUserChangePwd" method="post" class="form-horizontal">
+            <div class="form-body">
+               <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        用户编码
+                    </label>
+                   <div class="col-md-4">
+                       <input type="hidden" id="hidUserId" name="ID" value="@Model.ID"/>
+                       <input type="text" id="txtCode" name="CODE" value="@Model.CODE" readonly="readonly" class="form-control">
+                   </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        原密码<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtOldPassword" name="OLDPASSWORD" class="form-control" placeholder="请输入原密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        新密码<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="password" id="txtNewPassword" name="NEWPASSWORD" class="form-control" placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        再次输入新密码<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="password" id="txtAgainPassword" name="AGAINPASSWORD" class="form-control" placeholder="请输入新密码">
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="button" class="btn green" id="sure">确定</button>
+                        <a href="@Url.Action("Index")" class="btn default">取消</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+</div>
+@section scripts{
+    <script src="~/Assets/global/Plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <link href="~/Assets/global/Css/style-metronic.css" rel="stylesheet"/>
+    @Scripts.Render("~/Scripts/BfUser/ChangePwd.js")
+}

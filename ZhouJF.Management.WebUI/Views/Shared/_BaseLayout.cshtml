@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title  - 养护平台管理系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    @Styles.Render("~/assets/global/plugins/font-awesome/css/font-awesome.min.css")
+    @Styles.Render("~/assets/global/plugins/simple-line-icons/simple-line-icons.min.css")
+    @Styles.Render("~/assets/global/plugins/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/assets/global/plugins/uniform/css/uniform.default.css")
+    @Styles.Render("~/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css")
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    @Styles.Render("~/assets/global/plugins/select2/select2.css")
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME STYLES -->
+    @Styles.Render("~/assets/global/css/components.css")
+    @Styles.Render("~/assets/global/css/plugins.css")
+    @Styles.Render("~/assets/admin/layout/css/layout.css")
+    @Styles.Render("~/assets/admin/layout/css/themes/default.css")
+    @Styles.Render("~/assets/admin/layout/css/custom.css")
+    @RenderSection("header", false)
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- BEGIN BODY -->
+<body class="login">
+    <!-- BEGIN LOGO -->
+    <div class="logo">
+        @*<a href="index.html">
+            <img src="~/assets/admin/layout/img/logo-big.png" alt="" />
+        </a>*@
+    </div>
+    <!-- END LOGO -->
+    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+    <div class="menu-toggler sidebar-toggler">
+    </div>
+    <!-- END SIDEBAR TOGGLER BUTTON -->
+    <!-- BEGIN LOGIN -->
+    <div class="content">
+        @RenderBody()
+    </div>
+    <!-- END LOGIN -->
+    <!-- BEGIN COPYRIGHT -->
+    <div class="copyright">
+        2017 &copy; Metersbonwe.
+    </div>
+    <!-- END COPYRIGHT -->
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+    <script src="~/assets/global/plugins/respond.min.js"></script>
+    <script src="~/assets/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/assets/global/plugins/jquery-1.11.0.min.js")
+    @Scripts.Render("~/assets/global/plugins/jquery-migrate-1.2.1.min.js")
+
+    @Scripts.Render("~/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js")
+    @Scripts.Render("~/assets/global/plugins/bootstrap/js/bootstrap.min.js")
+    @Scripts.Render("~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js")
+    @Scripts.Render("~/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js")
+    @Scripts.Render("~/assets/global/plugins/jquery.blockui.min.js")
+    @Scripts.Render("~/assets/global/plugins/jquery.cookie.min.js")
+    @Scripts.Render("~/assets/global/plugins/uniform/jquery.uniform.min.js")
+    @Scripts.Render("~/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @Scripts.Render("~/Assets/global/Plugins/jquery-validation/jquery.validate.min.js")
+    @Scripts.Render("~/assets/global/plugins/select2/select2.min.js")
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    @Scripts.Render("~/assets/global/scripts/metronic.js")
+    @Scripts.Render("~/assets/admin/layout/scripts/layout.js")
+    @Scripts.Render("~/assets/admin/layout/scripts/quick-sidebar.js")
+    @RenderSection("scripts", false)
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script>
+        jQuery(document).ready(function () {
+            Metronic.init();
+            Layout.init();
+            QuickSidebar.init();
+            Login.init();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

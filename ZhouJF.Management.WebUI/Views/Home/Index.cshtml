@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "后台管理中心";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <script type="text/javascript">
+        function pageReady() {
+            timedCount();
+        }
+
+        function timedCount() {
+            var loginTime = moment($("#loginTime").text());
+            $("#loginSpan").text(moment().subtract(loginTime).format("HH:mm:ss"));
+            t = setTimeout("timedCount()", 500);
+        }
+    </script>
+}
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    后台管理中心 <small></small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index","Home")">首页</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="note note-info">
+            <p>
+                欢迎登录养护平台管理系统，您的登录时间是：<span id="loginTime">@ViewBag.LoginTime</span>，已登录：<span id="loginSpan"></span>。
+            </p>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
