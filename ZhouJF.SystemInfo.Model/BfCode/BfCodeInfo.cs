@@ -54,5 +54,5 @@ namespace YHPT.SystemInfo.Model.BfCode
         /// </summary>
         [DataMember]
         public List<BfCodeDetailInfo> BfCodeDtlInfoList { get; set; }
-    } 
+    }
 }
