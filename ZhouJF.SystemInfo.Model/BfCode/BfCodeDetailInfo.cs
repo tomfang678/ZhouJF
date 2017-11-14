@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace YHPT.SystemInfo.Model.BfCode
 {
-    // 需要引用的命名空间  using System.Runtime.Serialization;  test1
+    // 需要引用的命名空间  using System.Runtime.Serialization;  this is a test
 
     /// <summary> 
     /// 文件生成时间 2009-12-18 11:09 
