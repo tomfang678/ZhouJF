@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>BF_USER</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+      SELECT BU.[ID]
+            ,BU.[CODE]
+            ,BU.[NAME]
+            ,BU.[OWNER_ID]
+            ,BU.[EXPIRE_TIME]
+            ,ISNULL(BU.[PASSWORD],'') PASSWORD
+            ,BU.[LAST_MODIFIED_DATE]
+            ,BU.[LAST_CHANGPWD_DATE]
+            ,BU.[LAST_MODIFIED_USER]
+            ,BU.JOB
+            ,BU.LEADERID
+            ,BO.CODE AS OWNER_CODE
+            ,BO.NAME AS ORG_NAME
+            ,BU2.CODE AS LAST_MODIFIED_USERCODE
+        FROM [BF_USER] BU 
+        LEFT JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID
+        INNER JOIN BF_USER BU2 ON BU2.ID=BU.LAST_MODIFIED_USER
+      WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+      <QueryParamMappings DefaultTableAlias="BU">
+        <Mapping Name="ID" DbFieldName="BU.ID"></Mapping>
+      </QueryParamMappings>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+    INSERT INTO [BF_USER]
+               ([ID]
+               ,[CODE]
+               ,[NAME]
+               ,[OWNER_ID]
+               ,[EXPIRE_TIME]
+               ,[PASSWORD]
+               ,[LAST_MODIFIED_DATE]
+               ,[LAST_CHANGPWD_DATE]
+               ,[LAST_MODIFIED_USER]
+               ,[LEADERID]
+               ,[JOB])
+         VALUES
+               (@ID
+               ,@CODE
+               ,@NAME
+               ,@OWNER_ID
+               ,@EXPIRE_TIME
+               ,@PASSWORD
+               ,@LAST_MODIFIED_DATE
+               ,@LAST_CHANGPWD_DATE
+               ,@LAST_MODIFIED_USER
+               ,@LEADERID
+               ,@JOB)
+ SELECT @@IDENTITY;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@NAME" Column = "NAME" TypeName = "System.String" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@OWNER_ID" Column = "OWNER_ID" TypeName = "System.Int32" />
+        <Param Name = "@EXPIRE_TIME" Column = "EXPIRE_TIME" TypeName = "System.DateTIme" />
+        <Param Name = "@PASSWORD" Column = "PASSWORD" TypeName = "System.String" />
+        <Param Name = "@LAST_MODIFIED_DATE" Column = "LAST_MODIFIED_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_CHANGPWD_DATE" Column = "LAST_CHANGPWD_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_MODIFIED_USER" Column = "LAST_MODIFIED_USER" TypeName = "System.Int32" />
+        <Param Name = "@LEADERID" Column = "LEADERID" TypeName = "System.Int32" />
+        <Param Name = "@JOB" Column = "JOB" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+      UPDATE [BF_USER]
+         SET [NAME] = @NAME
+            ,[CODE] = @CODE
+            ,[OWNER_ID] = @OWNER_ID
+            ,[LAST_MODIFIED_USER] = @LAST_MODIFIED_USER
+            ,[LAST_MODIFIED_DATE] = @LAST_MODIFIED_DATE
+            ,[EXPIRE_TIME] = @EXPIRE_TIME
+            ,[JOB] = @JOB
+            ,[LEADERID] = @LEADERID
+       WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@NAME" Column = "NAME" TypeName = "System.String" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@OWNER_ID" Column = "OWNER_ID" TypeName = "System.Int32" />
+        <Param Name = "@EXPIRE_TIME" Column = "EXPIRE_TIME" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_MODIFIED_DATE" Column = "LAST_MODIFIED_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_MODIFIED_USER" Column = "LAST_MODIFIED_USER" TypeName = "System.Int32" />
+        <Param Name = "@LEADERID" Column = "LEADERID" TypeName = "System.Int32" />
+        <Param Name = "@JOB" Column = "JOB" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM [BF_USER]   
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+      select * from ( 
+      select row_number() over (order by @SortField @Direction) row, 
+            BU.[ID]
+            ,BU.[CODE]
+            ,BU.[NAME]
+            ,BU.[OWNER_ID]
+            ,BU.[EXPIRE_TIME]
+            ,ISNULL(BU.[PASSWORD],'') PASSWORD
+            ,BU.[LAST_MODIFIED_DATE]
+            ,BU.[LAST_CHANGPWD_DATE]
+            ,BU.[LAST_MODIFIED_USER]
+            ,BU.JOB
+            ,BU.LEADERID
+            ,BO.CODE AS OWNER_CODE
+            ,BO.NAME ORG_NAME
+  FROM BF_USER BU
+  LEFT JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+      <QueryParamMappings DefaultTableAlias="BU">
+        <Mapping Name="ID" DbFieldName="BU.ID"></Mapping>
+      </QueryParamMappings>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM BF_USER BU
+  INNER JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+      <QueryParamMappings DefaultTableAlias="BU">
+      </QueryParamMappings>
+    </Sql>
+
+    <Sql Name="ChangePwd">
+      <SqlString>
+        <String>
+          <![CDATA[
+      UPDATE [BF_USER]
+         SET [LAST_MODIFIED_USER] = @LAST_MODIFIED_USER
+            ,[LAST_MODIFIED_DATE] = @LAST_MODIFIED_DATE
+            ,[PASSWORD] = @PASSWORD
+            ,[LAST_CHANGPWD_DATE] = @LAST_CHANGPWD_DATE
+       WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@PASSWORD" Column = "PASSWORD" TypeName = "System.String" />
+        <Param Name = "@LAST_MODIFIED_DATE" Column = "LAST_MODIFIED_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_CHANGPWD_DATE" Column = "LAST_CHANGPWD_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_MODIFIED_USER" Column = "LAST_MODIFIED_USER" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

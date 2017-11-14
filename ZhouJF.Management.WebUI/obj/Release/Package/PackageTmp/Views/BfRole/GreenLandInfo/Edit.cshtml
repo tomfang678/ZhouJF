@@ -1,0 +1,186 @@
+﻿@using SmartFast.Web.BaseLibrary
+@{
+    ViewBag.Title = "道路绿化信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model YHPT.SystemInfo.Model.YhManager.GreenLandInfo
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">首页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "BfUser")">@ViewBag.Title</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">编辑</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+
+<div class="portlet box purple">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+        <div class="actions">
+            <a class="btn green" href="@Url.Action("Index", new { gridStage = Request.QueryString["gridStage"] })"><i class="fa  fa-mail-reply"></i>返回</a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form id="formEdit" method="post" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        图片<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <img src="@Model.picture" alt="" style="max-height:200px;max-width:500px;" />
+                        <input type="text" id="txtpicture" name="picture" value="@Model.picture" class="form-control" placeholder="图片地址">
+                        <span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
+                        <div id="uploader"></div>
+                        <div id="fileQueue"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        道路ID<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
+                        @*<input type="text" id="txRoadID" name="RoadID" value="@Model.RoadID" class="form-control" placeholder="道路ID">*@
+                        @Html.DropDownList("RoadID")
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        绿地编码<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtGreenLandCode" name="GreenLandCode" value="@Model.GreenLandCode" class="form-control" placeholder="绿地编码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        绿地名称<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" id="txtGreenLandName" name="GreenLandName" value="@Model.GreenLandName" class="form-control" placeholder="绿地名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        一级绿地面积<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtFirstLevelSquare" name="FirstLevelSquare" value="@Model.FirstLevelSquare" class="form-control" placeholder="一级绿地面积">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        二级绿地面积<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtSecondLevelSquare" name="SecondLevelSquare" value="@Model.SecondLevelSquare" class="form-control" placeholder="二级绿地面积">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        三级绿地面积<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtThirdLevelSquare" name="ThirdLevelSquare" value="@Model.ThirdLevelSquare" class="form-control" placeholder="三级绿地面积">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        草花面积<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtFlowerSquare" name="FlowerSquare" value="@Model.FlowerSquare" class="form-control" placeholder="草花面积">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        带班人<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtLeaderCode" name="LeaderCode" value="@Model.LeaderCode" class="form-control" placeholder="带班人">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="button" class="btn red" id="sure">确定</button>
+                            <a href="@Url.Action("Index", new { gridStage = Request.QueryString["gridStage"] })" class="btn default">取消</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+    @*@{ Html.RenderAction("BfOrgTree", "PlugIn"); }*@
+</div>
+
+@section scripts{
+    <script src="~/Assets/global/Plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <link href="~/Assets/global/Css/style-metronic.css" rel="stylesheet" />
+    <script src="~/Assets/global/Plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
+    @Scripts.Render("~/Scripts/GreenLandInfo/Edit.js")
+
+    @*@Scripts.Render("~/Scripts/PulgIn/BfOrgTree.js")*@
+
+    <script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+    </script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/scripts/flashupload.js")"></script>
+    <script type="text/javascript">
+        $('#uploader').FileUpload({
+            'subfolder': 'GreenLandInfo',
+            'callback': function (msg) {
+                //msg.url为图片地址
+                $("#txtpicture").val(msg.url);
+                $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + msg.url + "'/>" });
+            }
+        });
+
+        if ($("#txtpicture").val()) {
+            $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + $("#txtpicture").val() + "'/>" });
+        }
+    </script>
+}

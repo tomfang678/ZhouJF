@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>BF_MODULE</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+      SELECT [ID]
+            ,[CODE]
+            ,[NAME]
+            ,[PARENT_ID]
+            ,[REMARK]
+            ,[CREATE_USER]
+            ,[CREATE_DATE]
+            ,[LAST_MODIFIED_USER]
+            ,[LAST_MODIFIED_TIME]
+            ,[URL]
+            ,[ORDER]
+            ,[ICON]
+            ,[IsNeedControl]
+        FROM [BF_MODULE]
+      WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+    INSERT INTO [BF_MODULE]
+               ([ID]
+               ,[CODE]
+               ,[NAME]
+               ,[PARENT_ID]
+               ,[REMARK]
+               ,[CREATE_USER]
+               ,[CREATE_DATE]
+               ,[LAST_MODIFIED_USER]
+               ,[LAST_MODIFIED_TIME]
+               ,[URL]
+               ,[ORDER]
+               ,[ICON]
+               ,[IsNeedControl])
+         VALUES
+               (@ID
+               ,@CODE
+               ,@NAME
+               ,@PARENT_ID
+               ,@REMARK
+               ,@CREATE_USER
+               ,@CREATE_DATE
+               ,@LAST_MODIFIED_USER
+               ,@LAST_MODIFIED_TIME
+               ,@URL
+               ,@ORDER
+               ,@ICON
+               ,@IsNeedControl)
+ SELECT @@IDENTITY;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@NAME" Column = "NAME" TypeName = "System.String" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@PARENT_ID" Column = "PARENT_ID" TypeName = "System.Int32" />
+        <Param Name = "@REMARK" Column = "REMARK" TypeName = "System.String" />
+        <Param Name = "@CREATE_USER" Column = "CREATE_USER" TypeName = "System.Int32" />
+        <Param Name = "@CREATE_DATE" Column = "CREATE_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_MODIFIED_USER" Column = "LAST_MODIFIED_USER" TypeName = "System.Int32" />
+        <Param Name = "@LAST_MODIFIED_TIME" Column = "LAST_MODIFIED_TIME" TypeName = "System.DateTIme" />
+        <Param Name = "@URL" Column = "URL" TypeName = "System.String" />
+        <Param Name = "@ORDER" Column = "ORDER" TypeName = "System.Int32" />
+        <Param Name = "@ICON" Column = "ICON" TypeName = "System.String" />
+        <Param Name = "@IsNeedControl" Column = "IsNeedControl" TypeName = "System.Boolean" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+      UPDATE [BF_MODULE]
+         SET [CODE] = @CODE
+            ,[NAME] = @NAME
+            ,[PARENT_ID] = @PARENT_ID
+            ,[REMARK] = @REMARK
+            ,[CREATE_USER] = @CREATE_USER
+            ,[CREATE_DATE] = @CREATE_DATE
+            ,[LAST_MODIFIED_USER] = @LAST_MODIFIED_USER
+            ,[LAST_MODIFIED_TIME] = @LAST_MODIFIED_TIME
+            ,[URL] = @URL
+            ,[ORDER] = @ORDER
+            ,[ICON] = @ICON
+            ,[IsNeedControl] = @IsNeedControl
+       WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@NAME" Column = "NAME" TypeName = "System.String" />
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+        <Param Name = "@PARENT_ID" Column = "PARENT_ID" TypeName = "System.Int32" />
+        <Param Name = "@REMARK" Column = "REMARK" TypeName = "System.String" />
+        <Param Name = "@CREATE_USER" Column = "CREATE_USER" TypeName = "System.Int32" />
+        <Param Name = "@CREATE_DATE" Column = "CREATE_DATE" TypeName = "System.DateTIme" />
+        <Param Name = "@LAST_MODIFIED_USER" Column = "LAST_MODIFIED_USER" TypeName = "System.Int32" />
+        <Param Name = "@LAST_MODIFIED_TIME" Column = "LAST_MODIFIED_TIME" TypeName = "System.DateTIme" />
+        <Param Name = "@URL" Column = "URL" TypeName = "System.String" />
+        <Param Name = "@ORDER" Column = "ORDER" TypeName = "System.Int32" />
+        <Param Name = "@ICON" Column = "ICON" TypeName = "System.String" />
+        <Param Name = "@IsNeedControl" Column = "IsNeedControl" TypeName = "System.Boolean" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM [BF_MODULE]   
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+      select * from ( 
+      select row_number() over (order by @SortField @Direction) row, 
+            [ID]
+            ,[CODE]
+            ,[NAME]
+            ,[PARENT_ID]
+            ,[REMARK]
+            ,[CREATE_USER]
+            ,[CREATE_DATE]
+            ,[LAST_MODIFIED_USER]
+            ,[LAST_MODIFIED_TIME]
+            ,[URL]
+            ,[ORDER]
+            ,[ICON]
+            ,[IsNeedControl]
+        FROM [BF_MODULE]
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM BF_MODULE 
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <!-- 根据用户ID获取可操作模块信息 -->
+    <Sql Name="SelectObjectByUserID">
+      <SqlString>
+        <String>
+          <![CDATA[
+          SELECT DISTINCT M.[ID]
+              ,M.[CODE]
+              ,M.[NAME]
+              ,M.[PARENT_ID]
+              ,M.[REMARK]
+              ,M.[CREATE_USER]
+              ,M.[CREATE_DATE]
+              ,M.[LAST_MODIFIED_USER]
+              ,M.[LAST_MODIFIED_TIME]
+              ,M.[URL]
+              ,M.[ORDER]
+              ,M.[ICON]
+              ,M.[IsNeedControl] FROM dbo.BF_USER U 
+          INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID
+          INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID
+          INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID AND MO.CODE='OPEN'
+          INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID 
+          WHERE u.ID=@USER_ID;
+        ]]>
+        </String>
+        <Param Name = "@USER_ID" Column = "USER_ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="SelectAllChildBfModuleInfos">
+      <SqlString>
+        <String>
+          <![CDATA[
+          SELECT [ID]
+            ,[CODE]
+            ,[NAME]
+            ,[PARENT_ID]
+            ,[REMARK]
+            ,[CREATE_USER]
+            ,[CREATE_DATE]
+            ,[LAST_MODIFIED_USER]
+            ,[LAST_MODIFIED_TIME]
+            ,[URL]
+            ,[ORDER]
+            ,[ICON]
+            ,[IsNeedControl]
+          FROM dbo.BF_MODULE BM 
+          WHERE BM.PARENT_ID<>0 AND NOT EXISTS(
+          SELECT 1 FROM dbo.BF_MODULE BM2 WHERE BM2.PARENT_ID=BM.ID)
+        ]]>
+        </String>
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

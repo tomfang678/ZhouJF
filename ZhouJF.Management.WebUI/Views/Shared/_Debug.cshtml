@@ -1,0 +1,88 @@
+﻿@{
+    Layout = null;
+}
+
+@Html.Raw(Context.User.Identity.IsAuthenticated ? ("当前用户：" + Context.UserSession.Current.UserCode) : "未登录")
+<br />
+<p> Url:@Request.Url.AbsolutePath</p>
+
+<table>
+    @if (Request.QueryString.AllKeys.Length > 0)
+    {
+        <tr>
+            <td colspan="2">
+                <h2>Request QueryString:</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Key</td>
+            <td> value</td>
+        </tr>
+        foreach (var item in Request.QueryString.AllKeys)
+        {
+            <tr>
+                <td>@item</td>
+                <td>@Request.QueryString[item]</td>
+            </tr>
+        }
+    }
+    @if (Request.Form.AllKeys.Length > 0)
+    {
+        <tr>
+            <td colspan="2">
+                <h2>Request Form:</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Key</td>
+            <td> value</td>
+        </tr>
+        foreach (var item in Request.Form.AllKeys)
+        {
+            <tr>
+                <td>@item</td>
+                <td>@Request.Form[item]</td>
+            </tr>
+        }
+    }
+
+    @if (Request.Cookies.AllKeys.Length > 0)
+    {
+        <tr>
+            <td colspan="2">
+                <h2>Request Cookie:</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Key</td>
+            <td> value</td>
+        </tr>
+        foreach (var item in Request.Cookies.AllKeys)
+        {
+            <tr>
+                <td>@item</td>
+                <td>@Request.Cookies[item].Value</td>
+            </tr>
+        }
+    }
+
+    @if (Response.Cookies.AllKeys.Length > 0)
+    {
+        <tr>
+            <td colspan="2">
+                <h2>Response Cookie:</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Key</td>
+            <td> value</td>
+        </tr>
+        foreach (var item in Response.Cookies.AllKeys)
+        {
+            <tr>
+                <td>@item</td>
+                <td>@Response.Cookies[item].Value</td>
+            </tr>
+        }
+    }
+</table>

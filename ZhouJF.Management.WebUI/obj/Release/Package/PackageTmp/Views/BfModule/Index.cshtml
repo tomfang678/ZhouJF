@@ -1,0 +1,281 @@
+﻿@{
+    ViewBag.Title = "模块管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    @Scripts.Render("~/assets/global/plugins/jstree/dist/jstree.min.js")
+    @Scripts.Render("~/Scripts/BfModule/BfModule.js")
+
+    <script src="~/Assets/global/Plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <link href="~/Assets/global/Css/style-metronic.css" rel="stylesheet"/>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script>
+        @*function pageReady() {
+            var grid = $('#bfOrgList').dataTableExtention({
+                "filterForm": "#searchForm",
+                "sAjaxSource": "@Url.Action("SearchModuleOperate", "BfModule")",
+                "aoColumns": [
+                    { "mDataProp": "CODE" },
+                    { "mDataProp": "NAME" },
+                    { "mDataProp": "OWNER_CODE" },
+                    { "mDataProp": null }
+                ],
+                "columnDefs": [
+                    {
+                        "width": "140px",
+                        "targets": [2]
+                    },
+                    {
+                        "orderable": false,
+                        "searchable": false,
+                        "targets": -1,
+                        render: function (data, type, row) {
+                            var html = [];
+                            html.push("<a class=\"btn default btn-xs green\" OwnerOrgClsId='{0}' onclick='selectCls(this)'><i class=\"fa fa-edit\"></i> 选择 </a>");
+                            return html.join('').replace(/\{0\}/g, row.ID);
+                        }
+                    }
+                ],
+                "order": [
+                    [0, "desc"]
+                ]
+            });
+        }*@
+
+        function selectCls(a) {
+            $("#btnClose").click();
+        }
+    </script>
+}
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">模块管理
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">首页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">模块管理</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+<div class="portlet purple box">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body form tfbox">
+        <!-- BEGIN FORM-->
+        <form id="form1" action="#" method="post" class="form-horizontal">
+            <input id="ID" type="hidden">
+            <input id="PARENT_ID" type="hidden">
+            <input id="CREATE_USER" type="hidden">
+            <input id="CREATE_DATE" type="hidden">
+            <div class="form-body">
+                <div class="row">
+                    <div class="col-md-5 tfbox-tree" style="overflow: hidden;">
+                        <div class="ctl-p">
+                            <div class="form-tree-actions">
+                                <a class="btn btn-circle btn-icon-only btn-default" id="addChild" href="javascript:;">
+                                    <i class="icon-add">+</i>
+                                </a>
+                                <a class="btn btn-circle btn-icon-only btn-default" id="delete" href="javascript:;">
+                                    <i class="icon-trash"></i>
+                                </a>
+                            </div>
+                            <p class="ui-title">
+                                模块树
+                                <input type="button" value=" - 收起" class="btn btn-xs red btn-switch" id="J-switch">
+                            </p>
+                        </div>
+                        <div id="treeMain" style="overflow: scroll; overflow-x: hidden;">
+                            <div class="" id="treebox">
+                                <div id="bf_module_tree"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 tfbox-form">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">父级&nbsp;&nbsp;</label>
+                            <div class="col-md-4">
+                                <span id="parent"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">模块编码<span class="required" aria-required="true">*</span></label>
+                            <div class="col-md-5">
+                                <input id="CODE" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">模块名称<span class="required" aria-required="true">*</span></label>
+                            <div class="col-md-5">
+                                <input id="NAME" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">地址&nbsp;&nbsp;</label>
+                            <div class="col-md-5">
+                                <input id="URL" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">序号&nbsp;&nbsp;</label>
+                            <div class="col-md-5">
+                                <input id="ORDER" type="text" class="form-control" onkeyup="this.value = this.value.replace(/\D/g, '')">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">图标&nbsp;&nbsp;</label>
+                            <div class="col-md-5">
+                                <select id="ICON" class="form-control form-filter input">
+                                    <option value="">请选择</option>
+                                    <option value="icon-home">icon-home</option>
+                                    <option value="fa fa-cogs">fa-cogs</option>
+                                    <option value="fa icon-diamond">icon-diamond</option>
+                                    <option value="fa icon-user">icon-user</option>
+                                    <option value="fa fa-building-o">fa-building-o</option>
+                                    <option value="fa fa-cny">fa-cny</option>
+                                    <option value="fa fa-search">fa-search</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">是否权限控制</label>
+                            <div class="col-md-5">
+                                <input type="checkbox" name="IsNeedControl" value="1" id="IsNeedControl" checked="checked" class="status"/>
+                            </div>
+                        </div>
+                        <div class="form-group" id="divOperator" style="display: none">
+                            <label class="col-md-3 control-label">操作配置</label>
+                            <div class="col-md-7">
+                                <div class="input-group">
+                                    <input hidden="hidden" id="txtOperateIds">
+                                    <input hidden="hidden" id="txtOperateCodes">
+                                    <input hidden="hidden" id="txtOperOtherCodes">
+                                    <input hidden="hidden" id="txtOperOtherNames">
+                                    <input type="text" id="txtOperateCode" placeholder="请选择操作" readonly="readonly" class="form-control">
+                                    <span class="input-group-btn">
+                                        <a class="btn green" id="btnModuleOperateCls" data-toggle="modal" href="#moduleOperateDialog">选择</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group last">
+                            <label class="col-md-3 control-label">备注&nbsp;&nbsp;</label>
+                            <div class="col-md-5">
+                                <textarea style="height: 100px;" id="REMARK" class="form-control" placeholder="请输入备注"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button id="save" type="submit" class="btn btn-default red">保存</button>
+                                    <button id="clear" type="reset" class="btn default">清空</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @{ Html.RenderAction("SearchModuleOperate", "BfModule"); }
+        </form>
+        <!-- END FORM-->
+    </div>
+    
+</div>
+@section header{
+    <style>
+        #treebox
+        {
+            height: 430px;
+        }
+
+        .tfbox .form-body
+        {
+            padding: 0 10px;
+        }
+
+        .tfbox-tree
+        {
+            padding-top: 10px;
+            position: relative;
+            overflow: auto; 
+        }
+
+            .tfbox-tree .ui-title
+            {
+                font-size: 14px;
+                color: #e26a6a;
+                font-weight: bold;
+            }
+
+        .tfbox-form
+        {
+            padding-top: 20px;
+            border-left: 1px solid #474747;
+            padding-left: 0px;
+            padding-right: 0px;
+            overflow: hidden; 
+        }
+
+        .tfbox .control-label
+        {
+            line-height: initial;
+        }
+
+        /*.tfbox .checker
+        {
+            margin-top: 8px !important;
+        }*/
+
+        .tfbox .ui-text
+        {
+            height: 26px;
+            display: inline-block;
+        }
+
+        .tfbox .form-control-static
+        {
+            margin: 0;
+        }
+
+        .tfbox .form-action
+        {
+            width: 97.5%;
+            background: #f5f5f5;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tfbox .form-tree-actions
+        {
+            text-align: right;
+            position: absolute;
+            right: 12px;
+        }
+
+        .tfbox .icon-add
+        {
+            font-size: 16px;
+        }
+
+        .tfbox .btn-switch
+        {
+            display: inline-block;
+        }
+    </style>
+}

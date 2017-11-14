@@ -1,0 +1,63 @@
+﻿@model YHPT.Management.WebUI.Controllers.LoginPageStage
+@{
+    ViewBag.Title = "用户登录";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+
+    var redirectUrl = Request.QueryString.AllKeys.Contains("redirectUrl")
+        ? HttpUtility.UrlDecode(Request.QueryString["redirectUrl"])
+        : string.Empty;
+
+    var errMsg = (string)ViewBag.Message;
+}
+
+@section header{
+    @Styles.Render("~/assets/admin/pages/css/login.css")
+}
+
+@section scripts{
+    @Scripts.Render("~/assets/admin/pages/scripts/login.js")
+}
+<!-- BEGIN LOGIN FORM -->
+<form class="login-form" action="@Url.Action("Sigin")" method="post">
+    <input type="hidden" name="RedirectUrl" value="@redirectUrl">
+    <h3 class="form-title">用户登录</h3>
+    @if (!string.IsNullOrEmpty(errMsg))
+    {
+        <div class="alert alert-danger">
+            <button class="close" data-close="alert"></button>
+            <span>
+                @errMsg
+            </span>
+        </div>
+    }
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">用户</label>
+        <div class="input-icon">
+            <i class="fa fa-user"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="用户名" name="UserName" value="@Model.UserName" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">密码</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="密码" name="Password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="checkbox-list">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="RemberUserName" value="true" @Html.Raw(Model.IsRemberLoginName ? "checked" : string.Empty)> 记住登录名
+            </label>
+        </div>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn green pull-right">
+            登录
+        </button>
+        <br />
+    </div>
+</form>
+<!-- END LOGIN FORM -->

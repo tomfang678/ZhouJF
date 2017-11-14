@@ -1,0 +1,1218 @@
+2017-10-07 21:10:21.416:(localhost11)代码执行轨迹-->[Thread 11 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:10:21.419:(localhost11)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:10:21.420:(localhost11)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:10:23.013:(localhost9)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:10:23.016:(localhost9)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:10:23.036:(localhost9)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:10:23.037:(localhost9)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:10:23.037:(localhost9)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:10:23.040:(localhost9)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:10:24.451:(localhost11)代码执行轨迹-->[Thread 11 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:10:24.458:(localhost11)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:10:24.458:(localhost11)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:10:30.389:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:10:30.390:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:10:30.643:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:10:30.643:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:10:31.353:(localhost11)代码执行轨迹-->在XML 文件：GreenLandInfo 中获取相应SQL 语句：GreenLandInfo出错，请检查资源文件或者对应SQL 语句是否存在！
+2017-10-07 21:10:31.354:(localhost11)系统错误-->获取XML文件：中的SQL 语句:出错！请检查是否已经配置！
+2017-10-07 21:10:31.383:(localhost11)系统错误-->获取XML文件：中的SQL 语句:出错！请检查是否已经配置！
+2017-10-07 21:10:31.386:(localhost11)代码执行轨迹-->   在 MB.Orm.Persistence.PersistenceManagerHelper.CreateDbCommandByXml(Database db, String xmlFileName, String sqlName, Object[] parValues)
+   在 MB.RuleBase.Common.DatabaseExcuteByXmlHelper.GetObjectsByXml[T](Database db, DbTransaction transaction, Type cfgEntityType, String xmlFileName, String sqlName, Object[] parValues)
+   在 MB.RuleBase.Common.DatabaseExcuteByXmlHelper.GetObjectsByXml[T](Database db, String xmlFileName, String sqlName, Object[] parValues)
+2017-10-07 21:11:17.878:(localhost11)代码执行轨迹-->[Thread 11 RoadBasicInfoController] Exception:Action请求异常:http://localhost:45665/RoadBasicInfo/Detail/5?gridStage={"tableId":"grid","filterForm":"%23searchContatiner","paramArray":[{"name":"RoadCode","value":""},{"name":"RoadName","value":""},{"name":"RoadLevel","value":""},{"name":"RoadMaterial","value":""},{"name":"BridgeNumber","value":""},{"name":"AreaCode","value":"bbb"}],"startIndex":0,"pageSize":10,"sortFieldIndex":0,"sortDiection":"asc"} 请求URL:http://localhost:45665/RoadBasicInfo/Detail/5?gridStage={"tableId":"grid","filterForm":"%23searchContatiner","paramArray":[{"name":"RoadCode","value":""},{"name":"RoadName","value":""},{"name":"RoadLevel","value":""},{"name":"RoadMaterial","value":""},{"name":"BridgeNumber","value":""},{"name":"AreaCode","value":"bbb"}],"startIndex":0,"pageSize":10,"sortFieldIndex":0,"sortDiection":"asc"} | 异常说明: 
+StackTrace:   在 MB.RuleBase.Common.DatabaseExcuteByXmlHelper.GetObjectsByXml[T](Database db, String xmlFileName, String sqlName, Object[] parValues)
+   在 MB.RuleBase.Common.DatabaseExcuteByXmlHelper.GetObjectsByXml[T](String xmlFileName, String sqlName, Object[] parValues)
+   在 YHPT.SystemInfo.DAL.YhGreenLandInfoDAL.getByRoadId(Int32 roadId) 位置 d:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.DAL\DAL\YhGreenLandInfoDAL.cs:行号 23
+   在 YHPT.SystemInfo.Business.YhGreenLandInfoManager.GetItemByRoadId(Int32 roadId) 位置 d:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.Business\YhGreenLandInfoManager.cs:行号 22
+   在 YHPT.Management.WebUI.Controllers.RoadBasicInfoController.Detail(Int32 id) 位置 d:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI\Controllers\RoadBasicInfoController.cs:行号 29
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:11:56.919:(localhost10)代码执行轨迹-->MB.CacheProxy 缓存没有进行相应的配置！Activation error occured while trying to get instance of type ICacheManager, key "MB.Orm.EntityCache"
+2017-10-07 21:11:56.937:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:11:56.953:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT BU.[ID] ,BU.[CODE] ,BU.[NAME] ,BU.[OWNER_ID] ,BU.[EXPIRE_TIME] ,ISNULL(BU.[PASSWORD],'') PASSWORD ,BU.[LAST_MODIFIED_DATE] ,BU.[LAST_CHANGPWD_DATE] ,BU.[LAST_MODIFIED_USER] ,BU.JOB ,BU.LEADERID ,BO.CODE AS OWNER_CODE ,BO.NAME AS ORG_NAME ,BU2.CODE AS LAST_MODIFIED_USERCODE FROM [BF_USER] BU LEFT JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID INNER JOIN BF_USER BU2 ON BU2.ID=BU.LAST_MODIFIED_USER WHERE ((BU.CODE = 'SA')) ;(没有参数)
+2017-10-07 21:11:57.008:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObjectByUserID
+2017-10-07 21:11:57.011:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[ID] ,M.[CODE] ,M.[NAME] ,M.[PARENT_ID] ,M.[REMARK] ,M.[CREATE_USER] ,M.[CREATE_DATE] ,M.[LAST_MODIFIED_USER] ,M.[LAST_MODIFIED_TIME] ,M.[URL] ,M.[ORDER] ,M.[ICON] ,M.[IsNeedControl] FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID AND MO.CODE='OPEN' INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:11:57.027:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectRoleByUser
+2017-10-07 21:11:57.028:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT R.[ID] ,R.[CODE] ,R.[NAME] ,R.[LAST_MODIFIED_DATE] ,R.[LAST_MODIFIED_USER] ,R.[REMARK] ,R.[IS_ADMIN] FROM dbo.BF_ROLE R INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_ROLE_ID = R.ID WHERE RU.BF_USER_ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:11:57.039:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectOperationByUserID
+2017-10-07 21:11:57.039:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[CODE] MODULE_CODE ,MO.CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID UNION SELECT DISTINCT M.[CODE] MODULE_CODE , MOO.CODE CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID = U.ID INNER JOIN dbo.BF_ROLE_MOD_SPECIAL_PERMISSION MSP ON MSP.BF_ROLE_ID = RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OTHER_OPERATION MOO ON MOO.ID = MSP.BF_MODULE_SPECIAL_ID INNER JOIN dbo.BF_MODULE M ON M.ID = MOO.BF_MODULE_ID WHERE u.ID = @USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:11:57.052:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:11:57.053:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT [ID] ,[CODE] ,[NAME] ,[PARENT_ID] ,[REMARK] ,[CREATE_USER] ,[CREATE_DATE] ,[LAST_MODIFIED_USER] ,[LAST_MODIFIED_TIME] ,[URL] ,[ORDER] ,[ICON] ,[IsNeedControl] FROM [BF_MODULE] WHERE 0=0 ;(没有参数)
+2017-10-07 21:11:57.069:(localhost10)代码执行轨迹-->[Thread 10 HomeController] SA visit:/home/index
+2017-10-07 21:12:02.228:(localhost11)代码执行轨迹-->[Thread 11 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:12:02.232:(localhost11)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:12:02.232:(localhost11)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:12:03.794:(localhost13)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:12:03.798:(localhost13)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:12:03.827:(localhost13)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:12:03.827:(localhost13)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:12:03.827:(localhost13)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:12:03.831:(localhost13)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:12:04.925:(localhost11)代码执行轨迹-->[Thread 11 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:12:04.931:(localhost11)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:12:04.932:(localhost11)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:12:08.251:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:12:08.252:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:12:08.496:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:12:08.496:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:12:09.117:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:12:09.118:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:12:09.369:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:12:09.370:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:12:10.096:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:12:10.099:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:12:10.837:(localhost11)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:12:10.837:(localhost11)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:11.932:(localhost6)代码执行轨迹-->MB.CacheProxy 缓存没有进行相应的配置！Activation error occured while trying to get instance of type ICacheManager, key "MB.Orm.EntityCache"
+2017-10-07 21:26:11.950:(localhost6)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:26:11.966:(localhost6)代码执行轨迹-->正在执行: CommandText:SELECT BU.[ID] ,BU.[CODE] ,BU.[NAME] ,BU.[OWNER_ID] ,BU.[EXPIRE_TIME] ,ISNULL(BU.[PASSWORD],'') PASSWORD ,BU.[LAST_MODIFIED_DATE] ,BU.[LAST_CHANGPWD_DATE] ,BU.[LAST_MODIFIED_USER] ,BU.JOB ,BU.LEADERID ,BO.CODE AS OWNER_CODE ,BO.NAME AS ORG_NAME ,BU2.CODE AS LAST_MODIFIED_USERCODE FROM [BF_USER] BU LEFT JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID INNER JOIN BF_USER BU2 ON BU2.ID=BU.LAST_MODIFIED_USER WHERE ((BU.CODE = 'SA')) ;(没有参数)
+2017-10-07 21:26:12.012:(localhost6)代码执行轨迹-->成功发现SQL 语句：SelectObjectByUserID
+2017-10-07 21:26:12.014:(localhost6)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[ID] ,M.[CODE] ,M.[NAME] ,M.[PARENT_ID] ,M.[REMARK] ,M.[CREATE_USER] ,M.[CREATE_DATE] ,M.[LAST_MODIFIED_USER] ,M.[LAST_MODIFIED_TIME] ,M.[URL] ,M.[ORDER] ,M.[ICON] ,M.[IsNeedControl] FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID AND MO.CODE='OPEN' INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:26:12.027:(localhost6)代码执行轨迹-->成功发现SQL 语句：SelectRoleByUser
+2017-10-07 21:26:12.028:(localhost6)代码执行轨迹-->正在执行: CommandText:SELECT R.[ID] ,R.[CODE] ,R.[NAME] ,R.[LAST_MODIFIED_DATE] ,R.[LAST_MODIFIED_USER] ,R.[REMARK] ,R.[IS_ADMIN] FROM dbo.BF_ROLE R INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_ROLE_ID = R.ID WHERE RU.BF_USER_ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:26:12.039:(localhost6)代码执行轨迹-->成功发现SQL 语句：SelectOperationByUserID
+2017-10-07 21:26:12.040:(localhost6)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[CODE] MODULE_CODE ,MO.CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID UNION SELECT DISTINCT M.[CODE] MODULE_CODE , MOO.CODE CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID = U.ID INNER JOIN dbo.BF_ROLE_MOD_SPECIAL_PERMISSION MSP ON MSP.BF_ROLE_ID = RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OTHER_OPERATION MOO ON MOO.ID = MSP.BF_MODULE_SPECIAL_ID INNER JOIN dbo.BF_MODULE M ON M.ID = MOO.BF_MODULE_ID WHERE u.ID = @USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:26:12.055:(localhost6)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:26:12.055:(localhost6)代码执行轨迹-->正在执行: CommandText:SELECT [ID] ,[CODE] ,[NAME] ,[PARENT_ID] ,[REMARK] ,[CREATE_USER] ,[CREATE_DATE] ,[LAST_MODIFIED_USER] ,[LAST_MODIFIED_TIME] ,[URL] ,[ORDER] ,[ICON] ,[IsNeedControl] FROM [BF_MODULE] WHERE 0=0 ;(没有参数)
+2017-10-07 21:26:12.070:(localhost6)代码执行轨迹-->[Thread 6 HomeController] SA visit:/home/index
+2017-10-07 21:26:21.697:(localhost6)代码执行轨迹-->[Thread 6 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:26:21.757:(localhost6)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:26:21.759:(localhost6)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:26:21.784:(localhost6)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:21.785:(localhost6)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:21.802:(localhost6)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:21.803:(localhost6)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:21.815:(localhost6)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:21.816:(localhost6)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:21.827:(localhost6)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:21.828:(localhost6)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:21.839:(localhost6)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:21.841:(localhost6)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:21.853:(localhost6)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:21.854:(localhost6)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:51.460:(localhost9)代码执行轨迹-->[Thread 9 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:26:51.463:(localhost9)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:26:51.463:(localhost9)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:26:51.485:(localhost9)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:51.485:(localhost9)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:51.498:(localhost9)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:51.498:(localhost9)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:51.509:(localhost9)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:51.510:(localhost9)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:51.519:(localhost9)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:51.519:(localhost9)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:51.532:(localhost9)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:51.532:(localhost9)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:26:51.542:(localhost9)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:26:51.542:(localhost9)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:21.852:(localhost10)代码执行轨迹-->[Thread 10 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:27:21.854:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:27:21.855:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:27:21.878:(localhost10)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:21.878:(localhost10)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:21.893:(localhost10)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:21.894:(localhost10)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:21.906:(localhost10)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:21.906:(localhost10)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:21.916:(localhost10)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:21.916:(localhost10)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:21.931:(localhost10)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:21.931:(localhost10)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:21.944:(localhost10)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:21.944:(localhost10)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:41.969:(localhost16)代码执行轨迹-->[Thread 16 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:27:41.972:(localhost16)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:27:41.972:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:27:41.998:(localhost16)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:41.998:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:42.014:(localhost16)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:42.014:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:42.026:(localhost16)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:42.027:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:42.037:(localhost16)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:42.037:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:42.047:(localhost16)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:42.047:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:27:42.057:(localhost16)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:27:42.057:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:05.678:(localhost12)代码执行轨迹-->[Thread 12 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:28:05.681:(localhost12)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:28:05.682:(localhost12)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:28:05.707:(localhost12)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:05.707:(localhost12)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:05.720:(localhost12)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:05.720:(localhost12)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:05.731:(localhost12)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:05.731:(localhost12)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:05.741:(localhost12)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:05.741:(localhost12)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:05.750:(localhost12)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:05.751:(localhost12)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:05.764:(localhost12)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:05.764:(localhost12)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:31.317:(localhost8)代码执行轨迹-->[Thread 8 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:28:31.318:(localhost8)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:28:31.319:(localhost8)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:28:31.332:(localhost8)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:31.332:(localhost8)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:31.343:(localhost8)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:31.343:(localhost8)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:31.355:(localhost8)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:31.355:(localhost8)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:31.368:(localhost8)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:31.368:(localhost8)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:31.378:(localhost8)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:31.378:(localhost8)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:28:31.388:(localhost8)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:28:31.388:(localhost8)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:29:27.544:(localhost24)代码执行轨迹-->[Thread 24 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:29:27.545:(localhost24)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:29:27.545:(localhost24)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:29:27.560:(localhost24)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:29:27.561:(localhost24)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:29:27.573:(localhost24)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:29:27.574:(localhost24)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:29:27.586:(localhost24)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:29:27.586:(localhost24)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:29:27.598:(localhost24)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:29:27.598:(localhost24)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:29:27.611:(localhost24)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:29:27.611:(localhost24)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:29:27.622:(localhost24)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:29:27.622:(localhost24)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:30:43.215:(localhost18)代码执行轨迹-->[Thread 18 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:30:43.217:(localhost18)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:30:43.217:(localhost18)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:30:43.234:(localhost18)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:30:43.235:(localhost18)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:30:43.245:(localhost18)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:30:43.245:(localhost18)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:30:43.255:(localhost18)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:30:43.255:(localhost18)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:30:43.268:(localhost18)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:30:43.268:(localhost18)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:30:43.278:(localhost18)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:30:43.278:(localhost18)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:30:43.289:(localhost18)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:30:43.289:(localhost18)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:11.058:(localhost18)代码执行轨迹-->[Thread 18 RoadBasicInfoController] Exception:Action请求异常:http://localhost:45665/RoadBasicInfo/Detail/5?gridStage={"tableId":"grid","filterForm":"%23searchContatiner","paramArray":[{"name":"RoadCode","value":""},{"name":"RoadName","value":""},{"name":"RoadLevel","value":""},{"name":"RoadMaterial","value":""},{"name":"BridgeNumber","value":""},{"name":"AreaCode","value":"bbb"}],"startIndex":0,"pageSize":10,"sortFieldIndex":0,"sortDiection":"asc"} 请求URL:http://localhost:45665/RoadBasicInfo/Detail/5?gridStage={"tableId":"grid","filterForm":"%23searchContatiner","paramArray":[{"name":"RoadCode","value":""},{"name":"RoadName","value":""},{"name":"RoadLevel","value":""},{"name":"RoadMaterial","value":""},{"name":"BridgeNumber","value":""},{"name":"AreaCode","value":"bbb"}],"startIndex":0,"pageSize":10,"sortFieldIndex":0,"sortDiection":"asc"} | 异常说明: 具有键“AreaCode”的 ViewData 项属于类型“System.String”，但它必须属于类型“IEnumerable<SelectListItem>”。
+StackTrace:   在 System.Web.Mvc.Html.SelectExtensions.GetSelectData(HtmlHelper htmlHelper, String name)
+   在 System.Web.Mvc.Html.SelectExtensions.SelectInternal(HtmlHelper htmlHelper, ModelMetadata metadata, String optionLabel, String name, IEnumerable`1 selectList, Boolean allowMultiple, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.SelectExtensions.DropDownList(HtmlHelper htmlHelper, String name)
+   在 ASP._Page_Views_RoadBasicInfo_Detail_cshtml.Execute() 位置 d:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI\Views\RoadBasicInfo\Detail.cshtml:行号 106
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.RunPage()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:31:11.548:(localhost20)代码执行轨迹-->[Thread 20 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:31:11.551:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:31:11.552:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:31:11.592:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:11.592:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:11.612:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:11.612:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:11.631:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:11.631:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:11.643:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:11.643:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:11.653:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:11.653:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:11.663:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:11.663:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:49.157:(localhost20)代码执行轨迹-->[Thread 20 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:31:49.159:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:31:49.159:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:31:49.178:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:49.178:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:49.190:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:49.190:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:49.205:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:49.205:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:49.215:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:49.215:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:49.224:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:49.224:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:31:49.235:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:31:49.235:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:33.926:(localhost15)代码执行轨迹-->[Thread 15 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:32:33.931:(localhost15)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:32:33.931:(localhost15)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:32:33.952:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:33.952:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:33.965:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:33.965:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:33.974:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:33.974:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:33.984:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:33.984:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:33.995:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:33.995:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:34.007:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:34.007:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:58.728:(localhost17)代码执行轨迹-->[Thread 17 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:32:58.732:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:32:58.732:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:32:58.753:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:58.753:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:58.769:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:58.769:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:58.790:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:58.790:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:58.803:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:58.803:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:58.813:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:58.813:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:32:58.823:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:32:58.823:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:26.600:(localhost28)代码执行轨迹-->[Thread 28 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:33:26.605:(localhost28)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:33:26.606:(localhost28)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:33:26.634:(localhost28)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:26.634:(localhost28)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:26.649:(localhost28)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:26.649:(localhost28)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:26.661:(localhost28)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:26.661:(localhost28)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:26.678:(localhost28)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:26.678:(localhost28)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:26.690:(localhost28)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:26.690:(localhost28)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:26.703:(localhost28)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:26.704:(localhost28)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:42.199:(localhost17)代码执行轨迹-->[Thread 17 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:33:42.202:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:33:42.202:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:33:42.220:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:42.221:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:42.234:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:42.234:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:42.245:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:42.245:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:42.255:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:42.255:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:42.268:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:42.268:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:33:42.282:(localhost17)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:33:42.282:(localhost17)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:04.343:(localhost15)代码执行轨迹-->[Thread 15 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:34:04.348:(localhost15)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:34:04.349:(localhost15)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:34:04.377:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:04.377:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:04.389:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:04.389:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:04.407:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:04.407:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:04.417:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:04.418:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:04.428:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:04.428:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:04.440:(localhost15)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:04.440:(localhost15)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:20.681:(localhost20)代码执行轨迹-->MB.CacheProxy 缓存没有进行相应的配置！Activation error occured while trying to get instance of type ICacheManager, key "MB.Orm.EntityCache"
+2017-10-07 21:34:20.700:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:34:20.716:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT BU.[ID] ,BU.[CODE] ,BU.[NAME] ,BU.[OWNER_ID] ,BU.[EXPIRE_TIME] ,ISNULL(BU.[PASSWORD],'') PASSWORD ,BU.[LAST_MODIFIED_DATE] ,BU.[LAST_CHANGPWD_DATE] ,BU.[LAST_MODIFIED_USER] ,BU.JOB ,BU.LEADERID ,BO.CODE AS OWNER_CODE ,BO.NAME AS ORG_NAME ,BU2.CODE AS LAST_MODIFIED_USERCODE FROM [BF_USER] BU LEFT JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID INNER JOIN BF_USER BU2 ON BU2.ID=BU.LAST_MODIFIED_USER WHERE ((BU.CODE = 'SA')) ;(没有参数)
+2017-10-07 21:34:20.748:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObjectByUserID
+2017-10-07 21:34:20.750:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[ID] ,M.[CODE] ,M.[NAME] ,M.[PARENT_ID] ,M.[REMARK] ,M.[CREATE_USER] ,M.[CREATE_DATE] ,M.[LAST_MODIFIED_USER] ,M.[LAST_MODIFIED_TIME] ,M.[URL] ,M.[ORDER] ,M.[ICON] ,M.[IsNeedControl] FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID AND MO.CODE='OPEN' INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:34:20.764:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectRoleByUser
+2017-10-07 21:34:20.765:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT R.[ID] ,R.[CODE] ,R.[NAME] ,R.[LAST_MODIFIED_DATE] ,R.[LAST_MODIFIED_USER] ,R.[REMARK] ,R.[IS_ADMIN] FROM dbo.BF_ROLE R INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_ROLE_ID = R.ID WHERE RU.BF_USER_ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:34:20.777:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectOperationByUserID
+2017-10-07 21:34:20.778:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[CODE] MODULE_CODE ,MO.CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID UNION SELECT DISTINCT M.[CODE] MODULE_CODE , MOO.CODE CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID = U.ID INNER JOIN dbo.BF_ROLE_MOD_SPECIAL_PERMISSION MSP ON MSP.BF_ROLE_ID = RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OTHER_OPERATION MOO ON MOO.ID = MSP.BF_MODULE_SPECIAL_ID INNER JOIN dbo.BF_MODULE M ON M.ID = MOO.BF_MODULE_ID WHERE u.ID = @USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 21:34:20.794:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:34:20.794:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT [ID] ,[CODE] ,[NAME] ,[PARENT_ID] ,[REMARK] ,[CREATE_USER] ,[CREATE_DATE] ,[LAST_MODIFIED_USER] ,[LAST_MODIFIED_TIME] ,[URL] ,[ORDER] ,[ICON] ,[IsNeedControl] FROM [BF_MODULE] WHERE 0=0 ;(没有参数)
+2017-10-07 21:34:20.810:(localhost20)代码执行轨迹-->[Thread 20 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:34:20.913:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:34:20.913:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:34:20.930:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:20.932:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:20.943:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:20.944:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:20.958:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:20.958:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:20.970:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:20.971:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:20.982:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:20.983:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:34:20.996:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:34:20.997:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:35:29.558:(localhost20)代码执行轨迹-->[Thread 20 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:35:29.560:(localhost20)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:35:29.560:(localhost20)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:35:29.591:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:35:29.591:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:35:29.606:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:35:29.606:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:35:29.618:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:35:29.618:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:35:29.629:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:35:29.629:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:35:29.643:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:35:29.643:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:35:29.653:(localhost20)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:35:29.653:(localhost20)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:36:03.248:(localhost29)代码执行轨迹-->[Thread 29 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:36:03.250:(localhost29)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:36:03.250:(localhost29)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:36:03.273:(localhost29)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:36:03.273:(localhost29)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:36:03.285:(localhost29)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:36:03.285:(localhost29)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:36:03.297:(localhost29)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:36:03.297:(localhost29)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:36:03.307:(localhost29)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:36:03.307:(localhost29)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:36:03.320:(localhost29)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:36:03.320:(localhost29)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:36:03.331:(localhost29)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:36:03.331:(localhost29)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:48.785:(localhost33)代码执行轨迹-->[Thread 33 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:39:48.786:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:39:48.786:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:39:48.811:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:39:48.811:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:48.821:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:39:48.821:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:48.831:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:39:48.831:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:48.841:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:39:48.841:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:48.850:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:39:48.851:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:48.863:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:39:48.863:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:39:58.463:(localhost17)代码执行轨迹-->[Thread 17 StreetTreeInfoController] SA visit:/streettreeinfo/index
+2017-10-07 21:39:59.957:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:39:59.960:(localhost33)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.SamllTreeCount ,A.MiddleTreeCount ,A.BigTreeCount ,A.BiggerTreeCount ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM StreetTreeInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID;(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:39:59.984:(localhost33)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:39:59.985:(localhost33)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:39:59.985:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM StreetTreeInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:39:59.988:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM StreetTreeInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:01.023:(localhost40)代码执行轨迹-->[Thread 40 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:40:01.027:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:01.027:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:01.968:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:01.968:(localhost40)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:01.992:(localhost40)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:01.993:(localhost40)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:01.993:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:01.993:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:04.718:(localhost32)代码执行轨迹-->[Thread 32 RoadBasicInfoController] SA visit:/roadbasicinfo/edit
+2017-10-07 21:40:04.723:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:04.723:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:40:04.744:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:04.744:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:05.531:(localhost40)代码执行轨迹-->[Thread 40 RoadBasicInfoController] SA visit:/roadbasicinfo/edit
+2017-10-07 21:40:05.607:(localhost40)代码执行轨迹-->[Thread 40 RoadBasicInfoController] Exception:Action请求异常:http://localhost:45665/RoadBasicInfo/Edit/ 请求URL:http://localhost:45665/RoadBasicInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.RoadBasicInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:40:11.307:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:11.307:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((RoadCode = '浦东') AND (ID <> '5')) ;(没有参数)
+2017-10-07 21:40:11.328:(localhost40)代码执行轨迹-->成功发现SQL 语句：UpdateObject
+2017-10-07 21:40:11.331:(localhost40)代码执行轨迹-->正在执行: CommandText:UPDATE RoadBasicInfo SET RoadCode = @RoadCode ,RoadName = @RoadName ,RoadLevel = @RoadLevel ,RoadMaterial = @RoadMaterial ,BridgeNumber = @BridgeNumber ,AreaCode = @AreaCode ,LastModifiedUser = @LastModifiedUser ,LastModifiedTime = @LastModifiedTime ,picture = @picture WHERE ID = @ID ;(参数:@ID=>'5',@RoadCode=>'浦东',@RoadName=>'浦东',@RoadLevel=>'浦东',@RoadMaterial=>'浦东',@BridgeNumber=>'1',@AreaCode=>'三林',@LastModifiedUser=>'2',@LastModifiedTime=>'2017/10/7 21:40:11',@picture=>'/Upload/RoadBasicInfo/day_171007/201710070424442096.png')
+2017-10-07 21:40:11.374:(localhost32)代码执行轨迹-->[Thread 32 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:40:11.375:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:11.375:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:11.604:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:11.605:(localhost40)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:11.618:(localhost40)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:11.618:(localhost40)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:11.618:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:11.618:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:12.453:(localhost40)代码执行轨迹-->[Thread 40 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:40:12.454:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:12.455:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:12.665:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:12.666:(localhost33)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:12.680:(localhost33)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:12.680:(localhost33)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:12.680:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:12.680:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:16.420:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:16.420:(localhost41)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:16.440:(localhost41)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:16.441:(localhost41)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:16.441:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:40:16.441:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:40:20.046:(localhost37)代码执行轨迹-->[Thread 37 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:40:20.048:(localhost37)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:20.048:(localhost37)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '4')) ;(没有参数)
+2017-10-07 21:40:20.063:(localhost37)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:40:20.063:(localhost37)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:40:20.077:(localhost37)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:40:20.077:(localhost37)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:40:20.091:(localhost37)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:40:20.091:(localhost37)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:40:20.102:(localhost37)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:40:20.102:(localhost37)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:40:20.112:(localhost37)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:40:20.113:(localhost37)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:40:20.122:(localhost37)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:40:20.122:(localhost37)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:40:33.849:(localhost31)代码执行轨迹-->[Thread 31 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:40:33.852:(localhost31)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:33.852:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:33.926:(localhost31)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:33.927:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:35.366:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:35.366:(localhost33)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.RoadLength ,A.RoadSquare ,A.SlowLaneWidth ,A.SlowLaneSquare ,A.FastLaneWidth ,A.FastLaneSquare ,A.PavementWidth ,A.PavementSquare ,A.CurbSideLength ,A.CurbFlatLength ,A.InspectionShaftCount ,A.WaterInletCount ,A.WaterOutletCount ,A.GuideBoardCount ,A.PersonDivideLine ,A.VehicleDivideLine ,A.VehicleBicycleDivideLine ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM RoadMunicipalInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:35.389:(localhost33)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:35.389:(localhost33)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:35.389:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:35.390:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:37.357:(localhost39)代码执行轨迹-->[Thread 39 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:40:37.360:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:37.360:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,RoadLength ,RoadSquare ,SlowLaneWidth ,SlowLaneSquare ,FastLaneWidth ,FastLaneSquare ,PavementWidth ,PavementSquare ,CurbSideLength ,CurbFlatLength ,InspectionShaftCount ,WaterInletCount ,WaterOutletCount ,GuideBoardCount ,PersonDivideLine ,VehicleDivideLine ,VehicleBicycleDivideLine ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,pricture FROM RoadMunicipalInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:40:37.383:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:37.384:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:37.456:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:37.456:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:38.251:(localhost31)代码执行轨迹-->[Thread 31 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:40:38.330:(localhost31)代码执行轨迹-->[Thread 31 RoadMunicipalInfoController] Exception:Action请求异常:http://localhost:45665/RoadMunicipalInfo/Edit/ 请求URL:http://localhost:45665/RoadMunicipalInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.RoadMunicipalInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:40:50.028:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:50.029:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,RoadLength ,RoadSquare ,SlowLaneWidth ,SlowLaneSquare ,FastLaneWidth ,FastLaneSquare ,PavementWidth ,PavementSquare ,CurbSideLength ,CurbFlatLength ,InspectionShaftCount ,WaterInletCount ,WaterOutletCount ,GuideBoardCount ,PersonDivideLine ,VehicleDivideLine ,VehicleBicycleDivideLine ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,pricture FROM RoadMunicipalInfo WHERE ((ID <> '3')) ;(没有参数)
+2017-10-07 21:40:50.041:(localhost33)代码执行轨迹-->成功发现SQL 语句：UpdateObject
+2017-10-07 21:40:50.042:(localhost33)代码执行轨迹-->正在执行: CommandText:UPDATE RoadMunicipalInfo SET RoadID = @RoadID ,RoadLength = @RoadLength ,RoadSquare = @RoadSquare ,SlowLaneWidth = @SlowLaneWidth ,SlowLaneSquare = @SlowLaneSquare ,FastLaneWidth = @FastLaneWidth ,FastLaneSquare = @FastLaneSquare ,PavementWidth = @PavementWidth ,PavementSquare = @PavementSquare ,CurbSideLength = @CurbSideLength ,CurbFlatLength = @CurbFlatLength ,InspectionShaftCount = @InspectionShaftCount ,WaterInletCount = @WaterInletCount ,WaterOutletCount = @WaterOutletCount ,GuideBoardCount = @GuideBoardCount ,PersonDivideLine = @PersonDivideLine ,VehicleDivideLine = @VehicleDivideLine ,VehicleBicycleDivideLine = @VehicleBicycleDivideLine ,LeaderCode = @LeaderCode ,CreateUser = @CreateUser ,CreateTime = @CreateTime ,LastModifiedUser = @LastModifiedUser ,LastModifiedTime = @LastModifiedTime ,pricture = @pricture WHERE ID = @ID ;(参数:@ID=>'3',@RoadID=>'4',@RoadLength=>'66666',@RoadSquare=>'6662222',@SlowLaneWidth=>'8',@SlowLaneSquare=>'822',@FastLaneWidth=>'8',@FastLaneSquare=>'',@PavementWidth=>'22',@PavementSquare=>'8',@CurbSideLength=>'8',@CurbFlatLength=>'88',@InspectionShaftCount=>'8',@WaterInletCount=>'8',@WaterOutletCount=>'8',@GuideBoardCount=>'8',@PersonDivideLine=>'88',@VehicleDivideLine=>'9',@VehicleBicycleDivideLine=>'8',@LeaderCode=>'P01_1',@CreateUser=>'',@CreateTime=>'',@LastModifiedUser=>'2',@LastModifiedTime=>'2017/10/7 21:40:50',@pricture=>'/Upload/GreenLandInfo/day_171005/20171005055001850.png')
+2017-10-07 21:40:50.120:(localhost31)代码执行轨迹-->[Thread 31 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:40:50.122:(localhost31)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:50.122:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:50.140:(localhost31)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:50.141:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:50.463:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:50.464:(localhost17)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.RoadLength ,A.RoadSquare ,A.SlowLaneWidth ,A.SlowLaneSquare ,A.FastLaneWidth ,A.FastLaneSquare ,A.PavementWidth ,A.PavementSquare ,A.CurbSideLength ,A.CurbFlatLength ,A.InspectionShaftCount ,A.WaterInletCount ,A.WaterOutletCount ,A.GuideBoardCount ,A.PersonDivideLine ,A.VehicleDivideLine ,A.VehicleBicycleDivideLine ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM RoadMunicipalInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:50.489:(localhost17)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:50.489:(localhost17)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:50.489:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:50.489:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:52.122:(localhost17)代码执行轨迹-->[Thread 17 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:40:52.123:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:40:52.123:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:40:52.323:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:52.324:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:52.339:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:52.339:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:52.340:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:52.340:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:40:55.753:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:40:55.754:(localhost33)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:40:55.768:(localhost33)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:40:55.768:(localhost33)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:40:55.768:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:40:55.768:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:41:00.277:(localhost33)代码执行轨迹-->[Thread 33 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:41:00.278:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:00.279:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '5')) ;(没有参数)
+2017-10-07 21:41:00.293:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:41:00.293:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:41:00.304:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:41:00.304:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:41:00.315:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:41:00.316:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:41:00.327:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:41:00.327:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:41:00.339:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:41:00.339:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:41:00.354:(localhost33)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:41:00.354:(localhost33)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'5')
+2017-10-07 21:41:12.803:(localhost37)代码执行轨迹-->[Thread 37 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:41:12.804:(localhost37)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:12.805:(localhost37)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:12.820:(localhost37)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:12.820:(localhost37)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:13.038:(localhost31)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:41:13.039:(localhost31)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.RoadLength ,A.RoadSquare ,A.SlowLaneWidth ,A.SlowLaneSquare ,A.FastLaneWidth ,A.FastLaneSquare ,A.PavementWidth ,A.PavementSquare ,A.CurbSideLength ,A.CurbFlatLength ,A.InspectionShaftCount ,A.WaterInletCount ,A.WaterOutletCount ,A.GuideBoardCount ,A.PersonDivideLine ,A.VehicleDivideLine ,A.VehicleBicycleDivideLine ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM RoadMunicipalInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:41:13.060:(localhost31)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:41:13.061:(localhost31)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:41:13.061:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:13.061:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:15.521:(localhost41)代码执行轨迹-->[Thread 41 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:41:15.523:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:15.523:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,RoadLength ,RoadSquare ,SlowLaneWidth ,SlowLaneSquare ,FastLaneWidth ,FastLaneSquare ,PavementWidth ,PavementSquare ,CurbSideLength ,CurbFlatLength ,InspectionShaftCount ,WaterInletCount ,WaterOutletCount ,GuideBoardCount ,PersonDivideLine ,VehicleDivideLine ,VehicleBicycleDivideLine ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,pricture FROM RoadMunicipalInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:41:15.538:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:15.538:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:15.554:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:15.555:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:16.048:(localhost31)代码执行轨迹-->[Thread 31 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:41:16.125:(localhost31)代码执行轨迹-->[Thread 31 RoadMunicipalInfoController] Exception:Action请求异常:http://localhost:45665/RoadMunicipalInfo/Edit/ 请求URL:http://localhost:45665/RoadMunicipalInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.RoadMunicipalInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:41:29.251:(localhost39)代码执行轨迹-->[Thread 39 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:41:29.252:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:41:29.253:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:41:29.583:(localhost31)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:41:29.584:(localhost31)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:41:29.597:(localhost31)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:41:29.598:(localhost31)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:41:29.598:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:41:29.598:(localhost31)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:41:32.281:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:41:32.281:(localhost40)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:41:32.295:(localhost40)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:41:32.295:(localhost40)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:41:32.295:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:41:32.295:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:41:34.755:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:41:34.756:(localhost41)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:41:34.779:(localhost41)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:41:34.779:(localhost41)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:41:34.779:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:41:34.779:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:41:37.554:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:41:37.554:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:41:37.566:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:41:37.567:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:41:37.567:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:41:37.567:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:41:50.507:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:41:50.507:(localhost17)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:41:50.519:(localhost17)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:41:50.520:(localhost17)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:41:50.520:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:41:50.520:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:42:03.124:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:03.124:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:03.136:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:03.137:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:03.137:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:42:03.137:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:42:04.741:(localhost17)代码执行轨迹-->[Thread 17 AreaInfoController] SA visit:/areainfo/index
+2017-10-07 21:42:06.663:(localhost34)代码执行轨迹-->[Thread 34 AreaInfoController] SA visit:/areainfo/index
+2017-10-07 21:42:06.953:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:06.953:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from ( select row_number() over (order by Owner asc) row, A.ID ,A.Owner ,A.Section ,A.Dept ,A.Area ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM AreaInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:06.971:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:06.971:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:06.971:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM AreaInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:06.971:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM AreaInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:07.236:(localhost34)代码执行轨迹-->[Thread 34 AreaInfoController] SA visit:/areainfo/index
+2017-10-07 21:42:07.483:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:07.484:(localhost41)代码执行轨迹-->正在执行: CommandText:select * from ( select row_number() over (order by Owner asc) row, A.ID ,A.Owner ,A.Section ,A.Dept ,A.Area ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM AreaInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:07.506:(localhost41)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:07.506:(localhost41)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:07.506:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM AreaInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:07.506:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM AreaInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:10.393:(localhost17)代码执行轨迹-->[Thread 17 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:42:10.394:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:42:10.394:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:10.596:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:10.596:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:10.614:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:10.614:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:10.614:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:42:10.614:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:42:12.380:(localhost16)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:12.380:(localhost16)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:12.391:(localhost16)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:12.391:(localhost16)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:12.391:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:42:12.391:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:42:14.173:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:14.181:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:14.197:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:14.198:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:14.198:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:42:14.198:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:42:20.950:(localhost17)代码执行轨迹-->[Thread 17 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:42:20.951:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:42:20.951:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:20.965:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:42:20.965:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:21.213:(localhost16)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:42:21.214:(localhost16)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.RoadLength ,A.RoadSquare ,A.SlowLaneWidth ,A.SlowLaneSquare ,A.FastLaneWidth ,A.FastLaneSquare ,A.PavementWidth ,A.PavementSquare ,A.CurbSideLength ,A.CurbFlatLength ,A.InspectionShaftCount ,A.WaterInletCount ,A.WaterOutletCount ,A.GuideBoardCount ,A.PersonDivideLine ,A.VehicleDivideLine ,A.VehicleBicycleDivideLine ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM RoadMunicipalInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:42:21.235:(localhost16)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:42:21.235:(localhost16)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:42:21.235:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:21.235:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:24.528:(localhost41)代码执行轨迹-->[Thread 41 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:42:24.529:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:42:24.530:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,RoadLength ,RoadSquare ,SlowLaneWidth ,SlowLaneSquare ,FastLaneWidth ,FastLaneSquare ,PavementWidth ,PavementSquare ,CurbSideLength ,CurbFlatLength ,InspectionShaftCount ,WaterInletCount ,WaterOutletCount ,GuideBoardCount ,PersonDivideLine ,VehicleDivideLine ,VehicleBicycleDivideLine ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,pricture FROM RoadMunicipalInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:42:24.547:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:42:24.548:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:24.560:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:42:24.560:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:42:25.083:(localhost32)代码执行轨迹-->[Thread 32 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:42:25.154:(localhost32)代码执行轨迹-->[Thread 32 RoadMunicipalInfoController] Exception:Action请求异常:http://localhost:45665/RoadMunicipalInfo/Edit/ 请求URL:http://localhost:45665/RoadMunicipalInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.RoadMunicipalInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:43:29.166:(localhost36)代码执行轨迹-->[Thread 36 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:43:29.167:(localhost36)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:29.167:(localhost36)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,RoadLength ,RoadSquare ,SlowLaneWidth ,SlowLaneSquare ,FastLaneWidth ,FastLaneSquare ,PavementWidth ,PavementSquare ,CurbSideLength ,CurbFlatLength ,InspectionShaftCount ,WaterInletCount ,WaterOutletCount ,GuideBoardCount ,PersonDivideLine ,VehicleDivideLine ,VehicleBicycleDivideLine ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,pricture FROM RoadMunicipalInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:43:29.183:(localhost36)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:29.184:(localhost36)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:43:29.198:(localhost36)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:29.198:(localhost36)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:43:29.835:(localhost17)代码执行轨迹-->[Thread 17 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/edit
+2017-10-07 21:43:29.907:(localhost17)代码执行轨迹-->[Thread 17 RoadMunicipalInfoController] Exception:Action请求异常:http://localhost:45665/RoadMunicipalInfo/Edit/ 请求URL:http://localhost:45665/RoadMunicipalInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.RoadMunicipalInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:43:31.183:(localhost32)代码执行轨迹-->[Thread 32 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:43:31.184:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:31.184:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:43:31.456:(localhost36)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:43:31.456:(localhost36)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:43:31.474:(localhost36)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:43:31.474:(localhost36)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:43:31.474:(localhost36)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:43:31.475:(localhost36)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:43:34.213:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:43:34.213:(localhost17)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:43:34.229:(localhost17)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:43:34.230:(localhost17)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:43:34.230:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:43:34.230:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:43:39.236:(localhost32)代码执行轨迹-->[Thread 32 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:43:39.237:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:39.238:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:43:39.253:(localhost32)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:39.253:(localhost32)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:43:39.264:(localhost32)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:39.264:(localhost32)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:43:39.276:(localhost32)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:39.276:(localhost32)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:43:39.285:(localhost32)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:39.285:(localhost32)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:43:39.295:(localhost32)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:39.295:(localhost32)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:43:39.307:(localhost32)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:39.308:(localhost32)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:43:42.937:(localhost32)代码执行轨迹-->[Thread 32 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:43:42.938:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:42.938:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:43:43.178:(localhost32)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:43:43.178:(localhost32)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:43:43.192:(localhost32)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:43:43.192:(localhost32)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:43:43.192:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:43:43.192:(localhost32)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:43:45.311:(localhost17)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:43:45.312:(localhost17)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:43:45.323:(localhost17)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:43:45.324:(localhost17)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:43:45.324:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:43:45.324:(localhost17)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:43:49.400:(localhost36)代码执行轨迹-->[Thread 36 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:43:49.402:(localhost36)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:43:49.402:(localhost36)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '2')) ;(没有参数)
+2017-10-07 21:43:49.417:(localhost36)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:49.417:(localhost36)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:43:49.433:(localhost36)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:49.433:(localhost36)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:43:49.445:(localhost36)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:49.445:(localhost36)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:43:49.459:(localhost36)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:49.459:(localhost36)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:43:49.473:(localhost36)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:49.473:(localhost36)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:43:49.489:(localhost36)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:43:49.489:(localhost36)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:44:35.802:(localhost38)代码执行轨迹-->[Thread 38 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:44:35.803:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:35.803:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:35.818:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:35.818:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:36.151:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:44:36.151:(localhost34)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.RoadLength ,A.RoadSquare ,A.SlowLaneWidth ,A.SlowLaneSquare ,A.FastLaneWidth ,A.FastLaneSquare ,A.PavementWidth ,A.PavementSquare ,A.CurbSideLength ,A.CurbFlatLength ,A.InspectionShaftCount ,A.WaterInletCount ,A.WaterOutletCount ,A.GuideBoardCount ,A.PersonDivideLine ,A.VehicleDivideLine ,A.VehicleBicycleDivideLine ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM RoadMunicipalInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:44:36.177:(localhost34)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:44:36.178:(localhost34)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:44:36.178:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:36.178:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:40.307:(localhost34)代码执行轨迹-->[Thread 34 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/add
+2017-10-07 21:44:40.310:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:40.310:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:40.385:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:40.385:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:41.204:(localhost16)代码执行轨迹-->[Thread 16 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:44:41.206:(localhost16)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:41.206:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:41.224:(localhost16)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:41.224:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:46.309:(localhost37)代码执行轨迹-->成功发现SQL 语句：AddObject
+2017-10-07 21:44:46.310:(localhost37)代码执行轨迹-->正在执行: CommandText:INSERT INTO RoadMunicipalInfo (RoadID ,RoadLength ,RoadSquare ,SlowLaneWidth ,SlowLaneSquare ,FastLaneWidth ,FastLaneSquare ,PavementWidth ,PavementSquare ,CurbSideLength ,CurbFlatLength ,InspectionShaftCount ,WaterInletCount ,WaterOutletCount ,GuideBoardCount ,PersonDivideLine ,VehicleDivideLine ,VehicleBicycleDivideLine ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,pricture ) VALUES( @RoadID ,@RoadLength ,@RoadSquare ,@SlowLaneWidth ,@SlowLaneSquare ,@FastLaneWidth ,@FastLaneSquare ,@PavementWidth ,@PavementSquare ,@CurbSideLength ,@CurbFlatLength ,@InspectionShaftCount ,@WaterInletCount ,@WaterOutletCount ,@GuideBoardCount ,@PersonDivideLine ,@VehicleDivideLine ,@VehicleBicycleDivideLine ,@LeaderCode ,@CreateUser ,@CreateTime ,@LastModifiedUser ,@LastModifiedTime ,@pricture );(参数:@ID=>'7',@RoadID=>'4',@RoadLength=>'',@RoadSquare=>'',@SlowLaneWidth=>'',@SlowLaneSquare=>'',@FastLaneWidth=>'',@FastLaneSquare=>'',@PavementWidth=>'',@PavementSquare=>'',@CurbSideLength=>'',@CurbFlatLength=>'',@InspectionShaftCount=>'',@WaterInletCount=>'',@WaterOutletCount=>'',@GuideBoardCount=>'',@PersonDivideLine=>'',@VehicleDivideLine=>'',@VehicleBicycleDivideLine=>'',@LeaderCode=>'P01_1',@CreateUser=>'SA',@CreateTime=>'2017/10/7 21:44:46',@LastModifiedUser=>'SA',@LastModifiedTime=>'2017/10/7 21:44:46',@pricture=>'')
+2017-10-07 21:44:46.338:(localhost38)代码执行轨迹-->[Thread 38 RoadMunicipalInfoController] SA visit:/roadmunicipalinfo/index
+2017-10-07 21:44:46.339:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:46.339:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:46.354:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:46.355:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:46.617:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:44:46.617:(localhost34)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.RoadLength ,A.RoadSquare ,A.SlowLaneWidth ,A.SlowLaneSquare ,A.FastLaneWidth ,A.FastLaneSquare ,A.PavementWidth ,A.PavementSquare ,A.CurbSideLength ,A.CurbFlatLength ,A.InspectionShaftCount ,A.WaterInletCount ,A.WaterOutletCount ,A.GuideBoardCount ,A.PersonDivideLine ,A.VehicleDivideLine ,A.VehicleBicycleDivideLine ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime ,A.pricture FROM RoadMunicipalInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:44:46.643:(localhost34)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:44:46.644:(localhost34)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:44:46.644:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:46.644:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadMunicipalInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:51.063:(localhost34)代码执行轨迹-->[Thread 34 AreaInfoController] SA visit:/areainfo/index
+2017-10-07 21:44:51.267:(localhost16)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:44:51.267:(localhost16)代码执行轨迹-->正在执行: CommandText:select * from ( select row_number() over (order by Owner asc) row, A.ID ,A.Owner ,A.Section ,A.Dept ,A.Area ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM AreaInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1);(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:44:51.283:(localhost16)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:44:51.283:(localhost16)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:44:51.283:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM AreaInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:51.283:(localhost16)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM AreaInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:53.015:(localhost41)代码执行轨迹-->[Thread 41 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:44:53.016:(localhost41)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:44:53.017:(localhost41)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:44:53.256:(localhost33)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:44:53.256:(localhost33)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:44:53.272:(localhost33)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:44:53.272:(localhost33)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:44:53.272:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:44:53.272:(localhost33)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:44:55.984:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:44:55.984:(localhost38)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:44:56.002:(localhost38)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:44:56.002:(localhost38)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:44:56.002:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:44:56.002:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:00.690:(localhost39)代码执行轨迹-->[Thread 39 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:45:00.692:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:45:00.693:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '4')) ;(没有参数)
+2017-10-07 21:45:00.704:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:00.705:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:45:00.715:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:00.716:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:45:00.731:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:00.731:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:45:00.742:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:00.742:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:45:00.753:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:00.753:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:45:00.763:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:00.763:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'4')
+2017-10-07 21:45:07.300:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:45:07.302:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:45:07.302:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:45:07.529:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:07.529:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:07.546:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:07.547:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:07.547:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:45:07.547:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:45:09.823:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:09.823:(localhost38)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:09.835:(localhost38)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:09.835:(localhost38)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:09.836:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:09.836:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:14.443:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:45:14.445:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:45:14.445:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '1')) ;(没有参数)
+2017-10-07 21:45:14.460:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:14.461:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'1')
+2017-10-07 21:45:14.471:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:14.471:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'1')
+2017-10-07 21:45:14.481:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:14.481:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'1')
+2017-10-07 21:45:14.494:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:14.494:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'1')
+2017-10-07 21:45:14.504:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:14.504:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'1')
+2017-10-07 21:45:14.514:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:45:14.514:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'1')
+2017-10-07 21:45:18.131:(localhost39)代码执行轨迹-->[Thread 39 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:45:18.132:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:45:18.133:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:45:18.352:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:18.353:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:18.370:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:18.371:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:18.371:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:45:18.371:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:45:20.761:(localhost38)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:20.761:(localhost38)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:20.777:(localhost38)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:20.777:(localhost38)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:20.777:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:20.777:(localhost38)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:33.365:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:45:33.366:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:45:33.366:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:45:34.111:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:34.112:(localhost34)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:34.129:(localhost34)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:34.129:(localhost34)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:34.129:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:45:34.129:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:45:37.073:(localhost7)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:37.073:(localhost7)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:37.091:(localhost7)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:37.091:(localhost7)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:37.091:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:37.091:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:58.872:(localhost39)代码执行轨迹-->成功发现SQL 语句：DeleteObject
+2017-10-07 21:45:58.872:(localhost39)代码执行轨迹-->正在执行: CommandText:DELETE FROM RoadBasicInfo WHERE ID = @ID;(参数:@ID=>'5')
+2017-10-07 21:45:58.893:(localhost39)代码执行轨迹-->成功发现SQL 语句：DeleteObject
+2017-10-07 21:45:58.894:(localhost39)代码执行轨迹-->正在执行: CommandText:DELETE FROM RoadBasicInfo WHERE ID = @ID;(参数:@ID=>'5')
+2017-10-07 21:45:58.925:(localhost40)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:45:58.925:(localhost40)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:45:58.941:(localhost40)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:45:58.941:(localhost40)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:45:58.942:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:45:58.942:(localhost40)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:46:02.983:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:46:02.985:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:46:02.985:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '2')) ;(没有参数)
+2017-10-07 21:46:03.002:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:03.002:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:03.013:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:03.013:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:03.023:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:03.023:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:03.034:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:03.034:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:03.046:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:03.046:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:03.061:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:03.061:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:11.642:(localhost27)代码执行轨迹-->[Thread 27 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:46:11.643:(localhost27)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:46:11.643:(localhost27)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '2')) ;(没有参数)
+2017-10-07 21:46:11.657:(localhost27)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:11.657:(localhost27)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:11.671:(localhost27)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:11.671:(localhost27)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:11.685:(localhost27)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:11.686:(localhost27)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:11.700:(localhost27)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:11.700:(localhost27)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:11.711:(localhost27)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:11.711:(localhost27)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:46:11.725:(localhost27)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:46:11.725:(localhost27)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:01.029:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:47:01.032:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:01.033:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '2')) ;(没有参数)
+2017-10-07 21:47:01.056:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:01.056:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:01.079:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:01.080:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:01.100:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:01.100:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:01.123:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:01.123:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:01.153:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:01.153:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:01.180:(localhost34)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:01.181:(localhost34)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:14.849:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:47:14.850:(localhost39)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:47:14.876:(localhost39)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:47:14.877:(localhost39)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:47:14.877:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:14.877:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:16.972:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/edit
+2017-10-07 21:47:16.974:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:16.974:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:47:16.987:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:16.987:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:47:17.714:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] SA visit:/roadbasicinfo/edit
+2017-10-07 21:47:17.799:(localhost34)代码执行轨迹-->[Thread 34 RoadBasicInfoController] Exception:Action请求异常:http://localhost:45665/RoadBasicInfo/Edit/ 请求URL:http://localhost:45665/RoadBasicInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.RoadBasicInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 
+2017-10-07 21:47:20.982:(localhost34)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:47:20.982:(localhost34)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:47:21.023:(localhost34)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:47:21.024:(localhost34)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:47:21.024:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:21.024:(localhost34)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:23.900:(localhost39)代码执行轨迹-->[Thread 39 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:47:23.902:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:23.902:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '3')) ;(没有参数)
+2017-10-07 21:47:23.918:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:23.918:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:47:23.929:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:23.929:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:47:23.940:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:23.940:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:47:23.950:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:23.950:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:47:23.960:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:23.960:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:47:23.972:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:23.972:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'3')
+2017-10-07 21:47:27.275:(localhost19)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:47:27.276:(localhost19)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:47:27.295:(localhost19)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:47:27.296:(localhost19)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:47:27.297:(localhost19)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:27.297:(localhost19)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:28.813:(localhost39)代码执行轨迹-->[Thread 39 RoadBasicInfoController] SA visit:/roadbasicinfo/detail
+2017-10-07 21:47:28.815:(localhost39)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:28.815:(localhost39)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE ((ID = '2')) ;(没有参数)
+2017-10-07 21:47:28.829:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:28.829:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:28.843:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:28.843:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from SanitationInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:28.857:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:28.857:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from GreenLandInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:28.869:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:28.869:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from SewerInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:28.880:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:28.881:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from BridgeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:28.894:(localhost39)代码执行轨迹-->成功发现SQL 语句：getByRoadId
+2017-10-07 21:47:28.894:(localhost39)代码执行轨迹-->正在执行: CommandText:select * from StreetTreeInfo WHERE RoadID=@RoadID;(参数:@RoadID=>'2')
+2017-10-07 21:47:42.244:(localhost9)代码执行轨迹-->[Thread 9 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:47:42.245:(localhost9)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:42.245:(localhost9)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:47:43.089:(localhost13)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:47:43.089:(localhost13)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:47:43.105:(localhost13)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:47:43.105:(localhost13)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:47:43.106:(localhost13)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:47:43.106:(localhost13)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:47:44.957:(localhost25)代码执行轨迹-->[Thread 25 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:47:44.959:(localhost25)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:47:44.960:(localhost25)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:47:45.164:(localhost13)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:47:45.165:(localhost13)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:47:45.178:(localhost13)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:47:45.178:(localhost13)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:47:45.178:(localhost13)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:47:45.178:(localhost13)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:47:47.528:(localhost19)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:47:47.529:(localhost19)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:47:47.541:(localhost19)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:47:47.541:(localhost19)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:47:47.541:(localhost19)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:47:47.541:(localhost19)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:48:43.222:(localhost8)代码执行轨迹-->[Thread 8 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:48:43.225:(localhost8)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:48:43.226:(localhost8)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:48:43.937:(localhost9)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:48:43.938:(localhost9)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:48:43.964:(localhost9)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:48:43.965:(localhost9)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:48:43.965:(localhost9)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:48:43.965:(localhost9)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:48:47.913:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:48:47.914:(localhost10)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:48:47.930:(localhost10)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:48:47.930:(localhost10)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:48:47.930:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:48:47.930:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:48:56.859:(localhost10)代码执行轨迹-->[Thread 10 RoadBasicInfoController] SA visit:/roadbasicinfo/index
+2017-10-07 21:48:56.860:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 21:48:56.860:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,Owner ,Section ,Dept ,Area ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM AreaInfo WHERE 0=0 ;(没有参数)
+2017-10-07 21:48:57.552:(localhost19)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:48:57.552:(localhost19)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:48:57.563:(localhost19)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:48:57.563:(localhost19)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:48:57.563:(localhost19)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:48:57.563:(localhost19)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = 'bbb')) ;(没有参数)
+2017-10-07 21:49:00.648:(localhost24)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:49:00.648:(localhost24)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:49:00.670:(localhost24)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:49:00.671:(localhost24)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:49:00.671:(localhost24)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:49:00.671:(localhost24)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:49:04.737:(localhost13)代码执行轨迹-->成功发现SQL 语句：DeleteObject
+2017-10-07 21:49:04.737:(localhost13)代码执行轨迹-->正在执行: CommandText:DELETE FROM RoadBasicInfo WHERE ID = @ID;(参数:@ID=>'1')
+2017-10-07 21:49:04.755:(localhost13)代码执行轨迹-->成功发现SQL 语句：DeleteObject
+2017-10-07 21:49:04.755:(localhost13)代码执行轨迹-->正在执行: CommandText:DELETE FROM RoadBasicInfo WHERE ID = @ID;(参数:@ID=>'1')
+2017-10-07 21:49:04.784:(localhost25)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 21:49:04.784:(localhost25)代码执行轨迹-->正在执行: CommandText:select X.*,B.Area from ( select * from ( select row_number() over (order by RoadCode asc) row, A.ID ,A.RoadCode ,A.RoadName ,A.RoadLevel ,A.RoadMaterial ,A.BridgeNumber ,A.AreaCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM RoadBasicInfo A WHERE ((AreaCode = '三林'))) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) ) X left join AreaInfo B on X.AreaCode=B.AreaCode(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 21:49:04.801:(localhost25)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 21:49:04.801:(localhost25)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 21:49:04.801:(localhost25)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 21:49:04.801:(localhost25)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM RoadBasicInfo A WHERE ((AreaCode = '三林')) ;(没有参数)
+2017-10-07 23:36:41.439:(localhost7)代码执行轨迹-->MB.CacheProxy 缓存没有进行相应的配置！Activation error occured while trying to get instance of type ICacheManager, key "MB.Orm.EntityCache"
+2017-10-07 23:36:41.459:(localhost7)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:41.474:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT BU.[ID] ,BU.[CODE] ,BU.[NAME] ,BU.[OWNER_ID] ,BU.[EXPIRE_TIME] ,ISNULL(BU.[PASSWORD],'') PASSWORD ,BU.[LAST_MODIFIED_DATE] ,BU.[LAST_CHANGPWD_DATE] ,BU.[LAST_MODIFIED_USER] ,BU.JOB ,BU.LEADERID ,BO.CODE AS OWNER_CODE ,BO.NAME AS ORG_NAME ,BU2.CODE AS LAST_MODIFIED_USERCODE FROM [BF_USER] BU LEFT JOIN BF_ORG BO ON BU.OWNER_ID=BO.ID INNER JOIN BF_USER BU2 ON BU2.ID=BU.LAST_MODIFIED_USER WHERE ((BU.CODE = 'SA')) ;(没有参数)
+2017-10-07 23:36:41.525:(localhost7)代码执行轨迹-->成功发现SQL 语句：SelectObjectByUserID
+2017-10-07 23:36:41.527:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[ID] ,M.[CODE] ,M.[NAME] ,M.[PARENT_ID] ,M.[REMARK] ,M.[CREATE_USER] ,M.[CREATE_DATE] ,M.[LAST_MODIFIED_USER] ,M.[LAST_MODIFIED_TIME] ,M.[URL] ,M.[ORDER] ,M.[ICON] ,M.[IsNeedControl] FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID AND MO.CODE='OPEN' INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 23:36:41.541:(localhost7)代码执行轨迹-->成功发现SQL 语句：SelectRoleByUser
+2017-10-07 23:36:41.542:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT R.[ID] ,R.[CODE] ,R.[NAME] ,R.[LAST_MODIFIED_DATE] ,R.[LAST_MODIFIED_USER] ,R.[REMARK] ,R.[IS_ADMIN] FROM dbo.BF_ROLE R INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_ROLE_ID = R.ID WHERE RU.BF_USER_ID=@USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 23:36:41.553:(localhost7)代码执行轨迹-->成功发现SQL 语句：SelectOperationByUserID
+2017-10-07 23:36:41.553:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT DISTINCT M.[CODE] MODULE_CODE ,MO.CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID=U.ID INNER JOIN dbo.BF_ROLE_MOD_PERMISSION MP ON MP.BF_ROLE_ID=RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OPERATION MO ON MO.ID=MP.BF_MODULE_OPERATION_ID INNER JOIN dbo.BF_MODULE M ON M.ID=MO.BF_MODULE_ID WHERE u.ID=@USER_ID UNION SELECT DISTINCT M.[CODE] MODULE_CODE , MOO.CODE CODE FROM dbo.BF_USER U INNER JOIN dbo.BF_ROLE_USER RU ON RU.BF_USER_ID = U.ID INNER JOIN dbo.BF_ROLE_MOD_SPECIAL_PERMISSION MSP ON MSP.BF_ROLE_ID = RU.BF_ROLE_ID INNER JOIN dbo.BF_MODULE_OTHER_OPERATION MOO ON MOO.ID = MSP.BF_MODULE_SPECIAL_ID INNER JOIN dbo.BF_MODULE M ON M.ID = MOO.BF_MODULE_ID WHERE u.ID = @USER_ID;(参数:@USER_ID=>'2')
+2017-10-07 23:36:41.566:(localhost7)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:41.566:(localhost7)代码执行轨迹-->正在执行: CommandText:SELECT [ID] ,[CODE] ,[NAME] ,[PARENT_ID] ,[REMARK] ,[CREATE_USER] ,[CREATE_DATE] ,[LAST_MODIFIED_USER] ,[LAST_MODIFIED_TIME] ,[URL] ,[ORDER] ,[ICON] ,[IsNeedControl] FROM [BF_MODULE] WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:41.581:(localhost7)代码执行轨迹-->[Thread 7 HomeController] SA visit:/home/index
+2017-10-07 23:36:46.977:(localhost10)代码执行轨迹-->[Thread 10 SewerInfoController] SA visit:/sewerinfo/index
+2017-10-07 23:36:48.380:(localhost8)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 23:36:48.384:(localhost8)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.ConnectingPipeLength ,A.SamllRainPipeLength ,A.MiddleRainPipeLength ,A.BigRainPipeLength ,A.BiggerRainPipeLength ,A.DirtyWaterPipeLength ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM SewerInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 23:36:48.411:(localhost8)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 23:36:48.412:(localhost8)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 23:36:48.412:(localhost8)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM SewerInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:48.414:(localhost8)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM SewerInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:49.609:(localhost10)代码执行轨迹-->[Thread 10 SewerInfoController] SA visit:/sewerinfo/edit
+2017-10-07 23:36:49.617:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:49.617:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,ConnectingPipeLength ,SamllRainPipeLength ,MiddleRainPipeLength ,BigRainPipeLength ,BiggerRainPipeLength ,DirtyWaterPipeLength ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SewerInfo WHERE ((ID = '2')) ;(没有参数)
+2017-10-07 23:36:49.635:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:49.636:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:49.705:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:49.705:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:50.863:(localhost10)代码执行轨迹-->[Thread 10 BridgeInfoController] SA visit:/bridgeinfo/index
+2017-10-07 23:36:52.295:(localhost8)代码执行轨迹-->成功发现SQL 语句：SelectObjectByPage
+2017-10-07 23:36:52.298:(localhost8)代码执行轨迹-->正在执行: CommandText:select X.*,B.RoadName from( select * from ( select row_number() over (order by A.ID asc) row, A.ID ,A.RoadID ,A.BridgeName ,A.BridgeStructureStyle ,A.InteractionAngle ,A.BridgeSpanCount ,A.BridgeSpanStyle ,A.BridgeSquare ,A.BridgeLength ,A.BridgeWidth ,A.DriveWayWidth ,A.PavementWidth ,A.MainBeamSize ,A.MainBeamCount ,A.BearingStyle ,A.BridgeRoadStructure ,A.ExpansionStyle ,A.ExpansionCount ,A.MainBridgeLongitudinalSlope ,A.MainBridgeCrossSlope ,A.RailLength ,A.RailStructure ,A.BankRevetmentStyle ,A.CappingSize ,A.PileFeature ,A.WaterSupplyPipeCount ,A.GasPipeCount ,A.ElectricPowerCount ,A.CommsCableCount ,A.Images ,A.LeaderCode ,A.CreateUser ,A.CreateTime ,A.LastModifiedUser ,A.LastModifiedTime FROM BridgeInfo A WHERE 0=0) wx where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1) )X left join RoadBasicInfo B on X.RoadID=B.ID(参数:@PageIndex=>'0',@PageSize=>'10')
+2017-10-07 23:36:52.325:(localhost8)代码执行轨迹-->开始执行  MB.Orm.Persistence.PersistenceManagerHelper.NewInstance.CreateDbCommandByXml 
+2017-10-07 23:36:52.326:(localhost8)代码执行轨迹-->成功发现SQL 语句：GetTotalCount
+2017-10-07 23:36:52.326:(localhost8)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM BridgeInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:52.326:(localhost8)代码执行轨迹-->正在执行: CommandText:SELECT COUNT(1) AS ICOUNT FROM BridgeInfo A WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:53.512:(localhost10)代码执行轨迹-->[Thread 10 BridgeInfoController] SA visit:/bridgeinfo/edit
+2017-10-07 23:36:53.516:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:53.516:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadID ,BridgeName ,BridgeStructureStyle ,InteractionAngle ,BridgeSpanCount ,BridgeSpanStyle ,BridgeSquare ,BridgeLength ,BridgeWidth ,DriveWayWidth ,PavementWidth ,MainBeamSize ,MainBeamCount ,BearingStyle ,BridgeRoadStructure ,ExpansionStyle ,ExpansionCount ,MainBridgeLongitudinalSlope ,MainBridgeCrossSlope ,RailLength ,RailStructure ,BankRevetmentStyle ,CappingSize ,PileFeature ,WaterSupplyPipeCount ,GasPipeCount ,ElectricPowerCount ,CommsCableCount ,Images ,LeaderCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM BridgeInfo WHERE ((ID = '1')) ;(没有参数)
+2017-10-07 23:36:53.535:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:53.536:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,RoadCode ,RoadName ,RoadLevel ,RoadMaterial ,BridgeNumber ,AreaCode ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime ,picture FROM RoadBasicInfo WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:53.616:(localhost10)代码执行轨迹-->成功发现SQL 语句：SelectObject
+2017-10-07 23:36:53.616:(localhost10)代码执行轨迹-->正在执行: CommandText:SELECT ID ,SubContractorID ,LeaderCode ,LeaderName ,PhoneNumber ,CreateUser ,CreateTime ,LastModifiedUser ,LastModifiedTime FROM SubContLeaderInfo WHERE 0=0 ;(没有参数)
+2017-10-07 23:36:54.557:(localhost10)代码执行轨迹-->[Thread 10 BridgeInfoController] SA visit:/bridgeinfo/edit
+2017-10-07 23:36:54.652:(localhost10)代码执行轨迹-->[Thread 10 BridgeInfoController] Exception:Action请求异常:http://localhost:45665/BridgeInfo/Edit/ 请求URL:http://localhost:45665/BridgeInfo/Edit/ | 异常说明: 对于“YHPT.Management.WebUI.Controllers.BridgeInfoController”中方法“System.Web.Mvc.ActionResult Edit(Int32)”的不可以为 null 的类型“System.Int32”的参数“id”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+StackTrace:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.<>c__DisplayClass1.<Execute>b__0(ParameterInfo parameterInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+ 

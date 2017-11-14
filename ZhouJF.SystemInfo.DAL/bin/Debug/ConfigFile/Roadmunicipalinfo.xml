@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  XML 文件生成时间 2017-10-05 05:47  -->
+<!--  如果生成的是明细需要用  GetByForeingKey 替换 SelectObject 同时修改对应主表中DeleteObject 语句 -->
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>RoadMunicipalInfo</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ ID 
+ ,RoadID 
+ ,RoadLength 
+ ,RoadSquare 
+ ,SlowLaneWidth 
+ ,SlowLaneSquare 
+ ,FastLaneWidth 
+ ,FastLaneSquare 
+ ,PavementWidth 
+ ,PavementSquare 
+ ,CurbSideLength 
+ ,CurbFlatLength 
+ ,InspectionShaftCount 
+ ,WaterInletCount 
+ ,WaterOutletCount 
+ ,GuideBoardCount 
+ ,PersonDivideLine 
+ ,VehicleDivideLine 
+ ,VehicleBicycleDivideLine 
+ ,LeaderCode 
+ ,CreateUser 
+ ,CreateTime 
+ ,LastModifiedUser 
+ ,LastModifiedTime 
+ ,pricture 
+  
+ FROM 
+ RoadMunicipalInfo 
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              INSERT INTO 
+ RoadMunicipalInfo 
+ (RoadID 
+ ,RoadLength 
+ ,RoadSquare 
+ ,SlowLaneWidth 
+ ,SlowLaneSquare 
+ ,FastLaneWidth 
+ ,FastLaneSquare 
+ ,PavementWidth 
+ ,PavementSquare 
+ ,CurbSideLength 
+ ,CurbFlatLength 
+ ,InspectionShaftCount 
+ ,WaterInletCount 
+ ,WaterOutletCount 
+ ,GuideBoardCount 
+ ,PersonDivideLine 
+ ,VehicleDivideLine 
+ ,VehicleBicycleDivideLine 
+ ,LeaderCode 
+ ,CreateUser 
+ ,CreateTime 
+ ,LastModifiedUser 
+ ,LastModifiedTime 
+ ,pricture 
+ ) 
+ VALUES( 
+ @RoadID 
+ ,@RoadLength 
+ ,@RoadSquare 
+ ,@SlowLaneWidth 
+ ,@SlowLaneSquare 
+ ,@FastLaneWidth 
+ ,@FastLaneSquare 
+ ,@PavementWidth 
+ ,@PavementSquare 
+ ,@CurbSideLength 
+ ,@CurbFlatLength 
+ ,@InspectionShaftCount 
+ ,@WaterInletCount 
+ ,@WaterOutletCount 
+ ,@GuideBoardCount 
+ ,@PersonDivideLine 
+ ,@VehicleDivideLine 
+ ,@VehicleBicycleDivideLine 
+ ,@LeaderCode 
+ ,@CreateUser 
+ ,@CreateTime 
+ ,@LastModifiedUser 
+ ,@LastModifiedTime 
+ ,@pricture 
+ );
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
+        <Param Name = "@RoadLength" Column = "RoadLength" TypeName = "System.Int32" />
+        <Param Name = "@RoadSquare" Column = "RoadSquare" TypeName = "System.Int32" />
+        <Param Name = "@SlowLaneWidth" Column = "SlowLaneWidth" TypeName = "System.Int32" />
+        <Param Name = "@SlowLaneSquare" Column = "SlowLaneSquare" TypeName = "System.Int32" />
+        <Param Name = "@FastLaneWidth" Column = "FastLaneWidth" TypeName = "System.Int32" />
+        <Param Name = "@FastLaneSquare" Column = "FastLaneSquare" TypeName = "System.Int32" />
+        <Param Name = "@PavementWidth" Column = "PavementWidth" TypeName = "System.Int32" />
+        <Param Name = "@PavementSquare" Column = "PavementSquare" TypeName = "System.Int32" />
+        <Param Name = "@CurbSideLength" Column = "CurbSideLength" TypeName = "System.Int32" />
+        <Param Name = "@CurbFlatLength" Column = "CurbFlatLength" TypeName = "System.Int32" />
+        <Param Name = "@InspectionShaftCount" Column = "InspectionShaftCount" TypeName = "System.Int32" />
+        <Param Name = "@WaterInletCount" Column = "WaterInletCount" TypeName = "System.Int32" />
+        <Param Name = "@WaterOutletCount" Column = "WaterOutletCount" TypeName = "System.Int32" />
+        <Param Name = "@GuideBoardCount" Column = "GuideBoardCount" TypeName = "System.Int32" />
+        <Param Name = "@PersonDivideLine" Column = "PersonDivideLine" TypeName = "System.Int32" />
+        <Param Name = "@VehicleDivideLine" Column = "VehicleDivideLine" TypeName = "System.Int32" />
+        <Param Name = "@VehicleBicycleDivideLine" Column = "VehicleBicycleDivideLine" TypeName = "System.Int32" />
+        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
+        <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
+        <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
+        <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@pricture" Column = "pricture" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              UPDATE  RoadMunicipalInfo 
+ SET RoadID = @RoadID 
+ ,RoadLength = @RoadLength 
+ ,RoadSquare = @RoadSquare 
+ ,SlowLaneWidth = @SlowLaneWidth 
+ ,SlowLaneSquare = @SlowLaneSquare 
+ ,FastLaneWidth = @FastLaneWidth 
+ ,FastLaneSquare = @FastLaneSquare 
+ ,PavementWidth = @PavementWidth 
+ ,PavementSquare = @PavementSquare 
+ ,CurbSideLength = @CurbSideLength 
+ ,CurbFlatLength = @CurbFlatLength 
+ ,InspectionShaftCount = @InspectionShaftCount 
+ ,WaterInletCount = @WaterInletCount 
+ ,WaterOutletCount = @WaterOutletCount 
+ ,GuideBoardCount = @GuideBoardCount 
+ ,PersonDivideLine = @PersonDivideLine 
+ ,VehicleDivideLine = @VehicleDivideLine 
+ ,VehicleBicycleDivideLine = @VehicleBicycleDivideLine 
+ ,LeaderCode = @LeaderCode 
+ ,CreateUser = @CreateUser 
+ ,CreateTime = @CreateTime 
+ ,LastModifiedUser = @LastModifiedUser 
+ ,LastModifiedTime = @LastModifiedTime 
+ ,pricture = @pricture 
+  
+ WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
+        <Param Name = "@RoadLength" Column = "RoadLength" TypeName = "System.Int32" />
+        <Param Name = "@RoadSquare" Column = "RoadSquare" TypeName = "System.Int32" />
+        <Param Name = "@SlowLaneWidth" Column = "SlowLaneWidth" TypeName = "System.Int32" />
+        <Param Name = "@SlowLaneSquare" Column = "SlowLaneSquare" TypeName = "System.Int32" />
+        <Param Name = "@FastLaneWidth" Column = "FastLaneWidth" TypeName = "System.Int32" />
+        <Param Name = "@FastLaneSquare" Column = "FastLaneSquare" TypeName = "System.Int32" />
+        <Param Name = "@PavementWidth" Column = "PavementWidth" TypeName = "System.Int32" />
+        <Param Name = "@PavementSquare" Column = "PavementSquare" TypeName = "System.Int32" />
+        <Param Name = "@CurbSideLength" Column = "CurbSideLength" TypeName = "System.Int32" />
+        <Param Name = "@CurbFlatLength" Column = "CurbFlatLength" TypeName = "System.Int32" />
+        <Param Name = "@InspectionShaftCount" Column = "InspectionShaftCount" TypeName = "System.Int32" />
+        <Param Name = "@WaterInletCount" Column = "WaterInletCount" TypeName = "System.Int32" />
+        <Param Name = "@WaterOutletCount" Column = "WaterOutletCount" TypeName = "System.Int32" />
+        <Param Name = "@GuideBoardCount" Column = "GuideBoardCount" TypeName = "System.Int32" />
+        <Param Name = "@PersonDivideLine" Column = "PersonDivideLine" TypeName = "System.Int32" />
+        <Param Name = "@VehicleDivideLine" Column = "VehicleDivideLine" TypeName = "System.Int32" />
+        <Param Name = "@VehicleBicycleDivideLine" Column = "VehicleBicycleDivideLine" TypeName = "System.Int32" />
+        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
+        <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
+        <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
+        <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@pricture" Column = "pricture" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM RoadMunicipalInfo 
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+       select X.*,B.RoadName from(
+ select * from ( 
+      select row_number() over (order by A.ID @Direction) row, 
+  A.ID 
+ ,A.RoadID 
+ ,A.RoadLength 
+ ,A.RoadSquare 
+ ,A.SlowLaneWidth 
+ ,A.SlowLaneSquare 
+ ,A.FastLaneWidth 
+ ,A.FastLaneSquare 
+ ,A.PavementWidth 
+ ,A.PavementSquare 
+ ,A.CurbSideLength 
+ ,A.CurbFlatLength 
+ ,A.InspectionShaftCount 
+ ,A.WaterInletCount 
+ ,A.WaterOutletCount 
+ ,A.GuideBoardCount 
+ ,A.PersonDivideLine 
+ ,A.VehicleDivideLine 
+ ,A.VehicleBicycleDivideLine 
+ ,A.LeaderCode 
+ ,A.CreateUser 
+ ,A.CreateTime 
+ ,A.LastModifiedUser 
+ ,A.LastModifiedTime 
+ ,A.pricture 
+  
+ FROM 
+ RoadMunicipalInfo   A
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
+        )X left join RoadBasicInfo B on X.RoadID=B.ID
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM RoadMunicipalInfo A
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <!-- 根据ID获取模块信息 -->
+    <Sql Name="getByRoadId">
+      <SqlString>
+        <String>
+          <![CDATA[
+         select * from RoadMunicipalInfo
+          WHERE RoadID=@RoadID;
+        ]]>
+        </String>
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>

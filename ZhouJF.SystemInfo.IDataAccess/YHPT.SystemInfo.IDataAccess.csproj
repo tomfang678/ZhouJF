@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59B3A3D7-06B6-4398-9548-8F7A80397722}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YHPT.SystemInfo.IDataAccess</RootNamespace>
+    <AssemblyName>YHPT.SystemInfo.IDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\1.lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\1.lib\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.Common">
+      <HintPath>..\1.lib\MB.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Framework.RuleBase">
+      <HintPath>..\1.lib\MB.Framework.RuleBase.dll</HintPath>
+    </Reference>
+    <Reference Include="MB.Util">
+      <HintPath>..\1.lib\MB.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBfCodeDetailInfoDAL.cs" />
+    <Compile Include="IBfCodeInfoDAL.cs" />
+    <Compile Include="IBfModuleDAL.cs" />
+    <Compile Include="IBfModuleOperationDAL.cs" />
+    <Compile Include="IBfModuleOtherOperationDAL.cs" />
+    <Compile Include="IBfOrgDAL.cs" />
+    <Compile Include="IBfRegionInfoDAL.cs" />
+    <Compile Include="IBfRoleDAL.cs" />
+    <Compile Include="IBfRolePermissionDAL.cs" />
+    <Compile Include="IBfRoleSpecialPermissionDAL.cs" />
+    <Compile Include="IBfRoleUserDAL.cs" />
+    <Compile Include="IBfUserDAL.cs" />
+    <Compile Include="IYhSewerinfoInfoDAL.cs" />
+    <Compile Include="IYhBridgeInfoDAL.cs" />
+    <Compile Include="IYhRoadMunicipalInfoDAL.cs" />
+    <Compile Include="IYhRoadbasicinfoDAL.cs" />
+    <Compile Include="IYhAreainfoDAL.cs" />
+    <Compile Include="IYhImgInfoDAL.cs" />
+    <Compile Include="IYhSanitationInfoDAL.cs" />
+    <Compile Include="IYhGreenLandInfoDAL.cs" />
+    <Compile Include="IYhStreetTreeInfoDAL.cs" />
+    <Compile Include="IYhSubContLeaderInfoDAL.cs" />
+    <Compile Include="IYhSubcontractorinfoDAL.cs" />
+    <Compile Include="IUserTokenDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContract.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZhouJF.SystemInfo.Model\YHPT.SystemInfo.Model.csproj">
+      <Project>{84908d34-a8ee-4cd0-a522-e759570efd02}</Project>
+      <Name>YHPT.SystemInfo.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

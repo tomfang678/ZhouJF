@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "道路下水道管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model YHPT.SystemInfo.Model.YhManager.SewerinfoInfo
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">首页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "BfUser")">@ViewBag.Title</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">编辑</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+
+<div class="portlet box purple">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+        <div class="actions">
+            <a class="btn green" href="@Url.Action("Index", new { gridStage = Request.QueryString["gridStage"] })"><i class="fa  fa-mail-reply"></i>返回</a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form id="formEdit" method="post" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        道路编码<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
+                        @Html.DropDownList("RoadID")
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        连管长度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtConnectingPipeLength" name="ConnectingPipeLength" value="@Model.ConnectingPipeLength" class="form-control" placeholder="连管长度">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        小型雨水管长度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" id="txtSamllRainPipeLength" name="SamllRainPipeLength" value="@Model.SamllRainPipeLength" class="form-control" placeholder="小型雨水管长度">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        中型雨水管长度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtMiddleRainPipeLength" name="MiddleRainPipeLength" value="@Model.MiddleRainPipeLength" class="form-control" placeholder="中型雨水管长度">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        大型雨水管长度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtBigRainPipeLength" name="BigRainPipeLength" value="@Model.BigRainPipeLength" class="form-control" placeholder="大型雨水管长度">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        污水管长度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtDirtyWaterPipeLength" name="DirtyWaterPipeLength" value="@Model.DirtyWaterPipeLength" class="form-control" placeholder="污水管长度">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        带班人<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        @Html.DropDownList("LeaderCode")
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="button" class="btn red" id="sure">确定</button>
+                            <a href="@Url.Action("Index", new { gridStage = Request.QueryString["gridStage"] })" class="btn default">取消</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+    @*@{ Html.RenderAction("BfOrgTree", "PlugIn"); }*@
+</div>
+
+@section scripts{
+    <script src="~/Assets/global/Plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <link href="~/Assets/global/Css/style-metronic.css" rel="stylesheet" />
+    <script src="~/Assets/global/Plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
+    @Scripts.Render("~/Scripts/SewerInfo/Edit.js")
+
+    @*@Scripts.Render("~/Scripts/PulgIn/BfOrgTree.js")*@
+}

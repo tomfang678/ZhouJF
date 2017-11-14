@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{61083FF3-5B69-4B9A-9A8F-76E4CD15C8C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{685076CB-B34F-49E3-A858-D17D20DAC91D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{2252F4FD-BBA9-4732-B979-9B9DA918E681}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bussiness", "Bussiness", "{AC2A0AD1-F9C1-446D-997C-18963A7542B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{07727921-946C-4CD7-9B9A-93D4DC78D08A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IDataAccess", "IDataAccess", "{167B8750-D742-4256-9045-288A017D4BC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YHPT.SystemInfo.Model", "ZhouJF.SystemInfo.Model\YHPT.SystemInfo.Model.csproj", "{84908D34-A8EE-4CD0-A522-E759570EFD02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YHPT.SystemInfo.IDataAccess", "ZhouJF.SystemInfo.IDataAccess\YHPT.SystemInfo.IDataAccess.csproj", "{59B3A3D7-06B6-4398-9548-8F7A80397722}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YHPT.SystemInfo.DAL", "ZhouJF.SystemInfo.DAL\YHPT.SystemInfo.DAL.csproj", "{94854B83-A2B3-4D89-B383-9750AE46FE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YHPT.SystemInfo.Business", "ZhouJF.SystemInfo.Business\YHPT.SystemInfo.Business.csproj", "{0480BC0A-00B1-4E6F-B9E0-6EFED1F54BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YHPT.Management.WebUI.Library", "ZhouJF.Management.WebUI.Library\YHPT.Management.WebUI.Library.csproj", "{26FE31BD-EAD3-4B38-8E1D-15F58EFB49FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YHPT.Management.WebUI", "ZhouJF.Management.WebUI\YHPT.Management.WebUI.csproj", "{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CEF6BD98-06E2-4273-AE62-0B73F6174A00}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.doc", "0.doc", "{46D58DB0-745E-49DC-8AAD-36F2E5135C93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.lib", "1.lib", "{77437984-3BF1-40D5-85D5-29CA9E86139F}"
+	ProjectSection(SolutionItems) = preProject
+		1.lib\MB.ORM.dll = 1.lib\MB.ORM.dll
+		1.lib\MB.RuleBase.dll = 1.lib\MB.RuleBase.dll
+		1.lib\MB.Util.dll = 1.lib\MB.Util.dll
+		1.lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll = 1.lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll
+		1.lib\Microsoft.Practices.EnterpriseLibrary.Caching.dll = 1.lib\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+		1.lib\Microsoft.Practices.EnterpriseLibrary.Common.dll = 1.lib\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		1.lib\Microsoft.Practices.EnterpriseLibrary.Data.dll = 1.lib\Microsoft.Practices.EnterpriseLibrary.Data.dll
+		1.lib\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll = 1.lib\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll
+		1.lib\Microsoft.Practices.ObjectBuilder2.dll = 1.lib\Microsoft.Practices.ObjectBuilder2.dll
+		1.lib\Microsoft.Practices.ServiceLocation.dll = 1.lib\Microsoft.Practices.ServiceLocation.dll
+		1.lib\Microsoft.Practices.Unity.dll = 1.lib\Microsoft.Practices.Unity.dll
+		1.lib\Microsoft.Practices.Unity.Interception.dll = 1.lib\Microsoft.Practices.Unity.Interception.dll
+		1.lib\SmartFast.BaseFrame.Utility.dll = 1.lib\SmartFast.BaseFrame.Utility.dll
+		1.lib\SmartFast.Plugin.dll = 1.lib\SmartFast.Plugin.dll
+		1.lib\SmartFast.Web.BaseLibrary.dll = 1.lib\SmartFast.Web.BaseLibrary.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84908D34-A8EE-4CD0-A522-E759570EFD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84908D34-A8EE-4CD0-A522-E759570EFD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84908D34-A8EE-4CD0-A522-E759570EFD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84908D34-A8EE-4CD0-A522-E759570EFD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B3A3D7-06B6-4398-9548-8F7A80397722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B3A3D7-06B6-4398-9548-8F7A80397722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B3A3D7-06B6-4398-9548-8F7A80397722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B3A3D7-06B6-4398-9548-8F7A80397722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94854B83-A2B3-4D89-B383-9750AE46FE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94854B83-A2B3-4D89-B383-9750AE46FE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94854B83-A2B3-4D89-B383-9750AE46FE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94854B83-A2B3-4D89-B383-9750AE46FE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0480BC0A-00B1-4E6F-B9E0-6EFED1F54BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0480BC0A-00B1-4E6F-B9E0-6EFED1F54BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0480BC0A-00B1-4E6F-B9E0-6EFED1F54BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0480BC0A-00B1-4E6F-B9E0-6EFED1F54BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FE31BD-EAD3-4B38-8E1D-15F58EFB49FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FE31BD-EAD3-4B38-8E1D-15F58EFB49FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FE31BD-EAD3-4B38-8E1D-15F58EFB49FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FE31BD-EAD3-4B38-8E1D-15F58EFB49FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84908D34-A8EE-4CD0-A522-E759570EFD02} = {61083FF3-5B69-4B9A-9A8F-76E4CD15C8C2}
+		{59B3A3D7-06B6-4398-9548-8F7A80397722} = {167B8750-D742-4256-9045-288A017D4BC1}
+		{94854B83-A2B3-4D89-B383-9750AE46FE6E} = {07727921-946C-4CD7-9B9A-93D4DC78D08A}
+		{0480BC0A-00B1-4E6F-B9E0-6EFED1F54BCF} = {AC2A0AD1-F9C1-446D-997C-18963A7542B7}
+		{26FE31BD-EAD3-4B38-8E1D-15F58EFB49FD} = {685076CB-B34F-49E3-A858-D17D20DAC91D}
+		{93965FD6-F6B7-4AAB-8C17-B61D3C5B095B} = {2252F4FD-BBA9-4732-B979-9B9DA918E681}
+	EndGlobalSection
+EndGlobal
