@@ -12,6 +12,9 @@ using YHPT.SystemInfo.Model.BfCode;
 
 namespace YHPT.SystemInfo.Business
 {
+    /// <summary>
+    /// test
+    /// </summary>
     public class BfCodeDetailInfoManager : IBussiness<BfCodeDetailInfo, QueryBfCodeDetailDto>
     {
         private readonly IBfCodeDetailInfoDAL _da = new BfCodeDetailInfoDAL();
