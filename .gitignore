@@ -24,6 +24,7 @@ Thumbs.db
 *.lib
 *.sbr
 *.FileListAbsolute.txt
+*.txt
 obj/
 [Rr]elease*/
 _ReSharper*/
