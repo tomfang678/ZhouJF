@@ -679,7 +679,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\CacheConfig.xml" />
-    <Content Include="Config\DaoConfig.xml" />
     <Content Include="Config\Log4net.xml" />
     <Content Include="Config\SystemConfig.xml" />
     <Content Include="Config\UploadConfig.xml" />
