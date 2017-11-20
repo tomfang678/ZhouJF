@@ -26,12 +26,15 @@ namespace YHPT.Management.WebUI.Controllers
             if (id > 0)
             {
                 enity = (new YhRoadbasicinfoManager()).GetItemByKey(id);
-                enity.RoadMunicipalInfoList = (new YhRoadMunicipalInfoManager()).GetItemByRoadId(id);
-                enity.SanitationInfoList = (new YhSanitationInfoManager()).GetItemByRoadId(id);
-                enity.GenLandInfoList = (new YhGreenLandInfoManager()).GetItemByRoadId(id);
-                enity.SewerinfoInfoList = (new YhSewerinfoInfoManager()).GetItemByRoadId(id);
-                enity.BridgeInfoList = (new YhBridgeinfoManager()).GetItemByRoadId(id);
-                enity.StreetTreeInfoList = (new YhStreetTreeInfoManager()).GetItemByRoadId(id);
+                if (enity != null)
+                {
+                    enity.RoadMunicipalInfoList = (new YhRoadMunicipalInfoManager()).GetItemByRoadId(id);
+                    enity.SanitationInfoList = (new YhSanitationInfoManager()).GetItemByRoadId(id);
+                    enity.GenLandInfoList = (new YhGreenLandInfoManager()).GetItemByRoadId(id);
+                    enity.SewerinfoInfoList = (new YhSewerinfoInfoManager()).GetItemByRoadId(id);
+                    enity.BridgeInfoList = (new YhBridgeinfoManager()).GetItemByRoadId(id);
+                    enity.StreetTreeInfoList = (new YhStreetTreeInfoManager()).GetItemByRoadId(id);
+                }
                 ViewBag.entity = enity;
             }
             return View(enity);

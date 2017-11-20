@@ -64,4 +64,3 @@ D:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.Model\bin\Debug\Mi
 D:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.Model\bin\Debug\System.Net.Http.xml
 D:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.Model\obj\Debug\YHPT.SystemInfo.Model.dll
 D:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.Model\obj\Debug\YHPT.SystemInfo.Model.pdb
-D:\project\客户管理\养护平台\ZhouJF\ZhouJF.SystemInfo.Model\obj\Debug\YHPT.SystemInfo.Model.csprojResolveAssemblyReference.cache
