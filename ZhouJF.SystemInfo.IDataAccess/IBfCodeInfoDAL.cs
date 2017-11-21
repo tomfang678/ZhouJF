@@ -8,5 +8,8 @@ namespace YHPT.SystemInfo.IDataAccess
     public interface IBfCodeInfoDAL : IDataAccess<BfCodeInfo>
     {
         int BatchImport(List<BfCodeInfo> entitys, DataBaseResource dbResource = DataBaseResource.Default);
+
+        List<BfCodeDetailInfo> GetBfCodeByModuleId(string moduleId);
+
     }
 }

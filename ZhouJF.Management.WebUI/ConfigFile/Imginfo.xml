@@ -11,8 +11,8 @@
           <![CDATA[
               SELECT 
  ID 
- ,module 
- ,imgModule 
+ ,imgModuleId 
+ ,imgType 
  ,imgUrl 
  ,thembUrl 
  ,remark 
@@ -34,8 +34,8 @@
           <![CDATA[
               INSERT INTO 
  ImgInfo 
- (module 
- ,imgModule 
+ (imgModuleId 
+ ,imgType 
  ,imgUrl 
  ,thembUrl 
  ,remark 
@@ -44,8 +44,8 @@
  ,CreateTime 
  ) 
  VALUES( 
-@module 
- ,@imgModule 
+@imgModuleId 
+ ,@imgType 
  ,@imgUrl 
  ,@thembUrl 
  ,@remark 
@@ -56,8 +56,8 @@
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
-        <Param Name = "@module" Column = "module" TypeName = "System.Int32" />
-        <Param Name = "@imgModule" Column = "imgModule" TypeName = "System.String" />
+        <Param Name = "@imgModuleId" Column = "imgModuleId" TypeName = "System.Int32" />
+        <Param Name = "@imgType" Column = "imgType" TypeName = "System.String" />
         <Param Name = "@imgUrl" Column = "imgUrl" TypeName = "System.String" />
         <Param Name = "@thembUrl" Column = "thembUrl" TypeName = "System.String" />
         <Param Name = "@remark" Column = "remark" TypeName = "System.String" />
@@ -71,8 +71,8 @@
         <String>
           <![CDATA[
               UPDATE  ImgInfo 
- SET  module = @module 
- ,imgModule = @imgModule 
+ SET  imgModuleId = @imgModuleId 
+ ,imgType = @imgType 
  ,imgUrl = @imgUrl 
  ,thembUrl = @thembUrl 
  ,remark = @remark 
@@ -84,8 +84,8 @@
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
-        <Param Name = "@module" Column = "module" TypeName = "System.Int32" />
-        <Param Name = "@imgModule" Column = "imgModule" TypeName = "System.String" />
+        <Param Name = "@imgModuleId" Column = "imgModuleId" TypeName = "System.Int32" />
+        <Param Name = "@imgType" Column = "imgType" TypeName = "System.String" />
         <Param Name = "@imgUrl" Column = "imgUrl" TypeName = "System.String" />
         <Param Name = "@thembUrl" Column = "thembUrl" TypeName = "System.String" />
         <Param Name = "@remark" Column = "remark" TypeName = "System.String" />
@@ -113,8 +113,8 @@
       select * from ( 
       select row_number() over (order by @SortField @Direction) row, 
   A.ID 
- ,A.module 
- ,A.imgModule 
+ ,A.imgModuleId 
+ ,A.imgType 
  ,A.imgUrl 
  ,A.thembUrl 
  ,A.remark 
@@ -148,5 +148,29 @@
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
     </Sql>
+    <Sql Name="GetImgByModuleId">
+      <SqlString>
+        <String>
+          <![CDATA[
+   SELECT 
+ ID 
+ ,imgModuleId 
+ ,imgType 
+ ,imgUrl 
+ ,thembUrl 
+ ,remark 
+ ,isDisable 
+ ,CreateUser 
+ ,CreateTime 
+  
+ FROM 
+ ImgInfo 
+  WHERE imgModuleId=@imgModuleId ;
+]]>
+        </String>
+        <Param Name = "@imgModuleId" Column = "imgModuleId" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
   </Sqls>
 </Entity>

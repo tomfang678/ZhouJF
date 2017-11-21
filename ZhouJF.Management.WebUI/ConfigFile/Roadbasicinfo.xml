@@ -21,8 +21,14 @@
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
- ,picture 
-  
+ ,picture
+ ,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
  FROM 
  RoadBasicInfo 
   WHERE @Where ;
@@ -49,9 +55,16 @@
  ,LastModifiedUser 
  ,LastModifiedTime 
   ,picture 
+  ,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
  ) 
  VALUES( 
-@RoadCode 
+ @RoadCode 
  ,@RoadName 
  ,@RoadLevel 
  ,@RoadMaterial 
@@ -61,7 +74,14 @@
  ,@CreateTime 
  ,@LastModifiedUser 
  ,@LastModifiedTime 
-  ,@picture 
+ ,@picture 
+ ,@longitude
+,@latitude
+,@v1
+,@v2
+,@v3
+,@v4
+,@v5
  );
 ]]>
         </String>
@@ -69,13 +89,20 @@
         <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
         <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
-        <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.Int32" />
+        <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.String" />
         <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.String" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.String" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -92,6 +119,13 @@
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
  ,picture = @picture 
+ ,longitude = @longitude 
+ ,latitude = @latitude 
+ ,v1 = @v1 
+ ,v2 = @v2
+ ,v3 = @v3 
+ ,v4 = @v4 
+ ,v5 = @v5 
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -100,11 +134,18 @@
         <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
         <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
-        <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.Int32" />
+        <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.String" />
         <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.String" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.String" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -116,7 +157,7 @@
  WHERE ID = @ID;
 ]]>
         </String>
-        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@ID" Column = "ID" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="SelectObjectByPage">
@@ -137,6 +178,14 @@
  ,A.CreateTime 
  ,A.LastModifiedUser 
  ,A.LastModifiedTime
+ ,A.picture
+,A.longitude
+,A.latitude
+,A.v1
+,A.v2
+,A.v3
+,A.v4
+,A.v5
  FROM 
  RoadBasicInfo A
         WHERE @Where) wx

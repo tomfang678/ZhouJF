@@ -144,7 +144,6 @@
                 <!-- END FORM-->
             </div>
         </div>
-
         <div class="tab-pane" id="tab4">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
                 <table class="imagetable">
@@ -161,536 +160,150 @@
 
                     @foreach (var item in Model.GenLandInfoList)
                     {
-                        <tr>
-                            <td>@item.RoadID</td>
-                            <td>@item.GreenLandCode</td>
-                            <td>@item.GreenLandName.0 n  n</td>
-                            <td>@item.FirstLevelSquare</td>
-                            <td>@item.SecondLevelSquare</td>
-                            <td>@item.ThirdLevelSquare</td>
-                            <td>@item.FlowerSquare</td>
-                            <td>@item.LeaderCode</td>
-                        </tr>
+                    <tr>
+                        <td>@item.RoadID</td>
+                        <td>@item.GreenLandCode</td>
+                        <td>@item.GreenLandName.0 n  n</td>
+                        <td>@item.FirstLevelSquare</td>
+                        <td>@item.SecondLevelSquare</td>
+                        <td>@item.ThirdLevelSquare</td>
+                        <td>@item.FlowerSquare</td>
+                        <td>@item.LeaderCode</td>
+                    </tr>
                     }
                 </table>
             </div>
         </div>
         <div class="tab-pane" id="tab5">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
-                @foreach (var item in Model.SewerinfoInfoList)
-                {
-                    <div class="portlet-body form">
-                        <div class="portlet box purple">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-cogs"></i>下水道信息 ID:@item.ID
-                                </div>
-                                <div class="tools">
-                                    <a href="javascript:;" class="collapse"></a>
-                                </div>
-                            </div>
-                            <div class="portlet-body form">
-                                <!-- BEGIN FORM-->
+                <table class="imagetable">
+                    <tr>
+                        <th>道路编码</th>
+                        <th>连管长度</th>
+                        <th>小型雨水管长度</th>
+                        <th>中型雨水管长度</th>
+                        <th>大型雨水管长度</th>
+                        <th>污水管长度</th>
+                        <th>带班人</th>
+                    </tr>
 
-                                <form id="formEdit" method="post" class="form-horizontal">
-                                    <div class="form-body">
-                                        @*<div class="form-group">
-                                                <label class="col-md-3 control-label">
-                                                    道路编码<span class="required" aria-required="true">
-                                                        *
-                                                    </span>
-                                                </label>
-                                                <div class="col-md-4">
-                                                    <input type="hidden" id="hidID" name="ID" value="@item.ID" />
-                                                </div>
-                                            </div>*@
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                连管长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtConnectingPipeLength" name="ConnectingPipeLength" value="@item.ConnectingPipeLength" class="form-control" placeholder="连管长度">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                小型雨水管长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <input type="text" id="txtSamllRainPipeLength" name="SamllRainPipeLength" value="@item.SamllRainPipeLength" class="form-control" placeholder="小型雨水管长度">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                中型雨水管长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtMiddleRainPipeLength" name="MiddleRainPipeLength" value="@item.MiddleRainPipeLength" class="form-control" placeholder="中型雨水管长度">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                大型雨水管长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBigRainPipeLength" name="BigRainPipeLength" value="@item.BigRainPipeLength" class="form-control" placeholder="大型雨水管长度">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                污水管长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtDirtyWaterPipeLength" name="DirtyWaterPipeLength" value="@item.DirtyWaterPipeLength" class="form-control" placeholder="污水管长度">
-                                            </div>
-                                        </div>
+                    @foreach (var item in Model.SewerinfoInfoList)
+                    {
+                    <tr>
+                        <td>@item.RoadID</td>
+                        <td>@item.ConnectingPipeLength</td>
+                        <td>@item.SamllRainPipeLength.0 n  n</td>
+                        <td>@item.MiddleRainPipeLength</td>
+                        <td>@item.BigRainPipeLength</td>
+                        <td>@item.DirtyWaterPipeLength</td>
+                        <td>@item.LeaderCode</td>
+                    </tr>
+                    }
+                </table>
 
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                带班人<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtLeaderCode" name="LeaderCode" value="@item.LeaderCode" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <!-- END FORM-->
-                            </div>
-                        </div>
-                    </div>
-                }
             </div>
 
         </div>
         <div class="tab-pane" id="tab6">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
-                @foreach (var item in Model.BridgeInfoList)
-                {
-                    <div class="portlet-body form">
-                        <div class="portlet box purple">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-cogs"></i>道路桥梁信息 ID:@item.ID
-                                </div>
-                                <div class="tools">
-                                    <a href="javascript:;" class="collapse"></a>
-                                </div>
-                            </div>
-                            <div class="portlet-body form">
-                                <!-- BEGIN FORM-->
-                                <form id="formEdit" method="post" class="form-horizontal">
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                图片<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <img src="@item.Images" alt="" />
-                                                <input type="text" id="txtpicture" name="Images" value="@item.Images" class="form-control" placeholder="图片地址">
-                                                @*<span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
-                                                    <div id="uploader"></div>
-                                                    <div id="fileQueue"></div>*@
-                                            </div>
-                                        </div>
+                <table class="imagetable">
+                    <tr>
+                        <th>桥梁ID</th>
+                        <th>桥名称</th>
+                        <th>结构类型</th>
+                        <th>正斜交角</th>
+                        <th>桥梁跨数</th>
+                        <th>跨径组合</th>
+                        <th>桥面面积</th>
+                        <th>桥梁长度</th>
+                        <th>桥梁宽度</th>
+                        <th>车行道宽</th>
+                        <th>人行道宽</th>
+                        <th>主梁尺寸</th>
+                        <th>主梁数量</th>
+                        <th>支座形式</th>
+                        <th>桥面结构</th>
+                        <th>伸缩缝形式</th>
+                        <th>伸缩缝数量</th>
+                        <th>通讯电缆数量</th>
+                        <th>主桥纵坡</th>
+                        <th>主桥横坡</th>
+                        <th>栏杆长度</th>
 
-                                        <div class="form-group">
-                                            @*<label class="col-md-2 control-label">
-                                                    道路编码<span class="required" aria-required="true">
-                                                        *
-                                                    </span>
-                                                </label>
-                                                <div class="col-md-4">
-                                                    <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
-                                                    <input type="text" id="txtRoadID" name="RoadID" maxlength="10" value="@item.RoadID " class="form-control" placeholder="道路编码">
-                                                </div>*@
+                        <th>栏杆结构</th>
+                        <th>护岸类型</th>
+                        <th>盖梁尺寸</th>
+                        <th>基桩尺寸/根数</th>
+                        <th>给水管数量</th>
+                        <th>燃气管数量</th>
+                        <th>电力管数量</th>
+                        <th>带班人</th>
+                    </tr>
 
-                                            <label class="col-md-2 control-label">
-                                                桥名称<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeName" name="BridgeName" maxlength="10" value="@item.BridgeName " class="form-control" placeholder="桥名称">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                结构类型<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeStructureStyle" name="BridgeStructureStyle" maxlength="10" value="@item.BridgeStructureStyle" class="form-control" placeholder="结构类型">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                正斜交角<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtInteractionAngle" maxlength="10" name="InteractionAngle" value="@item.InteractionAngle" class="form-control" placeholder="正斜交角">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                桥梁跨数<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeSpanCount" name="BridgeSpanCount" maxlength="10" value="@item.BridgeSpanCount" class="form-control" placeholder="桥梁跨数">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                跨径组合<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeSpanStyle" name="BridgeSpanStyle" maxlength="10" value="@item.BridgeSpanStyle" class="form-control" placeholder="跨径组合">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                桥面面积<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeSquare" name="BridgeSquare" maxlength="10" value="@item.BridgeSquare" class="form-control" placeholder="桥面面积">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                桥梁长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeLength" name="BridgeLength" maxlength="10" value="@item.BridgeLength" class="form-control" placeholder="桥梁长度">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                桥梁宽度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeWidth" name="BridgeWidth" maxlength="10" value="@item.BridgeWidth" class="form-control" placeholder="桥梁宽度">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                车行道宽<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtDriveWayWidth" name="DriveWayWidth" maxlength="10" value="@item.DriveWayWidth" class="form-control" placeholder="车行道宽">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                人行道宽<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtPavementWidth" name="PavementWidth" maxlength="10" value="@item.PavementWidth" class="form-control" placeholder="人行道宽">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                主梁尺寸<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtMainBeamSize" name="MainBeamSize" value="@item.MainBeamSize" class="form-control" placeholder="主梁尺寸">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                主梁数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtMainBeamCount" name="MainBeamCount" maxlength="10" value="@item.MainBeamCount" class="form-control" placeholder="主梁数量">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                支座形式<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBearingStyle" name="BearingStyle" maxlength="10" value="@item.BearingStyle" class="form-control" placeholder="支座形式">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                桥面结构<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBridgeRoadStructure" name=" bridgeroadstructure" maxlength="10" value="@item.BridgeRoadStructure" class="form-control" placeholder="桥面结构">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                伸缩缝形式<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtExpansionStyle" name="ExpansionStyle" maxlength="10" value="@item.ExpansionStyle" class="form-control" placeholder="伸缩缝形式">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                伸缩缝数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtExpansionCount" name="ExpansionCount" maxlength="10" value="@item.ExpansionCount" class="form-control" placeholder="伸缩缝数量">
-                                            </div>
-                                            <label class="col-md-2 control-label">
-                                                通讯电缆数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtCommsCableCount" name=" CommsCableCount" maxlength="10" value="@item.CommsCableCount" class="form-control" placeholder="通讯电缆数量">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                主桥纵坡<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtMainBridgeLongitudinalSlope" name=" MainBridgeLongitudinalSlope" maxlength="10" value="@item.MainBridgeLongitudinalSlope" class="form-control" placeholder="主桥纵坡">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                主桥横坡<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtMainBridgeCrossSlope" name="MainBridgeCrossSlope" maxlength="10" value="@item.MainBridgeCrossSlope" class="form-control" placeholder="主桥横坡">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                栏杆长度<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtRailLength" name=" RailLength" maxlength="10" value="@item.RailLength" class="form-control" placeholder="栏杆长度">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                栏杆结构<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtRailStructure" name="RailStructure" maxlength="10" value="@item.RailStructure" class="form-control" placeholder="栏杆结构">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                护岸类型<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBankRevetmentStyle" name=" BankRevetmentStyle" maxlength="10" value="@item.BankRevetmentStyle" class="form-control" placeholder="护岸类型">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                盖梁尺寸<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtCappingSize" name="CappingSize" maxlength="10" value="@item.CappingSize" class="form-control" placeholder="盖梁尺寸">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                基桩尺寸/根数<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtPileFeature" name=" PileFeature" maxlength="10" value="@item.PileFeature" class="form-control" placeholder="基桩尺寸/根数">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                给水管数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtWaterSupplyPipeCount" name="WaterSupplyPipeCount" maxlength="10" value="@item.WaterSupplyPipeCount" class="form-control" placeholder="给水管数量">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                燃气管数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtGasPipeCount" name=" GasPipeCount" maxlength="10" value="@item.GasPipeCount" class="form-control" placeholder="燃气管数量">
-                                            </div>
-
-                                            <label class="col-md-2 control-label">
-                                                电力管数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtElectricPowerCount" name="ElectricPowerCount" maxlength="10" value="@item.ElectricPowerCount" class="form-control" placeholder="电力管数量">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">
-                                                带班人<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                @*@Html.DropDownList("LeaderCode")*@
-                                                <input type="text" id="txtLeaderCode" name="LeaderCode" maxlength="10" value="@item.LeaderCode" class="form-control" placeholder="带班人">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- END FORM-->
-                            </div>
-                        </div>
-                    </div>
-                }
+                    @foreach (var item in Model.BridgeInfoList)
+                    {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.BridgeName</td>
+                        <td>@item.BridgeStructureStyle</td>
+                        <td>@item.InteractionAngle</td>
+                        <td>@item.BridgeSpanCount</td>
+                        <td>@item.BridgeSpanStyle</td>
+                        <td>@item.BridgeSquare</td>
+                        <td>@item.BridgeLength</td>
+                        <td>@item.BridgeWidth</td>
+                        <td>@item.DriveWayWidth</td>
+                        <td>@item.PavementWidth</td>
+                        <td>@item.MainBeamSize</td>
+                        <td>@item.MainBeamCount</td>
+                        <td>@item.BearingStyle</td>
+                        <td>@item.BridgeRoadStructure</td>
+                        <td>@item.ExpansionStyle</td>
+                        <td>@item.ExpansionCount</td>
+                        <td>@item.CommsCableCount</td>
+                        <td>@item.MainBridgeLongitudinalSlope</td>
+                        <td>@item.MainBridgeCrossSlope</td>
+                        <td>@item.RailLength</td>
+                        <td>@item.RailStructure</td>
+                        <td>@item.BankRevetmentStyle</td>
+                        <td>@item.CappingSize</td>
+                        <td>@item.PileFeature</td>
+                        <td>@item.WaterSupplyPipeCount</td>
+                        <td>@item.GasPipeCount</td>
+                        <td>@item.ElectricPowerCount</td>
+                        <td>@item.LeaderCode</td>
+                    </tr>
+                    }
+                </table>
             </div>
 
         </div>
         <div class="tab-pane" id="tab7">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
-                @foreach (var item in Model.StreetTreeInfoList)
-                {
-                    <div class="portlet-body form">
-                        <div class="portlet box purple">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-cogs"></i>道路行道树信息 ID:@item.ID
-                                </div>
-                                <div class="tools">
-                                    <a href="javascript:;" class="collapse"></a>
-                                </div>
-                            </div>
-                            <div class="portlet-body form">
-                                <!-- BEGIN FORM-->
-                                <form id="formEdit" method="post" class="form-horizontal">
-                                    <div class="form-body">
-                                        @*<div class="form-group">
-                                                <label class="col-md-3 control-label">
-                                                    道路编码<span class="required" aria-required="true">
-                                                        *
-                                                    </span>
-                                                </label>
-                                                <div class="col-md-4">
-                                                    <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
-                                                </div>
-                                            </div>*@
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                小树数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtSamllTreeCount" name="SamllTreeCount" value="@item.SamllTreeCount" class="form-control" placeholder="小树数量">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                中树数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <input type="text" id="txtMiddleTreeCount" name="MiddleTreeCount" value="@item.MiddleTreeCount" class="form-control" placeholder="中树数量">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                大树数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBigTreeCount" name="BigTreeCount" value="@item.BigTreeCount" class="form-control" placeholder="大树数量">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                特大树数量<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtBiggerTreeCount" name="BiggerTreeCount" value="@item.BiggerTreeCount" class="form-control" placeholder="特大树数量">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">
-                                                带班人<span class="required" aria-required="true">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <input type="text" id="txtLeaderCode" name="LeaderCode" value="@item.LeaderCode" class="form-control" placeholder="">
-                                                @*@Html.DropDownList("LeaderCode")*@
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- END FORM-->
-                            </div>
-                        </div>
-                    </div>
-                }
+                <table class="imagetable">
+                    <tr>
+                        <th>行道树ID</th>
+                        <th>小树数量</th>
+                        <th>中树数量</th>
+                        <th>大树数量</th>
+                        <th>特大树数量</th>
+                        <th>带班人</th>
+                    </tr>
+                    @foreach (var item in Model.StreetTreeInfoList)
+                    {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.SamllTreeCount</td>
+                        <td>@item.MiddleTreeCount.0 n  n</td>
+                        <td>@item.BigTreeCount</td>
+                        <td>@item.BiggerTreeCount</td>
+
+                        <td>@item.LeaderCode</td>
+                    </tr>
+                    }
+                </table>
+
+
             </div>
-
-
-
         </div>
     </div>
-</div>
