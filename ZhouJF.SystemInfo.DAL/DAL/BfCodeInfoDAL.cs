@@ -16,6 +16,7 @@ namespace YHPT.SystemInfo.DAL
             : base(typeof(BfCodeInfoDAL))
         { }
 
+
         public override int Insert(BfCodeInfo item, DataBaseResource dbResource = DataBaseResource.Default)
         {
             using (var dbScope = new OperationDatabaseScope(GetDbConnection(dbResource)))
@@ -76,7 +77,7 @@ namespace YHPT.SystemInfo.DAL
 
                 foreach (var entity in entitys)
                 {
-                    if(entity.ID > 0)
+                    if (entity.ID > 0)
                         updateMainLst.Add(entity);
                     else
                         insertMainLst.Add(entity);
@@ -131,6 +132,19 @@ namespace YHPT.SystemInfo.DAL
                     }
                 });
                 return entitys.Count;
+            }
+        }
+
+        // DataBaseResource dbResource = DataBaseResource.Default)
+
+        //   using (var dbScope = new OperationDatabaseScope(GetDbConnection(dbResource)))
+        public List<BfCodeDetailInfo> GetBfCodeByModuleId(string moduleId)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var result = DatabaseExcuteByXmlHelper.NewInstance.GetObjectsByXml<BfCodeDetailInfo>("BfCode.xml",
+                    "GetBfCodeByModuleId", moduleId);
+                return result;
             }
         }
     }
