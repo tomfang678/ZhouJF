@@ -37,6 +37,11 @@ namespace YHPT.SystemInfo.Business
             var entity = _da.GetItemByKey(key, DataBaseResource.Read);
             return entity;
         }
+        public List<ImgInfo> GetImgByModule(int key)
+        {
+            return _da.GetImgByModuleId(key);
+        }
+
 
         public List<ImgInfo> GetItems(ImgInfoDto data, List<QueryParameterInfo> queryParameterInfos = null)
         {
@@ -101,11 +106,11 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new ImgInfoDto()
             {
-                imgModule = model.imgModule,
-                module = model.module
+                imgModuleId = model.imgModuleId,
+                imgType = model.imgType
             };
             var filters = new List<QueryParameterInfo>();
-            if (model.ID > 0)
+            if (!String.IsNullOrEmpty(model.ID))
             {
                 filters.Add(new QueryParameterInfo("ID", model.ID, DataFilterConditions.NotEqual));
             }

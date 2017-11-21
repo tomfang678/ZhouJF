@@ -89,7 +89,7 @@ namespace YHPT.SystemInfo.Business
 
                 #region 明细编号重复判断
 
-                if (items.Count(a=>a.DETAILCODE == item.DETAILCODE) > 1)
+                if (items.Count(a => a.DETAILCODE == item.DETAILCODE) > 1)
                 {
                     if (!string.IsNullOrEmpty(item.ErrorMsg))
                         item.ErrorMsg += ";";
@@ -108,7 +108,7 @@ namespace YHPT.SystemInfo.Business
                     item.ErrorMsg += "编码分组错误";
                     flag = false;
                 }
-                else if(tmp.First().Split('|')[1]!=item.DESCRIPTION)
+                else if (tmp.First().Split('|')[1] != item.DESCRIPTION)
                 {
                     if (!string.IsNullOrEmpty(item.ErrorMsg))
                         item.ErrorMsg += ";";
@@ -136,7 +136,7 @@ namespace YHPT.SystemInfo.Business
                 #region 获取已有细表信息
 
                 var allDetailList = new List<BfCodeDetailInfo>();
-                if (allMainList.Count>0)
+                if (allMainList.Count > 0)
                 {
                     filters = new List<QueryParameterInfo>
                     {
@@ -229,7 +229,7 @@ namespace YHPT.SystemInfo.Business
                     if (!string.IsNullOrEmpty(data.CODE))
                         filters.Add(new QueryParameterInfo("CODE", data.CODE, DataFilterConditions.Equal));
                     if (!string.IsNullOrEmpty(data.DESCRIPTION))
-                        filters.Add(new QueryParameterInfo("DESCRIPTION", "%"+data.DESCRIPTION + "%", DataFilterConditions.Like));
+                        filters.Add(new QueryParameterInfo("DESCRIPTION", "%" + data.DESCRIPTION + "%", DataFilterConditions.Like));
 
                     data.SortField = "A." + data.SortField;
 
@@ -269,6 +269,11 @@ namespace YHPT.SystemInfo.Business
             }
             var result = GetItems(queryInfo, filters);
             return result == null || result.Count == 0;
+        }
+
+        public List<BfCodeDetailInfo> GetBfCodeByModuleId(String moduleId)
+        {
+            return _da.GetBfCodeByModuleId(moduleId);
         }
     }
 }

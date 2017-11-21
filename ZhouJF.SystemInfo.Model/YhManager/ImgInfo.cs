@@ -18,29 +18,29 @@ namespace YHPT.SystemInfo.Model.YhManager
         {
 
         }
-        private int? _ID;
+        private String _ID;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("ID", System.Data.DbType.Int32)]
-        public int? ID
+        [MB.Orm.Mapping.Att.ColumnMap("ID", System.Data.DbType.String)]
+        public String ID
         {
             get { return _ID; }
             set { _ID = value; }
         }
-        private int? _module;
+        private String _imgModuleId;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("module", System.Data.DbType.Int32)]
-        public int? module
+        [MB.Orm.Mapping.Att.ColumnMap("imgModuleId", System.Data.DbType.String)]
+        public String imgModuleId
         {
-            get { return _module; }
-            set { _module = value; }
+            get { return _imgModuleId; }
+            set { _imgModuleId = value; }
         }
-        private string _imgModule;
+        private string _imgType;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("imgModule", System.Data.DbType.String)]
-        public string imgModule
+        [MB.Orm.Mapping.Att.ColumnMap("imgType", System.Data.DbType.String)]
+        public string imgType
         {
-            get { return _imgModule; }
-            set { _imgModule = value; }
+            get { return _imgType; }
+            set { _imgType = value; }
         }
         private string _imgUrl;
         [DataMember]

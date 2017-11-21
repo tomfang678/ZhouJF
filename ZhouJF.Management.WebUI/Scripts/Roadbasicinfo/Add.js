@@ -49,19 +49,19 @@
         if ($('#DataAdd').validate().form()) {
             var checkResult = true;
             //唯一性验证
-            $.ajax({
-                url: "/RoadBasicInfo/CheckCode?CODE=" + $("#txtRoadCode").val(),
-                type: "post",
-                dataType: "json",
-                async: false,
-                success: function (data) {
-                    checkResult = data;
-                }
-            });
-            if (checkResult == false) {
-                bootbox.alert("错误信息,该信息已被添加！");
-                return false;
-            }
+            //$.ajax({
+            //    url: "/RoadBasicInfo/CheckCode?CODE=" + $("#txtRoadCode").val(),
+            //    type: "post",
+            //    dataType: "json",
+            //    async: false,
+            //    success: function (data) {
+            //        checkResult = data;
+            //    }
+            //});
+            //if (checkResult == false) {
+            //    bootbox.alert("错误信息,该信息已被添加！");
+            //    return false;
+            //}
 
             CommitForm();
         }

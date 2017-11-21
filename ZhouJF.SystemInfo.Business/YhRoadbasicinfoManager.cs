@@ -11,7 +11,6 @@ using YHPT.SystemInfo.DAL;
 using YHPT.SystemInfo.IDataAccess;
 using YHPT.SystemInfo.Model.BfUser;
 using YHPT.SystemInfo.Model.Subcontractor;
-using YHPT.SystemInfo.DAL;
 using YHPT.SystemInfo.Model.YhAreaInfo;
 using YHPT.SystemInfo.Model.YhRoadbasicinfo;
 
@@ -24,9 +23,7 @@ namespace YHPT.SystemInfo.Business
 
         public int Add(Roadbasicinfo item)
         {
-            if (CheckCode(item))
-                return _da.Insert(item, DataBaseResource.Read);
-            return 0;
+            return _da.Insert(item, DataBaseResource.Write);
         }
 
         public bool Delete(object key)
@@ -36,7 +33,7 @@ namespace YHPT.SystemInfo.Business
 
         public Roadbasicinfo GetItemByKey(object key)
         {
-            var entity = _da.GetItemByKey(key, DataBaseResource.Read);
+            var entity = _da.GetItemByKey(key, DataBaseResource.Write);
             return entity;
         }
 
@@ -58,7 +55,7 @@ namespace YHPT.SystemInfo.Business
             {
                 filters.AddRange(queryParameterInfos);
             }
-            var result = _da.GetItems(filters, DataBaseResource.Read);
+            var result = _da.GetItems(filters, DataBaseResource.Write);
             return result;
         }
 
