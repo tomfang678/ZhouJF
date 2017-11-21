@@ -271,7 +271,7 @@ namespace YHPT.SystemInfo.Business
             return result == null || result.Count == 0;
         }
 
-        public BfCodeDetailInfo GetBfCodeByModuleId(String moduleId)
+        public List<BfCodeDetailInfo> GetBfCodeByModuleId(String moduleId)
         {
             return _da.GetBfCodeByModuleId(moduleId);
         }

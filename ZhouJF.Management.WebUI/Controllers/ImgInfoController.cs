@@ -22,6 +22,7 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Index(int moduleId)
         {
             var entity = (new YhImgInfoManager()).GetImgByModule(moduleId);
+            ViewBag.imgList = entity;
             return View(entity);
         }
 
