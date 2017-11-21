@@ -33,6 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CEF6BD
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.doc", "0.doc", "{46D58DB0-745E-49DC-8AAD-36F2E5135C93}"
+	ProjectSection(SolutionItems) = preProject
+		0.doc\养护平台设计文档V1.0.docx = 0.doc\养护平台设计文档V1.0.docx
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.lib", "1.lib", "{77437984-3BF1-40D5-85D5-29CA9E86139F}"
 	ProjectSection(SolutionItems) = preProject
@@ -51,6 +54,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.lib", "1.lib", "{77437984
 		1.lib\SmartFast.BaseFrame.Utility.dll = 1.lib\SmartFast.BaseFrame.Utility.dll
 		1.lib\SmartFast.Plugin.dll = 1.lib\SmartFast.Plugin.dll
 		1.lib\SmartFast.Web.BaseLibrary.dll = 1.lib\SmartFast.Web.BaseLibrary.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.db", "2.db", "{3961A099-FE52-410F-B03E-A0854F7C9C9C}"
+	ProjectSection(SolutionItems) = preProject
+		2.db\yhpt.bak = 2.db\yhpt.bak
+		2.db\YHPT.mdf = 2.db\YHPT.mdf
+		2.db\YHPT_log.ldf = 2.db\YHPT_log.ldf
 	EndProjectSection
 EndProject
 Global
