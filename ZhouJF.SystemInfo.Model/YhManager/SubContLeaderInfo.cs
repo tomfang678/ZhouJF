@@ -102,6 +102,7 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _SubContractorCrop; }
             set { _SubContractorCrop = value; }
         }
+
     }
 
 }

@@ -73,6 +73,15 @@ namespace YHPT.SystemInfo.Model.YhAreaInfo
         }
 
 
+        private int? _SubContLeaderInfoID;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("SubContLeaderInfoID", System.Data.DbType.Int32)]
+        public int? LeaderCode
+        {
+            get { return _SubContLeaderInfoID; }
+            set { _SubContLeaderInfoID = value; }
+        }
+
         private string _longitude;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("longitude", System.Data.DbType.String)]

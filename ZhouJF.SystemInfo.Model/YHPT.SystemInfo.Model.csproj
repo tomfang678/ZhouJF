@@ -95,6 +95,7 @@
     <Compile Include="QueryDto.cs" />
     <Compile Include="YhManager\ImgInfo.cs" />
     <Compile Include="YhManager\ImgInfoDto.cs" />
+    <Compile Include="YhManager\StreettreedtlinfoInfo.cs" />
     <Compile Include="YhManager\StreetTreeInfo.cs" />
     <Compile Include="YhManager\StreetTreeInfoDto.cs" />
     <Compile Include="YhManager\SanitationInfoDto.cs" />
