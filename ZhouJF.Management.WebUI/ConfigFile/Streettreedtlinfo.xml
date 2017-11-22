@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  XML 文件生成时间 2017-11-22 10:33  -->
+<!--  如果生成的是明细需要用  GetByForeingKey 替换 SelectObject 同时修改对应主表中DeleteObject 语句 -->
+<Entity>
+  <PrimaryKeyName>ID</PrimaryKeyName>
+  <MappingTableName>StreetTreeDtlInfo</MappingTableName>
+  <Sqls>
+    <Sql Name="SelectObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              SELECT 
+ ID 
+ ,StreetTreeInfoID 
+ ,Code 
+ ,Type 
+ ,Size 
+ ,Status 
+ ,IsDisturbPeople 
+ ,CoverBoardType 
+ ,Specification 
+ ,Protect 
+ ,Remark 
+ ,Picture 
+  
+ FROM 
+ StreetTreeDtlInfo 
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="AddObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              INSERT INTO 
+ StreetTreeDtlInfo 
+ (ID 
+ ,StreetTreeInfoID 
+ ,Code 
+ ,Type 
+ ,Size 
+ ,Status 
+ ,IsDisturbPeople 
+ ,CoverBoardType 
+ ,Specification 
+ ,Protect 
+ ,Remark 
+ ,Picture 
+ ) 
+ VALUES( 
+ @ID 
+ ,@StreetTreeInfoID 
+ ,@Code 
+ ,@Type 
+ ,@Size 
+ ,@Status 
+ ,@IsDisturbPeople 
+ ,@CoverBoardType 
+ ,@Specification 
+ ,@Protect 
+ ,@Remark 
+ ,@Picture 
+ );
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@StreetTreeInfoID" Column = "StreetTreeInfoID" TypeName = "System.Int32" />
+        <Param Name = "@Code" Column = "Code" TypeName = "System.String" />
+        <Param Name = "@Type" Column = "Type" TypeName = "System.String" />
+        <Param Name = "@Size" Column = "Size" TypeName = "System.Int32" />
+        <Param Name = "@Status" Column = "Status" TypeName = "System.String" />
+        <Param Name = "@IsDisturbPeople" Column = "IsDisturbPeople" TypeName = "System.Boolean" />
+        <Param Name = "@CoverBoardType" Column = "CoverBoardType" TypeName = "System.String" />
+        <Param Name = "@Specification" Column = "Specification" TypeName = "System.String" />
+        <Param Name = "@Protect" Column = "Protect" TypeName = "System.String" />
+        <Param Name = "@Remark" Column = "Remark" TypeName = "System.String" />
+        <Param Name = "@Picture" Column = "Picture" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="UpdateObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              UPDATE  StreetTreeDtlInfo 
+ SET  ID = @ID 
+ ,StreetTreeInfoID = @StreetTreeInfoID 
+ ,Code = @Code 
+ ,Type = @Type 
+ ,Size = @Size 
+ ,Status = @Status 
+ ,IsDisturbPeople = @IsDisturbPeople 
+ ,CoverBoardType = @CoverBoardType 
+ ,Specification = @Specification 
+ ,Protect = @Protect 
+ ,Remark = @Remark 
+ ,Picture = @Picture 
+  
+ WHERE ID = @ID ;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@StreetTreeInfoID" Column = "StreetTreeInfoID" TypeName = "System.Int32" />
+        <Param Name = "@Code" Column = "Code" TypeName = "System.String" />
+        <Param Name = "@Type" Column = "Type" TypeName = "System.String" />
+        <Param Name = "@Size" Column = "Size" TypeName = "System.Int32" />
+        <Param Name = "@Status" Column = "Status" TypeName = "System.String" />
+        <Param Name = "@IsDisturbPeople" Column = "IsDisturbPeople" TypeName = "System.Boolean" />
+        <Param Name = "@CoverBoardType" Column = "CoverBoardType" TypeName = "System.String" />
+        <Param Name = "@Specification" Column = "Specification" TypeName = "System.String" />
+        <Param Name = "@Protect" Column = "Protect" TypeName = "System.String" />
+        <Param Name = "@Remark" Column = "Remark" TypeName = "System.String" />
+        <Param Name = "@Picture" Column = "Picture" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="DeleteObject">
+      <SqlString>
+        <String>
+          <![CDATA[
+              DELETE 
+ FROM StreetTreeDtlInfo 
+ WHERE ID = @ID;
+]]>
+        </String>
+        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+  </Sqls>
+</Entity>
