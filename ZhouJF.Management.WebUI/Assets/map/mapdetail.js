@@ -5,7 +5,7 @@
 	var l = new BMap.Geocoder();
 	var c = $("#ctl00_ContentPlaceHolder1_CommunityName");
 	var b = c.html();
-	var a = "重庆市" + c.html();
+	var a = "上海" + c.html();
 	var i = $("#lnt");
 	var g = $("#lat");
 	var h;
@@ -30,7 +30,7 @@
 	function q(s, r) {
 		m = new BMap.Point(s, r);
 		if (s == "" || r == "") {
-		    k.centerAndZoom(new BMap.Point(106.540000, 29.570000), 13)
+		    k.centerAndZoom(new BMap.Point(121.480000, 31.230000), 13)
 		} else {
 			k.centerAndZoom(m, 16);
 			var t = new BMap.Marker(m);

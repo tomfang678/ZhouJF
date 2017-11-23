@@ -16,7 +16,7 @@
  ,RoadLevel 
  ,RoadMaterial 
  ,BridgeNumber 
- ,AreaCode 
+ ,AreaInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
@@ -49,7 +49,7 @@
  ,RoadLevel 
  ,RoadMaterial 
  ,BridgeNumber 
- ,AreaCode 
+ ,AreaInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
@@ -69,7 +69,7 @@
  ,@RoadLevel 
  ,@RoadMaterial 
  ,@BridgeNumber 
- ,@AreaCode 
+ ,@AreaInfoID 
  ,@CreateUser 
  ,@CreateTime 
  ,@LastModifiedUser 
@@ -90,7 +90,7 @@
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
         <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
         <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.String" />
-        <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
+        <Param Name = "@AreaInfoID" Column = "AreaInfoID" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
@@ -115,7 +115,7 @@
  ,RoadLevel = @RoadLevel 
  ,RoadMaterial = @RoadMaterial 
  ,BridgeNumber = @BridgeNumber 
- ,AreaCode = @AreaCode 
+ ,AreaInfoID = @AreaInfoID 
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
  ,picture = @picture 
@@ -135,7 +135,7 @@
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
         <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
         <Param Name = "@BridgeNumber" Column = "BridgeNumber" TypeName = "System.String" />
-        <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
+        <Param Name = "@AreaInfoID" Column = "AreaInfoID" TypeName = "System.String" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
@@ -173,7 +173,7 @@
  ,A.RoadLevel 
  ,A.RoadMaterial 
  ,A.BridgeNumber 
- ,A.AreaCode 
+ ,A.AreaInfoID 
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
@@ -191,7 +191,7 @@
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
         ) X
-         left join AreaInfo B on X.AreaCode=B.AreaCode
+         left join AreaInfo B on X.AreaInfoID=B.ID
 ]]>
         </String>
         <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />

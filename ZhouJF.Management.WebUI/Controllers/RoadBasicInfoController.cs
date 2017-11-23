@@ -44,14 +44,14 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Index()
         {
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
-            ViewBag.AreaCode = new SelectList(areaList, "AreaCode", "Area", 1);
+            ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", 1);
             return View();
         }
         [MenuItem("~/RoadBasicInfo/Index", AuthorizeKey.Add)]
         public ActionResult Add()
         {
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
-            ViewBag.AreaCode = new SelectList(areaList, "AreaCode", "Area", 1);
+            ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", 1);
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace YHPT.Management.WebUI.Controllers
         {
             var entity = (new YhRoadbasicinfoManager()).GetItemByKey(id);
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
-            ViewBag.AreaCode = new SelectList(areaList, "AreaCode", "Area", entity.AreaCode);
+            ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", entity.AreaCode);
 
             return View(entity);
         }
@@ -118,7 +118,7 @@ namespace YHPT.Management.WebUI.Controllers
             var queryParam = new RoadbasicinfoDto
             {
                 ID = query.ID,
-                AreaCode = query.AreaCode,
+                AreaInfoID= query.AreaInfoID,
                 BridgeNumber = query.BridgeNumber,
                 RoadCode = query.RoadCode,
                 RoadLevel = query.RoadLevel,

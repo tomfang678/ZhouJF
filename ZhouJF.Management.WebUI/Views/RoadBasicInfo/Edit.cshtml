@@ -28,6 +28,21 @@
 <div class="portlet box purple">
     <div class="portlet-title">
         <div class="caption">
+            <i class="fa fa-cogs">地图信息-单击选中地图位置</i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="form-group">
+            <div id="allmap" style="margin-left:20px; height :400px;width:95%"></div>
+        </div>
+    </div>
+</div>
+<div class="portlet box purple">
+    <div class="portlet-title">
+        <div class="caption">
             <i class="fa fa-cogs"></i>
         </div>
         <div class="tools">
@@ -42,7 +57,7 @@
         <form id="formEdit" method="post" class="form-horizontal">
             <div class="form-body">
                 <div class="form-group">
-                    <label class="col-md-3 control-label">
+                    <label class="col-md-2 control-label">
                         图片<span class="required" aria-required="true">
                             *
                         </span>
@@ -56,98 +71,90 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">
+                    <label class="col-md-2 control-label">
                         道路编码<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
                         <input type="text" id="txRoadCode" name="RoadCode" value="@Model.RoadCode" class="form-control" placeholder="道路编码">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         道路名称<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <input type="text" id="txtRoadName" name="RoadName" value="@Model.RoadName" class="form-control" placeholder="道路名称">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         道路等级<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="input-group">
                             <input type="text" id="txtRoadLevel" name="RoadLevel" value="@Model.RoadLevel" class="form-control" placeholder="道路等级">
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         路面材料<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <input type="text" id="txtRoadMaterial" name="RoadMaterial" value="@Model.RoadMaterial" class="form-control" placeholder="路面材料">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         桥梁数量<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <input type="text" id="txtBridgeNumber" name="BridgeNumber" value="@Model.BridgeNumber" class="form-control" placeholder="桥梁数量">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         区域编码<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         @*<input type="text" id="txtArea" name="Area" value="@Model.AreaCode" class="form-control" placeholder="区域编码">*@
-                        @Html.DropDownList("AreaCode")
+                        @Html.DropDownList("AreaInfoID")
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         经度<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
-                        <input type="text" id="txtRoadMaterial" name="longitude" value="@Model.longitude" class="form-control" placeholder="经度">
+                    <div class="col-md-2">
+                        <input type="text" id="longitude" name="longitude" value="@Model.longitude" class="form-control" placeholder="经度">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
+
+                    <label class="col-md-2 control-label">
                         纬度<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
-                    <div class="col-md-4">
-                        <input type="text" id="txtRoadMaterial" name="latitude" value="@Model.latitude" class="form-control" placeholder="纬度">
+                    <div class="col-md-2">
+                        <input type="text" id="latitude" name="latitude" value="@Model.latitude" class="form-control" placeholder="纬度">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        图片管理<span class="required" aria-required="true">
+
+                    <label class="col-md-2 control-label">
+                        图片<span class="required" aria-required="true">
                         </span>
                     </label>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <a href="/ImgInfo/Index?moduleId=@Model.ID" class="btn red">图片管理</a>
                     </div>
-                </div>
+                </div>  
                 <div class="form-group">
                     <input type="hidden" id="hidID" name="LastModifiedTime" value="@Model.LastModifiedTime" />
                     <input type="hidden" id="hidID" name="LastModifiedUser" value="@Model.LastModifiedUser" />
@@ -168,6 +175,8 @@
     </div>
     @*@{ Html.RenderAction("BfOrgTree", "PlugIn"); }*@
 </div>
+
+
 @section scripts{
     <script src="~/Assets/global/Plugins/jquery-validation/additional-methods.min.js"></script>
     <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
@@ -193,5 +202,22 @@
         if ($("#txtpicture").val()) {
             $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + $("#txtpicture").val() + "'/>" });
         }
+    </script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GMf62U3cb0xG38UmDg3LnWMWPZlpwnoP"></script>
+
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom(new BMap.Point(121.48, 31.23), 14);
+        setTimeout(function () {
+            map.setZoom(14);
+        }, 2000);  //2秒后放大到14级
+        map.enableScrollWheelZoom(true);
+        function showInfo(e) {
+            $("#latitude").val(e.point.lat);
+            $("#longitude").val(e.point.lng);
+            //alert(e.point.lng + ", " + e.point.lat);
+        }
+        map.addEventListener("click", showInfo);
     </script>
 }

@@ -22,10 +22,8 @@
                 "render": function (data, type, row) {
                     var html = [];
                     html.push("<a href=\"/RoadBasicInfo/Detail/{0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 详情 </a>");
-                    if ($("#hidIsEdit").val() == "True") {
+                    if ($("#hidIsEdit").val() == "True")
                         html.push("<a href=\"/RoadBasicInfo/Edit/{0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 编辑 </a>");
-                        html.push("<a href=\"/ImgInfo/Index?moduleId={0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 图片管理 </a>");
-                    }
                     else {
                         html.push("<label class=\"btn default btn-xs green\" style=\"cursor:default\"><i class=\"fa fa-edit\"></i> 编辑 </label>");
                     }

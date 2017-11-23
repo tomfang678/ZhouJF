@@ -71,6 +71,14 @@ namespace YHPT.SystemInfo.Model.YhAreaInfo
             get { return _AreaCode; }
             set { _AreaCode = value; }
         }
+        private string _AreaInfoID;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("AreaInfoID", System.Data.DbType.Int32)]
+        public string AreaInfoID
+        {
+            get { return _AreaInfoID; }
+            set { _AreaInfoID = value; }
+        }
 
 
         private int? _SubContLeaderInfoID;
