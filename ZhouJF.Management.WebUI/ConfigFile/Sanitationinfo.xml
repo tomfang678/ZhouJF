@@ -31,6 +31,8 @@
 ,v3
 ,v4
 ,v5
+,DustbinPerFiftyMtr
+,DustbinPerEightyMtr
  FROM 
  SanitationInfo  
   WHERE @Where ;
@@ -65,6 +67,8 @@
 ,v3
 ,v4
 ,v5
+,DustbinPerFiftyMtr
+,DustbinPerEightyMtr
  ) 
  VALUES( 
 @RoadID 
@@ -87,6 +91,8 @@
 ,@v3
 ,@v4
 ,@v5
+,@DustbinPerFiftyMtr
+,@DustbinPerEightyMtr
 
  );
 ]]>
@@ -112,6 +118,8 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@DustbinPerFiftyMtr" Column = "DustbinPerFiftyMtr" TypeName = "System.Int32" />
+        <Param Name = "@DustbinPerEightyMtr" Column = "DustbinPerEightyMtr" TypeName = "System.Int32" />
 
       </SqlString>
     </Sql>
@@ -138,6 +146,8 @@
  ,v3 = @v3 
  ,v4 = @v4 
  ,v5 = @v5 
+,DustbinPerFiftyMtr=@DustbinPerFiftyMtr
+,DustbinPerEightyMtr=@DustbinPerEightyMtr
 
  WHERE ID = @ID ;
 ]]>
@@ -161,6 +171,8 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@DustbinPerFiftyMtr" Column = "DustbinPerFiftyMtr" TypeName = "System.Int32" />
+        <Param Name = "@DustbinPerEightyMtr" Column = "DustbinPerEightyMtr" TypeName = "System.Int32" />
 
       </SqlString>
     </Sql>
@@ -204,6 +216,8 @@
 ,A.v3
 ,A.v4
 ,A.v5
+,A.DustbinPerFiftyMtr
+,A.DustbinPerEightyMtr
  FROM 
  SanitationInfo  A
         WHERE @Where) wx

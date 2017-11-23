@@ -207,5 +207,28 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _v5; }
             set { _v5 = value; }
         }
+
+
+
+        private string _DustbinPerFiftyMtr;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("DustbinPerFiftyMtr", System.Data.DbType.Int32)]
+        public string DustbinPerFiftyMtr
+        {
+            get { return _DustbinPerFiftyMtr; }
+            set { _DustbinPerFiftyMtr = value; }
+        }
+
+
+        private string _DustbinPerEightyMtr;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("DustbinPerEightyMtr", System.Data.DbType.Int32)]
+        public string DustbinPerEightyMtr
+        {
+            get { return _DustbinPerEightyMtr; }
+            set { _DustbinPerEightyMtr = value; }
+        }
+
+
     }
 }
