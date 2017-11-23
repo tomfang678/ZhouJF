@@ -640,6 +640,19 @@
     <Content Include="Assets\global\Scripts\datatable.js" />
     <Content Include="Assets\global\Scripts\dataTableExtention.js" />
     <Content Include="Assets\global\Scripts\metronic.js" />
+    <Content Include="Assets\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="Assets\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Assets\magnific-popup\magnific-popup.css" />
+    <Content Include="Assets\map\11_03.png" />
+    <Content Include="Assets\map\area1.png" />
+    <Content Include="Assets\map\js.cookie.js" />
+    <Content Include="Assets\map\map.min.css" />
+    <Content Include="Assets\map\mapdetail.js" />
+    <Content Include="Assets\map\null.png" />
+    <Content Include="Assets\map\runtip.png" />
+    <Content Include="Assets\map\saojiao - 副本.png" />
+    <Content Include="Assets\map\serach_map.min.js" />
+    <Content Include="Assets\map\typeahead.bundle.js" />
     <Content Include="Assets\scripts\flashupload.js" />
     <Content Include="Assets\table\table.css" />
     <Content Include="Assets\uploadify3.2.1\jquery.uploadify.js" />
@@ -671,6 +684,7 @@
     <Content Include="ConfigFile\Sewerinfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="ConfigFile\Streettreedtlinfo.xml" />
     <Content Include="ConfigFile\StreetTreeInfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
