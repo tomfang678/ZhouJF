@@ -120,6 +120,26 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">
+                            经度<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="longitude" name="longitude" value="@Model.longitude" class="form-control" placeholder="经度">
+                        </div>
+
+                        <label class="col-md-3 control-label">
+                            纬度<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="latitude" name="latitude" value="@Model.latitude" class="form-control" placeholder="纬度">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
                             道路图片<span class="required" aria-required="true">
                             </span>
                         </label>
@@ -136,7 +156,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <div id="allmap" style="margin-left:20px; height :400px;width:95%"></div>
+                        <div id="allmap" style="margin-top:20px; height :500px;width:95%"></div>
                     </div>
                 </div>
                 <div class="form-actions">

@@ -10,7 +10,7 @@
 { "mDataProp": "ManualWashSquare", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "ManualQuota", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "DustbinCount", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "SubContLeaderInfoID", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },

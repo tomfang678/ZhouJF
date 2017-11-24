@@ -51,7 +51,8 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Add()
         {
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
-            ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", 1);
+            var dropList = new SelectList(areaList, "ID", "Area", 1);
+            ViewData["dropList"] = dropList;
             return View();
         }
 
@@ -118,7 +119,7 @@ namespace YHPT.Management.WebUI.Controllers
             var queryParam = new RoadbasicinfoDto
             {
                 ID = query.ID,
-                AreaInfoID= query.AreaInfoID,
+                AreaInfoID = query.AreaInfoID,
                 BridgeNumber = query.BridgeNumber,
                 RoadCode = query.RoadCode,
                 RoadLevel = query.RoadLevel,
