@@ -182,8 +182,8 @@
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
-        <Param Name = "@longitude" Column = "longitude" TypeName = "System.String" />
-        <Param Name = "@latitude" Column = "latitude" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
         <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
         <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
@@ -272,8 +272,8 @@
         <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.Int32" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
-        <Param Name = "@longitude" Column = "longitude" TypeName = "System.String" />
-        <Param Name = "@latitude" Column = "latitude" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
         <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
         <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />

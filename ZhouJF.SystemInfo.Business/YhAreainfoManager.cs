@@ -49,7 +49,16 @@ namespace YHPT.SystemInfo.Business
                 filters.Add(new QueryParameterInfo("Dept", "%" + data.Dept + "%", DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.Owner))
                 filters.Add(new QueryParameterInfo("Owner", data.Owner, DataFilterConditions.Equal));
-
+            if (data.fromlat > 0)
+            {
+                filters.Add(new QueryParameterInfo("latitude", data.fromlat, DataFilterConditions.GreaterOrEqual));
+                filters.Add(new QueryParameterInfo("latitude", data.tolat, DataFilterConditions.LessOrEqual));
+            }
+            if (data.fromlng > 0)
+            {
+                filters.Add(new QueryParameterInfo("longitude", data.fromlng, DataFilterConditions.GreaterOrEqual));
+                filters.Add(new QueryParameterInfo("longitude", data.tolng, DataFilterConditions.LessOrEqual));
+            }
             if (queryParameterInfos != null)
             {
                 filters.AddRange(queryParameterInfos);

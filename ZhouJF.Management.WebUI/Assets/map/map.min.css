@@ -17,7 +17,7 @@ body {
 }
 
 .serach_map_house {
-    width: 370px;
+    width: 350px;
     height: 100%;
     background: #fff;
     box-shadow: 0 0 3px #ccc;
@@ -116,7 +116,7 @@ body {
 
 .house_list {
     margin-top: 37px;
-    height: 500px;
+    height: 550px;
     overflow-y: scroll;
     position: relative;
 }
@@ -149,7 +149,7 @@ body {
     .serach_house_item .house_preview {
         width: 140px;
         height: 105px;
-        background: url(../content/map/housePriview.png) no-repeat;
+        background: url(../map/housePriview.png) no-repeat;
         vertical-align: top;
     }
 
@@ -290,7 +290,7 @@ body {
         }
 
             .serach_house_name label button i {
-                background: url("../content/images/search.png") no-repeat center center;
+                background: url("../map/search.png") no-repeat center center;
                 display: inline-block;
                 width: 17px;
                 height: 17px;
@@ -417,8 +417,18 @@ body {
     margin: 0;
 }
 
-.sanjiao1{display:inline-block;background:#fff;padding:3px 0 0 0;width:18px;height:18px;background:url(../content/map/runtip.png) no-repeat;position:absolute;
-bottom:-18px;left:22px}
+.sanjiao1 {
+    display: inline-block;
+    background: #fff;
+    padding: 3px 0 0 0;
+    width: 18px;
+    height: 18px;
+    background: url(../content/map/runtip.png) no-repeat;
+    position: absolute;
+    bottom: -18px;
+    left: 22px;
+}
+
 .dropdown-menu {
     min-width: 100px;
     z-index: 1999;
@@ -427,7 +437,7 @@ bottom:-18px;left:22px}
 .notHoust {
     width: 360px;
     height: 230px;
-    background: url(../content/images/notSerachHouse.png) no-repeat;
+    background: url(../map/notSerachHouse.png) no-repeat;
     display: none;
     position: absolute;
     top: 0;

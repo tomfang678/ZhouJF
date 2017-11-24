@@ -96,5 +96,71 @@ namespace YHPT.SystemInfo.Model.YhAreaInfo
             get { return _LastModifiedTime; }
             set { _LastModifiedTime = value; }
         }
+        private decimal _longitude;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("longitude", System.Data.DbType.Decimal)]
+        public decimal longitude
+        {
+            get { return _longitude; }
+            set { _longitude = value; }
+        }
+        private decimal _latitude;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("latitude", System.Data.DbType.Decimal)]
+        public decimal latitude
+        {
+            get { return _latitude; }
+            set { _latitude = value; }
+        }
+        private string _v1;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("v1", System.Data.DbType.String)]
+        public string v1
+        {
+            get { return _v1; }
+            set { _v1 = value; }
+        }
+        private string _v2;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("v2", System.Data.DbType.String)]
+        public string v2
+        {
+            get { return _v2; }
+            set { _v2 = value; }
+        }
+        private string _v3;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("v3", System.Data.DbType.String)]
+        public string v3
+        {
+            get { return _v3; }
+            set { _v3 = value; }
+        }
+        private string _v4;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("v4", System.Data.DbType.String)]
+        public string v4
+        {
+            get { return _v4; }
+            set { _v4 = value; }
+        }
+        private string _v5;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("v5", System.Data.DbType.String)]
+        public string v5
+        {
+            get { return _v5; }
+            set { _v5 = value; }
+        }
+
+        private string _region;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("region", System.Data.DbType.String)]
+        public string region
+        {
+            get { return _region; }
+            set { _region = value; }
+        }
+
     }
 }

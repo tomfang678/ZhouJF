@@ -41,42 +41,15 @@
                 欢迎登录养护平台管理系统，您的登录时间是：<span id="loginTime">@ViewBag.LoginTime</span>，已登录：<span id="loginSpan"></span>。
             </p>
         </div>*@
-    <div class="main_content" style="margin-top:0px;  min-width: 880px;">
-        @*<div class="serach_map_house" hidden="hidden" id="leftRoomList">
-                <div class="conditions">
-                    <div>
-                        <span class="price">价格 <i></i></span>
-                        <ul class="sel_more">
-                            <li data-value="0">不限</li>
-                            @foreach (var item in ViewBag.RentRange)
-                            {
-                                <li data-value="@item.ID">
-                                    @item.Name 元
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                    <div>
-                        <span class="cfg">配置 <i></i></span>
-                        <ul class="sel_more">
-                            <li data-value="0">不限</li>
-                            @foreach (var item in ViewBag.HousingType)
-                            {
-                                <li data-value="@item.ID">
-                                    @item.Name 元
-                                </li>
-                            }
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="house_list">
-                </div>
-                <div class="page">
-                    <button>上一页</button>
-                    <button>下一页</button>
-                </div>
-            </div>*@
+    <div class="main_content" style="margin-top:0px;min-width: 880px;">
+        <div class="serach_map_house" hidden="hidden" id="leftRoomList">
+            <div class="house_list">
+            </div>
+            <div class="page">
+                <button>上一页</button>
+                <button>下一页</button>
+            </div>
+        </div>
         <div class="sel_map">
             <div class="loadMap">
                 <div class="loadpop">
@@ -88,7 +61,7 @@
                 </div>
                 <div class="notHoust">
                     <div class="tishi">
-                        <p>这个位置没有找到符合条件的房子</p>
+                        <p>这个位置没有找到符合条件的数据</p>
                         <div class="pub-msg">
                             <div class="left_sub">
                                 <button>确定</button>
@@ -99,7 +72,7 @@
             </div>
             @*<div class="serach_house_name">
                     <div class="input-group" style="width:80%;margin-top:6px;">
-                        <input type="text" id="txtSearch" class="inputName form-control input-lg" placeholder="请输入房源名称、房源编码">
+                        <input type="text" id="txtSearch" class="inputName form-control input-lg" placeholder="请输入道路名称、编码">
                         <span class="input-group-btn group-btn">
                             <button class="btn btn-info" id="btnSearch" type="button"><span class="glyphicon glyphicon-search">搜索</span></button>
                         </span>
@@ -109,7 +82,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- END PAGE CONTENT-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>

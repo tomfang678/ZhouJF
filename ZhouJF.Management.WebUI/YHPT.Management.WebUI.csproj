@@ -648,9 +648,11 @@
     <Content Include="Assets\map\js.cookie.js" />
     <Content Include="Assets\map\map.min.css" />
     <Content Include="Assets\map\mapdetail.js" />
+    <Content Include="Assets\map\notSerachHouse.png" />
     <Content Include="Assets\map\null.png" />
     <Content Include="Assets\map\runtip.png" />
     <Content Include="Assets\map\saojiao - 副本.png" />
+    <Content Include="Assets\map\search.png" />
     <Content Include="Assets\map\serach_map.min.js" />
     <Content Include="Assets\map\typeahead.bundle.js" />
     <Content Include="Assets\scripts\flashupload.js" />

@@ -130,18 +130,18 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _SubContLeaderInfoID; }
             set { _SubContLeaderInfoID = value; }
         }
-        private string _longitude;
+        private decimal _longitude;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("longitude", System.Data.DbType.String)]
-        public string longitude
+        [MB.Orm.Mapping.Att.ColumnMap("longitude", System.Data.DbType.Decimal)]
+        public decimal longitude
         {
             get { return _longitude; }
             set { _longitude = value; }
         }
-        private string _latitude;
+        private decimal _latitude;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("latitude", System.Data.DbType.String)]
-        public string latitude
+        [MB.Orm.Mapping.Att.ColumnMap("latitude", System.Data.DbType.Decimal)]
+        public decimal latitude
         {
             get { return _latitude; }
             set { _latitude = value; }
