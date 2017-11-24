@@ -173,7 +173,7 @@ body {
         }
 
             .serach_house_item .house_info label + label {
-                margin-top: 5px;
+                margin-top: 6px;
                 font-weight: normal;
                 font-size: 12px;
                 color: #908e8e;
@@ -194,7 +194,7 @@ body {
                 }
 
                     .serach_house_item .house_info label + label span + span {
-                        font-size: 16px;
+                        font-size: 14px;
                         color: #ff5300;
                         font-weight: bold;
                         margin-top: -4px;
