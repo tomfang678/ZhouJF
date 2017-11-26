@@ -40,11 +40,11 @@
  ,ElectricPowerCount 
  ,CommsCableCount 
  ,Images 
- ,LeaderCode 
+ ,SubContLeaderInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
- ,LastModifiedTime 
+ ,LastModifiedTime  
   
  FROM 
  BridgeInfo 
@@ -89,11 +89,18 @@
  ,ElectricPowerCount 
  ,CommsCableCount 
  ,Images 
- ,LeaderCode 
+ ,SubContLeaderInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
+ ,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
  ) 
  VALUES( 
 @RoadID 
@@ -125,11 +132,18 @@
  ,@ElectricPowerCount 
  ,@CommsCableCount 
  ,@Images 
- ,@LeaderCode 
+ ,@SubContLeaderInfoID 
  ,@CreateUser 
  ,@CreateTime 
  ,@LastModifiedUser 
  ,@LastModifiedTime 
+ ,@longitude
+,@latitude
+,@v1
+,@v2
+,@v3
+,@v4
+,@v5
  );
 ]]>
         </String>
@@ -163,11 +177,18 @@
         <Param Name = "@ElectricPowerCount" Column = "ElectricPowerCount" TypeName = "System.Int32" />
         <Param Name = "@CommsCableCount" Column = "CommsCableCount" TypeName = "System.Int32" />
         <Param Name = "@Images" Column = "Images" TypeName = "System.String" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.Int32" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -204,10 +225,17 @@
  ,ElectricPowerCount = @ElectricPowerCount 
  ,CommsCableCount = @CommsCableCount 
  ,Images = @Images 
- ,LeaderCode = @LeaderCode 
+ ,SubContLeaderInfoID = @SubContLeaderInfoID 
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
-  
+   ,longitude = @longitude 
+ ,latitude = @latitude 
+ ,v1 = @v1 
+ ,v2 = @v2
+ ,v3 = @v3 
+ ,v4 = @v4 
+ ,v5 = @v5 
+
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -241,9 +269,17 @@
         <Param Name = "@ElectricPowerCount" Column = "ElectricPowerCount" TypeName = "System.Int32" />
         <Param Name = "@CommsCableCount" Column = "CommsCableCount" TypeName = "System.Int32" />
         <Param Name = "@Images" Column = "Images" TypeName = "System.String" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.Int32" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -295,12 +331,18 @@
  ,A.ElectricPowerCount 
  ,A.CommsCableCount 
  ,A.Images 
- ,A.LeaderCode 
+ ,A.SubContLeaderInfoID 
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
  ,A.LastModifiedTime 
-  
+  ,A.longitude
+,A.latitude
+,A.v1
+,A.v2
+,A.v3
+,A.v4
+,A.v5
  FROM 
  BridgeInfo A
         WHERE @Where) wx

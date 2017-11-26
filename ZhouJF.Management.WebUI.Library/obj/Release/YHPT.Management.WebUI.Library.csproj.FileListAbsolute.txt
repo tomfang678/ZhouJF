@@ -70,3 +70,4 @@ D:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI.Library\bin\
 D:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI.Library\bin\Release\ConfigFile\Sewerinfo.xml
 D:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI.Library\bin\Release\ConfigFile\StreetTreeInfo.xml
 D:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI.Library\bin\Release\ConfigFile\Subcontleaderinfo.xml
+D:\project\客户管理\养护平台\ZhouJF\ZhouJF.Management.WebUI.Library\bin\Release\SmartFast.BaseFrame.Utility.dll

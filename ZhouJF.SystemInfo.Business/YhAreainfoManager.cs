@@ -120,5 +120,17 @@ namespace YHPT.SystemInfo.Business
             var result = GetItems(queryInfo, filters);
             return result == null || result.Count == 0;
         }
+
+
+        /// <summary>
+        ///   select distinct region from AreaInfo
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public List<string> GetAllRegion()
+        {
+            var entity = _da.GetAllRegion();
+            return entity;
+        }
     }
 }

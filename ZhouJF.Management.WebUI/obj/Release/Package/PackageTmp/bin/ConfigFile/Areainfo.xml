@@ -20,7 +20,14 @@
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
-  
+,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
+,region
  FROM 
  AreaInfo 
   WHERE @Where ;
@@ -45,6 +52,14 @@
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
+ ,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
+,region
  ) 
  VALUES( 
 @Owner 
@@ -56,6 +71,14 @@
  ,@CreateTime 
  ,@LastModifiedUser 
  ,@LastModifiedTime 
+ ,@longitude
+,@latitude
+,@v1
+,@v2
+,@v3
+,@v4
+,@v5
+,@region
  );
 ]]>
         </String>
@@ -68,6 +91,15 @@
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@region" Column = "region" TypeName = "System.String" />
+
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -82,7 +114,14 @@
  ,AreaCode = @AreaCode 
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
-  
+  ,longitude=@longitude
+,latitude=@latitude
+,v1=@v1
+,v2=@v2
+,v3=@v3
+,v4=@v4
+,v5=@v5
+,region=@region
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -96,6 +135,14 @@
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@region" Column = "region" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -126,6 +173,14 @@
  ,A.CreateTime 
  ,A.LastModifiedUser 
  ,A.LastModifiedTime 
+  ,A.longitude
+,A.latitude
+,A.v1
+,A.v2
+,A.v3
+,A.v4
+,A.v5
+,A.region
  FROM 
  AreaInfo  A
         WHERE @Where) wx
@@ -153,5 +208,16 @@
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
     </Sql>
+
+    <Sql Name="GetAllRegion">
+      <SqlString>
+        <String>
+          <![CDATA[
+  select distinct region from AreaInfo;
+]]>
+        </String>
+      </SqlString>
+    </Sql>
+
   </Sqls>
 </Entity>

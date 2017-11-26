@@ -45,8 +45,10 @@
                 "data": null,
                 "render": function (data, type, row) {
                     var html = [];
-                    if ($("#hidIsEdit").val() == "True")
+                    if ($("#hidIsEdit").val() == "True") {
+                        html.push("<a href=\"/ImgInfo/Index?moule=BridgeInfo&moduleId={0}&RoadID={1}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 图片管理 </a>");
                         html.push("<a href=\"/BridgeInfo/Edit/{0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 编辑 </a>");
+                    }
                     else {
                         html.push("<label class=\"btn default btn-xs green\" style=\"cursor:default\"><i class=\"fa fa-edit\"></i> 编辑 </label>");
                     }
@@ -55,7 +57,7 @@
                     else {
                         html.push("<label class=\"btn btn-xs green\" style=\"cursor:default\"><i class=\"fa fa-trash-o\"></i> 删除 </label>");
                     }
-                    return html.join('').replace(/\{0\}/g, row.ID);
+                    return html.join('').replace(/\{0\}/g, row.ID).replace(/\{1\}/g, row.RoadID);
                 }
             },
             {

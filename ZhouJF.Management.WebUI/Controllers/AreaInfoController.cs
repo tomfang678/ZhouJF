@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YHPT.Management.WebUI.CommonLogic;
 using YHPT.Management.WebUI.Library;
 using YHPT.Management.WebUI.Library.Controls;
 using YHPT.SystemInfo.Business;
@@ -23,11 +24,13 @@ namespace YHPT.Management.WebUI.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.region = new SelectList(CommonFeild.GetAreaList(), "Name", "Name", "浦东新区");
             return View();
         }
         [MenuItem("~/AreaInfo/Index", AuthorizeKey.Add)]
         public ActionResult Add()
         {
+            ViewBag.region = new SelectList(CommonFeild.GetAreaList(), "Name", "Name", "浦东新区");
             return View();
         }
 
@@ -36,6 +39,7 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Edit(int id)
         {
             var entity = (new YhAreainfoManager()).GetItemByKey(id);
+            ViewBag.region = new SelectList(CommonFeild.GetAreaList(), "Name", "Name", entity.region);
             return View(entity);
         }
 

@@ -29,13 +29,20 @@
  ,PersonDivideLine 
  ,VehicleDivideLine 
  ,VehicleBicycleDivideLine 
- ,LeaderCode 
+ ,SubContLeaderInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
  ,pricture 
-  
+,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
+,StoneCurbSideLength
  FROM 
  RoadMunicipalInfo 
   WHERE @Where ;
@@ -68,12 +75,20 @@
  ,PersonDivideLine 
  ,VehicleDivideLine 
  ,VehicleBicycleDivideLine 
- ,LeaderCode 
+ ,SubContLeaderInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
  ,pricture 
+,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
+,StoneCurbSideLength
  ) 
  VALUES( 
  @RoadID 
@@ -94,12 +109,20 @@
  ,@PersonDivideLine 
  ,@VehicleDivideLine 
  ,@VehicleBicycleDivideLine 
- ,@LeaderCode 
+ ,@SubContLeaderInfoID 
  ,@CreateUser 
  ,@CreateTime 
  ,@LastModifiedUser 
  ,@LastModifiedTime 
  ,@pricture 
+   ,@longitude
+,@latitude
+,@v1
+,@v2
+,@v3
+,@v4
+,@v5
+,@StoneCurbSideLength
  );
 ]]>
         </String>
@@ -122,12 +145,21 @@
         <Param Name = "@PersonDivideLine" Column = "PersonDivideLine" TypeName = "System.Int32" />
         <Param Name = "@VehicleDivideLine" Column = "VehicleDivideLine" TypeName = "System.Int32" />
         <Param Name = "@VehicleBicycleDivideLine" Column = "VehicleBicycleDivideLine" TypeName = "System.Int32" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@pricture" Column = "pricture" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@StoneCurbSideLength" Column = "StoneCurbSideLength" TypeName = "System.Int32" />
+
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -153,13 +185,20 @@
  ,PersonDivideLine = @PersonDivideLine 
  ,VehicleDivideLine = @VehicleDivideLine 
  ,VehicleBicycleDivideLine = @VehicleBicycleDivideLine 
- ,LeaderCode = @LeaderCode 
+ ,SubContLeaderInfoID = @SubContLeaderInfoID 
  ,CreateUser = @CreateUser 
  ,CreateTime = @CreateTime 
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
  ,pricture = @pricture 
-  
+     ,longitude = @longitude 
+ ,latitude = @latitude 
+ ,v1 = @v1 
+ ,v2 = @v2
+ ,v3 = @v3 
+ ,v4 = @v4 
+ ,v5 = @v5 
+,StoneCurbSideLength= @StoneCurbSideLength 
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -182,12 +221,21 @@
         <Param Name = "@PersonDivideLine" Column = "PersonDivideLine" TypeName = "System.Int32" />
         <Param Name = "@VehicleDivideLine" Column = "VehicleDivideLine" TypeName = "System.Int32" />
         <Param Name = "@VehicleBicycleDivideLine" Column = "VehicleBicycleDivideLine" TypeName = "System.Int32" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@pricture" Column = "pricture" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@StoneCurbSideLength" Column = "StoneCurbSideLength" TypeName = "System.Int32" />
+
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -228,13 +276,20 @@
  ,A.PersonDivideLine 
  ,A.VehicleDivideLine 
  ,A.VehicleBicycleDivideLine 
- ,A.LeaderCode 
+ ,A.SubContLeaderInfoID 
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
  ,A.LastModifiedTime 
  ,A.pricture 
-  
+ ,A.longitude
+,A.latitude
+,A.v1
+,A.v2
+,A.v3
+,A.v4
+,A.v5
+,A.StoneCurbSideLength
  FROM 
  RoadMunicipalInfo   A
         WHERE @Where) wx

@@ -34,8 +34,29 @@ namespace YHPT.Management.WebUI.Controllers
                     enity.SewerinfoInfoList = (new YhSewerinfoInfoManager()).GetItemByRoadId(id);
                     enity.BridgeInfoList = (new YhBridgeinfoManager()).GetItemByRoadId(id);
                     enity.StreetTreeInfoList = (new YhStreetTreeInfoManager()).GetItemByRoadId(id);
+                    enity.ImgInfoList = (new YhImgInfoManager()).GetImgByRoadId(id);
                 }
                 ViewBag.entity = enity;
+                if (enity.ImgInfoList != null)
+                {
+                    ViewBag.RoadBasicInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("RoadBasicInfo")).ToList();
+                    ViewBag.BridgeInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("BridgeInfo")).ToList();
+                    ViewBag.RoadMunicipalInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("RoadMunicipalInfo")).ToList();
+                    ViewBag.SanitationInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("SanitationInfo")).ToList();
+                    ViewBag.SewerInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("SewerInfo")).ToList();
+                    ViewBag.StreetTreeInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("StreetTreeInfo")).ToList();
+                    ViewBag.GreenLandInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("GreenLandInfo")).ToList();
+                }
+                else
+                {
+                    ViewBag.RoadBasicInfoImgList = null;
+                    ViewBag.BridgeInfoImgList = null;
+                    ViewBag.RoadMunicipalInfoImgList = null;
+                    ViewBag.SanitationInfoImgList = null;
+                    ViewBag.SewerInfoImgList = null;
+                    ViewBag.StreetTreeInfoImgList = null;
+                    ViewBag.GreenLandInfoImgList = null;
+                }
             }
             return View(enity);
 

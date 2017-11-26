@@ -13,6 +13,7 @@ using YHPT.SystemInfo.Model.BfUser;
 using YHPT.SystemInfo.Model.Subcontractor;
 using YHPT.SystemInfo.DAL;
 using YHPT.SystemInfo.Model.YhManager;
+using SmartFast.BaseFrame.Utility;
 
 namespace YHPT.SystemInfo.Business
 {
@@ -22,6 +23,10 @@ namespace YHPT.SystemInfo.Business
 
         public int Add(ImgInfo item)
         {
+            if (!string.IsNullOrEmpty(item.imgUrl))
+            {
+                item.thembUrl = ImageUtil.GetThumbnail(item.imgUrl);
+            }
             //if (CheckCode(item))
             return _da.Insert(item, DataBaseResource.Read);
             //return 0;
@@ -37,11 +42,14 @@ namespace YHPT.SystemInfo.Business
             var entity = _da.GetItemByKey(key, DataBaseResource.Read);
             return entity;
         }
-        public List<ImgInfo> GetImgByModule(int key)
+        public List<ImgInfo> GetImgByModule(string module, int key)
         {
-            return _da.GetImgByModuleId(key);
+            return _da.GetImgByModuleId(module, key);
         }
-
+        public List<ImgInfo> GetImgByRoadId(int RoadId)
+        {
+            return _da.GetImgByRoadId(RoadId);
+        }
 
         public List<ImgInfo> GetItems(ImgInfoDto data, List<QueryParameterInfo> queryParameterInfos = null)
         {
@@ -110,7 +118,7 @@ namespace YHPT.SystemInfo.Business
                 imgType = model.imgType
             };
             var filters = new List<QueryParameterInfo>();
-            if (!String.IsNullOrEmpty(model.ID))
+            if (model.ID > 0)
             {
                 filters.Add(new QueryParameterInfo("ID", model.ID, DataFilterConditions.NotEqual));
             }

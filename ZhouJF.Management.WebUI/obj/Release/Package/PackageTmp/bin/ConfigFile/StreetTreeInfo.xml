@@ -16,13 +16,20 @@
  ,MiddleTreeCount 
  ,BigTreeCount 
  ,BiggerTreeCount 
- ,LeaderCode 
+ ,SubContLeaderInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
  ,pricture 
-  
+,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
+
  FROM 
  StreetTreeInfo   
   WHERE @Where ;
@@ -42,12 +49,20 @@
  ,MiddleTreeCount 
  ,BigTreeCount 
  ,BiggerTreeCount 
- ,LeaderCode 
+ ,SubContLeaderInfoID 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime 
  ,pricture 
+ ,longitude
+,latitude
+,v1
+,v2
+,v3
+,v4
+,v5
+
  ) 
  VALUES( 
 @RoadID 
@@ -55,12 +70,20 @@
  ,@MiddleTreeCount 
  ,@BigTreeCount 
  ,@BiggerTreeCount 
- ,@LeaderCode 
+ ,@SubContLeaderInfoID 
  ,@CreateUser 
  ,@CreateTime 
  ,@LastModifiedUser 
  ,@LastModifiedTime 
  ,@pricture 
+  ,@longitude
+,@latitude
+,@v1
+,@v2
+,@v3
+,@v4
+,@v5
+
  );
 ]]>
         </String>
@@ -70,12 +93,20 @@
         <Param Name = "@MiddleTreeCount" Column = "MiddleTreeCount" TypeName = "System.Int32" />
         <Param Name = "@BigTreeCount" Column = "BigTreeCount" TypeName = "System.Int32" />
         <Param Name = "@BiggerTreeCount" Column = "BiggerTreeCount" TypeName = "System.Int32" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@pricture" Column = "pricture" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -88,11 +119,18 @@
  ,MiddleTreeCount = @MiddleTreeCount 
  ,BigTreeCount = @BigTreeCount 
  ,BiggerTreeCount = @BiggerTreeCount 
- ,LeaderCode = @LeaderCode 
+ ,SubContLeaderInfoID = @SubContLeaderInfoID 
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
  ,pricture = @pricture 
-  
+     ,longitude = @longitude 
+ ,latitude = @latitude 
+ ,v1 = @v1 
+ ,v2 = @v2
+ ,v3 = @v3 
+ ,v4 = @v4 
+ ,v5 = @v5 
+
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -102,10 +140,18 @@
         <Param Name = "@MiddleTreeCount" Column = "MiddleTreeCount" TypeName = "System.Int32" />
         <Param Name = "@BigTreeCount" Column = "BigTreeCount" TypeName = "System.Int32" />
         <Param Name = "@BiggerTreeCount" Column = "BiggerTreeCount" TypeName = "System.Int32" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
+        <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.String" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
         <Param Name = "@pricture" Column = "pricture" TypeName = "System.String" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
+        <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
+        <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
+        <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
+        <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
+        <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -134,12 +180,20 @@
  ,A.MiddleTreeCount 
  ,A.BigTreeCount 
  ,A.BiggerTreeCount 
- ,A.LeaderCode 
+ ,A.SubContLeaderInfoID 
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
  ,A.LastModifiedTime 
  ,A.pricture 
+ ,A.longitude
+,A.latitude
+,A.v1
+,A.v2
+,A.v3
+,A.v4
+,A.v5
+
  FROM 
  StreetTreeInfo  A
         WHERE @Where) wx

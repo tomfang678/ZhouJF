@@ -5,6 +5,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using YHPT.Management.WebUI.CommonLogic;
 using YHPT.Management.WebUI.Library;
 using YHPT.SystemInfo.Business;
 using YHPT.SystemInfo.Model.YhAreaInfo;
@@ -27,23 +28,41 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetSearchTips()
+        public ActionResult GetSearchTips(int cityid)
         {
-            var result = new[]{
-                new{
-                Name="上海地区1",
-                Lng=121.48100,
-                Lat=31.23300,
-                Type=0
-                },
-                new{
-                Name="上海地区2",
-                Lng=121.48300,
-                Lat=31.23500,
-                Type=0
-                }
-            };
-            return Json(result);
+            if (cityid > 0)
+            {
+                List<Roadbasicinfo> result = (new YhRoadbasicinfoManager()).GetItems(new RoadbasicinfoDto { AreaInfoID = cityid });
+                var jsonmodel = new
+                {
+                    Rooms = result,
+                    RoomCount = result.Count
+                };
+                return Json(jsonmodel);
+            }
+            else
+            {
+                return Json(new
+                {
+                    Rooms = new { },
+                    RoomCount = 0
+                });
+            }
+            //var result = new[]{
+            //    new{
+            //    Name="上海地区1",
+            //    Lng=121.48100,
+            //    Lat=31.23300,
+            //    Type=0
+            //    },
+            //    new{
+            //    Name="上海地区2",
+            //    Lng=121.48300,
+            //    Lat=31.23500,
+            //    Type=0
+            //    }
+            //};
+            //return Json(result);
         }
 
         /// <summary>
@@ -124,70 +143,16 @@ namespace YHPT.Management.WebUI.Controllers
         [HttpGet]
         public ActionResult GetRegions()
         {
-            var molde = new[]{
-                new  {
-                Name = "南汇",
-                Lng = "121.76",
-                Lat = "31.05",
-                Type = "0"
-            },
-           new  {
-                Name = "宝山",
-                Lng = "121.48",
-                Lat = "31.41",
-                Type = "0"
-            },
-             new  {
-                Name = "奉贤",
-                Lng = "121.46",
-                Lat = "30.92",
-                Type = "0"
-            },
-             new  {
-                Name = "崇明",
-                Lng = "121.40",
-                Lat = "31.73",
-                Type = "0"
-            },
-             new  {
-                Name = "松江",
-                Lng = "121.24",
-                Lat = "31.00",
-                Type = "0"
-            },
-             new {
-                Name = "嘉定",
-                Lng = "121.24",
-                Lat = "31.40",
-                Type = "0"
-            },
-             new {
-                Name = "金山",
-                Lng = "121.16",
-                Lat = "30.89",
-                Type = "0"
-            },
-             new {
-                Name = "青浦",
-                Lng = "121.10",
-                Lat = "31.15",
-                Type = "0"
-            },
-              new {
-                Name = "黄浦区",
-                Lng = "121.48",
-                Lat = "31.23",
-                Type = "0"
-            },
-             new {
-                Name = "浦东新区",
-                Lng = "121.53 ",
-                Lat = "31.22",
-                Type = "0"
+            List<string> allRegion = (new YhAreainfoManager()).GetAllRegion();
+            List<object> newList = new List<object>();
+            foreach (dynamic item in CommonFeild.GetAreaList())
+            {
+                if (allRegion.Contains(item.Name))
+                {
+                    newList.Add(item);
+                }
             }
-            };
-            return Json(molde, JsonRequestBehavior.AllowGet);
+            return Json(newList, JsonRequestBehavior.AllowGet);
         }
-
     }
 }

@@ -42,64 +42,109 @@
         <!-- BEGIN FORM-->
         <form id="formEdit" method="post" class="form-horizontal">
             <div class="form-body">
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        业主<span class="required" aria-required="true">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
-                        <input type="text" id="txtOwner" name="Owner" value="@Model.Owner" class="form-control" placeholder="业主">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            业主<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
+                            <input type="text" id="txtOwner" name="Owner" value="@Model.Owner" class="form-control" placeholder="业主">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        标段<span class="required" aria-required="true">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <input type="text" id="txtSection" name="Section" value="@Model.Section" class="form-control" placeholder="标段">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            标段<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="txtSection" name="Section" value="@Model.Section" class="form-control" placeholder="标段">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        项目部<span class="required" aria-required="true">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <div class="input-group">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            项目部<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
                             <input type="text" id="txtDept" name="Dept" value="@Model.Dept" class="form-control" placeholder="项目部">
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        区域编码<span class="required" aria-required="true">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <input type="text" id="txtAreaCode" name="AreaCode" value="@Model.AreaCode" class="form-control" placeholder="区域编码">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            区域编码<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="txtAreaCode" name="AreaCode" value="@Model.AreaCode" class="form-control" placeholder="区域编码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            区域<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="txtArea" name="Area" value="@Model.Area" class="form-control" placeholder="区域">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            经度<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="longitude" name="longitude" value="@Model.longitude" class="form-control" placeholder="经度">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            纬度<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="latitude" name="latitude" value="@Model.latitude" class="form-control" placeholder="纬度">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            区域<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            @Html.DropDownList("region")
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            道路总数<span class="required" aria-required="true">
+                                *
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" id="v1" name="v1" value="@Model.v1" class="form-control" placeholder="道路总数">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" id="hidID" name="LastModifiedTime" value="@Model.LastModifiedTime" />
+                        <input type="hidden" id="hidID" name="LastModifiedUser" value="@Model.LastModifiedUser" />
+                        <input type="hidden" id="hidCreateUser" name="CreateUser" value="@Model.CreateUser" />
+                        <input type="hidden" id="hidCreateTime" name="CreateTime" value="@Model.CreateTime" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        区域<span class="required" aria-required="true">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <input type="text" id="txtArea" name="Area" value="@Model.Area" class="form-control" placeholder="区域">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div id="allmap" style="margin-left:20px; height :400px;width:95%"></div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <input type="hidden" id="hidID" name="LastModifiedTime" value="@Model.LastModifiedTime" />
-                    <input type="hidden" id="hidID" name="LastModifiedUser" value="@Model.LastModifiedUser" />
-                    <input type="hidden" id="hidCreateUser" name="CreateUser" value="@Model.CreateUser" />
-                    <input type="hidden" id="hidCreateTime" name="CreateTime" value="@Model.CreateTime" />
                 </div>
                 <div class="form-actions">
                     <div class="row">
@@ -123,5 +168,21 @@
     <script src="~/Assets/global/Plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
     @Scripts.Render("~/Scripts/AreaInfo/Edit.js")
 
-    @*@Scripts.Render("~/Scripts/PulgIn/BfOrgTree.js")*@
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GMf62U3cb0xG38UmDg3LnWMWPZlpwnoP"></script>
+
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom(new BMap.Point(121.48, 31.23), 14);
+        setTimeout(function () {
+            map.setZoom(14);
+        }, 2000);  //2秒后放大到14级
+        map.enableScrollWheelZoom(true);
+        function showInfo(e) {
+            $("#latitude").val(e.point.lat);
+            $("#longitude").val(e.point.lng);
+            //alert(e.point.lng + ", " + e.point.lat);
+        }
+        map.addEventListener("click", showInfo);
+    </script>
 }

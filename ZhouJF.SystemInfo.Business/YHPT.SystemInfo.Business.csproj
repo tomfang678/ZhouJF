@@ -52,6 +52,9 @@
     <Reference Include="MB.Util">
       <HintPath>..\1.lib\MB.Util.dll</HintPath>
     </Reference>
+    <Reference Include="SmartFast.BaseFrame.Utility">
+      <HintPath>..\1.lib\SmartFast.BaseFrame.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />

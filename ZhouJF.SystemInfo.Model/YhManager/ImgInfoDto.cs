@@ -15,21 +15,38 @@ namespace YHPT.SystemInfo.Model.YhManager
 
         }
 
-        private String _ID;
+        private int _ID;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("ID", System.Data.DbType.String)]
-        public String ID
+        [MB.Orm.Mapping.Att.ColumnMap("ID", System.Data.DbType.Int32)]
+        public int ID
         {
             get { return _ID; }
             set { _ID = value; }
         }
-        private String _imgModuleId;
+        private int _RoadID;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("imgModuleId", System.Data.DbType.String)]
-        public String imgModuleId
+        [MB.Orm.Mapping.Att.ColumnMap("RoadID", System.Data.DbType.Int32)]
+        public int RoadID
+        {
+            get { return _RoadID; }
+            set { _RoadID = value; }
+        }
+        private int? _imgModuleId;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("imgModuleId", System.Data.DbType.Int32)]
+        public int? imgModuleId
         {
             get { return _imgModuleId; }
             set { _imgModuleId = value; }
+        }
+
+        private String _imgModule;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("imgModule", System.Data.DbType.String)]
+        public String imgModule
+        {
+            get { return _imgModule; }
+            set { _imgModule = value; }
         }
         private string _imgType;
         [DataMember]

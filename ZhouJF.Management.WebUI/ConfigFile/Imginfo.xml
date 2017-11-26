@@ -11,7 +11,8 @@
           <![CDATA[
               SELECT 
  ID 
- ,imgModuleId 
+ ,imgModuleId
+ ,imgModule
  ,imgType 
  ,imgUrl 
  ,thembUrl 
@@ -19,7 +20,7 @@
  ,isDisable 
  ,CreateUser 
  ,CreateTime 
-  
+ ,RoadID
  FROM 
  ImgInfo 
   WHERE @Where ;
@@ -35,16 +36,19 @@
               INSERT INTO 
  ImgInfo 
  (imgModuleId 
+  ,imgModule
  ,imgType 
  ,imgUrl 
  ,thembUrl 
  ,remark 
  ,isDisable 
  ,CreateUser 
- ,CreateTime 
+ ,CreateTime
+ ,RoadID
  ) 
  VALUES( 
 @imgModuleId 
+,@imgModule
  ,@imgType 
  ,@imgUrl 
  ,@thembUrl 
@@ -52,11 +56,13 @@
  ,@isDisable 
  ,@CreateUser 
  ,@CreateTime 
+ ,@RoadID
  );
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@imgModuleId" Column = "imgModuleId" TypeName = "System.Int32" />
+        <Param Name = "@imgModule" Column = "imgModule" TypeName = "System.String" />
         <Param Name = "@imgType" Column = "imgType" TypeName = "System.String" />
         <Param Name = "@imgUrl" Column = "imgUrl" TypeName = "System.String" />
         <Param Name = "@thembUrl" Column = "thembUrl" TypeName = "System.String" />
@@ -64,6 +70,7 @@
         <Param Name = "@isDisable" Column = "isDisable" TypeName = "System.Byte" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -79,7 +86,7 @@
  ,isDisable = @isDisable 
  ,CreateUser = @CreateUser 
  ,CreateTime = @CreateTime 
-  
+ ,RoadID=@RoadID
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -92,6 +99,7 @@
         <Param Name = "@isDisable" Column = "isDisable" TypeName = "System.Byte" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -114,6 +122,7 @@
       select row_number() over (order by @SortField @Direction) row, 
   A.ID 
  ,A.imgModuleId 
+,A.imgModule
  ,A.imgType 
  ,A.imgUrl 
  ,A.thembUrl 
@@ -121,6 +130,7 @@
  ,A.isDisable 
  ,A.CreateUser 
  ,A.CreateTime 
+ ,A.RoadID
  FROM 
  ImgInfo  A
         WHERE @Where) wx
@@ -155,6 +165,7 @@
    SELECT 
  ID 
  ,imgModuleId 
+ ,imgModule
  ,imgType 
  ,imgUrl 
  ,thembUrl 
@@ -162,13 +173,38 @@
  ,isDisable 
  ,CreateUser 
  ,CreateTime 
-  
+ ,RoadID
  FROM 
  ImgInfo 
-  WHERE imgModuleId=@imgModuleId ;
+  WHERE imgModuleId=@imgModuleId AND imgModule=@imgModule;
 ]]>
         </String>
-        <Param Name = "@imgModuleId" Column = "imgModuleId" TypeName = "System.String" />
+        <Param Name = "@imgModuleId" Column = "imgModuleId" TypeName = "System.Int32" />
+        <Param Name = "@imgModule" Column = "imgModule" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="GetImgByRoadId">
+      <SqlString>
+        <String>
+          <![CDATA[
+   SELECT 
+ ID 
+ ,imgModuleId 
+ ,imgModule
+ ,imgType 
+ ,imgUrl 
+ ,thembUrl 
+ ,remark 
+ ,isDisable 
+ ,CreateUser 
+ ,CreateTime 
+ ,RoadID
+ FROM 
+ ImgInfo 
+  WHERE RoadID=@RoadID
+]]>
+        </String>
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
       </SqlString>
     </Sql>
 

@@ -218,5 +218,10 @@ namespace YHPT.SystemInfo.Model.YhRoadbasicinfo
         /// 行道树
         /// </summary>
         public List<StreetTreeInfo> StreetTreeInfoList { get; set; }
+
+        /// <summary>
+        /// 图片
+        /// </summary>
+        public List<ImgInfo> ImgInfoList { get; set; }
     }
 }

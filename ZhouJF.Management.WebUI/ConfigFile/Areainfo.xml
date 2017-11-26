@@ -91,7 +91,7 @@
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
-		<Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
         <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
         <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
         <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
@@ -135,7 +135,7 @@
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
-		<Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
+        <Param Name = "@longitude" Column = "longitude" TypeName = "System.Decimal" />
         <Param Name = "@latitude" Column = "latitude" TypeName = "System.Decimal" />
         <Param Name = "@v1" Column = "v1" TypeName = "System.String" />
         <Param Name = "@v2" Column = "v2" TypeName = "System.String" />
@@ -208,5 +208,16 @@
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
     </Sql>
+
+    <Sql Name="GetAllRegion">
+      <SqlString>
+        <String>
+          <![CDATA[
+  select distinct region from AreaInfo;
+]]>
+        </String>
+      </SqlString>
+    </Sql>
+
   </Sqls>
 </Entity>

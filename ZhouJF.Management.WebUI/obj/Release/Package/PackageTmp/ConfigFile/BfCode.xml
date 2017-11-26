@@ -124,5 +124,26 @@
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
     </Sql>
+
+    <Sql Name="GetBfCodeByModuleId">
+      <SqlString>
+        <String>
+          <![CDATA[
+            SELECT 
+cd.ID,
+cd.BF_CODE_ID,
+cd.Code,
+cd.Name,
+cd.SEQ_NUM,
+cd.LAST_MODIFIED_DATE
+  FROM BF_CODE  C
+  LEFT JOIN BF_CODE_DETAIL CD ON CD.BF_CODE_ID = C.ID
+ where c.code=@CODE
+
+]]>
+        </String>
+        <Param Name = "@CODE" Column = "CODE" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
   </Sqls>
 </Entity>

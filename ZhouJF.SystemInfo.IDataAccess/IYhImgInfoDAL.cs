@@ -13,11 +13,12 @@ namespace YHPT.SystemInfo.IDataAccess
     [ServiceContract]
     public interface IYhImgInfoDAL : IDataAccess<ImgInfo>
     {
-        List<ImgInfo> GetImgByModuleId(int moduleId);
+        List<ImgInfo> GetImgByModuleId(string module, int moduleId);
         List<ImgInfo> GetImgByModuleIdAndType(int moduleId);
         ImgInfo GetImgById(int moduleId);
         int DeleteByModuleId(int moduleId);
         int DeleteByImgId(int imgId);
         int updateByImgId(ImgInfo img);
+        List<ImgInfo> GetImgByRoadId(int RoadId);
     }
 }

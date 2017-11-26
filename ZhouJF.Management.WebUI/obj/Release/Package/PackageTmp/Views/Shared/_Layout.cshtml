@@ -27,6 +27,8 @@
     <link href="~/assets/admin/layout/css/layout.css" rel="stylesheet" />
     <link href="~/assets/admin/layout/css/themes/default.css" rel="stylesheet" />
     <link href="~/assets/admin/layout/css/custom.css" rel="stylesheet" />
+    <link href="~/Assets/table/table.css" rel="stylesheet" />
+    <script src="~/Assets/global/Plugins/jquery-1.11.0.min.js"></script>
 
     @RenderSection("header", false)
 </head>
@@ -69,7 +71,9 @@
 
     <!-- BEGIN JAVASCRIPTS -->
     @*<script src="~/assets/global/plugins/jquery-1.10.1.min.js"></script>*@
-    <script src="~/Assets/global/Plugins/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+    </script>
     <script src="~/assets/global/plugins/jquery-migrate-1.2.1.min.js"></script>
     <script src="~/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="~/assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>

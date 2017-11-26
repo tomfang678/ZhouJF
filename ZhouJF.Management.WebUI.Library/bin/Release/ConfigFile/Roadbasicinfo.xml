@@ -38,7 +38,7 @@
           <![CDATA[
               INSERT INTO 
  RoadBasicInfo 
- (RoadCode 
+ (ID,RoadCode 
  ,RoadName 
  ,RoadLevel 
  ,RoadMaterial 
@@ -51,7 +51,8 @@
   ,picture 
  ) 
  VALUES( 
-@RoadCode 
+ newid()
+,@RoadCode 
  ,@RoadName 
  ,@RoadLevel 
  ,@RoadMaterial 
@@ -95,7 +96,7 @@
  WHERE ID = @ID ;
 ]]>
         </String>
-        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@ID" Column = "ID" TypeName = "System.String" />
         <Param Name = "@RoadCode" Column = "RoadCode" TypeName = "System.String" />
         <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
@@ -116,7 +117,7 @@
  WHERE ID = @ID;
 ]]>
         </String>
-        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+        <Param Name = "@ID" Column = "ID" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="SelectObjectByPage">

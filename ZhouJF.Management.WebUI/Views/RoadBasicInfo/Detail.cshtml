@@ -27,8 +27,7 @@
 <!-- END PAGE HEADER -->
 <div class="tabbable tabbable-custom">
     <ul class="nav nav-tabs">
-        <li><a href="#tab0" data-toggle="tab">市政图片</a></li>
-        <li class="active"><a href="#tab1" data-toggle="tab">基本信息</a></li>
+        <li class="active"><a href="#tab1" data-toggle="tab">道路基本信息</a></li>
         <li><a href="#tab2" data-toggle="tab">市政信息</a></li>
         <li><a href="#tab3" data-toggle="tab">环卫信息</a></li>
         <li><a href="#tab4" data-toggle="tab">绿化信息</a></li>
@@ -39,31 +38,6 @@
         <li><a href="#tab9" data-toggle="tab">平面地图</a></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="tab0">
-            市政图片
-            @*<div class="room-slide-image pull-left">
-                <div class="r-slider">
-                    <div class="slide-image-big">
-                        @if (Model.House_IndoorImg != null && Model.House_IndoorImg.Count > 0)
-                        { <ul class="list-unstyled" id="houseIndoorImg">
-                            @foreach (var item in Model.House_IndoorImg)
-                            {
-                                <li class="diagram-img-big" style="opacity: 1;"> <a href="@item.ImgUrl"> <img alt="" style="width:100%;" title="" src="@StaticFileHelper.ImageFile(null, ImageUtil.GetThumbnail(item.ImgUrl))" /></a> </li> }
-                        </ul> }
-                        else
-                        { <ul class="list-unstyled"> <li class="diagram-img-big" style="opacity: 1;"> <a class="mfp-zoom" href="#"> <img alt="" title="" src="@StaticFileHelper.ImageFile(null, " ")" /> </a> </li> </ul> }
-                    </div> <div class="slide-image-small">
-                        <div class="image-prev img-navigation" style="display: block;">上一张</div> <div class="image-list">
-                            @if (Model.House_IndoorImg != null && Model.House_IndoorImg.Count > 0)
-                            { <ul class="image-list-content list-unstyled">
-                                @foreach (var item in Model.House_IndoorImg)
-                                {
-                                    <li><img class="" width="66" height="44" title="" alt="" src="@StaticFileHelper.ImageFile(null,ImageUtil.GetThumbnail(item.ImgUrl))"></li>}
-                            </ul> }
-                        </div> <div class="image-next img-navigation" style="display: block;">下一张</div>
-                    </div>
-                </div>*@
-        </div>
         <!--基本信息-->
         <div class="tab-pane active" id="tab1">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
@@ -93,6 +67,23 @@
                         <td>@Model.LastModifiedUser</td>
                     </tr>
                 </table>
+            </div>
+            <div>
+                <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.RoadBasicInfoImgList)
+                            {
+                                foreach (var item in ViewBag.RoadBasicInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tab-pane" id="tab2">
@@ -143,6 +134,23 @@
                     }
                 </table>
             </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.RoadMunicipalInfoImgList)
+                            {
+                                foreach (var item in ViewBag.RoadMunicipalInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-pane" id="tab3">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
@@ -170,6 +178,23 @@
                     }
                 </table>
                 <!-- END FORM-->
+            </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.SanitationInfoImgList)
+                            {
+                                foreach (var item in ViewBag.SanitationInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tab-pane" id="tab4">
@@ -200,6 +225,23 @@
                     }
                 </table>
             </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.GreenLandInfoImgList)
+                            {
+                                foreach (var item in ViewBag.GreenLandInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-pane" id="tab5">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
@@ -226,6 +268,23 @@
                         </tr>
                     }
                 </table>
+            </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.SewerInfoImgList)
+                            {
+                                foreach (var item in ViewBag.SewerInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tab-pane" id="tab6">
@@ -298,6 +357,23 @@
                     }
                 </table>
             </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.BridgeInfoImgList)
+                            {
+                                foreach (var item in ViewBag.BridgeInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-pane" id="tab7">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
@@ -322,7 +398,23 @@
                         </tr>
                     }
                 </table>
-
+            </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.StreetTreeInfoImgList)
+                            {
+                                foreach (var item in ViewBag.StreetTreeInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@item.imgUrl" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tab-pane" id="tab8">
@@ -361,8 +453,6 @@
 
     </div>
 </div>
-
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=A4749739227af1618f7b0d1b588c0e85"></script>
 <style>
     #panorama {
         width: 100%;
@@ -385,6 +475,11 @@
     }
 </style>
 <script src="~/Assets/global/Plugins/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=A4749739227af1618f7b0d1b588c0e85"></script>
+<script src="~/Assets/map/mapdetail.js"></script>
+
+
 
 <script type="text/javascript">
     var lnt = $("#lnt").val();
@@ -403,11 +498,9 @@
     label.addEventListener('click', function () { //给标注点注册点击事件
         panorama.setPov({ //修改点的视角
             pitch: 10,
-            heading: 14
+            heading: 12
         });
     });
 
 </script>
-@*<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>*@
-<script src="~/Assets/map/mapdetail.js"></script>
 <script type="text/javascript">        var ln = $("#lnt").val(); var la = $("#lat").val(); /* 百度地图API功能*/ var map = new BMap.Map("s-map"); var point = new BMap.Point(ln, la); map.centerAndZoom(point, 18);/*创建标注*/ var marker = new BMap.Marker(point);   /*将标注添加到地图中*/ map.addOverlay(marker); marker.setAnimation(BMAP_ANIMATION_BOUNCE); /*跳动的动画*/ map.enableScrollWheelZoom(true); </script>

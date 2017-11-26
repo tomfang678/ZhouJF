@@ -15,16 +15,24 @@ namespace YHPT.SystemInfo.DAL
             : base(typeof(YhImgInfoDAL))
         { }
 
-        public System.Collections.Generic.List<ImgInfo> GetImgByModuleId(int moduleId)
+        public System.Collections.Generic.List<ImgInfo> GetImgByModuleId(string module, int moduleId)
         {
             using (var dbScope = new OperationDatabaseScope(ReadDb))
             {
                 var result = DatabaseExcuteByXmlHelper.NewInstance.GetObjectsByXml<ImgInfo>("Imginfo.xml",
-                    "GetImgByModuleId", moduleId);
+                    "GetImgByModuleId",moduleId,module);
                 return result;
             }
         }
-
+        public System.Collections.Generic.List<ImgInfo> GetImgByRoadId(int RoadId)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var result = DatabaseExcuteByXmlHelper.NewInstance.GetObjectsByXml<ImgInfo>("Imginfo.xml",
+                    "GetImgByRoadId", RoadId);
+                return result;
+            }
+        }
         public System.Collections.Generic.List<ImgInfo> GetImgByModuleIdAndType(int moduleId)
         {
             using (var dbScope = new OperationDatabaseScope(ReadDb))

@@ -49,7 +49,6 @@
                             </span>
                         </label>
                         <div class="col-md-9">
-                            <img src="@Model.picture" alt="" style="max-height:200px;max-width:500px;" />
                             <input type="text" id="txtpicture" name="picture" value="@Model.picture" class="form-control" placeholder="图片地址">
                             <span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
                             <div id="uploader"></div>
@@ -144,7 +143,7 @@
                             </span>
                         </label>
                         <div class="col-md-9">
-                            <a href="/ImgInfo/Index?moduleId=@Model.ID" class="btn red">图片管理</a>
+                            <a href="/ImgInfo/Index?moule=RoadBasicInfo&moduleId=@Model.ID" class="btn red">图片管理</a>
                         </div>
                     </div>
                     <div class="form-group">
@@ -156,7 +155,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <div id="allmap" style="margin-top:20px; height :500px;width:95%"></div>
+                        <img src="@Model.picture" alt="" style="max-height:200px;max-width:500px;" />
+                        <div id="allmap" style="margin-top:10px; height :240px;width:95%"></div>
                     </div>
                 </div>
                 <div class="form-actions">

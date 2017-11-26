@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YHPT.Management.WebUI.Library;
-using YHPT.Management.WebUI.Library;
 using YHPT.Management.WebUI.Library.Controls;
 using YHPT.SystemInfo.Business;
 using MB.Framework.Common.Enums;
 using MB.Framework.Common.Model;
 using YHPT.SystemInfo.Model.YhManager;
 using YHPT.SystemInfo.DAL;
+using YHPT.Management.WebUI.CommonLogic;
 
 namespace YHPT.Management.WebUI.Controllers
 {
@@ -18,15 +18,25 @@ namespace YHPT.Management.WebUI.Controllers
     {
         //
         // GET: /Img/
-
-        public ActionResult Index(int moduleId)
+        public ActionResult Index()
         {
-            var entity = (new YhImgInfoManager()).GetImgByModule(moduleId);
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Index(string moule, int moduleId, int RoadID)
+        {
+            var entity = (new YhImgInfoManager()).GetImgByModule(moule, moduleId);
             ViewBag.imgList = entity;
+            ViewBag.imgModule = new SelectList(CommonFeild.GetModuleList(), "code", "name", moule);
+            var imgTypeList = (new BfCodeInfoDAL()).GetBfCodeByModuleId("ImgType");
+            ViewBag.ImgType = new SelectList(imgTypeList, "Code", "Name", 1);
+            ViewBag.imgModuleId = moduleId;
+            ViewBag.imgModuleName = CommonFeild.GetModuleName(moule);
+            ViewBag.RoadID = RoadID;
             return View(entity);
         }
 
-        [MenuItem("~/ImgInfo/Index", AuthorizeKey.Add)]
         public ActionResult Add()
         {
             var imgTypeList = (new BfCodeInfoDAL()).GetBfCodeByModuleId("ImgType");
@@ -35,7 +45,6 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
 
-        [MenuItem("~/ImgInfo/Index", AuthorizeKey.Update)]
         public ActionResult Edit(int id)
         {
             var entity = (new YhImgInfoManager()).GetItemByKey(id);
@@ -47,7 +56,6 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
         [HttpPost]
-        [MenuItem("~/ImgInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(ImgInfo model, string gridStage)
         {
             model.CreateUser = UserSession.Current.UserID.ToString();
@@ -57,7 +65,6 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
         [HttpPost]
-        [MenuItem("~/ImgInfo/Index", AuthorizeKey.Delete)]
         public JsonResult Delete(int id)
         {
             var result = (new YhImgInfoManager()).Delete(id);
@@ -69,13 +76,9 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
         [HttpPost]
-        [MenuItem("~/ImgInfo/Index", AuthorizeKey.Add)]
+        //[MenuItem("~/ImgInfo/Index", AuthorizeKey.Add)]
         public JsonResult Add(ImgInfo model)
         {
-            //if (string.IsNullOrEmpty(model.RoadCode) || string.IsNullOrEmpty(model.RoadCode))
-            //{
-            //    return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = (int)ResponseIntValue.Fail, Message = "请输入必填字段" });
-            //}
             model.CreateUser = UserSession.Current.UserCode;
             model.CreateTime = DateTime.Now;
             var result = (new YhImgInfoManager()).Add(model);
