@@ -44,13 +44,23 @@
             <div class="form-body">
                 <div class="form-group">
                     <label class="col-md-3 control-label">
-                        道路编码<span class="required" aria-required="true">
+                        道路<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
                     <div class="col-md-4">
                         <input type="hidden" id="hidID" name="ID" value="@Model.ID" />
                         @Html.DropDownList("RoadID")
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        道路路格<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRoadBetween" name="RoadBetween" value="@Model.RoadBetween" class="form-control" placeholder="道路路格">
                     </div>
                 </div>
                 <div class="form-group">
@@ -65,34 +75,54 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">
-                        小型雨水管长度<span class="required" aria-required="true">
+                        小型雨水管长度（<Φ600)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
                     <div class="col-md-4">
                         <div class="input-group">
-                            <input type="text" id="txtSamllRainPipeLength" name="SamllRainPipeLength" value="@Model.SamllRainPipeLength" class="form-control" placeholder="小型雨水管长度">
+                            <input type="text" id="txtSamllRainPipeLength" name="SamllRainPipeLength" value="@Model.SamllRainPipeLength" class="form-control" placeholder="小型雨水管长度（<Φ600)">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">
-                        中型雨水管长度<span class="required" aria-required="true">
+                        中型雨水管长度（Φ600-Φ1000)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
                     <div class="col-md-4">
-                        <input type="text" id="txtMiddleRainPipeLength" name="MiddleRainPipeLength" value="@Model.MiddleRainPipeLength" class="form-control" placeholder="中型雨水管长度">
+                        <input type="text" id="txtMiddleRainPipeLength" name="MiddleRainPipeLength" value="@Model.MiddleRainPipeLength" class="form-control" placeholder="中型雨水管长度（Φ600-Φ1000)">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">
-                        大型雨水管长度<span class="required" aria-required="true">
+                        大型雨水管长度（Φ1050-Φ1500)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
                     <div class="col-md-4">
-                        <input type="text" id="txtBigRainPipeLength" name="BigRainPipeLength" value="@Model.BigRainPipeLength" class="form-control" placeholder="大型雨水管长度">
+                        <input type="text" id="txtBigRainPipeLength" name="BigRainPipeLength" value="@Model.BigRainPipeLength" class="form-control" placeholder="大型雨水管长度（Φ1050-Φ1500)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        特大型雨水管长度（＞Φ1500)<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtBiggerRainPipeLength" name="BiggerRainPipeLength" value="@Model.BiggerRainPipeLength" class="form-control" placeholder="特大型雨水管长度（＞Φ1500)">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        雨水管深度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRainPipeDeepth" name="RainPipeDeepth" value="@Model.RainPipeDeepth" class="form-control" placeholder="雨水管深度">
                     </div>
                 </div>
                 <div class="form-group">
@@ -105,6 +135,47 @@
                         <input type="text" id="txtDirtyWaterPipeLength" name="DirtyWaterPipeLength" value="@Model.DirtyWaterPipeLength" class="form-control" placeholder="污水管长度">
                     </div>
                 </div>
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        污水管深度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtDirtyWaterPipeDeepth" name="DirtyWaterPipeDeepth" value="@Model.DirtyWaterPipeDeepth" class="form-control" placeholder="污水管深度">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        雨水窨井数量<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRainInspectionShaftCount" name="RainInspectionShaftCount" value="@Model.RainInspectionShaftCount" class="form-control" placeholder="雨水窨井数量">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        污水窨井数量<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtDiryWaternspectionShaftCount" name="DiryWaternspectionShaftCount" value="@Model.DiryWaternspectionShaftCount" class="form-control" placeholder="污水窨井数量">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        进水口数量<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtWaterInletCount" name="WaterInletCount" value="@Model.WaterInletCount" class="form-control" placeholder="进水口数量">
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">
