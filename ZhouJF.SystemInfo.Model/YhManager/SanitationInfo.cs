@@ -87,14 +87,6 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _ManualQuota; }
             set { _ManualQuota = value; }
         }
-        private int? _DustbinCount;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("DustbinCount", System.Data.DbType.Int32)]
-        public int? DustbinCount
-        {
-            get { return _DustbinCount; }
-            set { _DustbinCount = value; }
-        }
         private string _LeaderCode;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("LeaderCode", System.Data.DbType.String)]

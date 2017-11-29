@@ -14,6 +14,7 @@
 { "mDataProp": "PavementSquare", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CurbSideLength", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CurbFlatLength", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "StoneCurbSideLength", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "InspectionShaftCount", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "WaterInletCount", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "WaterOutletCount", "mMaxWidth": "150px", "sWidth": "250px" },
@@ -50,7 +51,7 @@
                 }
             },
             {
-                'targets': [20, 22],
+                'targets': [21, 23],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

@@ -4,8 +4,6 @@
         "sAjaxSource": "/GreenLandInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [{ "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "GreenLandCode", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "GreenLandName", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "FirstLevelSquare", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "SecondLevelSquare", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "ThirdLevelSquare", "mMaxWidth": "150px", "sWidth": "250px" },
@@ -39,7 +37,7 @@
                 }
             },
             {
-                'targets': [9, 11],
+                'targets': [7, 9],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

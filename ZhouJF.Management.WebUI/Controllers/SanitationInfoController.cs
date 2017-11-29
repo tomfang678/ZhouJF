@@ -55,7 +55,14 @@ namespace YHPT.Management.WebUI.Controllers
             model.LastModifiedUser = UserSession.Current.UserID.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhSanitationInfoManager()).Update(model);
-            return Json(new ResponseMessage() { IsSuccess = true });
+            if (result)
+            {
+                return Json(new ResponseMessage() { IsSuccess = true });
+            }
+            else
+            {
+                return Json(new ResponseMessage() { IsSuccess = false, Message = "编辑失败" });
+            }
         }
 
         [HttpPost]
@@ -75,10 +82,6 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/SanitationInfo/Index", AuthorizeKey.Add)]
         public JsonResult Add(SanitationInfo model)
         {
-            //if (string.IsNullOrEmpty(model) || string.IsNullOrEmpty(model.SubContractorCode))
-            //{
-            //    return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = (int)ResponseIntValue.Fail, Message = "请输入必填字段" });
-            //}
             model.CreateUser = UserSession.Current.UserCode;
             model.CreateTime = DateTime.Now;
             model.LastModifiedUser = UserSession.Current.UserCode;

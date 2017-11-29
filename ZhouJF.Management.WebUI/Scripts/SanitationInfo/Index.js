@@ -9,7 +9,8 @@
 { "mDataProp": "ManualCleanSquare", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "ManualWashSquare", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "ManualQuota", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "DustbinCount", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "DustbinPerFiftyMtr", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "DustbinPerEightyMtr", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "SubContLeaderInfoID", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
@@ -39,7 +40,7 @@
                 }
             },
             {
-                'targets': [9, 11],
+                'targets': [10, 12],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

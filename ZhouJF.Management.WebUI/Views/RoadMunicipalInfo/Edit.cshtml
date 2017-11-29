@@ -60,7 +60,7 @@
 
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        道路编码<span class="required" aria-required="true">
+                        道路<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -71,7 +71,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        道路长度<span class="required" aria-required="true">
+                        道路长度(M)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        道路面积<span class="required" aria-required="true">
+                        道路面积(M²)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -90,7 +90,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        慢车道宽度<span class="required" aria-required="true">
+                        非机动车道宽度(M)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        慢车道面积<span class="required" aria-required="true">
+                        非机动车道面积(M²)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -109,7 +109,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        快车道宽度<span class="required" aria-required="true">
+                        车行道宽度(M)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -120,16 +120,33 @@
 
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        人行道宽度<span class="required" aria-required="true">
+                        车行道面积(M²)<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtFastLaneSquare" name="FastLaneSquare" value="@Model.FastLaneSquare" class="form-control" placeholder="快车道面积">
+                    </div>
+                    <label class="col-md-2 control-label">
+                        人行道宽度(M)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
                     <div class="col-md-4">
                         <input type="text" id="txtPavementWidth" name="PavementWidth" maxlength="10" value="@Model.PavementWidth" class="form-control" placeholder="人行道宽度">
                     </div>
-
+                </div>
+                <div class="form-group">
                     <label class="col-md-2 control-label">
-                        人行道面积<span class="required" aria-required="true">
+                        石材类侧平石(M)<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtStoneCurbSideLength" name="StoneCurbSideLength" value="@Model.StoneCurbSideLength" class="form-control" placeholder="石材类侧平石">
+                    </div>
+                    <label class="col-md-2 control-label">
+                        人行道面积(M²)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -139,7 +156,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        侧石长度<span class="required" aria-required="true">
+                        侧石(M)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -148,7 +165,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        平石长度<span class="required" aria-required="true">
+                        平石(M)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -158,7 +175,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        窨井数量<span class="required" aria-required="true">
+                        窨井(座)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -167,7 +184,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        进水口数量<span class="required" aria-required="true">
+                        进水口(座)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -177,7 +194,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        排放口数量<span class="required" aria-required="true">
+                        排放口(座)<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -186,7 +203,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        路牌数量<span class="required" aria-required="true">
+                        路名牌、公益、轨交牌（套）<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -196,7 +213,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        人行隔离<span class="required" aria-required="true">
+                        人行隔离（M）<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -205,7 +222,7 @@
                     </div>
 
                     <label class="col-md-2 control-label">
-                        车行隔离<span class="required" aria-required="true">
+                        车行隔离（M）<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
@@ -215,7 +232,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">
-                        机非隔离<span class="required" aria-required="true">
+                        机非隔离（M）<span class="required" aria-required="true">
                             *
                         </span>
                     </label>

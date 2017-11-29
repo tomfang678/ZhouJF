@@ -23,7 +23,6 @@
 <input type="hidden" id="hidIsDelete" name="hidIsDelete" value="@(ViewBag.AuthorizeKey.CanDelete + "")" />
 <input type="hidden" id="hidIsAdd" name="hidIsAdd" value="@(ViewBag.AuthorizeKey.CanAdd + "")" />
 
-
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
     @ViewBag.Title
@@ -108,24 +107,25 @@
         <table id="grid" class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>道路名称</th>
-                    <th>道路长度</th>
-                    <th>道路面积</th>
-                    <th>慢车道宽度</th>
-                    <th>慢车道面积</th>
-                    <th>快车道宽度</th>
-                    <th>快车道面积</th>
-                    <th>人行道宽度</th>
-                    <th>人行道面积</th>
-                    <th>侧石长度</th>
-                    <th>平石长度</th>
-                    <th>窨井数量</th>
-                    <th>进水口数量</th>
-                    <th>排放口数量</th>
-                    <th>路牌数量</th>
-                    <th>人行隔离</th>
-                    <th>车行隔离</th>
-                    <th>机非隔离</th>
+                    <th>道路</th>
+                    <th>道路长度(M)</th>
+                    <th>道路面积(M²)</th>
+                    <th>非机动车道宽度(M)</th>
+                    <th>非机动车道面积(M²)</th>
+                    <th>车行道宽度(M)</th>
+                    <th>车行道面积(M²)</th>
+                    <th>人行道宽度(M)</th>
+                    <th>人行道面积(M²)</th>
+                    <th>侧石(M)</th>
+                    <th>平石(M)</th>
+                    <th>石材类侧平石(M)</th>
+                    <th>窨井(座)</th>
+                    <th>进水口(座)</th>
+                    <th>排放口(座)</th>
+                    <th>路名牌、公益、轨交牌（套）</th>
+                    <th>人行隔离（M）</th>
+                    <th>车行隔离（M）</th>
+                    <th>机非隔离（M）</th>
                     <th>带班编码</th>
                     <th>创建人</th>
                     <th>
@@ -145,5 +145,6 @@
         </table>
     </div>
 </div>
+
 
 @*@{ Html.RenderAction("ImportData", "PlugIn"); }*@

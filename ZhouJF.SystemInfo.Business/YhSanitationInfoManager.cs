@@ -45,8 +45,8 @@ namespace YHPT.SystemInfo.Business
             var filters = new List<QueryParameterInfo>();
             if (data.RoadID != null && data.RoadID != 0)
                 filters.Add(new QueryParameterInfo("RoadID", data.RoadID, DataFilterConditions.Equal));
-            if (!string.IsNullOrEmpty(data.LeaderCode))
-                filters.Add(new QueryParameterInfo("SubContLeaderInfoID", data.SubContLeaderInfoID, DataFilterConditions.Equal));
+            //if (!string.IsNullOrEmpty(data.LeaderCode))
+            //    filters.Add(new QueryParameterInfo("SubContLeaderInfoID", data.SubContLeaderInfoID, DataFilterConditions.Equal));
             //if (!string.IsNullOrEmpty(data.RoadName))
             //if (!string.IsNullOrEmpty(data.RoadName))
             //    filters.Add(new QueryParameterInfo("RoadName", "%" + data.RoadName + "%", DataFilterConditions.Like));

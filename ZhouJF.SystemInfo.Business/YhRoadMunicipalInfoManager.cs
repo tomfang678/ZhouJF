@@ -24,9 +24,11 @@ namespace YHPT.SystemInfo.Business
 
         public int Add(RoadMunicipalInfo item)
         {
-            //if (CheckCode(item))
-            return _da.Insert(item, DataBaseResource.Read);
-            // return 0;
+            if (CheckCode(item))
+            {
+                return _da.Insert(item, DataBaseResource.Read);
+            }
+            return 0;
         }
 
         public bool Delete(object key)
@@ -61,6 +63,8 @@ namespace YHPT.SystemInfo.Business
                 filters.Add(new QueryParameterInfo("SlowLaneSquare", data.SlowLaneSquare, DataFilterConditions.Equal));
             if (data.FastLaneWidth != null && data.FastLaneWidth != 0)
                 filters.Add(new QueryParameterInfo("FastLaneWidth", data.FastLaneWidth, DataFilterConditions.Equal));
+            if (data.RoadID >= 0)
+                filters.Add(new QueryParameterInfo("RoadID", data.RoadID, DataFilterConditions.Equal));
 
             if (queryParameterInfos != null)
             {
@@ -116,7 +120,7 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new RoadMunicipalInfoDto()
             {
-                //RoadID = model.RoadID
+                RoadID = model.RoadID
             };
             var filters = new List<QueryParameterInfo>();
             if (model.ID > 0)

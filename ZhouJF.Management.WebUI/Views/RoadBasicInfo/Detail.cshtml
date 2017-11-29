@@ -172,7 +172,7 @@
                             <td>@item.MachineWashLength</td>
                             <td>@item.ManualWashSquare</td>
                             <td>@item.ManualQuota</td>
-                            <td>@item.DustbinCount</td>
+                            <td></td>
                             <td>@item.LeaderCode <input type="hidden" id="lnt" value="@item.longitude" /> <input type="hidden" id="lat" value="@item.latitude" /></td>
                         </tr>
                     }
@@ -201,9 +201,7 @@
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
                 <table class="imagetable">
                     <tr>
-                        <th>道路编码</th>
-                        <th>绿地编码</th>
-                        <th>绿地名称</th>
+                        <th>道路</th>
                         <th>一级绿地面积</th>
                         <th>二级绿地面积</th>
                         <th>三级绿地面积</th>
@@ -214,8 +212,6 @@
                     {
                         <tr>
                             <td>@item.RoadID</td>
-                            <td>@item.GreenLandCode</td>
-                            <td>@item.GreenLandName.0 n  n</td>
                             <td>@item.FirstLevelSquare</td>
                             <td>@item.SecondLevelSquare</td>
                             <td>@item.ThirdLevelSquare</td>

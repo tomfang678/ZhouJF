@@ -45,22 +45,6 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _RoadID; }
             set { _RoadID = value; }
         }
-        private string _GreenLandCode;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("GreenLandCode", System.Data.DbType.String)]
-        public string GreenLandCode
-        {
-            get { return _GreenLandCode; }
-            set { _GreenLandCode = value; }
-        }
-        private string _GreenLandName;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("GreenLandName", System.Data.DbType.String)]
-        public string GreenLandName
-        {
-            get { return _GreenLandName; }
-            set { _GreenLandName = value; }
-        }
         private int? _FirstLevelSquare;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("FirstLevelSquare", System.Data.DbType.Int32)]

@@ -12,8 +12,6 @@
               SELECT 
  ID 
  ,RoadID 
- ,GreenLandCode 
- ,GreenLandName 
  ,FirstLevelSquare 
  ,SecondLevelSquare 
  ,ThirdLevelSquare 
@@ -47,8 +45,6 @@
               INSERT INTO 
  GreenLandInfo 
  (RoadID 
- ,GreenLandCode 
- ,GreenLandName 
  ,FirstLevelSquare 
  ,SecondLevelSquare 
  ,ThirdLevelSquare 
@@ -69,9 +65,7 @@
 
  ) 
  VALUES( 
- @RoadID 
- ,@GreenLandCode 
- ,@GreenLandName 
+ @RoadID  
  ,@FirstLevelSquare 
  ,@SecondLevelSquare 
  ,@ThirdLevelSquare 
@@ -95,8 +89,6 @@
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
-        <Param Name = "@GreenLandCode" Column = "GreenLandCode" TypeName = "System.String" />
-        <Param Name = "@GreenLandName" Column = "GreenLandName" TypeName = "System.String" />
         <Param Name = "@FirstLevelSquare" Column = "FirstLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@SecondLevelSquare" Column = "SecondLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@ThirdLevelSquare" Column = "ThirdLevelSquare" TypeName = "System.Int32" />
@@ -123,8 +115,6 @@
           <![CDATA[
               UPDATE  GreenLandInfo 
  SET  RoadID = @RoadID 
- ,GreenLandCode = @GreenLandCode 
- ,GreenLandName = @GreenLandName 
  ,FirstLevelSquare = @FirstLevelSquare 
  ,SecondLevelSquare = @SecondLevelSquare 
  ,ThirdLevelSquare = @ThirdLevelSquare 
@@ -146,8 +136,6 @@
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
-        <Param Name = "@GreenLandCode" Column = "GreenLandCode" TypeName = "System.String" />
-        <Param Name = "@GreenLandName" Column = "GreenLandName" TypeName = "System.String" />
         <Param Name = "@FirstLevelSquare" Column = "FirstLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@SecondLevelSquare" Column = "SecondLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@ThirdLevelSquare" Column = "ThirdLevelSquare" TypeName = "System.Int32" />
@@ -163,7 +151,6 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
-
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -187,8 +174,6 @@
       select row_number() over (order by A.ID @Direction) row, 
   A.ID 
  ,A.RoadID 
- ,A.GreenLandCode 
- ,A.GreenLandName 
  ,A.FirstLevelSquare 
  ,A.SecondLevelSquare 
  ,A.ThirdLevelSquare 
