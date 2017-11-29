@@ -94,5 +94,53 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _v5; }
             set { _v5 = value; }
         }
+        private string _RoadBetween;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("RoadBetween", System.Data.DbType.String)]
+        public string RoadBetween
+        {
+            get { return _RoadBetween; }
+            set { _RoadBetween = value; }
+        }
+        private string _RainPipeDeepth;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("RainPipeDeepth", System.Data.DbType.String)]
+        public string RainPipeDeepth
+        {
+            get { return _RainPipeDeepth; }
+            set { _RainPipeDeepth = value; }
+        }
+        private string _DirtyWaterPipeDeepth;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("DirtyWaterPipeDeepth", System.Data.DbType.String)]
+        public string DirtyWaterPipeDeepth
+        {
+            get { return _DirtyWaterPipeDeepth; }
+            set { _DirtyWaterPipeDeepth = value; }
+        }
+        private int _RainInspectionShaftCount;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("RainInspectionShaftCount", System.Data.DbType.String)]
+        public int RainInspectionShaftCount
+        {
+            get { return _RainInspectionShaftCount; }
+            set { _RainInspectionShaftCount = value; }
+        }
+        private int _DiryWaternspectionShaftCount;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("DiryWaternspectionShaftCount", System.Data.DbType.String)]
+        public int DiryWaternspectionShaftCount
+        {
+            get { return _DiryWaternspectionShaftCount; }
+            set { _DiryWaternspectionShaftCount = value; }
+        }
+        private int _WaterInletCount;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("WaterInletCount", System.Data.DbType.String)]
+        public int WaterInletCount
+        {
+            get { return _WaterInletCount; }
+            set { _WaterInletCount = value; }
+        }
     }
 }

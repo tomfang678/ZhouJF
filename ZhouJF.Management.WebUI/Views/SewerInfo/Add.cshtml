@@ -50,6 +50,16 @@
                         @Html.DropDownList("RoadID")
                     </div>
                 </div>
+                 <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        道路路格<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRoadBetween" name="RoadBetween" value="" class="form-control" placeholder="道路路格">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">
                         连管长度<span class="required" aria-required="true">
@@ -100,14 +110,64 @@
                         <input type="text" id="txtBiggerRainPipeLength" name="BiggerRainPipeLength" value="" class="form-control" placeholder="特大型雨水管长度（＞Φ1500)">
                     </div>
                 </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        雨水管深度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRainPipeDeepth" name="RainPipeDeepth" value="" class="form-control" placeholder="雨水管深度">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">
-                        特大型雨水管长度（＞Φ1500)<span class="required" aria-required="true">
+                        污水管长度（不分管径）<span class="required" aria-required="true">
                             *
                         </span>
                     </label>
                     <div class="col-md-4">
                         <input type="text" id="txtDirtyWaterPipeLength" name="DirtyWaterPipeLength" value="" class="form-control" placeholder="污水管长度（不分管径）">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        污水管深度<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtDirtyWaterPipeDeepth" name="DirtyWaterPipeDeepth" value="" class="form-control" placeholder="污水管深度">
+                    </div>
+                </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        雨水窨井数量<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRainInspectionShaftCount" name="RainInspectionShaftCount" value="" class="form-control" placeholder="雨水窨井数量">
+                    </div>
+                </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        污水窨井数量<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtDiryWaternspectionShaftCount" name="DiryWaternspectionShaftCount" value="" class="form-control" placeholder="污水窨井数量">
+                    </div>
+                </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        进水口数量<span class="required" aria-required="true">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtWaterInletCount" name="WaterInletCount" value="" class="form-control" placeholder="进水口数量">
                     </div>
                 </div>
                 <div class="form-group">
