@@ -45,9 +45,7 @@ namespace YHPT.SystemInfo.Business
             var filters = new List<QueryParameterInfo>();
             if (data.RoadID != null && data.RoadID != 0)
                 filters.Add(new QueryParameterInfo("RoadID", data.RoadID, DataFilterConditions.Equal));
-            if (!string.IsNullOrEmpty(data.LeaderCode))
-                filters.Add(new QueryParameterInfo("LeaderCode", data.LeaderCode, DataFilterConditions.Equal));
-
+            
             //if (!string.IsNullOrEmpty(data.RoadCode))
             //    filters.Add(new QueryParameterInfo("RoadCode", data.RoadCode, DataFilterConditions.Equal));
             //if (!string.IsNullOrEmpty(data.RoadName))
@@ -113,7 +111,7 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new GreenLandInfoDto()
             {
-                // LeaderCode = model.LeaderCode
+                RoadID = model.RoadID
             };
             var filters = new List<QueryParameterInfo>();
             if (model.ID > 0)

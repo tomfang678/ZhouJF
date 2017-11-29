@@ -53,10 +53,17 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/BridgeInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(BridgeInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID == null ? "" : UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserID.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhBridgeinfoManager()).Update(model);
-            return Json(new ResponseMessage() { IsSuccess = true });
+            if (result)
+            {
+                return Json(new ResponseMessage() { IsSuccess = true });
+            }
+            else
+            {
+                return Json(new ResponseMessage() { IsSuccess = false, Message = "编辑失败" });
+            }
         }
 
         [HttpPost]
@@ -76,10 +83,6 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/BridgeInfo/Index", AuthorizeKey.Add)]
         public JsonResult Add(BridgeInfo model)
         {
-            //if (string.IsNullOrEmpty(model.) || string.IsNullOrEmpty(model.RoadCode))
-            //{
-            //    return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = (int)ResponseIntValue.Fail, Message = "请输入必填字段" });
-            //}
             model.CreateUser = UserSession.Current.UserCode;
             model.CreateTime = DateTime.Now;
             model.LastModifiedUser = UserSession.Current.UserCode;

@@ -8,7 +8,7 @@
 { "mDataProp": "MiddleTreeCount", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "BigTreeCount", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "BiggerTreeCount", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "SubContLeaderInfoID", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },

@@ -49,7 +49,7 @@ namespace YHPT.Management.WebUI.Controllers
             this.ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", entity.RoadID);
 
             var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
-            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", entity.LeaderCode);
+            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", entity.SubContLeaderInfoID);
 
             return View(entity);
         }
@@ -81,10 +81,6 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/StreetTreeInfo/Index", AuthorizeKey.Add)]
         public JsonResult Add(StreetTreeInfo model)
         {
-            //if (string.IsNullOrEmpty(model.RoadCode) || string.IsNullOrEmpty(model.RoadCode))
-            //{
-            //    return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = (int)ResponseIntValue.Fail, Message = "请输入必填字段" });
-            //}
             model.CreateUser = UserSession.Current.UserCode;
             model.CreateTime = DateTime.Now;
             model.LastModifiedUser = UserSession.Current.UserCode;

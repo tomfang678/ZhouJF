@@ -45,6 +45,7 @@
  ,CreateTime 
  ,LastModifiedUser 
  ,LastModifiedTime  
+ ,picture
   
  FROM 
  BridgeInfo 
@@ -101,6 +102,7 @@
 ,v3
 ,v4
 ,v5
+,picture
  ) 
  VALUES( 
 @RoadID 
@@ -144,6 +146,7 @@
 ,@v3
 ,@v4
 ,@v5
+,@picture
  );
 ]]>
         </String>
@@ -189,6 +192,7 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -235,7 +239,7 @@
  ,v3 = @v3 
  ,v4 = @v4 
  ,v5 = @v5 
-
+ ,picture = @picture
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -279,7 +283,7 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
-
+        <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">

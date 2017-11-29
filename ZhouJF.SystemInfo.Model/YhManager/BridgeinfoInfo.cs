@@ -375,6 +375,15 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _v5; }
             set { _v5 = value; }
         }
+        private string _picture;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("picture", System.Data.DbType.String)]
+        public string picture
+        {
+            get { return _picture; }
+            set { _picture = value; }
+        }
+
     }
 
 }

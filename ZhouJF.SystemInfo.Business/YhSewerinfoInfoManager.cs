@@ -49,9 +49,10 @@ namespace YHPT.SystemInfo.Business
             var filters = new List<QueryParameterInfo>();
             if (data.RoadID != null && data.RoadID != 0)
                 filters.Add(new QueryParameterInfo("RoadID", data.RoadID, DataFilterConditions.Equal));
-            if (!string.IsNullOrEmpty(data.LeaderCode))
-                filters.Add(new QueryParameterInfo("SubContLeaderInfoID", data.SubContLeaderInfoID, DataFilterConditions.Equal));
 
+            if (!string.IsNullOrEmpty(data.RoadBetween))
+                filters.Add(new QueryParameterInfo("RoadBetween", data.RoadBetween, DataFilterConditions.Equal));
+          
             //if (!string.IsNullOrEmpty(data.RoadCode))
             //    filters.Add(new QueryParameterInfo("RoadCode", data.RoadCode, DataFilterConditions.Equal));
             //if (!string.IsNullOrEmpty(data.RoadName))
@@ -120,7 +121,8 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new SewerinfoDto()
             {
-                LeaderCode = model.LeaderCode
+                RoadID = model.RoadID,
+                RoadBetween = model.RoadBetween
             };
             var filters = new List<QueryParameterInfo>();
             if (model.ID > 0)

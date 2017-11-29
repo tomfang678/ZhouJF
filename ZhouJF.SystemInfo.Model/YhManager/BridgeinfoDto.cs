@@ -104,5 +104,13 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _v5; }
             set { _v5 = value; }
         }
+        private string _BridgeName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("BridgeName", System.Data.DbType.String)]
+        public string BridgeName
+        {
+            get { return _BridgeName; }
+            set { _BridgeName = value; }
+        }
     }
 }

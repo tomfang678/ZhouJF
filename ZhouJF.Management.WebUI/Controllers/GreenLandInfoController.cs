@@ -56,7 +56,14 @@ namespace YHPT.Management.WebUI.Controllers
             model.LastModifiedUser = UserSession.Current.UserID.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhGreenLandInfoManager()).Update(model);
-            return Json(new ResponseMessage() { IsSuccess = true });
+            if (result)
+            {
+                return Json(new ResponseMessage() { IsSuccess = true });
+            }
+            else
+            {
+                return Json(new ResponseMessage() { IsSuccess = false, Message = "编辑失败" });
+            }
         }
 
         [HttpPost]

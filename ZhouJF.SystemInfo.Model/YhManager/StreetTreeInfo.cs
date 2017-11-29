@@ -74,14 +74,6 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _BiggerTreeCount; }
             set { _BiggerTreeCount = value; }
         }
-        private string _LeaderCode;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("LeaderCode", System.Data.DbType.String)]
-        public string LeaderCode
-        {
-            get { return _LeaderCode; }
-            set { _LeaderCode = value; }
-        }
         private string _CreateUser;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("CreateUser", System.Data.DbType.String)]
