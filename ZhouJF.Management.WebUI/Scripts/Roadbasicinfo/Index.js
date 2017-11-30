@@ -4,16 +4,15 @@
         "sAjaxSource": "/RoadBasicInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [
-            { "mDataProp": "ID", "mMaxWidth": "100px", "sWidth": "50px" },
-            { "mDataProp": "RoadCode", "mMaxWidth": "150px", "sWidth": "250px" },
+            { "mDataProp": "RoadCode", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "RoadLevel", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "RoadMaterial", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "BridgeNumber", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "Area", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "RoadLevel", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "RoadMaterial", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "BridgeNumber", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "Area", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "CreateUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": null, "mMaxWidth": "150px", "sWidth": "450px" }],
         "columnDefs": [
@@ -39,7 +38,7 @@
                 }
             },
             {
-                'targets': [8, 10],
+                'targets': [7, 9],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

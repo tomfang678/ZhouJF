@@ -30,7 +30,7 @@
                             <label class="control-label col-md-4">模块</label>
                             <div class="col-md-8">
                                 @*<input type="text" id="txtimgModule" name="imgModule" value="" class="form-control" placeholder="模块">*@
-                                @Html.DropDownList("imgModule")
+                                @Html.DropDownList("imgModule", null, new { @disabled = "disabled" })
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <button type="button" class="btn green" id="sure">保存</button>
-                            <input type=button value="取消" class="btn default" onclick="window.history.go(-1)">
+                            <input type="button" value="取消" class="btn default" onclick="window.history.go(-1)">
                         </div>
                     </div>
                 </div>
@@ -99,17 +99,13 @@
             <th style="width: 8px;">
                 <input type="checkbox" id="checkall" class="group-checkable" />
             </th>
-            <th>
-                ID
+            <th>ID
             </th>
-            <th>
-                缩略图
+            <th>缩略图
             </th>
-            <th>
-                备注
+            <th>备注
             </th>
-            <th>
-                操作
+            <th>操作
             </th>
         </tr>
     </thead>
