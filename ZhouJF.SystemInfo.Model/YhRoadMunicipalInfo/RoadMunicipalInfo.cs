@@ -177,6 +177,14 @@ namespace YHPT.SystemInfo.Model.YhRoadMunicipalInfo
             get { return _LeaderCode; }
             set { _LeaderCode = value; }
         }
+        private string _LeaderName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("LeaderName", System.Data.DbType.String)]
+        public string LeaderName
+        {
+            get { return _LeaderName; }
+            set { _LeaderName = value; }
+        }
         private string _CreateUser;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("CreateUser", System.Data.DbType.String)]

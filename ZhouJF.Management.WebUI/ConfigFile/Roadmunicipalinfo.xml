@@ -10,7 +10,7 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
+ rt.ID 
  ,RoadID 
  ,RoadLength 
  ,RoadSquare 
@@ -30,10 +30,10 @@
  ,VehicleDivideLine 
  ,VehicleBicycleDivideLine 
  ,SubContLeaderInfoID 
- ,CreateUser 
- ,CreateTime 
- ,LastModifiedUser 
- ,LastModifiedTime 
+ ,rt.CreateUser 
+ ,rt.CreateTime 
+ ,rt.LastModifiedUser 
+ ,rt.LastModifiedTime 
  ,pricture 
 ,longitude
 ,latitude
@@ -43,13 +43,17 @@
 ,v4
 ,v5
 ,StoneCurbSideLength
+,st.LeaderName
  FROM 
- RoadMunicipalInfo 
+ RoadMunicipalInfo rt left join SubContLeaderInfo st on rt.SubContLeaderInfoID = st.ID
   WHERE @Where ;
 ]]>
         </String>
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
+      <QueryParamMappings DefaultTableAlias="rt">
+        <Mapping Name="ID" DbFieldName="rt.ID"></Mapping>
+      </QueryParamMappings>
     </Sql>
     <Sql Name="AddObject">
       <SqlString>
@@ -277,6 +281,7 @@
  ,A.VehicleDivideLine 
  ,A.VehicleBicycleDivideLine 
  ,A.SubContLeaderInfoID 
+ ,C.LeaderName
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
@@ -291,7 +296,7 @@
 ,A.v5
 ,A.StoneCurbSideLength
  FROM 
- RoadMunicipalInfo   A
+ RoadMunicipalInfo   A left join SubContLeaderInfo C on A.SubContLeaderInfoID = C.ID
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
         )X left join RoadBasicInfo B on X.RoadID=B.ID

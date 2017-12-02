@@ -82,6 +82,8 @@ namespace YHPT.SystemInfo.Business
                         filters.Add(new QueryParameterInfo("Dept", "%" + data.Dept + "%", DataFilterConditions.Like));
                     if (!string.IsNullOrEmpty(data.Owner))
                         filters.Add(new QueryParameterInfo("Owner", data.Owner, DataFilterConditions.Equal));
+                    if (!string.IsNullOrEmpty(data.Section))
+                        filters.Add(new QueryParameterInfo("Section", "%" + data.Section + "%", DataFilterConditions.Like));
 
                     var result = _da.GetPagedList(filters, data.PageIndex, data.PageSize,
                         data.SortField, data.SortDirection, DataBaseResource.Read);

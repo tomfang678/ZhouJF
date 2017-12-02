@@ -27,9 +27,6 @@ namespace YHPT.Management.WebUI.Controllers
             var roadList = (new YhRoadbasicinfoManager()).GetItems(new RoadbasicinfoDto());
             ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", 1);
 
-            var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
-            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", 1);
-
             return View();
         }
         [MenuItem("~/RoadMunicipalInfo/Index", AuthorizeKey.Add)]
@@ -39,7 +36,7 @@ namespace YHPT.Management.WebUI.Controllers
             ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", 1);
 
             var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
-            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", 1);
+            ViewBag.SubContLeaderInfoID = new SelectList(leaderList, "ID", "LeaderName", 1);
 
             return View();
         }
@@ -53,7 +50,7 @@ namespace YHPT.Management.WebUI.Controllers
             this.ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", entity.RoadID);
 
             var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
-            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", entity.LeaderCode);
+            ViewBag.SubContLeaderInfoID = new SelectList(leaderList, "ID", "LeaderName", entity.SubContLeaderInfoID);
 
             return View(entity);
         }

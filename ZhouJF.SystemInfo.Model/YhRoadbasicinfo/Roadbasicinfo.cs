@@ -67,13 +67,13 @@ namespace YHPT.SystemInfo.Model.YhRoadbasicinfo
             get { return _BridgeNumber; }
             set { _BridgeNumber = value; }
         }
-        private string _AreaCode;
+        private int _AreaInfoID;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("AreaCode", System.Data.DbType.String)]
-        public string AreaCode
+        [MB.Orm.Mapping.Att.ColumnMap("AreaInfoID", System.Data.DbType.String)]
+        public int AreaInfoID
         {
-            get { return _AreaCode; }
-            set { _AreaCode = value; }
+            get { return _AreaInfoID; }
+            set { _AreaInfoID = value; }
         }
         private string _CreateUser;
         [DataMember]
@@ -134,6 +134,15 @@ namespace YHPT.SystemInfo.Model.YhRoadbasicinfo
         {
             get { return _SubContLeaderInfoID; }
             set { _SubContLeaderInfoID = value; }
+        }
+
+        private string _LeaderName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("LeaderName", System.Data.DbType.String)]
+        public string LeaderName
+        {
+            get { return _LeaderName; }
+            set { _LeaderName = value; }
         }
 
         private decimal _longitude;

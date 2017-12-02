@@ -22,7 +22,7 @@
 { "mDataProp": "PersonDivideLine", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "VehicleDivideLine", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "VehicleBicycleDivideLine", "mMaxWidth": "100px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "LeaderName", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedUser", "mMaxWidth": "100px", "sWidth": "250px" },

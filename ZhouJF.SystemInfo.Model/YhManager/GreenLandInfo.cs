@@ -77,13 +77,13 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _FlowerSquare; }
             set { _FlowerSquare = value; }
         }
-        private string _LeaderCode;
+        private string _LeaderName;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("LeaderCode", System.Data.DbType.String)]
-        public string LeaderCode
+        [MB.Orm.Mapping.Att.ColumnMap("LeaderName", System.Data.DbType.String)]
+        public string LeaderName
         {
-            get { return _LeaderCode; }
-            set { _LeaderCode = value; }
+            get { return _LeaderName; }
+            set { _LeaderName = value; }
         }
         private string _CreateUser;
         [DataMember]

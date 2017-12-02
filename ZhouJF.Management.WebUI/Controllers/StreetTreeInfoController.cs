@@ -30,7 +30,7 @@ namespace YHPT.Management.WebUI.Controllers
             ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", 1);
 
             var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
-            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", 1);
+            ViewBag.SubContLeaderInfoID = new SelectList(leaderList, "ID", "LeaderName", 1);
 
             //var cmpList = (new YhSubcontractorinfoManager()).GetItems(new SubContractorDto());
             //ViewBag.SubContractorID = new SelectList(cmpList, "ID", "SubContractorCrop", 1);
@@ -49,7 +49,7 @@ namespace YHPT.Management.WebUI.Controllers
             this.ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", entity.RoadID);
 
             var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
-            ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", entity.SubContLeaderInfoID);
+            ViewBag.SubContLeaderInfoID = new SelectList(leaderList, "ID", "LeaderName", entity.SubContLeaderInfoID);
 
             return View(entity);
         }

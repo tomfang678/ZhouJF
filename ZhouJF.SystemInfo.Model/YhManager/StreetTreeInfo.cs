@@ -114,6 +114,14 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _pricture; }
             set { _pricture = value; }
         }
+        private string _LeaderName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("LeaderName", System.Data.DbType.String)]
+        public string LeaderName
+        {
+            get { return _LeaderName; }
+            set { _LeaderName = value; }
+        }
         private int? _SubContLeaderInfoID;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("SubContLeaderInfoID", System.Data.DbType.Int32)]

@@ -74,8 +74,8 @@ namespace YHPT.SystemInfo.Business
                         filters.Add(new QueryParameterInfo("RoadLevel", "%" + data.RoadLevel + "%", DataFilterConditions.Like));
                     if (!string.IsNullOrEmpty(data.RoadMaterial))
                         filters.Add(new QueryParameterInfo("RoadMaterial", data.RoadMaterial, DataFilterConditions.Equal));
-                    if (!string.IsNullOrEmpty(data.AreaCode))
-                        filters.Add(new QueryParameterInfo("AreaCode", data.AreaCode, DataFilterConditions.Equal));
+                    if (data.AreaInfoID >= 0)
+                        filters.Add(new QueryParameterInfo("AreaInfoID", data.AreaInfoID, DataFilterConditions.Equal));
                     var result = _da.GetPagedList(filters, data.PageIndex, data.PageSize,
                         data.SortField, data.SortDirection, DataBaseResource.Read);
                     return result;

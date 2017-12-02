@@ -83,7 +83,7 @@ namespace YHPT.Management.WebUI.Controllers
         {
             var entity = (new YhRoadbasicinfoManager()).GetItemByKey(id);
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
-            ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", entity.AreaCode);
+            ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", entity.AreaInfoID);
 
             return View(entity);
         }

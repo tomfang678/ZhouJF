@@ -6,10 +6,10 @@
         "aoColumns": [
             { "mDataProp": "RoadCode", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "Area", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "RoadLevel", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "RoadMaterial", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "BridgeNumber", "mMaxWidth": "100px", "sWidth": "250px" },
-{ "mDataProp": "Area", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedUser", "mMaxWidth": "100px", "sWidth": "250px" },

@@ -32,7 +32,7 @@
 { "mDataProp": "ElectricPowerCount", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CommsCableCount", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "Images", "mMaxWidth": "100px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "LeaderName", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedUser", "mMaxWidth": "100px", "sWidth": "250px" },

@@ -114,7 +114,6 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new SanitationInfoDto()
             {
-                LeaderCode = model.LeaderCode,
                 RoadID = model.RoadID
             };
             var filters = new List<QueryParameterInfo>();

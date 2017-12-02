@@ -8,7 +8,7 @@
 { "mDataProp": "SecondLevelSquare", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "ThirdLevelSquare", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "FlowerSquare", "mMaxWidth": "110px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "LeaderName", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedUser", "mMaxWidth": "110px", "sWidth": "250px" },
