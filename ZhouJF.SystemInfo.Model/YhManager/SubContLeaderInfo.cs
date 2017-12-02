@@ -37,14 +37,6 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _SubContractorID; }
             set { _SubContractorID = value; }
         }
-        private string _LeaderCode;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("LeaderCode", System.Data.DbType.String)]
-        public string LeaderCode
-        {
-            get { return _LeaderCode; }
-            set { _LeaderCode = value; }
-        }
         private string _LeaderName;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("LeaderName", System.Data.DbType.String)]

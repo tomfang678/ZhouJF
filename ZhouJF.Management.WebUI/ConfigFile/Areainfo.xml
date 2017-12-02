@@ -14,8 +14,7 @@
  ,Owner 
  ,Section 
  ,Dept 
- ,Area 
- ,AreaCode 
+ ,Area  
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
@@ -47,7 +46,6 @@
  ,Section 
  ,Dept 
  ,Area 
- ,AreaCode 
  ,CreateUser 
  ,CreateTime 
  ,LastModifiedUser 
@@ -66,7 +64,6 @@
  ,@Section 
  ,@Dept 
  ,@Area 
- ,@AreaCode 
  ,@CreateUser 
  ,@CreateTime 
  ,@LastModifiedUser 
@@ -86,7 +83,6 @@
         <Param Name = "@Section" Column = "Section" TypeName = "System.String" />
         <Param Name = "@Dept" Column = "Dept" TypeName = "System.String" />
         <Param Name = "@Area" Column = "Area" TypeName = "System.String" />
-        <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
@@ -111,7 +107,6 @@
  ,Section = @Section 
  ,Dept = @Dept 
  ,Area = @Area 
- ,AreaCode = @AreaCode 
  ,LastModifiedUser = @LastModifiedUser 
  ,LastModifiedTime = @LastModifiedTime 
   ,longitude=@longitude
@@ -130,7 +125,6 @@
         <Param Name = "@Section" Column = "Section" TypeName = "System.String" />
         <Param Name = "@Dept" Column = "Dept" TypeName = "System.String" />
         <Param Name = "@Area" Column = "Area" TypeName = "System.String" />
-        <Param Name = "@AreaCode" Column = "AreaCode" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
@@ -168,7 +162,6 @@
  ,A.Section 
  ,A.Dept 
  ,A.Area 
- ,A.AreaCode 
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 

@@ -43,6 +43,15 @@
         <form id="formEdit" method="post" class="form-horizontal">
             <div class="form-body">
                 <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            区<span class="required" aria-required="true">
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            @Html.DropDownList("region")
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             业主<span class="required" aria-required="true">
@@ -73,15 +82,6 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">
-                            区域编码<span class="required" aria-required="true">
-                            </span>
-                        </label>
-                        <div class="col-md-9">
-                            <input type="text" id="txtAreaCode" name="AreaCode" value="@Model.AreaCode" class="form-control" placeholder="区域编码">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
                             区域<span class="required" aria-required="true">
                             </span>
                         </label>
@@ -105,15 +105,6 @@
                         </label>
                         <div class="col-md-9">
                             <input type="text" id="latitude" name="latitude" value="@Model.latitude" class="form-control" placeholder="纬度">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            区域<span class="required" aria-required="true">
-                            </span>
-                        </label>
-                        <div class="col-md-9">
-                            @Html.DropDownList("region")
                         </div>
                     </div>
                     <div class="form-group">

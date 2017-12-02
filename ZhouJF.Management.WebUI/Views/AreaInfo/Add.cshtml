@@ -41,10 +41,18 @@
         <form id="DataAdd" method="post" class="form-horizontal">
             <div class="form-body">
                 <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            区<span class="required" aria-required="true">
+                            </span>
+                        </label>
+                        <div class="col-md-9">
+                            @Html.DropDownList("region")
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             业主<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">
@@ -54,7 +62,6 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             标段<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">
@@ -64,7 +71,6 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             项目部<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">
@@ -73,18 +79,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">
-                            区域编码<span class="required" aria-required="true">
-                                *
-                            </span>
-                        </label>
-                        <div class="col-md-9">
-                            <input type="text" id="txtAreaCode" name="AreaCode" value="" class="form-control" placeholder="区域编码">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
                             区域<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">
@@ -94,7 +89,6 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             经度<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">
@@ -104,27 +98,16 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             纬度<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">
                             <input type="text" id="latitude" name="latitude" value="" class="form-control" placeholder="纬度">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            地图片区<span class="required" aria-required="true">
-                                *
-                            </span>
-                        </label>
-                        <div class="col-md-9">
-                            @Html.DropDownList("region")
-                        </div>
-                    </div>
+                   
                     <div class="form-group">
                         <label class="col-md-3 control-label">
                             道路总数<span class="required" aria-required="true">
-                                *
                             </span>
                         </label>
                         <div class="col-md-9">

@@ -115,10 +115,6 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/RoadBasicInfo/Index", AuthorizeKey.Add)]
         public JsonResult Add(Roadbasicinfo model)
         {
-            if (string.IsNullOrEmpty(model.RoadCode) || string.IsNullOrEmpty(model.RoadCode))
-            {
-                return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = (int)ResponseIntValue.Fail, Message = "请输入必填字段" });
-            }
             model.CreateUser = UserSession.Current.UserCode;
             model.CreateTime = DateTime.Now;
             model.LastModifiedUser = UserSession.Current.UserCode;

@@ -40,8 +40,6 @@ namespace YHPT.SystemInfo.Business
         public List<Roadbasicinfo> GetItems(RoadbasicinfoDto data, List<QueryParameterInfo> queryParameterInfos = null)
         {
             var filters = new List<QueryParameterInfo>();
-            if (!string.IsNullOrEmpty(data.RoadCode))
-                filters.Add(new QueryParameterInfo("RoadCode", data.RoadCode, DataFilterConditions.Equal));
             if (!string.IsNullOrEmpty(data.RoadName))
                 filters.Add(new QueryParameterInfo("RoadName", "%" + data.RoadName + "%", DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.RoadLevel))
@@ -66,8 +64,6 @@ namespace YHPT.SystemInfo.Business
                 if (data != null)
                 {
                     var filters = new List<QueryParameterInfo>();
-                    if (!string.IsNullOrEmpty(data.RoadCode))
-                        filters.Add(new QueryParameterInfo("RoadCode", data.RoadCode, DataFilterConditions.Equal));
                     if (!string.IsNullOrEmpty(data.RoadName))
                         filters.Add(new QueryParameterInfo("RoadName", "%" + data.RoadName + "%", DataFilterConditions.Like));
                     if (!string.IsNullOrEmpty(data.RoadLevel))
@@ -103,7 +99,7 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new RoadbasicinfoDto()
             {
-                RoadCode = model.RoadCode
+                RoadName = model.RoadName
             };
             var filters = new List<QueryParameterInfo>();
             if (model.ID > 0)

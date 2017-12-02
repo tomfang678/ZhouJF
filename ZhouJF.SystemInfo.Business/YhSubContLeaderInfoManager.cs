@@ -37,12 +37,8 @@ namespace YHPT.SystemInfo.Business
         public List<SubContLeaderInfo> GetItems(SubContLeaderInfoDto data, List<QueryParameterInfo> queryParameterInfos = null)
         {
             var filters = new List<QueryParameterInfo>();
-            if (!string.IsNullOrEmpty(data.PhoneNumber))
-                filters.Add(new QueryParameterInfo("PhoneNumber", data.PhoneNumber, DataFilterConditions.Equal));
-            if (!string.IsNullOrEmpty(data.LeaderCode))
-                filters.Add(new QueryParameterInfo("LeaderName", "%" + data.LeaderName + "%", DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.LeaderName))
-                filters.Add(new QueryParameterInfo("LeaderCode", data.LeaderCode, DataFilterConditions.Equal));
+                filters.Add(new QueryParameterInfo("LeaderName", "%" + data.LeaderName + "%", DataFilterConditions.Like));
             if (data.SubContractorID != null && data.SubContractorID > 0)
                 filters.Add(new QueryParameterInfo("SubContractorID", data.SubContractorID, DataFilterConditions.Equal));
             if (queryParameterInfos != null)
@@ -60,12 +56,8 @@ namespace YHPT.SystemInfo.Business
                 if (data != null)
                 {
                     var filters = new List<QueryParameterInfo>();
-                    if (!string.IsNullOrEmpty(data.PhoneNumber))
-                        filters.Add(new QueryParameterInfo("PhoneNumber", data.PhoneNumber, DataFilterConditions.Equal));
-                    if (!string.IsNullOrEmpty(data.LeaderCode))
-                        filters.Add(new QueryParameterInfo("LeaderName", "%" + data.LeaderName + "%", DataFilterConditions.Like));
                     if (!string.IsNullOrEmpty(data.LeaderName))
-                        filters.Add(new QueryParameterInfo("LeaderCode", data.LeaderCode, DataFilterConditions.Equal));
+                        filters.Add(new QueryParameterInfo("LeaderName", "%" + data.LeaderName + "%", DataFilterConditions.Like));
                     if (data.SubContractorID != null && data.SubContractorID > 0)
                         filters.Add(new QueryParameterInfo("SubContractorID", data.SubContractorID, DataFilterConditions.Equal));
 
@@ -101,7 +93,6 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new SubContLeaderInfoDto()
             {
-                LeaderCode = model.LeaderCode,
                 LeaderName = model.LeaderName,
                 PhoneNumber = model.PhoneNumber
             };

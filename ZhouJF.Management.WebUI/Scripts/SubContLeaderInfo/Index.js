@@ -4,7 +4,6 @@
         "sAjaxSource": "/SubContLeaderInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [{ "mDataProp": "SubContractorCrop", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "LeaderName", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "PhoneNumber", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
@@ -33,7 +32,7 @@
                 }
             },
             {
-                'targets': [5, 7],
+                'targets': [4, 6],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

@@ -27,14 +27,6 @@ namespace YHPT.SystemInfo.Model.YhRoadbasicinfo
             get { return _ID; }
             set { _ID = value; }
         }
-        private string _RoadCode;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("RoadCode", System.Data.DbType.String)]
-        public string RoadCode
-        {
-            get { return _RoadCode; }
-            set { _RoadCode = value; }
-        }
         private string _RoadName;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("RoadName", System.Data.DbType.String)]

@@ -56,14 +56,6 @@ namespace YHPT.SystemInfo.Model.YhAreaInfo
             get { return _Area; }
             set { _Area = value; }
         }
-        private string _AreaCode;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("AreaCode", System.Data.DbType.String)]
-        public string AreaCode
-        {
-            get { return _AreaCode; }
-            set { _AreaCode = value; }
-        }
         private string _CreateUser;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("CreateUser", System.Data.DbType.String)]

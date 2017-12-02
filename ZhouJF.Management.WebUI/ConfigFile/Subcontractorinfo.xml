@@ -10,8 +10,7 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
- ,SubContractorCode 
+ ID  
  ,SubContractorCrop 
  ,SubContractorBoss 
  ,PhoneNumber 
@@ -34,8 +33,7 @@
           <![CDATA[
               INSERT INTO 
  SubContractorInfo 
- (SubContractorCode 
- ,SubContractorCrop 
+ ( SubContractorCrop 
  ,SubContractorBoss 
  ,PhoneNumber 
  ,CreateUser 
@@ -43,9 +41,8 @@
  ,LastModifiedUser 
  ,LastModifiedTime 
  ) 
- VALUES( 
- @SubContractorCode 
- ,@SubContractorCrop 
+ VALUES(  
+ @SubContractorCrop 
  ,@SubContractorBoss 
  ,@PhoneNumber 
  ,@CreateUser 
@@ -55,7 +52,6 @@
  );
 ]]>
         </String>
-        <Param Name = "@SubContractorCode" Column = "SubContractorCode" TypeName = "System.String" />
         <Param Name = "@SubContractorCrop" Column = "SubContractorCrop" TypeName = "System.String" />
         <Param Name = "@SubContractorBoss" Column = "SubContractorBoss" TypeName = "System.String" />
         <Param Name = "@PhoneNumber" Column = "PhoneNumber" TypeName = "System.String" />
@@ -70,9 +66,8 @@
         <String>
           <![CDATA[
               UPDATE  SubContractorInfo 
- SET
- SubContractorCode = @SubContractorCode 
- ,SubContractorCrop = @SubContractorCrop 
+ SET 
+  SubContractorCrop = @SubContractorCrop 
  ,SubContractorBoss = @SubContractorBoss 
  ,PhoneNumber = @PhoneNumber 
  ,LastModifiedUser = @LastModifiedUser 
@@ -81,7 +76,6 @@
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
-        <Param Name = "@SubContractorCode" Column = "SubContractorCode" TypeName = "System.String" />
         <Param Name = "@SubContractorCrop" Column = "SubContractorCrop" TypeName = "System.String" />
         <Param Name = "@SubContractorBoss" Column = "SubContractorBoss" TypeName = "System.String" />
         <Param Name = "@PhoneNumber" Column = "PhoneNumber" TypeName = "System.String" />
@@ -107,8 +101,7 @@
           <![CDATA[
       select * from ( 
       select row_number() over (order by @SortField @Direction) row, 
- A.ID 
- , A.SubContractorCode 
+ A.ID  
  , A.SubContractorCrop 
  , A.SubContractorBoss 
  , A.PhoneNumber 

@@ -24,14 +24,6 @@ namespace YHPT.SystemInfo.Model.Subcontractor
             get { return _ID; }
             set { _ID = value; }
         }
-        private string _SubContractorCode;
-        [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("SubContractorCode", System.Data.DbType.String)]
-        public string SubContractorCode
-        {
-            get { return _SubContractorCode; }
-            set { _SubContractorCode = value; }
-        }
         private string _SubContractorCrop;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("SubContractorCrop", System.Data.DbType.String)]

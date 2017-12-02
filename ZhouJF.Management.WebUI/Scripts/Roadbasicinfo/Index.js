@@ -4,7 +4,6 @@
         "sAjaxSource": "/RoadBasicInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [
-            { "mDataProp": "RoadCode", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "Area", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "RoadLevel", "mMaxWidth": "100px", "sWidth": "250px" },
@@ -38,7 +37,7 @@
                 }
             },
             {
-                'targets': [7, 9],
+                'targets': [6, 8],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

@@ -100,7 +100,7 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new SubContractorDto()
             {
-                SubContractorCode = model.SubContractorCode
+                SubContractorCrop = model.SubContractorCrop
             };
             var filters = new List<QueryParameterInfo>();
             if (model.ID > 0)

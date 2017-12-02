@@ -68,10 +68,6 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/SubContractorInfo/Index", AuthorizeKey.Add)]
         public JsonResult Add(SubContractorInfo model)
         {
-            if (string.IsNullOrEmpty(model.SubContractorCode) || string.IsNullOrEmpty(model.SubContractorCode))
-            {
-                return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = (int)ResponseIntValue.Fail, Message = "请输入必填字段" });
-            }
             model.CreateUser = UserSession.Current.UserCode;
             model.CreateTime = DateTime.Now;
             model.LastModifiedUser = UserSession.Current.UserCode;

@@ -41,10 +41,10 @@ namespace YHPT.SystemInfo.Business
         public List<AreaInfo> GetItems(AreaInfoDto data, List<QueryParameterInfo> queryParameterInfos = null)
         {
             var filters = new List<QueryParameterInfo>();
-            if (!string.IsNullOrEmpty(data.AreaCode))
-                filters.Add(new QueryParameterInfo("AreaCode", data.AreaCode, DataFilterConditions.Equal));
+            if (!string.IsNullOrEmpty(data.Section))
+                filters.Add(new QueryParameterInfo("Section", "%" + data.Section + "%", DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.Area))
-                filters.Add(new QueryParameterInfo("Area", "%" + data.Area + "%", DataFilterConditions.Like));
+                filters.Add(new QueryParameterInfo("Area", data.Area, DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.Dept))
                 filters.Add(new QueryParameterInfo("Dept", "%" + data.Dept + "%", DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.Owner))
@@ -112,7 +112,7 @@ namespace YHPT.SystemInfo.Business
         {
             var queryInfo = new AreaInfoDto()
             {
-                AreaCode = model.AreaCode
+                Area = model.Area
             };
             var filters = new List<QueryParameterInfo>();
             if (model.ID > 0)
