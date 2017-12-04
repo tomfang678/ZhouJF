@@ -669,6 +669,7 @@
     <Content Include="Config\UploadConfig.xml" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\loadingAnimation.gif" />
+    <Content Include="Content\images\no_picture.jpg" />
     <Content Include="Content\MenuTree.xml" />
     <Content Include="Global.asax" />
     <Content Include="Image\ActionIcons10.png" />
