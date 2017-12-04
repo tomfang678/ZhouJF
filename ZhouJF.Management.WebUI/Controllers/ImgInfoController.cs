@@ -11,6 +11,7 @@ using MB.Framework.Common.Model;
 using YHPT.SystemInfo.Model.YhManager;
 using YHPT.SystemInfo.DAL;
 using YHPT.Management.WebUI.CommonLogic;
+using SmartFast.BaseFrame.Utility;
 
 namespace YHPT.Management.WebUI.Controllers
 {
@@ -28,10 +29,11 @@ namespace YHPT.Management.WebUI.Controllers
         {
             var entity = (new YhImgInfoManager()).GetImgByModule(moule, moduleId);
             ViewBag.imgList = entity;
-            ViewBag.imgModule = new SelectList(CommonFeild.GetModuleList(), "code", "name", moule);
+            ViewBag.imgModuleList = new SelectList(CommonFeild.GetModuleList(), "code", "name", moule);
             var imgTypeList = (new BfCodeInfoDAL()).GetBfCodeByModuleId("ImgType");
             ViewBag.ImgType = new SelectList(imgTypeList, "Code", "Name", 1);
             ViewBag.imgModuleId = moduleId;
+            ViewBag.imgModule = moule;
             ViewBag.imgModuleName = CommonFeild.GetModuleName(moule);
             ViewBag.RoadID = RoadID;
             return View(entity);
@@ -48,7 +50,7 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Edit(int id)
         {
             var entity = (new YhImgInfoManager()).GetItemByKey(id);
-            //var roadList = (new YhImgInfoManager()).GetItems(new ImgInfoDto());
+            //var roadList = (new YhImgInfoManager()).GetItems(new ImgInfoDto()); 
             //this.ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", entity.RoadID);
             //var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
             //ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", entity.LeaderCode);
@@ -67,12 +69,24 @@ namespace YHPT.Management.WebUI.Controllers
         [HttpPost]
         public JsonResult Delete(int id)
         {
-            var result = (new YhImgInfoManager()).Delete(id);
-            if (result)
+            try
             {
-                return Json(new ResponseMessage() { IsSuccess = true });
+                var entity = (new YhImgInfoManager()).GetItemByKey(id);
+                if (!string.IsNullOrEmpty(entity.imgUrl))
+                {
+                    FileHelper.ImgFileRemoe(entity.imgUrl);
+                }
+                var result = (new YhImgInfoManager()).Delete(id);
+                if (result)
+                {
+                    return Json(new ResponseMessage() { IsSuccess = true });
+                }
+                return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = 0, Message = "删除失败" });
             }
-            return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = 0, Message = "删除失败" });
+            catch (Exception e)
+            {
+                return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = 0, Message = "删除失败" + e.Message });
+            }
         }
 
         [HttpPost]

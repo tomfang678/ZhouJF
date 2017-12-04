@@ -10,7 +10,7 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
+ rt.ID 
  ,RoadID 
  ,ConnectingPipeLength 
  ,SamllRainPipeLength 
@@ -19,10 +19,10 @@
  ,BiggerRainPipeLength 
  ,DirtyWaterPipeLength 
  ,SubContLeaderInfoID 
- ,CreateUser 
- ,CreateTime 
- ,LastModifiedUser 
- ,LastModifiedTime 
+ ,rt.CreateUser 
+ ,rt.CreateTime 
+ ,rt.LastModifiedUser 
+ ,rt.LastModifiedTime  
 ,longitude
 ,latitude
 ,v1
@@ -30,13 +30,22 @@
 ,v3
 ,v4
 ,v5
+,RoadBetween
+,RainPipeDeepth
+,DirtyWaterPipeDeepth
+,RainInspectionShaftCount
+,DiryWaternspectionShaftCount
+,WaterInletCount
  FROM 
- SewerInfo 
+ SewerInfo rt left join SubContLeaderInfo st on rt.SubContLeaderInfoID = st.ID
   WHERE @Where ;
 ]]>
         </String>
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
+      <QueryParamMappings DefaultTableAlias="rt">
+        <Mapping Name="ID" DbFieldName="rt.ID"></Mapping>
+      </QueryParamMappings>
     </Sql>
     <Sql Name="AddObject">
       <SqlString>
@@ -63,6 +72,12 @@
 ,v3
 ,v4
 ,v5
+,RoadBetween
+,RainPipeDeepth
+,DirtyWaterPipeDeepth
+,RainInspectionShaftCount
+,DiryWaternspectionShaftCount
+,WaterInletCount
  ) 
  VALUES( 
 @RoadID 
@@ -84,6 +99,12 @@
 ,@v3
 ,@v4
 ,@v5
+,@RoadBetween
+,@RainPipeDeepth
+,@DirtyWaterPipeDeepth
+,@RainInspectionShaftCount
+,@DiryWaternspectionShaftCount
+,@WaterInletCount
  );
 ]]>
         </String>
@@ -107,7 +128,12 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
-
+        <Param Name = "@RoadBetween" Column = "RoadBetween" TypeName = "System.String" />
+        <Param Name = "@RainPipeDeepth" Column = "RainPipeDeepth" TypeName = "System.String" />
+        <Param Name = "@DirtyWaterPipeDeepth" Column = "DirtyWaterPipeDeepth" TypeName = "System.String" />
+        <Param Name = "@RainInspectionShaftCount" Column = "RainInspectionShaftCount" TypeName = "System.Int32" />
+        <Param Name = "@DiryWaternspectionShaftCount" Column = "DiryWaternspectionShaftCount" TypeName = "System.Int32" />
+        <Param Name = "@WaterInletCount" Column = "WaterInletCount" TypeName = "System.Int32" />
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -132,6 +158,12 @@
  ,v3 = @v3 
  ,v4 = @v4 
  ,v5 = @v5 
+ ,RoadBetween = @RoadBetween
+,RainPipeDeepth = @RainPipeDeepth
+,DirtyWaterPipeDeepth = @DirtyWaterPipeDeepth
+,RainInspectionShaftCount = @RainInspectionShaftCount
+,DiryWaternspectionShaftCount = @DiryWaternspectionShaftCount
+,WaterInletCount = @WaterInletCount
 
  WHERE ID = @ID ;
 ]]>
@@ -154,7 +186,12 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
-
+        <Param Name = "@RoadBetween" Column = "RoadBetween" TypeName = "System.String" />
+        <Param Name = "@RainPipeDeepth" Column = "RainPipeDeepth" TypeName = "System.String" />
+        <Param Name = "@DirtyWaterPipeDeepth" Column = "DirtyWaterPipeDeepth" TypeName = "System.String" />
+        <Param Name = "@RainInspectionShaftCount" Column = "RainInspectionShaftCount" TypeName = "System.Int32" />
+        <Param Name = "@DiryWaternspectionShaftCount" Column = "DiryWaternspectionShaftCount" TypeName = "System.Int32" />
+        <Param Name = "@WaterInletCount" Column = "WaterInletCount" TypeName = "System.Int32" />
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -185,6 +222,7 @@
  ,A.BiggerRainPipeLength 
  ,A.DirtyWaterPipeLength 
  ,A.SubContLeaderInfoID 
+ ,C.LeaderName
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
@@ -196,8 +234,14 @@
 ,A.v3
 ,A.v4
 ,A.v5
+,A.RoadBetween
+,A.RainPipeDeepth
+,A.DirtyWaterPipeDeepth
+,A.RainInspectionShaftCount
+,A.DiryWaternspectionShaftCount
+,A.WaterInletCount
  FROM 
- SewerInfo A
+ SewerInfo A left join SubContLeaderInfo C on A.SubContLeaderInfoID = C.ID
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
         )X left join RoadBasicInfo B on X.RoadID=B.ID

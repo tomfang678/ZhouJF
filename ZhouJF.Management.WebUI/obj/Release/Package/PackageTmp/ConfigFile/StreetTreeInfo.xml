@@ -10,17 +10,17 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
+ rt.ID 
  ,RoadID 
  ,SamllTreeCount 
  ,MiddleTreeCount 
  ,BigTreeCount 
  ,BiggerTreeCount 
  ,SubContLeaderInfoID 
- ,CreateUser 
- ,CreateTime 
- ,LastModifiedUser 
- ,LastModifiedTime 
+ ,rt.CreateUser 
+ ,rt.CreateTime 
+ ,rt.LastModifiedUser 
+ ,rt.LastModifiedTime  
  ,pricture 
 ,longitude
 ,latitude
@@ -31,12 +31,15 @@
 ,v5
 
  FROM 
- StreetTreeInfo   
+ StreetTreeInfo  rt left join SubContLeaderInfo st on rt.SubContLeaderInfoID = st.ID 
   WHERE @Where ;
 ]]>
         </String>
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
+      <QueryParamMappings DefaultTableAlias="rt">
+        <Mapping Name="ID" DbFieldName="rt.ID"></Mapping>
+      </QueryParamMappings>
     </Sql>
     <Sql Name="AddObject">
       <SqlString>
@@ -181,6 +184,7 @@
  ,A.BigTreeCount 
  ,A.BiggerTreeCount 
  ,A.SubContLeaderInfoID 
+ ,C.LeaderName
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
@@ -195,7 +199,7 @@
 ,A.v5
 
  FROM 
- StreetTreeInfo  A
+ StreetTreeInfo  A left join SubContLeaderInfo C on A.SubContLeaderInfoID = C.ID
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
         )X left join RoadBasicInfo B on X.RoadID=B.ID;

@@ -11,8 +11,7 @@
           <![CDATA[
               SELECT 
  ID 
- ,SubContractorID 
- ,LeaderCode 
+ ,SubContractorID  
  ,LeaderName 
  ,PhoneNumber 
  ,CreateUser 
@@ -34,8 +33,7 @@
           <![CDATA[
               INSERT INTO 
  SubContLeaderInfo 
- (SubContractorID 
- ,LeaderCode 
+ (SubContractorID  
  ,LeaderName 
  ,PhoneNumber 
  ,CreateUser 
@@ -45,7 +43,6 @@
  ) 
  VALUES( 
  @SubContractorID 
- ,@LeaderCode 
  ,@LeaderName 
  ,@PhoneNumber 
  ,@CreateUser 
@@ -57,7 +54,6 @@
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@SubContractorID" Column = "SubContractorID" TypeName = "System.Int32" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
         <Param Name = "@LeaderName" Column = "LeaderName" TypeName = "System.String" />
         <Param Name = "@PhoneNumber" Column = "PhoneNumber" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
@@ -72,7 +68,6 @@
           <![CDATA[
               UPDATE  SubContLeaderInfo 
  SET SubContractorID = @SubContractorID 
- ,LeaderCode = @LeaderCode 
  ,LeaderName = @LeaderName 
  ,PhoneNumber = @PhoneNumber 
  ,CreateUser = @CreateUser 
@@ -85,7 +80,6 @@
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@SubContractorID" Column = "SubContractorID" TypeName = "System.Int32" />
-        <Param Name = "@LeaderCode" Column = "LeaderCode" TypeName = "System.String" />
         <Param Name = "@LeaderName" Column = "LeaderName" TypeName = "System.String" />
         <Param Name = "@PhoneNumber" Column = "PhoneNumber" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
@@ -115,7 +109,6 @@ select * from (
 select row_number() over (order by A.SubContractorID @Direction) row, 
   A.ID 
  ,A.SubContractorID 
- ,A.LeaderCode 
  ,A.LeaderName 
  ,A.PhoneNumber 
  ,A.CreateUser 

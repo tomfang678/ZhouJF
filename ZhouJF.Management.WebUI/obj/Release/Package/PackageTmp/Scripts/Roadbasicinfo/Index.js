@@ -4,16 +4,14 @@
         "sAjaxSource": "/RoadBasicInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [
-            { "mDataProp": "ID", "mMaxWidth": "100px", "sWidth": "50px" },
-            { "mDataProp": "RoadCode", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "RoadLevel", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "RoadMaterial", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "BridgeNumber", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "Area", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "Area", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "RoadLevel", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "RoadMaterial", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "BridgeNumber", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "CreateUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
 { "mDataProp": null, "mMaxWidth": "150px", "sWidth": "450px" }],
         "columnDefs": [
@@ -24,7 +22,7 @@
                 "render": function (data, type, row) {
                     var html = [];
                     html.push("<a href=\"/RoadBasicInfo/Detail/{0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 详情 </a>");
-                    html.push("<a href=\"/ImgInfo/Index?moule=RoadBasicInfo&moduleId={0}&RoadID={1}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 图片管理 </a>");
+                    html.push("<a href=\"/ImgInfo/Index?moule=RoadBasicInfo&moduleId={0}&RoadID={0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 图片管理 </a>");
                     if ($("#hidIsEdit").val() == "True")
                         html.push("<a href=\"/RoadBasicInfo/Edit/{0}\" class=\"btn default btn-xs green\"><i class=\"fa fa-edit\"></i> 编辑 </a>");
                     else {
@@ -35,11 +33,11 @@
                     else {
                         html.push("<label class=\"btn btn-xs green\" style=\"cursor:default\"><i class=\"fa fa-trash-o\"></i> 删除 </label>");
                     }
-                    return html.join('').replace(/\{0\}/g, row.ID).replace(/\{1\}/g, row.RoadID);
+                    return html.join('').replace(/\{0\}/g, row.ID);
                 }
             },
             {
-                'targets': [8, 10],
+                'targets': [6, 8],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

@@ -3,12 +3,12 @@
         "filterForm": "#searchContatiner",
         "sAjaxSource": "/SubContractorInfo/QueryDB",
         "lockLastColumn": true,
-        "aoColumns": [{ "mDataProp": "SubContractorCode", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "SubContractorCrop", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "SubContractorBoss", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "PhoneNumber", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": null, "mMaxWidth": "150px", "sWidth": "250px" }],
+        "aoColumns": [
+{ "mDataProp": "SubContractorCrop", "mMaxWidth": "120px", "sWidth": "250px" },
+{ "mDataProp": "SubContractorBoss", "mMaxWidth": "120px", "sWidth": "250px" },
+{ "mDataProp": "PhoneNumber", "mMaxWidth": "120px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedTime", "mMaxWidth": "120px", "sWidth": "250px" },
+{ "mDataProp": null, "mMaxWidth": "120px", "sWidth": "250px" }],
         "columnDefs": [
             {
                 'orderable': false,
@@ -30,7 +30,7 @@
                 }
             },
             {
-                'targets': [4],
+                'targets': [3],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

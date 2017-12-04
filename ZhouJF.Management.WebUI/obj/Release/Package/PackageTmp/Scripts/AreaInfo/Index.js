@@ -3,16 +3,18 @@
         "filterForm": "#searchContatiner",
         "sAjaxSource": "/AreaInfo/QueryDB",
         "lockLastColumn": true,
-        "aoColumns": [{ "mDataProp": "Owner", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "Section", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "Dept", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "AreaCode", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "Area", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
+        "aoColumns": [
+            { "mDataProp": "region", "mMaxWidth": "100px", "sWidth": "250px" },
+            { "mDataProp": "Owner", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "Section", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "Dept", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "Area", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "v1", "mMaxWidth": "100px", "sWidth": "250px" },
+{ "mDataProp": "CreateUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedUser", "mMaxWidth": "100px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": null, "mMaxWidth": "150px", "sWidth": "250px" }],
+{ "mDataProp": null, "mMaxWidth": "100px", "sWidth": "250px" }],
         "columnDefs": [
             {
                 'orderable': false,
@@ -34,7 +36,7 @@
                 }
             },
             {
-                'targets': [6, 8],
+                'targets': [7, 9],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

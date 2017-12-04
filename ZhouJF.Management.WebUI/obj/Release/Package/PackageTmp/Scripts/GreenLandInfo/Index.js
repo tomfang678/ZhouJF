@@ -4,18 +4,16 @@
         "sAjaxSource": "/GreenLandInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [{ "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "GreenLandCode", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "GreenLandName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "FirstLevelSquare", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "SecondLevelSquare", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "ThirdLevelSquare", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "FlowerSquare", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "FirstLevelSquare", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "SecondLevelSquare", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "ThirdLevelSquare", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "FlowerSquare", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "LeaderName", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "CreateUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": null, "mMaxWidth": "150px", "sWidth": "250px" }],
+{ "mDataProp": null, "mMaxWidth": "110px", "sWidth": "250px" }],
         "columnDefs": [
             {
                 'orderable': false,
@@ -39,7 +37,7 @@
                 }
             },
             {
-                'targets': [9, 11],
+                'targets': [7, 9],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");

@@ -4,18 +4,19 @@
         "sAjaxSource": "/SanitationInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [{ "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "MachineCleanLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "MachineWashLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "ManualCleanSquare", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "ManualWashSquare", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "ManualQuota", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "DustbinCount", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "SubContLeaderInfoID", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "MachineCleanLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "MachineWashLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "ManualCleanSquare", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "ManualWashSquare", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "ManualQuota", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "DustbinPerFiftyMtr", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "DustbinPerEightyMtr", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "LeaderName", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "CreateUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": null, "mMaxWidth": "150px", "sWidth": "250px" }],
+{ "mDataProp": null, "mMaxWidth": "110px", "sWidth": "250px" }],
         "columnDefs": [
             {
                 'orderable': false,
@@ -39,7 +40,7 @@
                 }
             },
             {
-                'targets': [9, 11],
+                'targets': [10, 12],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");
