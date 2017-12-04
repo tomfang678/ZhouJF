@@ -65,7 +65,13 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Index()
         {
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
+            AreaInfo allArea = new AreaInfo { 
+                ID = -1,
+                Area = "所有"
+            };
+            areaList.Add(allArea);
             ViewBag.AreaInfoID = new SelectList(areaList, "ID", "Area", 1);
+
             return View();
         }
         [MenuItem("~/RoadBasicInfo/Index", AuthorizeKey.Add)]
