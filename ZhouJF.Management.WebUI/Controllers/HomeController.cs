@@ -110,7 +110,7 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
         /// <summary>
-        /// 根据区域ID或
+        /// 根据区域ID找出道路信息
         /// </summary>
         /// <param name="communityIds"></param>
         /// <param name="price"></param>
@@ -122,6 +122,10 @@ namespace YHPT.Management.WebUI.Controllers
             if (communityIds > 0)
             {
                 List<Roadbasicinfo> result = (new YhRoadbasicinfoManager()).GetItems(new RoadbasicinfoDto { AreaInfoID = communityIds });
+                foreach (var item in result)
+                {
+                    item.pictureThuemb = UtilHelper.GetThumbnail(item.picture);
+                }
                 var jsonmodel = new
                 {
                     Rooms = result,

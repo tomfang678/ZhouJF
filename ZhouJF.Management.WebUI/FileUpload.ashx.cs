@@ -41,7 +41,7 @@ namespace YHPT.Management.WebUI
                 if (string.IsNullOrEmpty(context.Request["thumbs"]))
                 {
                     //this.MakeThumbnail(filePath, "s", context.Request["thumbwidth"].ToInt(85), context.Request["thumbheight"].ToInt(85), string.IsNullOrEmpty(context.Request["mode"]) ? "H" : context.Request["mode"]);
-                    this.MakeThumbnail(filePath, "s", context.Request["thumbwidth"].ToInt(318), context.Request["thumbheight"].ToInt(212), string.IsNullOrEmpty(context.Request["mode"]) ? "H" : context.Request["mode"]);
+                    this.MakeThumbnail(filePath, "s", context.Request["thumbwidth"].ToInt(500), context.Request["thumbheight"].ToInt(280), string.IsNullOrEmpty(context.Request["mode"]) ? "H" : context.Request["mode"]);
                 }
                 else
                 {

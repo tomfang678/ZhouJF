@@ -21,6 +21,24 @@ namespace YHPT.Management.WebUI.CommonLogic
 {
     public class UtilHelper
     {
+        /// <summary>
+        /// 获取缩率图
+        /// </summary>
+        /// <param name="imgUrl"></param>
+        /// <returns></returns>
+        public static string GetThumbnail(string imgUrl)
+        {
+            if (!string.IsNullOrEmpty(imgUrl))
+            {
+                var imgSpt = imgUrl.Split('.');
+                return imgSpt[0] + "_s." + imgSpt[1];
+            }
+            else
+            {
+                return "~/Content/images/no_picture.jpg";
+            }
+        }
+
         public static List<T> GetDuplicateElementInList<T>(List<T> list)
         {
             var set = new HashSet<T>();

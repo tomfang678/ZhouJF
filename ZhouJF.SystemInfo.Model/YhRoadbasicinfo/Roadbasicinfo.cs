@@ -100,6 +100,15 @@ namespace YHPT.SystemInfo.Model.YhRoadbasicinfo
             set { _LastModifiedTime = value; }
         }
 
+        private string _pictureThuemb;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("pictureThuemb", System.Data.DbType.String)]
+        public string pictureThuemb
+        {
+            get { return _pictureThuemb; }
+            set { _pictureThuemb = value; }
+        }
+
         private string _picture;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("picture", System.Data.DbType.String)]
