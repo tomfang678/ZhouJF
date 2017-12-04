@@ -50,7 +50,7 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Edit(int id)
         {
             var entity = (new YhImgInfoManager()).GetItemByKey(id);
-            //var roadList = (new YhImgInfoManager()).GetItems(new ImgInfoDto()); 
+            //var roadList = (new YhImgInfoManager()).GetItems(new ImgInfoDto());  
             //this.ViewBag.RoadID = new SelectList(roadList, "ID", "RoadName", entity.RoadID);
             //var leaderList = (new YhSubContLeaderInfoManager()).GetItems(new SubContLeaderInfoDto());
             //ViewBag.LeaderCode = new SelectList(leaderList, "LeaderCode", "LeaderName", entity.LeaderCode);
