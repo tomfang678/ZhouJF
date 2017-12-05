@@ -160,28 +160,28 @@
         <Param Name = "@InteractionAngle" Column = "InteractionAngle" TypeName = "System.String" />
         <Param Name = "@BridgeSpanCount" Column = "BridgeSpanCount" TypeName = "System.String" />
         <Param Name = "@BridgeSpanStyle" Column = "BridgeSpanStyle" TypeName = "System.String" />
-        <Param Name = "@BridgeSquare" Column = "BridgeSquare" TypeName = "System.Int32" />
-        <Param Name = "@BridgeLength" Column = "BridgeLength" TypeName = "System.Int32" />
-        <Param Name = "@BridgeWidth" Column = "BridgeWidth" TypeName = "System.Int32" />
-        <Param Name = "@DriveWayWidth" Column = "DriveWayWidth" TypeName = "System.Int32" />
-        <Param Name = "@PavementWidth" Column = "PavementWidth" TypeName = "System.Int32" />
-        <Param Name = "@MainBeamSize" Column = "MainBeamSize" TypeName = "System.Int32" />
-        <Param Name = "@MainBeamCount" Column = "MainBeamCount" TypeName = "System.Int32" />
+        <Param Name = "@BridgeSquare" Column = "BridgeSquare" TypeName = "System.Double" />
+        <Param Name = "@BridgeLength" Column = "BridgeLength" TypeName = "System.Double" />
+        <Param Name = "@BridgeWidth" Column = "BridgeWidth" TypeName = "System.Double" />
+        <Param Name = "@DriveWayWidth" Column = "DriveWayWidth" TypeName = "System.Double" />
+        <Param Name = "@PavementWidth" Column = "PavementWidth" TypeName = "System.Double" />
+        <Param Name = "@MainBeamSize" Column = "MainBeamSize" TypeName = "System.String" />
+        <Param Name = "@MainBeamCount" Column = "MainBeamCount" TypeName = "System.String" />
         <Param Name = "@BearingStyle" Column = "BearingStyle" TypeName = "System.String" />
         <Param Name = "@BridgeRoadStructure" Column = "BridgeRoadStructure" TypeName = "System.String" />
         <Param Name = "@ExpansionStyle" Column = "ExpansionStyle" TypeName = "System.String" />
         <Param Name = "@ExpansionCount" Column = "ExpansionCount" TypeName = "System.Int32" />
-        <Param Name = "@MainBridgeLongitudinalSlope" Column = "MainBridgeLongitudinalSlope" TypeName = "System.Double" />
-        <Param Name = "@MainBridgeCrossSlope" Column = "MainBridgeCrossSlope" TypeName = "System.Double" />
-        <Param Name = "@RailLength" Column = "RailLength" TypeName = "System.Int32" />
+        <Param Name = "@MainBridgeLongitudinalSlope" Column = "MainBridgeLongitudinalSlope" TypeName = "System.String" />
+        <Param Name = "@MainBridgeCrossSlope" Column = "MainBridgeCrossSlope" TypeName = "System.String" />
+        <Param Name = "@RailLength" Column = "RailLength" TypeName = "System.Double" />
         <Param Name = "@RailStructure" Column = "RailStructure" TypeName = "System.String" />
         <Param Name = "@BankRevetmentStyle" Column = "BankRevetmentStyle" TypeName = "System.String" />
-        <Param Name = "@CappingSize" Column = "CappingSize" TypeName = "System.Int32" />
-        <Param Name = "@PileFeature" Column = "PileFeature" TypeName = "System.Int32" />
-        <Param Name = "@WaterSupplyPipeCount" Column = "WaterSupplyPipeCount" TypeName = "System.Int32" />
-        <Param Name = "@GasPipeCount" Column = "GasPipeCount" TypeName = "System.Int32" />
-        <Param Name = "@ElectricPowerCount" Column = "ElectricPowerCount" TypeName = "System.Int32" />
-        <Param Name = "@CommsCableCount" Column = "CommsCableCount" TypeName = "System.Int32" />
+        <Param Name = "@CappingSize" Column = "CappingSize" TypeName = "System.String" />
+        <Param Name = "@PileFeature" Column = "PileFeature" TypeName = "System.String" />
+        <Param Name = "@WaterSupplyPipeCount" Column = "WaterSupplyPipeCount" TypeName = "System.String" />
+        <Param Name = "@GasPipeCount" Column = "GasPipeCount" TypeName = "System.String" />
+        <Param Name = "@ElectricPowerCount" Column = "ElectricPowerCount" TypeName = "System.String" />
+        <Param Name = "@CommsCableCount" Column = "CommsCableCount" TypeName = "System.String" />
         <Param Name = "@Images" Column = "Images" TypeName = "System.String" />
         <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.Int32" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
@@ -253,28 +253,28 @@
         <Param Name = "@InteractionAngle" Column = "InteractionAngle" TypeName = "System.String" />
         <Param Name = "@BridgeSpanCount" Column = "BridgeSpanCount" TypeName = "System.String" />
         <Param Name = "@BridgeSpanStyle" Column = "BridgeSpanStyle" TypeName = "System.String" />
-        <Param Name = "@BridgeSquare" Column = "BridgeSquare" TypeName = "System.Int32" />
-        <Param Name = "@BridgeLength" Column = "BridgeLength" TypeName = "System.Int32" />
-        <Param Name = "@BridgeWidth" Column = "BridgeWidth" TypeName = "System.Int32" />
-        <Param Name = "@DriveWayWidth" Column = "DriveWayWidth" TypeName = "System.Int32" />
-        <Param Name = "@PavementWidth" Column = "PavementWidth" TypeName = "System.Int32" />
-        <Param Name = "@MainBeamSize" Column = "MainBeamSize" TypeName = "System.Int32" />
-        <Param Name = "@MainBeamCount" Column = "MainBeamCount" TypeName = "System.Int32" />
+        <Param Name = "@BridgeSquare" Column = "BridgeSquare" TypeName = "System.Double" />
+        <Param Name = "@BridgeLength" Column = "BridgeLength" TypeName = "System.Double" />
+        <Param Name = "@BridgeWidth" Column = "BridgeWidth" TypeName = "System.Double" />
+        <Param Name = "@DriveWayWidth" Column = "DriveWayWidth" TypeName = "System.Double" />
+        <Param Name = "@PavementWidth" Column = "PavementWidth" TypeName = "System.Double" />
+        <Param Name = "@MainBeamSize" Column = "MainBeamSize" TypeName = "System.String" />
+        <Param Name = "@MainBeamCount" Column = "MainBeamCount" TypeName = "System.String" />
         <Param Name = "@BearingStyle" Column = "BearingStyle" TypeName = "System.String" />
         <Param Name = "@BridgeRoadStructure" Column = "BridgeRoadStructure" TypeName = "System.String" />
         <Param Name = "@ExpansionStyle" Column = "ExpansionStyle" TypeName = "System.String" />
         <Param Name = "@ExpansionCount" Column = "ExpansionCount" TypeName = "System.Int32" />
-        <Param Name = "@MainBridgeLongitudinalSlope" Column = "MainBridgeLongitudinalSlope" TypeName = "System.Double" />
-        <Param Name = "@MainBridgeCrossSlope" Column = "MainBridgeCrossSlope" TypeName = "System.Double" />
-        <Param Name = "@RailLength" Column = "RailLength" TypeName = "System.Int32" />
+        <Param Name = "@MainBridgeLongitudinalSlope" Column = "MainBridgeLongitudinalSlope" TypeName = "System.String" />
+        <Param Name = "@MainBridgeCrossSlope" Column = "MainBridgeCrossSlope" TypeName = "System.String" />
+        <Param Name = "@RailLength" Column = "RailLength" TypeName = "System.Double" />
         <Param Name = "@RailStructure" Column = "RailStructure" TypeName = "System.String" />
         <Param Name = "@BankRevetmentStyle" Column = "BankRevetmentStyle" TypeName = "System.String" />
-        <Param Name = "@CappingSize" Column = "CappingSize" TypeName = "System.Int32" />
-        <Param Name = "@PileFeature" Column = "PileFeature" TypeName = "System.Int32" />
-        <Param Name = "@WaterSupplyPipeCount" Column = "WaterSupplyPipeCount" TypeName = "System.Int32" />
-        <Param Name = "@GasPipeCount" Column = "GasPipeCount" TypeName = "System.Int32" />
-        <Param Name = "@ElectricPowerCount" Column = "ElectricPowerCount" TypeName = "System.Int32" />
-        <Param Name = "@CommsCableCount" Column = "CommsCableCount" TypeName = "System.Int32" />
+        <Param Name = "@CappingSize" Column = "CappingSize" TypeName = "System.String" />
+        <Param Name = "@PileFeature" Column = "PileFeature" TypeName = "System.String" />
+        <Param Name = "@WaterSupplyPipeCount" Column = "WaterSupplyPipeCount" TypeName = "System.String" />
+        <Param Name = "@GasPipeCount" Column = "GasPipeCount" TypeName = "System.String" />
+        <Param Name = "@ElectricPowerCount" Column = "ElectricPowerCount" TypeName = "System.String" />
+        <Param Name = "@CommsCableCount" Column = "CommsCableCount" TypeName = "System.String" />
         <Param Name = "@Images" Column = "Images" TypeName = "System.String" />
         <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.Int32" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
