@@ -79,10 +79,10 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _ManualWashSquare; }
             set { _ManualWashSquare = value; }
         }
-        private int? _ManualQuota;
+        private double? _ManualQuota;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("ManualQuota", System.Data.DbType.Int32)]
-        public int? ManualQuota
+        [MB.Orm.Mapping.Att.ColumnMap("ManualQuota", System.Data.DbType.Double)]
+        public double? ManualQuota
         {
             get { return _ManualQuota; }
             set { _ManualQuota = value; }

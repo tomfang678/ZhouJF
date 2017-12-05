@@ -53,7 +53,7 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/SanitationInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(SanitationInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserCode == null ? "" : UserSession.Current.UserCode.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhSanitationInfoManager()).Update(model);
             if (result)

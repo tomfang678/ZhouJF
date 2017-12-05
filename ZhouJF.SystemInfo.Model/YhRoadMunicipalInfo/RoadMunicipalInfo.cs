@@ -309,5 +309,15 @@ namespace YHPT.SystemInfo.Model.YhRoadMunicipalInfo
             set { _StoneCurbSideLength = value; }
         }
 
+        private string _Area;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("Area", System.Data.DbType.Int32)]
+        public string Area
+        {
+            get { return _Area; }
+            set { _Area = value; }
+        }
+
+
     }
 }

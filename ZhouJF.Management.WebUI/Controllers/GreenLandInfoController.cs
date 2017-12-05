@@ -53,7 +53,7 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/GreenLandInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(GreenLandInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserCode == null ? "" : UserSession.Current.UserCode.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhGreenLandInfoManager()).Update(model);
             if (result)

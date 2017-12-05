@@ -103,7 +103,7 @@
         <Param Name = "@MachineWashLength" Column = "MachineWashLength" TypeName = "System.Int32" />
         <Param Name = "@ManualCleanSquare" Column = "ManualCleanSquare" TypeName = "System.Int32" />
         <Param Name = "@ManualWashSquare" Column = "ManualWashSquare" TypeName = "System.Int32" />
-        <Param Name = "@ManualQuota" Column = "ManualQuota" TypeName = "System.Int32" />
+        <Param Name = "@ManualQuota" Column = "ManualQuota" TypeName = "System.Double" />
         <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.String" />
         <Param Name = "@CreateUser" Column = "CreateUser" TypeName = "System.String" />
         <Param Name = "@CreateTime" Column = "CreateTime" TypeName = "System.DateTime" />
@@ -156,7 +156,7 @@
         <Param Name = "@MachineWashLength" Column = "MachineWashLength" TypeName = "System.Int32" />
         <Param Name = "@ManualCleanSquare" Column = "ManualCleanSquare" TypeName = "System.Int32" />
         <Param Name = "@ManualWashSquare" Column = "ManualWashSquare" TypeName = "System.Int32" />
-        <Param Name = "@ManualQuota" Column = "ManualQuota" TypeName = "System.Int32" />
+        <Param Name = "@ManualQuota" Column = "ManualQuota" TypeName = "System.Double" />
         <Param Name = "@SubContLeaderInfoID" Column = "SubContLeaderInfoID" TypeName = "System.String" />
         <Param Name = "@LastModifiedUser" Column = "LastModifiedUser" TypeName = "System.String" />
         <Param Name = "@LastModifiedTime" Column = "LastModifiedTime" TypeName = "System.DateTime" />
