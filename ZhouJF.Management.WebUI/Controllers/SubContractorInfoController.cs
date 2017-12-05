@@ -45,7 +45,7 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/SubContractorInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(SubContractorInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID == null ? "" : UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserCode == null ? "" : UserSession.Current.UserCode.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhSubcontractorinfoManager()).Update(model);
             return Json(new ResponseMessage() { IsSuccess = true });

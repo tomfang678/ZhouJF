@@ -86,58 +86,58 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _BridgeSpanStyle; }
             set { _BridgeSpanStyle = value; }
         }
-        private int? _BridgeSquare;
+        private double _BridgeSquare;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("BridgeSquare", System.Data.DbType.Int32)]
-        public int? BridgeSquare
+        [MB.Orm.Mapping.Att.ColumnMap("BridgeSquare", System.Data.DbType.Double)]
+        public double BridgeSquare
         {
             get { return _BridgeSquare; }
             set { _BridgeSquare = value; }
         }
-        private int? _BridgeLength;
+        private double _BridgeLength;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("BridgeLength", System.Data.DbType.Int32)]
-        public int? BridgeLength
+        [MB.Orm.Mapping.Att.ColumnMap("BridgeLength", System.Data.DbType.Double)]
+        public double BridgeLength
         {
             get { return _BridgeLength; }
             set { _BridgeLength = value; }
         }
-        private int? _BridgeWidth;
+        private double _BridgeWidth;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("BridgeWidth", System.Data.DbType.Int32)]
-        public int? BridgeWidth
+        [MB.Orm.Mapping.Att.ColumnMap("BridgeWidth", System.Data.DbType.Double)]
+        public double BridgeWidth
         {
             get { return _BridgeWidth; }
             set { _BridgeWidth = value; }
         }
-        private int? _DriveWayWidth;
+        private double _DriveWayWidth;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("DriveWayWidth", System.Data.DbType.Int32)]
-        public int? DriveWayWidth
+        [MB.Orm.Mapping.Att.ColumnMap("DriveWayWidth", System.Data.DbType.Double)]
+        public double DriveWayWidth
         {
             get { return _DriveWayWidth; }
             set { _DriveWayWidth = value; }
         }
-        private int? _PavementWidth;
+        private double _PavementWidth;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("PavementWidth", System.Data.DbType.Int32)]
-        public int? PavementWidth
+        [MB.Orm.Mapping.Att.ColumnMap("PavementWidth", System.Data.DbType.Double)]
+        public double PavementWidth
         {
             get { return _PavementWidth; }
             set { _PavementWidth = value; }
         }
-        private int? _MainBeamSize;
+        private string _MainBeamSize;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("MainBeamSize", System.Data.DbType.Int32)]
-        public int? MainBeamSize
+        [MB.Orm.Mapping.Att.ColumnMap("MainBeamSize", System.Data.DbType.String)]
+        public string MainBeamSize
         {
             get { return _MainBeamSize; }
             set { _MainBeamSize = value; }
         }
-        private int? _MainBeamCount;
+        private string _MainBeamCount;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("MainBeamCount", System.Data.DbType.Int32)]
-        public int? MainBeamCount
+        [MB.Orm.Mapping.Att.ColumnMap("MainBeamCount", System.Data.DbType.String)]
+        public string MainBeamCount
         {
             get { return _MainBeamCount; }
             set { _MainBeamCount = value; }
@@ -174,26 +174,26 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _ExpansionCount; }
             set { _ExpansionCount = value; }
         }
-        private double? _MainBridgeLongitudinalSlope;
+        private string _MainBridgeLongitudinalSlope;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("MainBridgeLongitudinalSlope", System.Data.DbType.String)]
-        public double? MainBridgeLongitudinalSlope
+        public string MainBridgeLongitudinalSlope
         {
             get { return _MainBridgeLongitudinalSlope; }
             set { _MainBridgeLongitudinalSlope = value; }
         }
-        private double? _MainBridgeCrossSlope;
+        private string _MainBridgeCrossSlope;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("MainBridgeCrossSlope", System.Data.DbType.String)]
-        public double? MainBridgeCrossSlope
+        public string MainBridgeCrossSlope
         {
             get { return _MainBridgeCrossSlope; }
             set { _MainBridgeCrossSlope = value; }
         }
-        private int? _RailLength;
+        private double _RailLength;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("RailLength", System.Data.DbType.Int32)]
-        public int? RailLength
+        [MB.Orm.Mapping.Att.ColumnMap("RailLength", System.Data.DbType.Double)]
+        public double RailLength
         {
             get { return _RailLength; }
             set { _RailLength = value; }
@@ -214,50 +214,50 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _BankRevetmentStyle; }
             set { _BankRevetmentStyle = value; }
         }
-        private int? _CappingSize;
+        private string _CappingSize;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("CappingSize", System.Data.DbType.Int32)]
-        public int? CappingSize
+        [MB.Orm.Mapping.Att.ColumnMap("CappingSize", System.Data.DbType.String)]
+        public string CappingSize
         {
             get { return _CappingSize; }
             set { _CappingSize = value; }
         }
-        private int? _PileFeature;
+        private string _PileFeature;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("PileFeature", System.Data.DbType.Int32)]
-        public int? PileFeature
+        [MB.Orm.Mapping.Att.ColumnMap("PileFeature", System.Data.DbType.String)]
+        public string PileFeature
         {
             get { return _PileFeature; }
             set { _PileFeature = value; }
         }
-        private int? _WaterSupplyPipeCount;
+        private string _WaterSupplyPipeCount;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("WaterSupplyPipeCount", System.Data.DbType.Int32)]
-        public int? WaterSupplyPipeCount
+        [MB.Orm.Mapping.Att.ColumnMap("WaterSupplyPipeCount", System.Data.DbType.String)]
+        public string WaterSupplyPipeCount
         {
             get { return _WaterSupplyPipeCount; }
             set { _WaterSupplyPipeCount = value; }
         }
-        private int? _GasPipeCount;
+        private string _GasPipeCount;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("GasPipeCount", System.Data.DbType.Int32)]
-        public int? GasPipeCount
+        [MB.Orm.Mapping.Att.ColumnMap("GasPipeCount", System.Data.DbType.String)]
+        public string GasPipeCount
         {
             get { return _GasPipeCount; }
             set { _GasPipeCount = value; }
         }
-        private int? _ElectricPowerCount;
+        private string _ElectricPowerCount;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("ElectricPowerCount", System.Data.DbType.Int32)]
-        public int? ElectricPowerCount
+        [MB.Orm.Mapping.Att.ColumnMap("ElectricPowerCount", System.Data.DbType.String)]
+        public string ElectricPowerCount
         {
             get { return _ElectricPowerCount; }
             set { _ElectricPowerCount = value; }
         }
-        private int? _CommsCableCount;
+        private string _CommsCableCount;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("CommsCableCount", System.Data.DbType.Int32)]
-        public int? CommsCableCount
+        [MB.Orm.Mapping.Att.ColumnMap("CommsCableCount", System.Data.DbType.String)]
+        public string CommsCableCount
         {
             get { return _CommsCableCount; }
             set { _CommsCableCount = value; }
