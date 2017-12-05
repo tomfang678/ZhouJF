@@ -20,7 +20,7 @@
         <li>@ViewBag.imgModuleName</li>
     </ul>
 </div>
-<form id="DataAdd" method="post" class="form-horizontal">
+<form id="DataAdd" method="post" class="form-horizontal"> 
     <div class="form-body">
         <div class="row">
             <div class="col-md-12">
@@ -29,23 +29,21 @@
                         <div class="form-group">
                             <label class="control-label col-md-4">模块</label>
                             <div class="col-md-8">
-                                @*<input type="text" id="txtimgModule" name="imgModule" value="" class="form-control" placeholder="模块">*@
-                                @Html.DropDownList("imgModule", null, new { @disabled = "disabled" })
+                                <input type="hidden" name="imgModule" value="@ViewBag.imgModule" />
+                                @*<input type="text" id="txtimgModule" name="imgModule" value="" class="form-control" placeholder="模块"> *@
+                                @Html.DropDownList("imgModuleList", null, new { @disabled = "disabled" })
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label col-md-4">模块ID</label>
                             <div class="col-md-8">
                                 <input type="text" id="txtimgModuleId" name="imgModuleId" readonly="readonly" value="@ViewBag.imgModuleId" class="form-control" placeholder="模块ID" />
                                 <input type="hidden" id="txtRoadID" name="RoadID" readonly="readonly" value="@ViewBag.RoadID" />
-
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label col-md-4">图片类别</label>
@@ -55,7 +53,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label col-md-4">图片</label>
@@ -71,7 +68,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label col-md-4">备注</label>
@@ -92,20 +88,23 @@
     </div>
 </form>
 
-
 <table class="table table-striped table-hover ">
     <thead>
         <tr>
             <th style="width: 8px;">
                 <input type="checkbox" id="checkall" class="group-checkable" />
             </th>
-            <th>ID
+            <th>
+                ID
             </th>
-            <th>缩略图
+            <th>
+                缩略图
             </th>
-            <th>备注
+            <th>
+                备注
             </th>
-            <th>操作
+            <th>
+                操作
             </th>
         </tr>
     </thead>
@@ -132,7 +131,6 @@
         }
     </tbody>
 </table>
-
 @section scripts{
     @Scripts.Render("~/Scripts/ImgInfo/Add.js")
     <script type="text/javascript">
@@ -155,4 +153,3 @@
         }
     </script>
 }
-

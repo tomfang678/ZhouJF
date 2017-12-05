@@ -11,7 +11,6 @@
           <![CDATA[
                SELECT 
  ID 
- ,RoadCode 
  ,RoadName 
  ,RoadLevel 
  ,RoadMaterial 
@@ -44,8 +43,7 @@
           <![CDATA[
               INSERT INTO 
  RoadBasicInfo 
- (RoadCode 
- ,RoadName 
+ (RoadName 
  ,RoadLevel 
  ,RoadMaterial 
  ,BridgeNumber 
@@ -64,8 +62,7 @@
 ,v5
  ) 
  VALUES( 
- @RoadCode 
- ,@RoadName 
+ @RoadName 
  ,@RoadLevel 
  ,@RoadMaterial 
  ,@BridgeNumber 
@@ -85,7 +82,6 @@
  );
 ]]>
         </String>
-        <Param Name = "@RoadCode" Column = "RoadCode" TypeName = "System.String" />
         <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
         <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
@@ -110,8 +106,7 @@
         <String>
           <![CDATA[
               UPDATE  RoadBasicInfo 
- SET RoadCode = @RoadCode 
- ,RoadName = @RoadName 
+ SET RoadName = @RoadName 
  ,RoadLevel = @RoadLevel 
  ,RoadMaterial = @RoadMaterial 
  ,BridgeNumber = @BridgeNumber 
@@ -130,7 +125,6 @@
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
-        <Param Name = "@RoadCode" Column = "RoadCode" TypeName = "System.String" />
         <Param Name = "@RoadName" Column = "RoadName" TypeName = "System.String" />
         <Param Name = "@RoadLevel" Column = "RoadLevel" TypeName = "System.String" />
         <Param Name = "@RoadMaterial" Column = "RoadMaterial" TypeName = "System.String" />
@@ -168,7 +162,6 @@
          select * from ( 
       select row_number() over (order by @SortField  @Direction) row, 
   A.ID 
- ,A.RoadCode 
  ,A.RoadName 
  ,A.RoadLevel 
  ,A.RoadMaterial 

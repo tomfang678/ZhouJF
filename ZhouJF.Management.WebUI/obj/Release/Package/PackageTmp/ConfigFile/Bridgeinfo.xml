@@ -10,7 +10,7 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
+ rt.ID 
  ,RoadID 
  ,BridgeName 
  ,BridgeStructureStyle 
@@ -41,18 +41,22 @@
  ,CommsCableCount 
  ,Images 
  ,SubContLeaderInfoID 
- ,CreateUser 
- ,CreateTime 
- ,LastModifiedUser 
- ,LastModifiedTime  
+ ,rt.CreateUser 
+ ,rt.CreateTime 
+ ,rt.LastModifiedUser 
+ ,rt.LastModifiedTime 
+ ,picture
   
  FROM 
- BridgeInfo 
+ BridgeInfo rt left join SubContLeaderInfo st on rt.SubContLeaderInfoID = st.ID
   WHERE @Where ;
 ]]>
         </String>
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
+      <QueryParamMappings DefaultTableAlias="rt">
+        <Mapping Name="ID" DbFieldName="rt.ID"></Mapping>
+      </QueryParamMappings>
     </Sql>
     <Sql Name="AddObject">
       <SqlString>
@@ -101,6 +105,7 @@
 ,v3
 ,v4
 ,v5
+,picture
  ) 
  VALUES( 
 @RoadID 
@@ -144,6 +149,7 @@
 ,@v3
 ,@v4
 ,@v5
+,@picture
  );
 ]]>
         </String>
@@ -189,6 +195,7 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
+        <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="UpdateObject">
@@ -235,7 +242,7 @@
  ,v3 = @v3 
  ,v4 = @v4 
  ,v5 = @v5 
-
+ ,picture = @picture
  WHERE ID = @ID ;
 ]]>
         </String>
@@ -279,7 +286,7 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
-
+        <Param Name = "@picture" Column = "picture" TypeName = "System.String" />
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -332,6 +339,7 @@
  ,A.CommsCableCount 
  ,A.Images 
  ,A.SubContLeaderInfoID 
+ ,C.LeaderName
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
@@ -344,7 +352,7 @@
 ,A.v4
 ,A.v5
  FROM 
- BridgeInfo A
+ BridgeInfo A left join SubContLeaderInfo C on A.SubContLeaderInfoID = C.ID
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
         )X left join RoadBasicInfo B on X.RoadID=B.ID

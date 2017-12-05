@@ -10,19 +10,17 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
+ rt.ID 
  ,RoadID 
- ,GreenLandCode 
- ,GreenLandName 
  ,FirstLevelSquare 
  ,SecondLevelSquare 
  ,ThirdLevelSquare 
  ,FlowerSquare 
  ,SubContLeaderInfoID 
- ,CreateUser 
- ,CreateTime 
- ,LastModifiedUser 
- ,LastModifiedTime 
+ ,rt.CreateUser 
+ ,rt.CreateTime 
+ ,rt.LastModifiedUser 
+ ,rt.LastModifiedTime  
  ,picture 
    ,longitude
 ,latitude
@@ -33,12 +31,15 @@
 ,v5
 
  FROM 
- GreenLandInfo 
+ GreenLandInfo rt left join SubContLeaderInfo st on rt.SubContLeaderInfoID = st.ID
   WHERE @Where ;
 ]]>
         </String>
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
+      <QueryParamMappings DefaultTableAlias="rt">
+        <Mapping Name="ID" DbFieldName="rt.ID"></Mapping>
+      </QueryParamMappings>
     </Sql>
     <Sql Name="AddObject">
       <SqlString>
@@ -47,8 +48,6 @@
               INSERT INTO 
  GreenLandInfo 
  (RoadID 
- ,GreenLandCode 
- ,GreenLandName 
  ,FirstLevelSquare 
  ,SecondLevelSquare 
  ,ThirdLevelSquare 
@@ -69,9 +68,7 @@
 
  ) 
  VALUES( 
- @RoadID 
- ,@GreenLandCode 
- ,@GreenLandName 
+ @RoadID  
  ,@FirstLevelSquare 
  ,@SecondLevelSquare 
  ,@ThirdLevelSquare 
@@ -95,8 +92,6 @@
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
-        <Param Name = "@GreenLandCode" Column = "GreenLandCode" TypeName = "System.String" />
-        <Param Name = "@GreenLandName" Column = "GreenLandName" TypeName = "System.String" />
         <Param Name = "@FirstLevelSquare" Column = "FirstLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@SecondLevelSquare" Column = "SecondLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@ThirdLevelSquare" Column = "ThirdLevelSquare" TypeName = "System.Int32" />
@@ -123,8 +118,6 @@
           <![CDATA[
               UPDATE  GreenLandInfo 
  SET  RoadID = @RoadID 
- ,GreenLandCode = @GreenLandCode 
- ,GreenLandName = @GreenLandName 
  ,FirstLevelSquare = @FirstLevelSquare 
  ,SecondLevelSquare = @SecondLevelSquare 
  ,ThirdLevelSquare = @ThirdLevelSquare 
@@ -146,8 +139,6 @@
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
         <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
-        <Param Name = "@GreenLandCode" Column = "GreenLandCode" TypeName = "System.String" />
-        <Param Name = "@GreenLandName" Column = "GreenLandName" TypeName = "System.String" />
         <Param Name = "@FirstLevelSquare" Column = "FirstLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@SecondLevelSquare" Column = "SecondLevelSquare" TypeName = "System.Int32" />
         <Param Name = "@ThirdLevelSquare" Column = "ThirdLevelSquare" TypeName = "System.Int32" />
@@ -163,7 +154,6 @@
         <Param Name = "@v3" Column = "v3" TypeName = "System.String" />
         <Param Name = "@v4" Column = "v4" TypeName = "System.String" />
         <Param Name = "@v5" Column = "v5" TypeName = "System.String" />
-
       </SqlString>
     </Sql>
     <Sql Name="DeleteObject">
@@ -187,13 +177,12 @@
       select row_number() over (order by A.ID @Direction) row, 
   A.ID 
  ,A.RoadID 
- ,A.GreenLandCode 
- ,A.GreenLandName 
  ,A.FirstLevelSquare 
  ,A.SecondLevelSquare 
  ,A.ThirdLevelSquare 
  ,A.FlowerSquare 
  ,A.SubContLeaderInfoID 
+ ,C.LeaderName
  ,A.CreateUser 
  ,A.CreateTime 
  ,A.LastModifiedUser 
@@ -208,7 +197,7 @@
 ,A.v5
 
  FROM 
- GreenLandInfo  A
+ GreenLandInfo  A left join SubContLeaderInfo C on A.SubContLeaderInfoID = C.ID
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
         )X left join RoadBasicInfo B on X.RoadID=B.ID

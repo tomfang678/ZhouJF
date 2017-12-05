@@ -3,48 +3,6 @@
     var error1 = $('.alert-danger', form1);
     var success1 = $('.alert-success', form1);
 
-    form1.validate({
-        errorElement: 'span',
-        errorClass: 'help-block help-block-error',
-        focusInvalid: false,
-        ignore: "",
-        messages: {
-            RoadID: {
-                required: "道路必填"
-            },
-            LeaderCode: {
-                required: "带班人必填"
-            }
-        },
-        rules:
-        {
-            RoadID: {
-                required: true
-            },
-            LeaderCode: {
-                required: true
-            }
-        },
-
-        invalidHandler: function (event, validator) {
-            success1.hide();
-            error1.show();
-            Metronic.scrollTo(error1, -200);
-        },
-
-        highlight: function (element) {
-            $(element).closest('.form-group').addClass('has-error');
-        },
-
-        unhighlight: function (element) {
-            $(element).closest('.form-group').removeClass('has-error');
-        },
-
-        success: function (label) {
-            label.closest('.form-group').removeClass('has-error');
-        }
-    });
-
     $("#sure").click(function () {
         if ($('#DataAdd').validate().form()) {
             var checkResult = true;

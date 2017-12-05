@@ -48,45 +48,10 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="control-label col-md-4">业主</label>
-                            <div class="col-md-8">
-                                <input hidden="hidden" id="txtOwner" name="Owner" class="form-control">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
                             <label class="control-label col-md-4">标段</label>
                             <div class="col-md-8">
                                 <input hidden="hidden" id="txtSection" name="Section" class="form-control">
                                 <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">项目部	</label>
-                            <div class="col-md-8">
-                                <input hidden="hidden" id="txtDept" name="Dept" class="form-control">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">区域编码</label>
-                            <div class="col-md-8">
-                                <input hidden="hidden" id="txtAreaCode" name="AreaCode" class="form-control">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label col-md-4">区域</label>
-                            <div class="col-md-8">
-                                @Html.DropDownList("region")
                             </div>
                         </div>
                     </div>
@@ -144,6 +109,9 @@
             <thead>
                 <tr>
                     <th>
+                        区
+                    </th>
+                    <th>
                         业主
                     </th>
                     <th>
@@ -153,10 +121,10 @@
                         项目部
                     </th>
                     <th>
-                        区域编码
-                    </th>
-                    <th>
                         区域
+                    </th>
+                     <th>
+                        道路总数
                     </th>
                     <th>
                         创建人

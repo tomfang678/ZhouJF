@@ -4,18 +4,24 @@
         "sAjaxSource": "/SewerInfo/QueryDB",
         "lockLastColumn": true,
         "aoColumns": [{ "mDataProp": "RoadName", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "ConnectingPipeLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "SamllRainPipeLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "MiddleRainPipeLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "BigRainPipeLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "BiggerRainPipeLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "DirtyWaterPipeLength", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LeaderCode", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "CreateUser", "mMaxWidth": "150px", "sWidth": "250px" },
+            { "mDataProp": "RoadBetween", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "ConnectingPipeLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "SamllRainPipeLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "MiddleRainPipeLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "BigRainPipeLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "BiggerRainPipeLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "RainPipeDeepth", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "DirtyWaterPipeLength", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "DirtyWaterPipeDeepth", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "RainInspectionShaftCount", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "DiryWaternspectionShaftCount", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "WaterInletCount", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "LeaderName", "mMaxWidth": "110px", "sWidth": "250px" },
+{ "mDataProp": "CreateUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "CreateTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": "LastModifiedUser", "mMaxWidth": "150px", "sWidth": "250px" },
+{ "mDataProp": "LastModifiedUser", "mMaxWidth": "110px", "sWidth": "250px" },
 { "mDataProp": "LastModifiedTime", "mMaxWidth": "150px", "sWidth": "250px" },
-{ "mDataProp": null, "mMaxWidth": "150px", "sWidth": "250px" }],
+{ "mDataProp": null, "mMaxWidth": "110px", "sWidth": "250px" }],
         "columnDefs": [
             {
                 'orderable': false,
@@ -39,7 +45,7 @@
                 }
             },
             {
-                'targets': [9, 11],
+                'targets': [15, 17],
                 "render": function (data, type, row) {
                     if (data) {
                         return moment(data).format("YYYY-MM-DD HH:mm:ss");
