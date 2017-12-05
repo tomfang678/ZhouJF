@@ -3,7 +3,7 @@
 	k.enableScrollWheelZoom();
 	var j = "";
 	var l = new BMap.Geocoder();
-	var c = $("#ctl00_ContentPlaceHolder1_CommunityName");
+	var c = $("#ctl00_ContentPlaceHolder1_CommunityName"); 
 	var b = c.html();
 	var a = "上海" + c.html();
 	var i = $("#lnt");
@@ -30,7 +30,7 @@
 	function q(s, r) {
 		m = new BMap.Point(s, r);
 		if (s == "" || r == "") {
-		    k.centerAndZoom(new BMap.Point(121.480000, 31.230000), 13)
+		    k.centerAndZoom(new BMap.Point(s, r), 18)
 		} else {
 			k.centerAndZoom(m, 16);
 			var t = new BMap.Marker(m);
