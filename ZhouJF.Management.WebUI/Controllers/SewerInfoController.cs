@@ -52,7 +52,7 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/SewerInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(SewerinfoInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserCode == null ? "" : UserSession.Current.UserCode.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhSewerinfoInfoManager()).Update(model);
             if (result)

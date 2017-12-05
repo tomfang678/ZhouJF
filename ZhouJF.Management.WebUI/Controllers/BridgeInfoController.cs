@@ -53,7 +53,7 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/BridgeInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(BridgeInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserCode == null ? "" : UserSession.Current.UserCode.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhBridgeinfoManager()).Update(model);
             if (result)

@@ -49,7 +49,7 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/SubContLeaderInfo/Index", AuthorizeKey.Update)]
         public JsonResult Edit(SubContLeaderInfo model, string gridStage)
         {
-            model.LastModifiedUser = UserSession.Current.UserID == null ? "" : UserSession.Current.UserID.ToString();
+            model.LastModifiedUser = UserSession.Current.UserCode == null ? "" : UserSession.Current.UserCode.ToString();
             model.LastModifiedTime = DateTime.Now;
             var result = (new YhSubContLeaderInfoManager()).Update(model);
             return Json(new ResponseMessage() { IsSuccess = true });
