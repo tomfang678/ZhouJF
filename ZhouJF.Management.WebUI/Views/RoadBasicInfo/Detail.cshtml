@@ -411,16 +411,15 @@
             @*<div class="portlet-body form-horizontal form-bordered form-row-stripped">
                     <table class="table table-bordered elian-table"> <thead> <tr> <th> <a id="eat" href="javascript:void(0)">餐饮</a> </th> <th> <a id="supermarket" href="javascript:void(0)">超市</a> </th> <th> <a id="movie" href="javascript:void(0)">影院</a> </th> <th> <a id="hotel" href="javascript:void(0)">酒店</a> </th> <th> <a id="subway" href="javascript:void(0)">地铁站</a> </th> <th> <a id="school" href="javascript:void(0)">学校</a> </th> <th> <a id="bank" href="javascript:void(0)">银行</a> </th> <th> <a id="hospital" href="javascript:void(0)">医院</a> </th> <th> <a id="scenic" href="javascript:void(0)">景点</a> </th>  </thead> </table>
                 </div>*@
+            <div id="mapDiv"></div>
 
-            <div id="mapDiv" class="l-map"></div>
-
-            <div class="traffic">
+            @*<div class="traffic">
                 <div class="traffic-des">
                     <div class="bus-way gongjiaoline">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group">
-                                    <span id="this_houseposition" class="input-group-addon input-group-uk">从  到</span>
+                                    <span id="this_houseposition" class="input-group-addon input-group-uk">到达</span>
                                     <input id="gongjiaoline_text" type="text" class="form-control  input-lg">
                                     <span class="input-group-btn">
                                         <button id="busline_querybutton" class="btn btn-info" type="button">查询路线</button>
@@ -433,7 +432,7 @@
                             <strong>请您输入有效的精确地址描述</strong>
                         </div>
                     </div>
-                    <!--bus-way-style -->
+                    bus-way-style 
                     <div class="col-sm-12">
                         <div id="dvPolicy" class="bus-way-style" style="margin-top: 20px;">
                             <button type="button" class="btn  btn-default btn-warning selected" id="policy0">较快捷 <span class="caret"></span></button>
@@ -444,7 +443,7 @@
                         <div id="results" class="subway-result" style="margin-top: 20px;"></div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
 
     </div>
@@ -460,22 +459,19 @@
         font-size: 12px;
     }
 
-    .l-map {
-        height: 400px;
-        width: 99%;
-    }
-
-    #s-map {
-        height: 560px;
-        width: 99%;
+    #mapDiv {
+        width: 60%;
+        height: 500px;
+        overflow: hidden;
+        margin: 0;
+        font-family: "微软雅黑";
     }
 </style>
+
 <script src="~/Assets/global/Plugins/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=A4749739227af1618f7b0d1b588c0e85"></script>
+@*<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>*@
 <script src="~/Assets/map/mapdetail.js"></script>
-
-
 
 <script type="text/javascript">
     var lnt = $("#lnt").val();
@@ -497,20 +493,5 @@
             heading: 12
         });
     });
-
-</script>
-<script type="text/javascript">
-    var ln = $("#lnt").val(); var la = $("#lat").val();
-    /* 百度地图API功能*/
-    var map = new BMap.Map("s-map");
-    var point = new BMap.Point(ln, la);
-    map.centerAndZoom(point, 14);
-    /*创建标注*/
-    var marker = new BMap.Marker(point);
-    /*将标注添加到地图中*/
-    map.addOverlay(marker);
-    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-    /*跳动的动画*/
-    map.enableScrollWheelZoom(true);
 
 </script>

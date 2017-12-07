@@ -15,10 +15,10 @@ namespace YHPT.SystemInfo.Model.YhAreaInfo
 
         }
 
-        private string _ID;
+        private int _ID;
         [DataMember]
-        [MB.Orm.Mapping.Att.ColumnMap("ID", System.Data.DbType.String)]
-        public string ID
+        [MB.Orm.Mapping.Att.ColumnMap("ID", System.Data.DbType.Int32)]
+        public int ID
         {
             get { return _ID; }
             set { _ID = value; }

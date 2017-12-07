@@ -40,6 +40,8 @@ namespace YHPT.SystemInfo.Business
         public List<Roadbasicinfo> GetItems(RoadbasicinfoDto data, List<QueryParameterInfo> queryParameterInfos = null)
         {
             var filters = new List<QueryParameterInfo>();
+            if (data.AreaInfoID > 0)
+                filters.Add(new QueryParameterInfo("AreaInfoID", data.AreaInfoID, DataFilterConditions.Equal));
             if (!string.IsNullOrEmpty(data.RoadName))
                 filters.Add(new QueryParameterInfo("RoadName", "%" + data.RoadName + "%", DataFilterConditions.Like));
             if (!string.IsNullOrEmpty(data.RoadLevel))
