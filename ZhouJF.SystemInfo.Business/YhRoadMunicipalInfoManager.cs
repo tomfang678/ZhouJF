@@ -81,6 +81,8 @@ namespace YHPT.SystemInfo.Business
                 if (data != null)
                 {
                     var filters = new List<QueryParameterInfo>();
+                    if (!string.IsNullOrEmpty(data.RoadName))
+                        filters.Add(new QueryParameterInfo("RoadName", "%" + data.RoadName + "%", DataFilterConditions.Like));
                     if (!string.IsNullOrEmpty(data.LeaderCode))
                         filters.Add(new QueryParameterInfo("LeaderCode", data.LeaderCode, DataFilterConditions.Equal));
                     if (data.RoadLength != null && data.RoadLength != 0)

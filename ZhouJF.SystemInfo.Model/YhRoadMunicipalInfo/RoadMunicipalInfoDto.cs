@@ -23,6 +23,16 @@ namespace YHPT.SystemInfo.Model.YhRoadMunicipalInfo
             get { return _RoadID; }
             set { _RoadID = value; }
         }
+
+        private string _RoadName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("RoadName", System.Data.DbType.String)]
+        public string RoadName
+        {
+            get { return _RoadName; }
+            set { _RoadName = value; }
+        }
+
         private int? _RoadLength;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("RoadLength", System.Data.DbType.Int32)]

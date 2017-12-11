@@ -189,10 +189,10 @@
       <SqlString>
         <String>
           <![CDATA[
-      select X.*,B.RoadName from(
   select * from ( 
       select row_number() over (order by A.ID @Direction) row, 
   A.ID 
+  ,RB.RoadName
  ,A.RoadID 
  ,A.MachineCleanLength 
  ,A.MachineWashLength 
@@ -217,9 +217,9 @@
 ,A.DustbinPerEightyMtr
  FROM 
  SanitationInfo  A left join SubContLeaderInfo C on A.SubContLeaderInfoID = C.ID
+ inner join RoadBasicInfo RB on RB.ID = A.RoadID
         WHERE @Where) wx
         where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
-        )X left join RoadBasicInfo B on X.RoadID=B.ID
 ]]>
         </String>
         <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
@@ -237,6 +237,7 @@
   SELECT 
     COUNT(1) AS ICOUNT  
   FROM SanitationInfo A
+  inner join RoadBasicInfo B on A.RoadId = B.id
   WHERE @Where ;
 ]]>
         </String>

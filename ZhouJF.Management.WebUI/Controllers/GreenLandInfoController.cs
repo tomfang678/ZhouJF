@@ -108,7 +108,8 @@ namespace YHPT.Management.WebUI.Controllers
                 ID = query.ID,
                 LeaderCode = query.LeaderCode,
                 SortField = jQueryDataTablesModel.SortField,
-                SortDirection = jQueryDataTablesModel.Direction
+                SortDirection = jQueryDataTablesModel.Direction,
+                RoadName = query.RoadName
             };
             var pageList = (new YhGreenLandInfoManager()).GetPagedList(queryParam);
             return DataTablesJson(pageList, jQueryDataTablesModel.GridKey);

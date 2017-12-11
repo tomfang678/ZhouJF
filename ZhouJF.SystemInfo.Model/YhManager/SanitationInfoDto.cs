@@ -31,6 +31,14 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _RoadID; }
             set { _RoadID = value; }
         }
+        private string _RoadName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("RoadName", System.Data.DbType.String)]
+        public string RoadName
+        {
+            get { return _RoadName; }
+            set { _RoadName = value; }
+        }
         private string _LeaderCode;
         [DataMember]
         [MB.Orm.Mapping.Att.ColumnMap("LeaderCode", System.Data.DbType.String)]

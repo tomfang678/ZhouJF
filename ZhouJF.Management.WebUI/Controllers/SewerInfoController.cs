@@ -107,7 +107,8 @@ namespace YHPT.Management.WebUI.Controllers
                 PageIndex = jQueryDataTablesModel.PageIndex,
                 PageSize = jQueryDataTablesModel.PageSize,
                 SortField = jQueryDataTablesModel.SortField,
-                SortDirection = jQueryDataTablesModel.Direction
+                SortDirection = jQueryDataTablesModel.Direction,
+                RoadName = query.RoadName
             };
             var pageList = (new YhSewerinfoInfoManager()).GetPagedList(queryParam);
             return DataTablesJson(pageList, jQueryDataTablesModel.GridKey);
