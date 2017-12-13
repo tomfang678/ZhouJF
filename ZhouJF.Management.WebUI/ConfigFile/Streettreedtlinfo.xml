@@ -168,7 +168,7 @@ RoadID = @RoadID
         <String>
           <![CDATA[
   SELECT 
-    COUNT(1) AS ICOUNT  
+    COUNT(1) AS ICOUNT   
   FROM StreetTreeDtlInfo A
   inner join RoadBasicInfo B on A.roadID = B.ID
   WHERE @Where ;
