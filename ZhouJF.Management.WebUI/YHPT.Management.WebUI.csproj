@@ -269,6 +269,7 @@
     <Compile Include="Controllers\SanitationInfoController.cs" />
     <Compile Include="Controllers\SewerInfoController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\StreetTreeDtlInfoController.cs" />
     <Compile Include="Controllers\StreetTreeInfoController.cs" />
     <Compile Include="Controllers\SubContLeaderInfoController.cs" />
     <Compile Include="Controllers\SubContractorInfoController.cs" />
@@ -653,7 +654,9 @@
     <Content Include="ConfigFile\Sewerinfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ConfigFile\Streettreedtlinfo.xml" />
+    <Content Include="ConfigFile\StreetTreeDtlInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ConfigFile\StreetTreeInfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -691,6 +694,9 @@
     <Content Include="Scripts\GreenLandInfo\Add.js" />
     <Content Include="Scripts\GreenLandInfo\Edit.js" />
     <Content Include="Scripts\GreenLandInfo\Index.js" />
+    <Content Include="Scripts\StreetTreeDtlInfo\Add.js" />
+    <Content Include="Scripts\StreetTreeDtlInfo\Edit.js" />
+    <Content Include="Scripts\StreetTreeDtlInfo\Index.js" />
     <Content Include="Scripts\StreetTreeInfo\Add.js" />
     <Content Include="Scripts\StreetTreeInfo\Edit.js" />
     <Content Include="Scripts\StreetTreeInfo\Index.js" />
@@ -1293,6 +1299,9 @@
     <Content Include="Views\BfRole\GreenLandInfo\Index.cshtml" />
     <Content Include="Views\RoadBasicInfo\Detail.cshtml" />
     <Content Include="Views\ImgInfo\Index.cshtml" />
+    <Content Include="Views\StreetTreeDtlInfo\Index.cshtml" />
+    <Content Include="Views\StreetTreeDtlInfo\Edit.cshtml" />
+    <Content Include="Views\StreetTreeDtlInfo\Add.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

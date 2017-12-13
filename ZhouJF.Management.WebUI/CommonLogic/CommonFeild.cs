@@ -29,6 +29,8 @@ namespace YHPT.Management.WebUI.CommonLogic
                 return "下水道信息";
             if (module == "StreetTreeInfo")
                 return "行道树";
+            if (module == "StreetTreeDtlInfo")
+                return "行道树明细";
             if (module == "GreenLandInfo")
                 return "绿化信息";
             return "";
@@ -65,6 +67,10 @@ namespace YHPT.Management.WebUI.CommonLogic
                  new {
                 code="StreetTreeInfo",
                 name="行道树"
+                },
+                 new {
+                code="StreetTreeDtlInfo",
+                name="行道树明细"
                 }
             };
         }

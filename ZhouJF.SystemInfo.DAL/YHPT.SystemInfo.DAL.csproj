@@ -87,6 +87,7 @@
     <Compile Include="DAL\YhImgInfoDAL.cs" />
     <Compile Include="DAL\YhGreenLandInfoDAL.cs" />
     <Compile Include="DAL\YhSanitationInfoDAL.cs" />
+    <Compile Include="DAL\YhStreetTreeDtlDAL.cs" />
     <Compile Include="DAL\YhStreetTreeInfoDAL.cs" />
     <Compile Include="DAL\YhSewerinfoInfoDAL.cs" />
     <Compile Include="DAL\YhBridgeInfoDAL.cs" />

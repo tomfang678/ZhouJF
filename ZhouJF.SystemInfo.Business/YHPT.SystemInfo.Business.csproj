@@ -80,6 +80,7 @@
     <Compile Include="YhBridgeinfoManager.cs" />
     <Compile Include="YhGreenLandInfoManager.cs" />
     <Compile Include="YhSanitationInfoManager.cs" />
+    <Compile Include="YhStreetTreeDtlManager.cs" />
     <Compile Include="YhStreetTreeInfoManager.cs" />
     <Compile Include="YhSewerinfoInfoManager.cs" />
     <Compile Include="YhRoadMunicipalInfoManager.cs" />

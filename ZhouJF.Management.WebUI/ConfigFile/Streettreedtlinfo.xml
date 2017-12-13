@@ -10,8 +10,8 @@
         <String>
           <![CDATA[
               SELECT 
- ID 
- ,StreetTreeInfoID 
+  ID 
+ ,RoadID 
  ,Code 
  ,Type 
  ,Size 
@@ -22,9 +22,8 @@
  ,Protect 
  ,Remark 
  ,Picture 
-  
  FROM 
- StreetTreeDtlInfo 
+ StreetTreeDtlInfo
   WHERE @Where ;
 ]]>
         </String>
@@ -37,8 +36,7 @@
           <![CDATA[
               INSERT INTO 
  StreetTreeDtlInfo 
- (ID 
- ,StreetTreeInfoID 
+ (RoadID 
  ,Code 
  ,Type 
  ,Size 
@@ -51,8 +49,7 @@
  ,Picture 
  ) 
  VALUES( 
- @ID 
- ,@StreetTreeInfoID 
+@RoadID 
  ,@Code 
  ,@Type 
  ,@Size 
@@ -66,8 +63,7 @@
  );
 ]]>
         </String>
-        <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
-        <Param Name = "@StreetTreeInfoID" Column = "StreetTreeInfoID" TypeName = "System.Int32" />
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
         <Param Name = "@Code" Column = "Code" TypeName = "System.String" />
         <Param Name = "@Type" Column = "Type" TypeName = "System.String" />
         <Param Name = "@Size" Column = "Size" TypeName = "System.Int32" />
@@ -85,8 +81,8 @@
         <String>
           <![CDATA[
               UPDATE  StreetTreeDtlInfo 
- SET  ID = @ID 
- ,StreetTreeInfoID = @StreetTreeInfoID 
+ SET  
+RoadID = @RoadID 
  ,Code = @Code 
  ,Type = @Type 
  ,Size = @Size 
@@ -102,7 +98,7 @@
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
-        <Param Name = "@StreetTreeInfoID" Column = "StreetTreeInfoID" TypeName = "System.Int32" />
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
         <Param Name = "@Code" Column = "Code" TypeName = "System.String" />
         <Param Name = "@Type" Column = "Type" TypeName = "System.String" />
         <Param Name = "@Size" Column = "Size" TypeName = "System.Int32" />
@@ -125,6 +121,70 @@
 ]]>
         </String>
         <Param Name = "@ID" Column = "ID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
+
+
+    <Sql Name="SelectObjectByPage">
+      <SqlString>
+        <String>
+          <![CDATA[
+ select * from ( 
+      SELECT row_number() over (order by  A.ID @Direction) row,         
+ A.ID 
+ ,A.RoadID 
+ ,A.Code 
+ ,A.Type 
+ ,A.Size 
+ ,A.Status 
+ ,A.IsDisturbPeople 
+ ,(case A.IsDisturbPeople 
+ when 0 then '否'
+ when 1 then '是' 
+ else 'unknown' end)  IsDisturbPeopleName
+ ,A.CoverBoardType 
+ ,A.Specification 
+ ,A.Protect 
+ ,A.Remark 
+ ,A.Picture 
+ ,B.RoadName
+ FROM 
+ StreetTreeDtlInfo A
+ left join RoadBasicInfo B on A.RoadID=B.id
+        WHERE @Where) wx
+        where row between @PageSize*@PageIndex+1 and @PageSize*(@PageIndex+1)
+]]>
+        </String>
+        <Param Name = "@PageIndex" Column = "PageIndex" TypeName = "System.Int32" />
+        <Param Name = "@PageSize" Column = "PageSize" TypeName = "System.Int32" />
+        <Param Name = "@SortField" Column = "SortField" TypeName = "System.String"  Overcast="True" />
+        <Param Name = "@Direction" Column = "Direction" TypeName = "System.String" Overcast="True" />
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+
+    <Sql Name="GetTotalCount">
+      <SqlString>
+        <String>
+          <![CDATA[
+  SELECT 
+    COUNT(1) AS ICOUNT  
+  FROM StreetTreeDtlInfo A
+  inner join RoadBasicInfo B on A.roadID = B.ID
+  WHERE @Where ;
+]]>
+        </String>
+        <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
+      </SqlString>
+    </Sql>
+    <Sql Name="getByRoadId">
+      <SqlString>
+        <String>
+          <![CDATA[
+      select * from StreetTreeDtlInfo WHERE RoadID=@RoadID;
+        ]]>
+        </String>
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
       </SqlString>
     </Sql>
   </Sqls>

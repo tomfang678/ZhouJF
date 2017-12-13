@@ -79,6 +79,7 @@
     <Compile Include="IYhImgInfoDAL.cs" />
     <Compile Include="IYhSanitationInfoDAL.cs" />
     <Compile Include="IYhGreenLandInfoDAL.cs" />
+    <Compile Include="IYhStreetTreeDtlDAL.cs" />
     <Compile Include="IYhStreetTreeInfoDAL.cs" />
     <Compile Include="IYhSubContLeaderInfoDAL.cs" />
     <Compile Include="IYhSubcontractorinfoDAL.cs" />

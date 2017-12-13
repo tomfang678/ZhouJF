@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "行道树明细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    @ViewBag.Title
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="@Url.Action("Index", "Home")">首页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "RoadBasicInfo")">@ViewBag.Title</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">新建</a>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER -->
+
+<div class="portlet box purple">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+        <div class="actions">
+            <a class="btn green" href="@Url.Action("Index", new { gridStage = Request.QueryString["gridStage"] })"><i class="fa  fa-mail-reply"></i>返回</a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form id="DataAdd" method="post" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        道路<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        @Html.DropDownList("RoadID")
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        编码<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtCode" name="Code" value="" class="form-control" placeholder="编码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        品种<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtType" name="Type" value="" class="form-control" placeholder="品种">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        树径<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtSize" name="Size" value="" class="form-control" placeholder="树径">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        冠幅<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtStatus" name="Status" value="" class="form-control" placeholder="冠幅">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        是否扰民<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="checkbox" id="txtIsDisturbPeople" name="IsDisturbPeople" value="true"> 是否扰民
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        盖板类型<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtCoverBoardType" name="CoverBoardType" value="" class="form-control" placeholder="盖板类型">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        规格<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtSpecification" name="Specification" value="" class="form-control" placeholder="规格">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        护树桩<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtProtect" name="Protect" value="" class="form-control" placeholder="护树桩">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">
+                        备注<span class="required" aria-required="true">
+                        </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" id="txtRemark" name="Remark" value="" class="form-control" placeholder="备注">
+                    </div>
+                </div>
+                @*<div class="form-group">
+                        <label class="col-md-3 control-label">
+                            护树桩<span class="required" aria-required="true">
+                            </span>
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" id="txtProtect" name="Protect" value="" class="form-control" placeholder="护树桩">
+                        </div>
+                    </div>*@
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="button" class="btn green" id="sure">确定</button>
+                        <a href="@Url.Action("Index")" class="btn default">取消</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+    @*@{ Html.RenderAction("BfOrgTree", "PlugIn"); }*@
+</div>
+
+@section scripts{
+    <script src="~/Assets/global/Plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/Assets/global/Plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <link href="~/Assets/global/Css/style-metronic.css" rel="stylesheet" />
+    <script src="~/Assets/global/Plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
+    @Scripts.Render("~/Scripts/StreetTreeDtlInfo/Add.js")
+}
+
+
