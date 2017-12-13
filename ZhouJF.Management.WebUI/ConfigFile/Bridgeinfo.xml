@@ -365,7 +365,16 @@
         <Param Name = "@Where" Column = "Where" TypeName = "System.String" />
       </SqlString>
     </Sql>
-
+    <Sql Name="SelectRoadID">
+      <SqlString>
+        <String>
+          <![CDATA[
+          select 1 from BridgeInfo where RoadID = @RoadID
+]]>
+        </String>
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
     <Sql Name="GetTotalCount">
       <SqlString>
         <String>

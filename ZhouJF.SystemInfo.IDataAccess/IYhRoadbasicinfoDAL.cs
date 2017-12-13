@@ -14,5 +14,17 @@ namespace YHPT.SystemInfo.IDataAccess
     [ServiceContract]
     public interface IYhRoadbasicinfoDAL : IDataAccess<Roadbasicinfo>
     {
+        bool CheckExistsMunicipalDetail(int id);
+
+        bool CheckExistsSanitationDetail(int id);
+
+        bool CheckExistsSewerDetail(int id);
+
+        bool CheckExistsGreenLandDetail(int id);
+
+        bool CheckExistsBridgeDetail(int id);
+
+        bool CheckExistsStreetInfo(int id);
+
     }
 }

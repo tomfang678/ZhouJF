@@ -111,5 +111,40 @@ namespace YHPT.SystemInfo.Business
             var result = GetItems(queryInfo, filters);
             return result == null || result.Count == 0;
         }
+
+        public bool CheckRoadBasicExistsDetail(int id)
+        {
+            if (_da.CheckExistsMunicipalDetail(id))
+            {
+                return true;
+            }
+
+            if (_da.CheckExistsBridgeDetail(id))
+            {
+                return true;
+            }
+
+            if (_da.CheckExistsGreenLandDetail(id))
+            {
+                return true;
+            }
+
+            if (_da.CheckExistsSanitationDetail(id))
+            {
+                return true;
+            }
+
+            if (_da.CheckExistsSewerDetail(id))
+            {
+                return true;
+            }
+
+            if (_da.CheckExistsStreetInfo(id))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

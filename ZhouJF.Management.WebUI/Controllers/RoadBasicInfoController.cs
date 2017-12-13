@@ -108,12 +108,21 @@ namespace YHPT.Management.WebUI.Controllers
         [MenuItem("~/RoadBasicInfo/Index", AuthorizeKey.Delete)]
         public JsonResult Delete(int id)
         {
+            YhRoadbasicinfoManager manager = new YhRoadbasicinfoManager();
+
+            bool isExists = manager.CheckRoadBasicExistsDetail(id);
+
+            if (isExists)
+            {
+                return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = 0, Message = "道路基本信息存在明细记录，无法删除。如需删除，先删除明细记录" });
+            }
+
             var result = (new YhRoadbasicinfoManager()).Delete(id);
             if (result)
             {
-                (new YhRoadbasicinfoManager()).Delete(id);
                 return Json(new ResponseMessage() { IsSuccess = true });
             }
+
             return Json(new ResponseMessage() { IsSuccess = false, ErrorCode = 0, Message = "删除失败" });
         }
 

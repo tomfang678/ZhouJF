@@ -15,6 +15,98 @@ namespace YHPT.SystemInfo.DAL
         public YhRoadbasicinfoDAL()
             : base(typeof(YhRoadbasicinfoDAL))
         { }
+
+        public bool CheckExistsMunicipalDetail(int id)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var ds = DatabaseExcuteByXmlHelper.NewInstance.GetDataSetByXml("Roadmunicipalinfo.xml",
+                    "SelectRoadID", id);
+                if (ds.Tables[0].Rows.Count>0 && int.Parse(ds.Tables[0].Rows[0][0].ToString()) == 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        public bool CheckExistsSanitationDetail(int id)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var ds = DatabaseExcuteByXmlHelper.NewInstance.GetDataSetByXml("Sanitationinfo.xml",
+                    "SelectRoadID", id);
+                if (ds.Tables[0].Rows.Count > 0 && int.Parse(ds.Tables[0].Rows[0][0].ToString()) == 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool CheckExistsSewerDetail(int id)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var ds = DatabaseExcuteByXmlHelper.NewInstance.GetDataSetByXml("Sewerinfo.xml",
+                    "SelectRoadID", id);
+                if (ds.Tables[0].Rows.Count > 0 && int.Parse(ds.Tables[0].Rows[0][0].ToString()) == 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool CheckExistsGreenLandDetail(int id)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var ds = DatabaseExcuteByXmlHelper.NewInstance.GetDataSetByXml("GreenLandInfo.xml",
+                    "SelectRoadID", id);
+                if (ds.Tables[0].Rows.Count > 0 && int.Parse(ds.Tables[0].Rows[0][0].ToString()) == 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool CheckExistsBridgeDetail(int id)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var ds = DatabaseExcuteByXmlHelper.NewInstance.GetDataSetByXml("Bridgeinfo.xml",
+                    "SelectRoadID", id);
+                if (ds.Tables[0].Rows.Count > 0 && int.Parse(ds.Tables[0].Rows[0][0].ToString()) == 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        public bool CheckExistsStreetInfo(int id)
+        {
+            using (var dbScope = new OperationDatabaseScope(ReadDb))
+            {
+                var ds = DatabaseExcuteByXmlHelper.NewInstance.GetDataSetByXml("StreetTreeInfo.xml",
+                    "SelectRoadID", id);
+                if (ds.Tables[0].Rows.Count > 0 && int.Parse(ds.Tables[0].Rows[0][0].ToString()) == 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
 

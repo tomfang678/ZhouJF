@@ -43,6 +43,16 @@
         <Mapping Name="ID" DbFieldName="rt.ID"></Mapping>
       </QueryParamMappings>
     </Sql>
+    <Sql Name="SelectRoadID">
+      <SqlString>
+        <String>
+          <![CDATA[
+          select 1 from SanitationInfo where RoadID = @RoadID
+]]>
+        </String>
+        <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />
+      </SqlString>
+    </Sql>
     <Sql Name="AddObject">
       <SqlString>
         <String>
