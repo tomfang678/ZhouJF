@@ -111,5 +111,14 @@ namespace YHPT.SystemInfo.Model.YhManager
             get { return _Picture; }
             set { _Picture = value; }
         }
+
+        private string _RoadName;
+        [DataMember]
+        [MB.Orm.Mapping.Att.ColumnMap("RoadName", System.Data.DbType.String)]
+        public string RoadName
+        {
+            get { return _RoadName; }
+            set { _RoadName = value; }
+        }
     }
 }

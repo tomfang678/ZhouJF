@@ -63,7 +63,15 @@ namespace YHPT.SystemInfo.Business
                 {
                     var filters = new List<QueryParameterInfo>();
                     if (data.RoadID != null && data.RoadID > 0)
-                        filters.Add(new QueryParameterInfo("RoadID", data.RoadID, DataFilterConditions.Equal));
+                        filters.Add(new QueryParameterInfo("A.RoadID", data.RoadID, DataFilterConditions.Equal));
+                    if (!string.IsNullOrEmpty(data.RoadName))
+                    {
+                        filters.Add(new QueryParameterInfo("B.RoadName", "%" + data.RoadName + "%", DataFilterConditions.Like));
+                    }
+                    if (!string.IsNullOrEmpty(data.Code))
+                    {
+                        filters.Add(new QueryParameterInfo("A.Code", data.Code, DataFilterConditions.Equal));
+                    }
                     var result = _da.GetPagedList(filters, data.PageIndex, data.PageSize,
                         data.SortField, data.SortDirection, DataBaseResource.Read);
                     return result;
@@ -83,7 +91,7 @@ namespace YHPT.SystemInfo.Business
         public bool Update(StreetTreeDtlInfo item)
         {
             //if (CheckCode(item))
-                return _da.Update(item, DataBaseResource.Write);
+            return _da.Update(item, DataBaseResource.Write);
             //return false;
         }
 

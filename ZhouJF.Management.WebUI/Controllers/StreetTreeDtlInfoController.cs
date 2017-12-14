@@ -85,7 +85,7 @@ namespace YHPT.Management.WebUI.Controllers
         }
 
 
-        public ActionResult QueryDB(JQueryDataTablesModel jQueryDataTablesModel, StreetTreeInfoDto query)
+        public ActionResult QueryDB(JQueryDataTablesModel jQueryDataTablesModel, StreetTreeDtlInfoDto query)
         {
             var queryParam = new StreetTreeDtlInfoDto
             {
@@ -94,7 +94,9 @@ namespace YHPT.Management.WebUI.Controllers
                 PageSize = jQueryDataTablesModel.PageSize,
                 SortField = jQueryDataTablesModel.SortField,
                 SortDirection = jQueryDataTablesModel.Direction,
-                RoadID = query.RoadID
+                RoadID = query.RoadID,
+                Code=query.Code,
+                RoadName=query.RoadName
             };
             var pageList = (new YhStreetTreeDtlManager()).GetPagedList(queryParam);
             return DataTablesJson(pageList, jQueryDataTablesModel.GridKey);

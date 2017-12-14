@@ -35,6 +35,7 @@ namespace YHPT.Management.WebUI.Controllers
                     enity.BridgeInfoList = (new YhBridgeinfoManager()).GetItemByRoadId(id);
                     enity.StreetTreeInfoList = (new YhStreetTreeInfoManager()).GetItemByRoadId(id);
                     enity.ImgInfoList = (new YhImgInfoManager()).GetImgByRoadId(id);
+                    enity.StreetTreeDtlInfoList = (new YhStreetTreeDtlManager()).GetItemByRoadId(id);
                 }
                 ViewBag.entity = enity;
                 if (enity.ImgInfoList != null)
@@ -46,6 +47,7 @@ namespace YHPT.Management.WebUI.Controllers
                     ViewBag.SewerInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("SewerInfo")).ToList();
                     ViewBag.StreetTreeInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("StreetTreeInfo")).ToList();
                     ViewBag.GreenLandInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("GreenLandInfo")).ToList();
+                    ViewBag.StreetTreeDtlInfoImgList = enity.ImgInfoList.Where(t => t.imgModule.Equals("StreetTreeDtlInfo")).ToList();
                 }
                 else
                 {
@@ -56,6 +58,7 @@ namespace YHPT.Management.WebUI.Controllers
                     ViewBag.SewerInfoImgList = null;
                     ViewBag.StreetTreeInfoImgList = null;
                     ViewBag.GreenLandInfoImgList = null;
+                    ViewBag.StreetTreeDtlInfoList = null;
                 }
             }
             return View(enity);
@@ -65,7 +68,8 @@ namespace YHPT.Management.WebUI.Controllers
         public ActionResult Index()
         {
             var areaList = (new YhAreainfoManager()).GetItems(new AreaInfoDto());
-            AreaInfo allArea = new AreaInfo { 
+            AreaInfo allArea = new AreaInfo
+            {
                 ID = -1,
                 Area = "所有"
             };

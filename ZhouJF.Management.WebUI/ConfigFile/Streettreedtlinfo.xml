@@ -181,7 +181,26 @@ RoadID = @RoadID
       <SqlString>
         <String>
           <![CDATA[
-      select * from StreetTreeDtlInfo WHERE RoadID=@RoadID;
+  SELECT    A.ID 
+ ,A.RoadID 
+ ,A.Code 
+ ,A.Type 
+ ,A.Size 
+ ,A.Status 
+ ,A.IsDisturbPeople 
+ ,(case A.IsDisturbPeople 
+ when 0 then '否'
+ when 1 then '是' 
+ else 'unknown' end)  IsDisturbPeopleName
+ ,A.CoverBoardType 
+ ,A.Specification 
+ ,A.Protect 
+ ,A.Remark 
+ ,A.Picture 
+ ,B.RoadName
+ FROM 
+ StreetTreeDtlInfo A
+ left join RoadBasicInfo B on A.RoadID=B.id WHERE A.RoadID=@RoadID;
         ]]>
         </String>
         <Param Name = "@RoadID" Column = "RoadID" TypeName = "System.Int32" />

@@ -34,8 +34,9 @@
         <li><a href="#tab5" data-toggle="tab">下水道信息</a></li>
         <li><a href="#tab6" data-toggle="tab">桥梁信息</a></li>
         <li><a href="#tab7" data-toggle="tab">行道树信息</a></li>
-        <li><a href="#tab8" data-toggle="tab">全景地图</a></li>
-        <li><a href="#tab9" data-toggle="tab">平面地图</a></li>
+        <li><a href="#tab8" data-toggle="tab">行道树明细</a></li>
+        <li><a href="#tab9" data-toggle="tab">全景地图</a></li>
+        <li><a href="#tab10" data-toggle="tab">平面地图</a></li>
     </ul>
     <div class="tab-content">
         <!--基本信息-->
@@ -52,7 +53,8 @@
                         <th>最后修改人</th>
                     </tr>
                     <tr>
-                        <td>@Model.RoadName
+                        <td>
+                            @Model.RoadName
                             <input type="hidden" id="lnt" value="@Model.longitude" />
                             <input type="hidden" id="lat" value="@Model.latitude" />
                         </td>
@@ -65,17 +67,17 @@
                     </tr>
                 </table>
             </div>
-            <div>
-                <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="row">
                             @if (null != ViewBag.RoadBasicInfoImgList)
                             {
                                 foreach (var item in ViewBag.RoadBasicInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
                                 }
                             }
                         </div>
@@ -107,25 +109,25 @@
                     </tr>
                     @foreach (var item in Model.RoadMunicipalInfoList)
                     {
-                        <tr>
-                            <td>@item.RoadLength</td>
-                            <td>@item.RoadSquare</td>
-                            <td>@item.SlowLaneWidth</td>
-                            <td>@item.SlowLaneSquare</td>
-                            <td>@item.FastLaneWidth</td>
-                            <td>@item.PavementWidth</td>
-                            <td>@item.PavementSquare</td>
-                            <td>@item.CurbSideLength</td>
-                            <td>@item.CurbFlatLength</td>
-                            <td>@item.InspectionShaftCount</td>
-                            <td>@item.WaterInletCount</td>
-                            <td>@item.WaterOutletCount</td>
-                            <td>@item.GuideBoardCount</td>
-                            <td>@item.PersonDivideLine</td>
-                            <td>@item.VehicleDivideLine</td>
-                            <td>@item.VehicleBicycleDivideLine</td>
-                            <td>@item.LeaderName</td>
-                        </tr>
+                    <tr>
+                        <td>@item.RoadLength</td>
+                        <td>@item.RoadSquare</td>
+                        <td>@item.SlowLaneWidth</td>
+                        <td>@item.SlowLaneSquare</td>
+                        <td>@item.FastLaneWidth</td>
+                        <td>@item.PavementWidth</td>
+                        <td>@item.PavementSquare</td>
+                        <td>@item.CurbSideLength</td>
+                        <td>@item.CurbFlatLength</td>
+                        <td>@item.InspectionShaftCount</td>
+                        <td>@item.WaterInletCount</td>
+                        <td>@item.WaterOutletCount</td>
+                        <td>@item.GuideBoardCount</td>
+                        <td>@item.PersonDivideLine</td>
+                        <td>@item.VehicleDivideLine</td>
+                        <td>@item.VehicleBicycleDivideLine</td>
+                        <td>@item.LeaderName</td>
+                    </tr>
                     }
                 </table>
             </div>
@@ -137,9 +139,9 @@
                             {
                                 foreach (var item in ViewBag.RoadMunicipalInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                            <div class="col-md-4">
+                                <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                            </div>
                                 }
                             }
                         </div>
@@ -168,7 +170,8 @@
                             <td>@item.LeaderName</td>
                             <td>
                                 <input type="hidden" id="lnt" value="@item.longitude" />
-                                <input type="hidden" id="lat" value="@item.latitude" /></td>
+                                <input type="hidden" id="lat" value="@item.latitude" />
+                            </td>
                         </tr>
                     }
                 </table>
@@ -182,9 +185,9 @@
                             {
                                 foreach (var item in ViewBag.SanitationInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
                                 }
                             }
                         </div>
@@ -222,9 +225,9 @@
                             {
                                 foreach (var item in ViewBag.GreenLandInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
                                 }
                             }
                         </div>
@@ -264,9 +267,9 @@
                             {
                                 foreach (var item in ViewBag.SewerInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
                                 }
                             }
                         </div>
@@ -350,9 +353,9 @@
                             {
                                 foreach (var item in ViewBag.BridgeInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
                                 }
                             }
                         </div>
@@ -390,9 +393,9 @@
                             {
                                 foreach (var item in ViewBag.StreetTreeInfoImgList)
                                 {
-                                <div class="col-md-4">
-                                    <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
-                                </div>
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
                                 }
                             }
                         </div>
@@ -402,48 +405,98 @@
         </div>
         <div class="tab-pane" id="tab8">
             <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <table class="imagetable">
+                    <tr>
+                        <th>道路</th>
+                        <th>编号</th>
+                        <th>品种</th>
+                        <th>胸径</th>
+                        <th>冠幅</th>
+                        <th>扰民</th>
+                        <th>盖板</th>
+                        <th>规格</th>
+                        <th>护树桩</th>
+                        <th>备注</th>
+                    </tr>
+                    @foreach (var item in Model.StreetTreeDtlInfoList)
+                    {
+                        <tr>
+                            <td>@item.RoadName</td>
+                            <td>@item.Code</td>
+                            <td>@item.Type</td>
+                            <td>@item.Size</td>
+                            <td>@item.Status</td>
+                            <td>@item.IsDisturbPeopleName</td>
+                            <td>@item.CoverBoardType</td>
+                            <td>@item.Specification</td>
+                            <td>@item.Protect</td>
+                            <td>@item.Remark</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            @if (null != ViewBag.StreetTreeDtlInfoImgList)
+                            {
+                                foreach (var item in ViewBag.StreetTreeDtlInfoImgList)
+                                {
+                                    <div class="col-md-4">
+                                        <img src="@YHPT.Management.WebUI.CommonLogic.UtilHelper.GetThumbnail(item.imgUrl)" alt="" style="max-height:500px;max-width:99%" alert="" />
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab9">
+            <div class="portlet-body form-horizontal form-bordered form-row-stripped">
                 <div id="panorama"></div>
                 <div id="result">
                 </div>
             </div>
         </div>
-        <div class="tab-pane" id="tab9">
+        <div class="tab-pane" id="tab10">
             @*<div class="portlet-body form-horizontal form-bordered form-row-stripped">
                     <table class="table table-bordered elian-table"> <thead> <tr> <th> <a id="eat" href="javascript:void(0)">餐饮</a> </th> <th> <a id="supermarket" href="javascript:void(0)">超市</a> </th> <th> <a id="movie" href="javascript:void(0)">影院</a> </th> <th> <a id="hotel" href="javascript:void(0)">酒店</a> </th> <th> <a id="subway" href="javascript:void(0)">地铁站</a> </th> <th> <a id="school" href="javascript:void(0)">学校</a> </th> <th> <a id="bank" href="javascript:void(0)">银行</a> </th> <th> <a id="hospital" href="javascript:void(0)">医院</a> </th> <th> <a id="scenic" href="javascript:void(0)">景点</a> </th>  </thead> </table>
                 </div>*@
             <div id="mapDiv"></div>
 
             @*<div class="traffic">
-                <div class="traffic-des">
-                    <div class="bus-way gongjiaoline">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="input-group">
-                                    <span id="this_houseposition" class="input-group-addon input-group-uk">到达</span>
-                                    <input id="gongjiaoline_text" type="text" class="form-control  input-lg">
-                                    <span class="input-group-btn">
-                                        <button id="busline_querybutton" class="btn btn-info" type="button">查询路线</button>
-                                    </span>
+                    <div class="traffic-des">
+                        <div class="bus-way gongjiaoline">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <span id="this_houseposition" class="input-group-addon input-group-uk">到达</span>
+                                        <input id="gongjiaoline_text" type="text" class="form-control  input-lg">
+                                        <span class="input-group-btn">
+                                            <button id="busline_querybutton" class="btn btn-info" type="button">查询路线</button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
+                            <div id="gjTips" class="alert alert-danger fade  in" style="display: none;">
+                                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                                <strong>请您输入有效的精确地址描述</strong>
+                            </div>
                         </div>
-                        <div id="gjTips" class="alert alert-danger fade  in" style="display: none;">
-                            <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                            <strong>请您输入有效的精确地址描述</strong>
+                        bus-way-style
+                        <div class="col-sm-12">
+                            <div id="dvPolicy" class="bus-way-style" style="margin-top: 20px;">
+                                <button type="button" class="btn  btn-default btn-warning selected" id="policy0">较快捷 <span class="caret"></span></button>
+                                <button type="button" class="btn btn-default btn-warning" id="policy1">不坐地铁 <span class="caret"></span></button>
+                                <button type="button" class="btn btn-default btn-warning" id="policy2">少换乘 <span class="caret"></span></button>
+                                <button type="button" class="btn btn-default btn-warning" id="policy3">少步行 <span class="caret"></span></button>
+                            </div>
+                            <div id="results" class="subway-result" style="margin-top: 20px;"></div>
                         </div>
                     </div>
-                    bus-way-style 
-                    <div class="col-sm-12">
-                        <div id="dvPolicy" class="bus-way-style" style="margin-top: 20px;">
-                            <button type="button" class="btn  btn-default btn-warning selected" id="policy0">较快捷 <span class="caret"></span></button>
-                            <button type="button" class="btn btn-default btn-warning" id="policy1">不坐地铁 <span class="caret"></span></button>
-                            <button type="button" class="btn btn-default btn-warning" id="policy2">少换乘 <span class="caret"></span></button>
-                            <button type="button" class="btn btn-default btn-warning" id="policy3">少步行 <span class="caret"></span></button>
-                        </div>
-                        <div id="results" class="subway-result" style="margin-top: 20px;"></div>
-                    </div>
-                </div>
-            </div>*@
+                </div>*@
             <div id="dvPolicy" class="bus-way-style" style="margin-top: 20px;"></div>
         </div>
 
